@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>The Revealing Module Pattern</title>
+<meta name="description" content="" />
+<meta name="HandheldFriendly" content="True" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="http://carldanley.com/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="http://carldanley.com/assets/css/screen.css?v=d5c427f5db" />
+<link rel="stylesheet" type="text/css" href="http://carldanley.com//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+<link rel="canonical" href="http://carldanley.com/js-revealing-module-pattern/" />
+<meta name="referrer" content="origin" />
+<meta name="generator" content="Ghost 0.7" />
+<link rel="alternate" type="application/rss+xml" title="Carl Danley" href="http://carldanley.com/rss/" />
+</head>
+<body class="post-template page-template page nav-closed">
+<div class="nav">
+<h3 class="nav-title">Menu</h3>
+<a href="#" class="nav-close">
+<span class="hidden">Close</span>
+</a>
+<ul>
+<li class="nav-home" role="presentation"><a href="http://carldanley.com/">Home</a></li>
+</ul>
+<a class="subscribe-button icon-feed" href="http://carldanley.com/rss/">Subscribe</a>
+</div>
+<span class="nav-cover"></span>
+<div class="site-wrapper">
+<header class="main-header post-head no-cover">
+<nav class="main-nav  clearfix">
+<a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
+</nav>
+</header>
+<main class="content" role="main">
+<article class="post page">
+<header class="post-header">
+<h1 class="post-title">The Revealing Module Pattern</h1>
+</header>
+<section class="post-content">
+</section></article></main><p>This pattern is the same concept as the <a href="http://carldanley.com/js-module-pattern/">module pattern</a> in that it focuses on public &amp; private methods. The only difference is that the revealing module pattern was engineered as a way to ensure that all methods and variables are kept private until they are explicitly exposed; usually through an object literal returned by the closure from which it's defined. Personally, I like this approach for vanilla JavaScript as it puts a clear emphasis on both the intent of the developer and the module itself.</p>
+<blockquote>"I've used this pattern on projects ranging from 100 to 100,000 lines of code." - Bob Holt</blockquote>
+<p>This article is part of a series called <a href="http://carldanley.com/javascript-design-patterns/">JavaScript Design Patterns</a>.</p>
+<h2>Advantages</h2>
+<ul>
+<li>Cleaner approach for developers</li>
+<li>Supports private data</li>
+<li>Less clutter in the global namespace</li>
+<li>Localization of functions and variables through closures</li>
+<li>The syntax of our scripts are even more consistent</li>
+<li>Explicitly defined public methods and variables which lead to increased readability</li>
+</ul>
+<h2>Disadvantages</h2>
+<ul>
+<li>Private methods are unaccessible.<em style="display: block; margin: 20px 0;">Some people say that this leads to the inability of unit testing but more often than not, if you're questioning the integrity of a function, it should probably be engineered in such a fashion that exposes the utility of that function publicly, thus making it testable. Given the adaptation of the module pattern by jQuery and their everyday use of QUnit to automate testing, this bullet point isn't really relevant but still listed for documentation purposes.</em></li>
+<li>Private methods and functions lose extendability since they are unaccessible (see my comment in the previous bullet point).</li>
+<li>It's harder to patch public methods and variables that are referred to by something private.</li>
+</ul>
+<h2>Example</h2>
+<script src="https://gist.github.com/carldanley/ef95b006eaa08761b0ca.js"></script>
+<p>This pattern can also be implemented using a privately shared cache (see <a href="http://carldanley.com/js-module-pattern/#file-module-pattern-example-2-js-L1">Example 2</a> of the <a href="http://carldanley.com/js-module-pattern/">module pattern</a> for an example.)</p>
+<h2>Additional Resources</h2>
+<p><a href="http://www.raymondcamden.com/index.cfm/2013/5/13/JavaScript-Design-Patterns--The-Revealing-Module-Pattern">http://www.raymondcamden.com/index.cfm/2013/5/13/JavaScript-Design-Patterns--The-Revealing-Module-Pattern</a> <br />
+<a href="http://www.bobholt.me/2012/08/using-the-revealing-module-pattern/">http://www.bobholt.me/2012/08/using-the-revealing-module-pattern/</a> <br />
+<a href="http://addyosmani.com/resources/essentialjsdesignpatterns/book/#revealingmodulepatternjavascript">http://addyosmani.com/resources/essentialjsdesignpatterns/book/#revealingmodulepatternjavascript</a></p>
+<h2>Other Common JS Patterns</h2>
+<p><a href="http://carldanley.com/js-module-pattern/">The Module Pattern</a> <br />
+<b>The Revealing Module Pattern</b> <br />
+<a href="http://carldanley.com/js-singleton-pattern/">The Singleton Pattern</a> <br />
+<a href="http://carldanley.com/js-observer-pattern/">The Observer Pattern</a> <br />
+<a href="http://carldanley.com/js-mediator-pattern/">The Mediator Pattern</a> <br />
+<a href="http://carldanley.com/js-prototype-pattern/">The Prototype Pattern</a> <br />
+<a href="http://carldanley.com/js-facade-pattern/">The Facade Pattern</a> <br />
+<a href="http://carldanley.com/js-factory-pattern/">The Factory Pattern</a></p>
+
+
+
+<footer class="site-footer clearfix">
+<section class="copyright"><a href="http://carldanley.com">Carl Danley</a> &copy; 2016</section>
+<section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
+</footer>
+</div>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<!-- You can safely delete this line if your theme does not require jQuery -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="http://carldanley.com/assets/js/jquery.fitvids.js?v=d5c427f5db"></script>
+<script type="text/javascript" src="http://carldanley.com/assets/js/index.js?v=d5c427f5db"></script>
+</body>
+</html>

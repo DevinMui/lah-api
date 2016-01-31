@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>ccan</title>
+<link rel="stylesheet" type="text/css" href="../ccan.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="http://ccodearchive.net//fonts.googleapis.com/css?family=Raleway:300" rel="stylesheet" type="text/css" />
+<link href="../prettify/src/prettify.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../prettify/src/run_prettify.js"></script>
+</head><head>
+<body>
+<div class="logo">
+<a href="../"><img src="../ccan.png" border="0" /></a>
+<h1>Comprehensive C Archive Network</h1>
+</div>
+<div class="menulist">
+<div class="menulist-inner">
+<ul class="menu">
+<li><a href="../upload.html">Upload Code</a></li>
+<li><a href="../list.html">Download Code</a></li>
+<li><a href="../index.html">About</a></li>
+</ul>
+<div class="search">
+<form method="get" action="http://www.google.com/search">
+<input type="text" name="q" size="25" maxlength="255" value="" />
+<input type="hidden" name="sitesearch" value="ccodearchive.net" />
+<input type="submit" value="Search CCAN (Google)" />
+</form>
+</div>
+</div>
+</div>
+<div class="content moduleinfo">
+<p><a href="http://git.ozlabs.org/?p=ccan;a=tree;f=ccan/rszshm">Browse Source</a> <a href="../tarballs/with-deps/rszshm.tar.bz2">Download</a> <a href="../tarballs/rszshm.tar.bz2">(without any required ccan dependencies)</a></p>
+<h3>Module:</h3>
+<p>rszshm</p>
+<h3>Summary:</h3>
+<p>resizable pointer-safe shared memory
+</p>
+<h3>Author:</h3>
+<p>Dan Good &lt;dan@dancancode.com&gt;
+</p>
+<h3>Description:</h3>
+<p></p><p></p>
+<p>If two separate processes have shared mappings of the same file at the
+same address, then pointers to addresses within the region can be shared
+between the processes and safely dereferenced.
+</p>
+<p>Mapping to the same address in unrelated processes is nontrivial.  One can
+request a specific address, but mmap will return another in case of an
+overlap.  One can require a specific address, but mmap will unmap anything
+overlapped.  On Linux boxes it can be seen that the used addresses clump
+at either end of the address range.  rszshm tries to mmap in the middle
+of the address range, and checks if the requested address matches the
+returned address.  If not, additional addresses are tried.  Once mapped,
+the address is recorded to a header in the file.  Another process reads the
+header and requests the saved address from mmap.  If the returned address
+matches, work proceeds.  While the defaults provide a propitious search,
+all the search parameters may be specified.
+</p>
+<p>To accommodate resizing, rszshm first maps a large, private, noreserve map.
+This serves to claim a span of addresses.  The shared file mapping then
+overlays the beginning of the span.  Later calls to extend the mapping
+overlay more of the span.  Attempts to extend beyond the end of the span
+return an error.
+</p>
+
+<h3>Example:</h3>
+<pre class="prettyprint">
+<code class="language-c">// fork x times, grow and fill shared memory cooperatively
+#include &lt;assert.h&gt;
+#include &lt;err.h&gt;
+#include &lt;signal.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;unistd.h&gt;
+#include &lt;ccan/rszshm/rszshm.h&gt;
+
+#define ok(x) ({ int n = (x); if (n == -1) err(1, &quot;%s&quot;, #x); n; })
+
+int main(int argc, char *argv[]) {
+        int pidcnt, stopval, n, i;
+        struct rszshm *r;
+        char *m;
+
+        assert(argc == 3);
+        pidcnt  = atoi(argv[1]);
+        stopval = atoi(argv[2]);
+        assert(pidcnt &gt; 0 &amp;&amp; stopval &gt; 0);
+
+        if (!rszshm_mkm(r, 4096, NULL))
+                err(1, &quot;rszshm_mkm&quot;);
+
+        printf(&quot;%s\n&quot;, r-&gt;fname);
+
+        for (n = 0; n &lt; pidcnt - 1; n++)
+                if (ok(fork()) == 0)
+                        break;
+
+        m = (char *) r-&gt;dat + sizeof(int);
+        #define next() (__sync_fetch_and_add((int *) r-&gt;dat, 1))
+
+        for(i = next(); i &lt; stopval; i = next()) {
+                if (i &gt;= r-&gt;cap - sizeof(int))
+                        ok(rszshm_grow(r));
+                assert(m[i] == '\0');
+                m[i] = 'A' + n;
+                kill(0, 0); // busy work
+        }
+
+        rszshm_free(r);
+        return 0;
+}
+// $ ./foo 8 $((4*1024*1024-28))
+// /dev/shm/rszshm_LAsEvt/0
+// $ tail -c +29 /dev/shm/rszshm_LAsEvt/0 | sed 's/./&amp;\n/g' | sort | uniq -c | tr '\n' '\t'; echo
+//  515532 A   527251 B    512930 C    513062 D    544326 E    545876 F    512936 G    522363 H
+</code>
+</pre>
+<h3>License:</h3>
+<p>APACHE-2
+</p>
+</div>
+</body></head></html>

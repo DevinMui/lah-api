@@ -1,0 +1,1902 @@
+
+<!DOCTYPE html>
+<html lang="en" class="">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article# profile: http://ogp.me/ns/profile#">
+<meta charset="utf-8" />
+<link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/github-d0dea0e5376d5c42aabf467726e0cffb7034a0d94eb947b9328eb6c9c4fcbba3.css" media="all" rel="stylesheet" />
+<link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/github2-5f7255544b25f937224217b1c37ee5c139a0a00a3decd8020b9aabc550340903.css" media="all" rel="stylesheet" />
+<link as="script" href="https://assets-cdn.github.com/assets/frameworks-9ee55ceaf87fc34dc86334249fef6cbece88e815478e0fbe81642d57ed0fff89.js" rel="preload" />
+<link as="script" href="https://assets-cdn.github.com/assets/github-8afeb971202f92778ffc73ddd92661c1977dc5e42a928ed35f8ec96e425a6e7a.js" rel="preload" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Content-Language" content="en" />
+<meta name="viewport" content="width=1020" />
+<title>brigade/overcommit: A fully configurable and extendable Git hook manager</title>
+<link rel="search" type="application/opensearchdescription+xml" href="http://github.com/opensearch.xml" title="GitHub" />
+<link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub" />
+<link rel="apple-touch-icon" href="http://github.com/apple-touch-icon.png" />
+<link rel="apple-touch-icon" sizes="57x57" href="http://github.com/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon" sizes="60x60" href="http://github.com/apple-touch-icon-60x60.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="http://github.com/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon" sizes="76x76" href="http://github.com/apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="http://github.com/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon" sizes="120x120" href="http://github.com/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="http://github.com/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon" sizes="152x152" href="http://github.com/apple-touch-icon-152x152.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="http://github.com/apple-touch-icon-180x180.png" />
+<meta property="fb:app_id" content="1401488693436528" />
+<meta content="https://avatars0.githubusercontent.com/u/7872961?v=3&amp;s=400" name="twitter:image:src" /><meta content="@github" name="twitter:site" /><meta content="summary" name="twitter:card" /><meta content="brigade/overcommit" name="twitter:title" /><meta content="overcommit - A fully configurable and extendable Git hook manager" name="twitter:description" />
+<meta content="https://avatars0.githubusercontent.com/u/7872961?v=3&amp;s=400" property="og:image" /><meta content="GitHub" property="og:site_name" /><meta content="object" property="og:type" /><meta content="brigade/overcommit" property="og:title" /><meta content="https://github.com/brigade/overcommit" property="og:url" /><meta content="overcommit - A fully configurable and extendable Git hook manager" property="og:description" />
+<meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats" />
+<meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors" />
+<link rel="assets" href="https://assets-cdn.github.com/" />
+<meta name="pjax-timeout" content="1000" />
+<meta name="msapplication-TileImage" content="/windows-tile.png" />
+<meta name="msapplication-TileColor" content="#ffffff" />
+<meta name="selected-link" value="repo_source" data-pjax-transient="data-pjax-transient" />
+<meta name="google-site-verification" content="KT5gs8h0wvaagLKAVWq8bbeNwnZZK1r1XQysX3xurLU" />
+<meta name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA" />
+<meta name="google-analytics" content="UA-3769691-2" />
+<meta content="collector.githubapp.com" name="octolytics-host" /><meta content="github" name="octolytics-app-id" /><meta content="68C5BF7F:1BA0:850A6A3:56ADA81E" name="octolytics-dimension-request_id" />
+<meta content="/&lt;user-name&gt;/&lt;repo-name&gt;" data-pjax-transient="true" name="analytics-location" />
+<meta class="js-ga-set" name="dimension1" content="Logged Out" />
+<meta name="hostname" content="github.com" />
+<meta name="user-login" content="" />
+<meta name="expected-hostname" content="github.com" />
+<link rel="mask-icon" href="https://assets-cdn.github.com/pinned-octocat.svg" color="#4078c0" />
+<link rel="icon" type="image/x-icon" href="https://assets-cdn.github.com/favicon.ico" />
+<meta content="63693f4bbc3a292ed8b571ffc07e11f0f5791d18" name="form-nonce" />
+<meta http-equiv="x-pjax-version" content="55b41dd856d04e698e17bd7fc2020079" />
+<meta name="description" content="overcommit - A fully configurable and extendable Git hook manager" />
+<meta name="go-import" content="github.com/brigade/overcommit git https://github.com/brigade/overcommit.git" />
+<meta content="7872961" name="octolytics-dimension-user_id" /><meta content="brigade" name="octolytics-dimension-user_login" /><meta content="1520275" name="octolytics-dimension-repository_id" /><meta content="brigade/overcommit" name="octolytics-dimension-repository_nwo" /><meta content="true" name="octolytics-dimension-repository_public" /><meta content="false" name="octolytics-dimension-repository_is_fork" /><meta content="1520275" name="octolytics-dimension-repository_network_root_id" /><meta content="brigade/overcommit" name="octolytics-dimension-repository_network_root_nwo" />
+<link href="https://github.com/brigade/overcommit/commits/master.atom" rel="alternate" title="Recent Commits to overcommit:master" type="application/atom+xml" />
+<link rel="canonical" href="https://github.com/brigade/overcommit" data-pjax-transient="data-pjax-transient" />
+</head>
+<body class="logged_out   env-production  vis-public">
+<a href="#start-of-content" tabindex="1" class="accessibility-aid js-skip-to-content">Skip to content</a>
+<div class="header header-logged-out" role="banner">
+<div class="container clearfix">
+<a class="header-logo-wordmark" href="https://github.com/" data-ga-click="(Logged out) Header, go to homepage, icon:logo-wordmark">
+<span aria-hidden="true" class="mega-octicon octicon-logo-github"></span>
+</a>
+<div class="header-actions" role="navigation">
+<a class="btn btn-primary" href="http://github.com/join?source=header-repo" data-ga-click="(Logged out) Header, clicked Sign up, text:sign-up">Sign up</a>
+<a class="btn" href="http://github.com/login?return_to=%2Fbrigade%2Fovercommit" data-ga-click="(Logged out) Header, clicked Sign in, text:sign-in">Sign in</a>
+</div>
+<div class="site-search repo-scope js-site-search" role="search">
+<!-- &lt;/textarea&gt; --><!-- '"` --><form accept-charset="UTF-8" action="/brigade/overcommit/search" class="js-site-search-form" data-global-search-url="/search" data-repo-search-url="/brigade/overcommit/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓" /></div>
+<label class="js-chromeless-input-container form-control">
+<div class="scope-badge">This repository</div>
+<input type="text" class="js-site-search-focus js-site-search-field is-clearable chromeless-input" data-hotkey="s" name="q" placeholder="Search" aria-label="Search this repository" data-global-scope-placeholder="Search GitHub" data-repo-scope-placeholder="Search" tabindex="1" autocapitalize="off" />
+</label>
+</form>
+</div>
+<ul class="header-nav left" role="navigation">
+<li class="header-nav-item">
+<a class="header-nav-link" href="http://github.com/explore" data-ga-click="(Logged out) Header, go to explore, text:explore">Explore</a>
+</li>
+<li class="header-nav-item">
+<a class="header-nav-link" href="http://github.com/features" data-ga-click="(Logged out) Header, go to features, text:features">Features</a>
+</li>
+<li class="header-nav-item">
+<a class="header-nav-link" href="https://enterprise.github.com/" data-ga-click="(Logged out) Header, go to enterprise, text:enterprise">Enterprise</a>
+</li>
+<li class="header-nav-item">
+<a class="header-nav-link" href="http://github.com/pricing" data-ga-click="(Logged out) Header, go to pricing, text:pricing">Pricing</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="start-of-content" class="accessibility-aid"></div>
+<div id="js-flash-container">
+</div>
+<div role="main" class="main-content">
+<div itemscope="itemscope" itemtype="http://schema.org/WebPage">
+<div id="js-repo-pjax-container" class="context-loader-container js-repo-nav-next" data-pjax-container="data-pjax-container">
+<div class="pagehead repohead instapaper_ignore readability-menu experiment-repo-nav">
+<div class="container repohead-details-container">
+<ul class="pagehead-actions">
+<li>
+<a href="http://github.com/login?return_to=%2Fbrigade%2Fovercommit" class="btn btn-sm btn-with-count tooltipped tooltipped-n" aria-label="You must be signed in to watch a repository" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-eye"></span>
+    Watch
+  </a>
+<a class="social-count" href="http://github.com/brigade/overcommit/watchers">
+    68
+  </a>
+</li>
+<li>
+<a href="http://github.com/login?return_to=%2Fbrigade%2Fovercommit" class="btn btn-sm btn-with-count tooltipped tooltipped-n" aria-label="You must be signed in to star a repository" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-star"></span>
+    Star
+  </a>
+<a class="social-count js-social-count" href="http://github.com/brigade/overcommit/stargazers">
+      1,033
+    </a>
+</li>
+<li>
+<a href="http://github.com/login?return_to=%2Fbrigade%2Fovercommit" class="btn btn-sm btn-with-count tooltipped tooltipped-n" aria-label="You must be signed in to fork a repository" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-repo-forked"></span>
+        Fork
+      </a>
+<a href="http://github.com/brigade/overcommit/network" class="social-count">
+      74
+    </a>
+</li>
+</ul>
+<h1 itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb" class="entry-title public ">
+<span aria-hidden="true" class="octicon octicon-repo"></span>
+<span class="author"><a href="http://github.com/brigade" class="url fn" itemprop="url" rel="author"><span itemprop="title">brigade</span></a></span><!--
+--><span class="path-divider">/</span><!--
+--><strong><a href="http://github.com/brigade/overcommit" data-pjax="#js-repo-pjax-container">overcommit</a></strong>
+<span class="page-context-loader">
+<img alt="" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</span>
+</h1>
+</div>
+<div class="container">
+<nav class="reponav js-repo-nav js-sidenav-container-pjax js-octicon-loaders" role="navigation" data-pjax="#js-repo-pjax-container">
+<a href="http://github.com/brigade/overcommit" aria-label="Code" aria-selected="true" class="js-selected-navigation-item selected reponav-item" data-hotkey="g c" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches /brigade/overcommit">
+<span aria-hidden="true" class="octicon octicon-code"></span>
+    Code
+</a>
+<a href="http://github.com/brigade/overcommit/issues" class="js-selected-navigation-item reponav-item" data-hotkey="g i" data-selected-links="repo_issues repo_labels repo_milestones /brigade/overcommit/issues">
+<span aria-hidden="true" class="octicon octicon-issue-opened"></span>
+      Issues
+      <span class="counter">11</span>
+</a>
+<a href="http://github.com/brigade/overcommit/pulls" class="js-selected-navigation-item reponav-item" data-hotkey="g p" data-selected-links="repo_pulls /brigade/overcommit/pulls">
+<span aria-hidden="true" class="octicon octicon-git-pull-request"></span>
+    Pull requests
+    <span class="counter">1</span>
+</a>
+<a href="http://github.com/brigade/overcommit/pulse" class="js-selected-navigation-item reponav-item" data-selected-links="pulse /brigade/overcommit/pulse">
+<span aria-hidden="true" class="octicon octicon-pulse"></span>
+    Pulse
+</a>
+<a href="http://github.com/brigade/overcommit/graphs" class="js-selected-navigation-item reponav-item" data-selected-links="repo_graphs repo_contributors /brigade/overcommit/graphs">
+<span aria-hidden="true" class="octicon octicon-graph"></span>
+    Graphs
+</a>
+</nav>
+</div>
+</div>
+<div class="container new-discussion-timeline experiment-repo-nav">
+<div class="repository-content">
+<div class="repository-meta js-details-container">
+<span class="repository-meta-content">
+        A fully configurable and extendable Git hook manager
+  </span>
+</div>
+<div class="overall-summary overall-summary-bottomless">
+<div class="stats-switcher-viewport js-stats-switcher-viewport">
+<div class="stats-switcher-wrapper">
+<ul class="numbers-summary">
+<li class="commits">
+<a data-pjax="data-pjax" href="http://github.com/brigade/overcommit/commits/master">
+<span aria-hidden="true" class="octicon octicon-history"></span>
+<span class="num text-emphasized">
+              1,175
+            </span>
+            commits
+        </a>
+</li>
+<li>
+<a data-pjax="data-pjax" href="http://github.com/brigade/overcommit/branches">
+<span aria-hidden="true" class="octicon octicon-git-branch"></span>
+<span class="num text-emphasized">
+            2
+          </span>
+          branches
+        </a>
+</li>
+<li>
+<a data-pjax="data-pjax" href="http://github.com/brigade/overcommit/releases">
+<span aria-hidden="true" class="octicon octicon-tag"></span>
+<span class="num text-emphasized">
+            57
+          </span>
+          releases
+        </a>
+</li>
+<li>
+<a href="http://github.com/brigade/overcommit/graphs/contributors">
+<span aria-hidden="true" class="octicon octicon-organization"></span>
+<span class="num text-emphasized">
+      35
+    </span>
+    contributors
+</a>
+</li>
+</ul>
+<div class="repository-lang-stats">
+<ol class="repository-lang-stats-numbers">
+<li>
+<a href="http://github.com/brigade/overcommit/search?l=ruby" data-ga-click="Repository, language stats search click, location:repo overview">
+<span class="color-block language-color" style="background-color:#701516;"></span>
+<span class="lang">Ruby</span>
+<span class="percent">98.6%</span>
+</a>
+</li>
+<li>
+<a href="http://github.com/brigade/overcommit/search?l=bash" data-ga-click="Repository, language stats search click, location:repo overview">
+<span class="color-block language-color" style="background-color:#89e051;"></span>
+<span class="lang">Shell</span>
+<span class="percent">1.4%</span>
+</a>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="repository-lang-stats-graph js-toggle-lang-stats" title="Click for language details" data-ga-click="Repository, language bar stats toggle, location:repo overview">
+<span class="language-color" aria-label="Ruby 98.6%" style="width:98.6%; background-color:#701516;" itemprop="keywords">Ruby</span>
+<span class="language-color" aria-label="Shell 1.4%" style="width:1.4%; background-color:#89e051;" itemprop="keywords">Shell</span>
+</div>
+<div class="file-navigation in-mid-page">
+<div class="right">
+<div class="btn-group">
+<button class="btn btn-sm disabled tooltipped tooltipped-n" aria-label="You must be signed in to make or propose changes" type="button">
+    New file
+  </button>
+<a href="http://github.com/brigade/overcommit/find/master" class="btn btn-sm empty-icon right js-show-file-finder" data-pjax="data-pjax" data-hotkey="t" data-ga-click="Repository, find file, location:repo overview">
+        Find file
+      </a>
+</div>
+<div class="file-navigation-options" data-multiple="data-multiple">
+<div class="file-navigation-option">
+<!-- &lt;/textarea&gt; --><!-- '"` --><form accept-charset="UTF-8" action="/users/set_protocol" class="js-set-user-protocol-preference" data-form-nonce="63693f4bbc3a292ed8b571ffc07e11f0f5791d18" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓" /><input name="authenticity_token" type="hidden" value="GTY3sLI4Ct0YfaKUgdIIyukPDpDac+ezTBTGm2jcXXfd9Hh0nyrqguwihFgJ/2vZVDpWKGlc0P3NOxIgKYC/ag==" /></div>
+<input type="hidden" name="protocol_type" value="clone" />
+<div class="select-menu js-menu-container js-select-menu">
+<div class="input-group js-select-button js-zeroclipboard-container">
+<div class="input-group-button">
+<button type="button" class="btn btn-sm select-menu-button js-menu-target" data-ga-click="Repository, clone HTTPS, location:repo overview">
+    HTTPS
+  </button>
+</div>
+<input type="text" class="input-monospace input-mini js-zeroclipboard-target js-url-field" value="https://github.com/brigade/overcommit.git" readonly="readonly" />
+<div class="input-group-button">
+<button aria-label="Copy to clipboard" class="js-zeroclipboard btn btn-sm zeroclipboard-button tooltipped tooltipped-s" data-copied-hint="Copied!" type="button"><span aria-hidden="true" class="octicon octicon-clippy"></span></button>
+</div>
+</div>
+<div class="select-menu-modal-holder">
+<div class="select-menu-modal js-menu-content" aria-hidden="true">
+<div class="select-menu-header">
+<span aria-label="Close" class="octicon octicon-x js-menu-close" role="button"></span>
+<span class="select-menu-title">Choose a clone URL</span>
+</div>
+<div class="select-menu-list js-navigation-container" role="menu">
+<div class="select-menu-item js-navigation-item selected" role="menuitem" tabindex="0">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<div class="select-menu-item-text">
+<input type="radio" name="protocol_selector" value="http" checked="checked" />
+<span class="select-menu-item-heading">
+                            HTTPS
+                            (recommended)
+                          </span>
+<span class="description">
+                              Clone with Git or checkout with SVN using the repository's web address.
+                            </span>
+<span class="js-select-button-text hidden-select-button-text">
+<div class="input-group-button">
+<button type="button" class="btn btn-sm select-menu-button js-menu-target" data-ga-click="Repository, clone HTTPS, location:repo overview">
+    HTTPS
+  </button>
+</div>
+<input type="text" class="input-monospace input-mini js-zeroclipboard-target js-url-field" value="https://github.com/brigade/overcommit.git" readonly="readonly" />
+<div class="input-group-button">
+<button aria-label="Copy to clipboard" class="js-zeroclipboard btn btn-sm zeroclipboard-button tooltipped tooltipped-s" data-copied-hint="Copied!" type="button"><span aria-hidden="true" class="octicon octicon-clippy"></span></button>
+</div>
+</span>
+</div>
+</div>
+</div>
+<div class="select-menu-list" role="menu">
+<a class="select-menu-item select-menu-action" href="https://help.github.com/articles/which-remote-url-should-i-use" target="_blank">
+<span aria-hidden="true" class="octicon octicon-question select-menu-item-icon"></span>
+<div class="select-menu-item-text">
+                        Learn more about clone URLs
+                      </div>
+</a>
+</div>
+</div>
+</div>
+</div>
+</form> </div>
+<div class="file-navigation-option">
+</div>
+<div class="file-navigation-option">
+<a href="http://github.com/brigade/overcommit/archive/master.zip" class="btn btn-sm" rel="nofollow" data-ga-click="Repository, download zip, location:repo overview">
+            Download ZIP
+          </a>
+</div>
+</div>
+</div>
+<div class="select-menu js-menu-container js-select-menu left">
+<button class="btn btn-sm select-menu-button js-menu-target css-truncate" data-hotkey="w" title="master" type="button" aria-label="Switch branches or tags" tabindex="0" aria-haspopup="true">
+<i>Branch:</i>
+<span class="js-select-button css-truncate-target">master</span>
+</button>
+<div class="select-menu-modal-holder js-menu-content js-navigation-container" data-pjax="data-pjax" aria-hidden="true">
+<div class="select-menu-modal">
+<div class="select-menu-header">
+<span aria-label="Close" class="octicon octicon-x js-menu-close" role="button"></span>
+<span class="select-menu-title">Switch branches/tags</span>
+</div>
+<div class="select-menu-filters">
+<div class="select-menu-text-filter">
+<input type="text" aria-label="Filter branches/tags" id="context-commitish-filter-field" class="js-filterable-field js-navigation-enable" placeholder="Filter branches/tags" />
+</div>
+<div class="select-menu-tabs">
+<ul>
+<li class="select-menu-tab">
+<a href="#" data-tab-filter="branches" data-filter-placeholder="Filter branches/tags" class="js-select-menu-tab" role="tab">Branches</a>
+</li>
+<li class="select-menu-tab">
+<a href="#" data-tab-filter="tags" data-filter-placeholder="Find a tag…" class="js-select-menu-tab" role="tab">Tags</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="branches" role="menu">
+<div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/brigade/overcommit/tree/gh-pages" data-name="gh-pages" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="gh-pages">
+                gh-pages
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open selected" href="http://github.com/brigade/overcommit/tree/master" data-name="master" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="master">
+                master
+              </span>
+</a>
+</div>
+<div class="select-menu-no-results">Nothing to show</div>
+</div>
+<div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="tags">
+<div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/brigade/overcommit/tree/v0.32.0.rc1" data-name="v0.32.0.rc1" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.32.0.rc1">
+                v0.32.0.rc1
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/brigade/overcommit/tree/v0.31.0" data-name="v0.31.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.31.0">
+                v0.31.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/brigade/overcommit/tree/v0.30.0" data-name="v0.30.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.30.0">
+                v0.30.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/brigade/overcommit/tree/v0.29.1" data-name="v0.29.1" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.29.1">
+                v0.29.1
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/brigade/overcommit/tree/v0.29.0" data-name="v0.29.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.29.0">
+                v0.29.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/brigade/overcommit/tree/v0.28.0" data-name="v0.28.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.28.0">
+                v0.28.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/brigade/overcommit/tree/v0.27.0" data-name="v0.27.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.27.0">
+                v0.27.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/brigade/overcommit/tree/v0.26.0" data-name="v0.26.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.26.0">
+                v0.26.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/brigade/overcommit/tree/v0.25.0" data-name="v0.25.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.25.0">
+                v0.25.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/brigade/overcommit/tree/v0.24.0" data-name="v0.24.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.24.0">
+                v0.24.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/brigade/overcommit/tree/v0.23.0" data-name="v0.23.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.23.0">
+                v0.23.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/brigade/overcommit/tree/v0.22.0" data-name="v0.22.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.22.0">
+                v0.22.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/brigade/overcommit/tree/v0.21.0" data-name="v0.21.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.21.0">
+                v0.21.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/brigade/overcommit/tree/v0.20.0" data-name="v0.20.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.20.0">
+                v0.20.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/brigade/overcommit/tree/v0.19.0" data-name="v0.19.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.19.0">
+                v0.19.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/brigade/overcommit/tree/v0.18.0" data-name="v0.18.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.18.0">
+                v0.18.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/brigade/overcommit/tree/v0.17.0" data-name="v0.17.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.17.0">
+                v0.17.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/brigade/overcommit/tree/v0.16.0" data-name="v0.16.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.16.0">
+                v0.16.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/brigade/overcommit/tree/v0.15.0" data-name="v0.15.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.15.0">
+                v0.15.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/brigade/overcommit/tree/v0.14.1" data-name="v0.14.1" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.14.1">
+                v0.14.1
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/brigade/overcommit/tree/v0.14.0" data-name="v0.14.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.14.0">
+                v0.14.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/brigade/overcommit/tree/v0.13.0" data-name="v0.13.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.13.0">
+                v0.13.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/brigade/overcommit/tree/v0.12.0" data-name="v0.12.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.12.0">
+                v0.12.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/brigade/overcommit/tree/v0.11.1" data-name="v0.11.1" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.11.1">
+                v0.11.1
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/brigade/overcommit/tree/v0.11.0" data-name="v0.11.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.11.0">
+                v0.11.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/brigade/overcommit/tree/v0.10.0" data-name="v0.10.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.10.0">
+                v0.10.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/brigade/overcommit/tree/v0.9.0" data-name="v0.9.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.9.0">
+                v0.9.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/brigade/overcommit/tree/v0.8.0" data-name="v0.8.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.8.0">
+                v0.8.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/brigade/overcommit/tree/v0.7.0" data-name="v0.7.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.7.0">
+                v0.7.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/brigade/overcommit/tree/v0.6.3" data-name="v0.6.3" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.6.3">
+                v0.6.3
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/brigade/overcommit/tree/v0.6.2" data-name="v0.6.2" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.6.2">
+                v0.6.2
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/brigade/overcommit/tree/v0.6.1" data-name="v0.6.1" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.6.1">
+                v0.6.1
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/brigade/overcommit/tree/v0.6.0" data-name="v0.6.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.6.0">
+                v0.6.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/brigade/overcommit/tree/v0.5.0" data-name="v0.5.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.5.0">
+                v0.5.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/brigade/overcommit/tree/v0.4.1" data-name="v0.4.1" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.4.1">
+                v0.4.1
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/brigade/overcommit/tree/v0.4.0" data-name="v0.4.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.4.0">
+                v0.4.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/brigade/overcommit/tree/v0.3.2" data-name="v0.3.2" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.3.2">
+                v0.3.2
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/brigade/overcommit/tree/v0.3.1" data-name="v0.3.1" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.3.1">
+                v0.3.1
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/brigade/overcommit/tree/v0.3.0" data-name="v0.3.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.3.0">
+                v0.3.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/brigade/overcommit/tree/v0.2.6" data-name="v0.2.6" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.2.6">
+                v0.2.6
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/brigade/overcommit/tree/v0.2.5" data-name="v0.2.5" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.2.5">
+                v0.2.5
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/brigade/overcommit/tree/v0.2.4" data-name="v0.2.4" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.2.4">
+                v0.2.4
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/brigade/overcommit/tree/v0.2.3" data-name="v0.2.3" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.2.3">
+                v0.2.3
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/brigade/overcommit/tree/v0.2.2" data-name="v0.2.2" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.2.2">
+                v0.2.2
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/brigade/overcommit/tree/v0.2.1" data-name="v0.2.1" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.2.1">
+                v0.2.1
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/brigade/overcommit/tree/v0.2.0" data-name="v0.2.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.2.0">
+                v0.2.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/brigade/overcommit/tree/v0.1.11" data-name="v0.1.11" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.1.11">
+                v0.1.11
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/brigade/overcommit/tree/v0.1.10" data-name="v0.1.10" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.1.10">
+                v0.1.10
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/brigade/overcommit/tree/v0.1.9" data-name="v0.1.9" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.1.9">
+                v0.1.9
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/brigade/overcommit/tree/v0.1.8" data-name="v0.1.8" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.1.8">
+                v0.1.8
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/brigade/overcommit/tree/v0.1.7" data-name="v0.1.7" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.1.7">
+                v0.1.7
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/brigade/overcommit/tree/v0.1.6" data-name="v0.1.6" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.1.6">
+                v0.1.6
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/brigade/overcommit/tree/v0.1.5" data-name="v0.1.5" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.1.5">
+                v0.1.5
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/brigade/overcommit/tree/v0.1.4" data-name="v0.1.4" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.1.4">
+                v0.1.4
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/brigade/overcommit/tree/v0.1.2" data-name="v0.1.2" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.1.2">
+                v0.1.2
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/brigade/overcommit/tree/v0.1.1" data-name="v0.1.1" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.1.1">
+                v0.1.1
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/brigade/overcommit/tree/v0.1.0" data-name="v0.1.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.1.0">
+                v0.1.0
+              </span>
+</a>
+</div>
+<div class="select-menu-no-results">Nothing to show</div>
+</div>
+</div>
+</div>
+</div>
+<button type="button" class="btn btn-sm btn-primary disabled tooltipped tooltipped-n" aria-label="You must be signed in to create a pull request">
+        New pull request
+      </button>
+<div class="breadcrumb">
+</div>
+</div>
+<div class="commit-tease js-details-container">
+<span class="right">
+      Latest commit
+      <a class="commit-tease-sha" href="http://github.com/brigade/overcommit/commit/7624e705d6819e1060fc96b7cd756f3eb9f2335e" data-pjax="data-pjax">
+        7624e70
+      </a>
+<time datetime="2016-01-29T17:41:51Z" is="relative-time">Jan 29, 2016</time>
+</span>
+<span class="commit-author-section">
+<img alt="@sds" class="avatar" height="20" src="https://avatars2.githubusercontent.com/u/677877?v=3&amp;s=40" width="20" />
+<a href="http://github.com/sds" class="user-mention" rel="contributor">sds</a>
+</span>
+<a href="http://github.com/brigade/overcommit/commit/7624e705d6819e1060fc96b7cd756f3eb9f2335e" class="message" data-pjax="true" title="Cut prerelease version 0.32.0.rc1
+
+We want developers to be able to try out the parallelism feature so we
+can find bugs.">Cut prerelease version 0.32.0.rc1</a>
+<span class="hidden-text-expander inline">
+<a href="#" class="js-details-target">…</a>
+</span>
+
+<div class="commit-desc"><pre class="text-small">We want developers to be able to try out the parallelism feature so we
+can find bugs.</pre></div>
+</div>
+<div class="file-wrap ">
+<a href="http://github.com/brigade/overcommit/tree/7624e705d6819e1060fc96b7cd756f3eb9f2335e" class="hidden js-permalink-shortcut" data-hotkey="y">Permalink</a>
+<table class="files js-navigation-container js-active-navigation-container" data-pjax="data-pjax">
+<tbody>
+<tr class="warning include-fragment-error">
+<td class="icon"><span aria-hidden="true" class="octicon octicon-alert"></span></td>
+<td class="content" colspan="3">Failed to load latest commit information.</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-directory"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/brigade/overcommit/tree/master/bin" class="js-directory-link js-navigation-open" id="c1111bd512b29e821b120b86446026b8-1a1a56747ba5bde7bc0e3c62bfc270b33cb589fe" title="bin">bin</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/brigade/overcommit/commit/8cd0113d267fbbf979bdef97d6ba3238025439db" class="message" data-pjax="true" title="Automatically require overcommit in CLI file
+
+There's no situation where you can require the CLI code and not also
+require the main Overcommit codebase, so move that require statement
+into the CLI file.">Automatically require overcommit in CLI file</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2015-07-14T01:07:36Z" is="time-ago">Jul 14, 2015</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-directory"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/brigade/overcommit/tree/master/config" class="js-directory-link js-navigation-open" id="2245023265ae4cf87d02c8b6ba991139-e3e00b41b6db1371f4e5fa1fc7a60b74590562c7" title="config">config</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/brigade/overcommit/commit/2364e6a18e95a12a0a482d09c09ee1c4ce29dea5" class="message" data-pjax="true" title="Run hooks in parallel where possible
+
+Add support for running hooks in parallel.">Run hooks in parallel where possible</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2016-01-29T05:45:59Z" is="time-ago">Jan 28, 2016</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-directory"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/brigade/overcommit/tree/master/lib" class="js-directory-link js-navigation-open" id="e8acc63b1e238f3255c900eed37254b8-173a5173a2012c97a47cbcea37ed9b201663d0cc" title="lib">lib</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/brigade/overcommit/commit/7624e705d6819e1060fc96b7cd756f3eb9f2335e" class="message" data-pjax="true" title="Cut prerelease version 0.32.0.rc1
+
+We want developers to be able to try out the parallelism feature so we
+can find bugs.">Cut prerelease version 0.32.0.rc1</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2016-01-29T17:41:51Z" is="time-ago">Jan 29, 2016</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-directory"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/brigade/overcommit/tree/master/libexec" class="js-directory-link js-navigation-open" id="1fdbfe83d306a74c93d81735153a7a80-890126cdac3efecb5610c1291ee55d69e203b3db" title="libexec">libexec</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/brigade/overcommit/commit/8d751bd11bc579f8de8cc7336982278b5d265d32" class="message" data-pjax="true" title="Gracefully handle .git submodule files
+
+It turns out that the `.git` directory can also be a file whose contents
+point to another directory.
+
+If users used this kind of `.git` file, Overcommit would fail
+spectacularly. Add support for detecting this case and handling it
+gracefully.
+
+In the process, I noticed a number of tests depended on the `repo_root`
+and `git_dir` helpers of the `Utils` module, so I extracted some code to
+clear their internal caches before each example.
+
+Change-Id: I18941d9c5ae72d240f1fef44593330592d2398ca
+Reviewed-on: http://gerrit.causes.com/44223
+Tested-by: jenkins &lt;jenkins@brigade.com&gt;
+Reviewed-by: Shane da Silva &lt;shane.dasilva@brigade.com&gt;">Gracefully handle .git submodule files</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2014-11-05T22:11:46Z" is="time-ago">Nov 5, 2014</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-directory"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/brigade/overcommit/tree/master/spec" class="js-directory-link js-navigation-open" id="b979c2934ac0b4ba3f08dabfdd1b2299-1077b1eb4cae2b605df9ac11ec37b205c98f6d16" title="spec">spec</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/brigade/overcommit/commit/b55e4dab1ab74f8aa6009f5b92c3e6e7c46915ad" class="message" data-pjax="true" title="Add processors hook option
+
+Add option which allows hooks to specify that they require a specified
+number of processing units from the total number of `concurrency`
+processing units available.">Add processors hook option</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2016-01-29T06:18:30Z" is="time-ago">Jan 28, 2016</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-directory"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/brigade/overcommit/tree/master/template-dir/hooks" class="js-directory-link js-navigation-open" id="de8ae487a16cf3910f739d3f5460da87-6fdad67e1bc26f360158b1ba7be9b3d369d6bc79" title="This path skips through empty directories"><span class="simplified-path">template-dir/</span>hooks</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/brigade/overcommit/commit/338a3602fcc8c6ffe16c8b458505985e5bebc9d5" class="message" data-pjax="true" title="Improve error message for missing gemfile dependencies
+
+If you hadn't run `bundle install --gemfile=&lt;overcommit-gemfile&gt;`, you
+would get an error during a hook run that lead you to believe there was
+a problem with your `Gemfile`, when it was the separate Overcommit gem
+file.
+
+Fix this by improving the error message to make this clearer.">Improve error message for missing gemfile dependencies</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2016-01-26T03:59:40Z" is="time-ago">Jan 26, 2016</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-text"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/brigade/overcommit/blob/master/.editorconfig" class="js-directory-link js-navigation-open" id="1e70daafb475c0ce3fef7d2728279182-3f95cc7d5e00ea9a2413eb0512e0c50f71c93a52" title=".editorconfig">.editorconfig</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/brigade/overcommit/commit/280efb6d06701de5ad5dfe5ef85565565bc98e44" class="message" data-pjax="true" title="Add .editorconfig file
+
+Ensure indentation/spacing are explicitly defined via this format.
+
+Change-Id: If8659482d7acba0065069436e4c37874fcd27885
+Reviewed-on: http://gerrit.causes.com/44915
+Tested-by: jenkins &lt;jenkins@brigade.com&gt;
+Reviewed-by: Shane da Silva &lt;shane.dasilva@brigade.com&gt;">Add .editorconfig file</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2014-12-01T08:10:44Z" is="time-ago">Dec 1, 2014</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-text"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/brigade/overcommit/blob/master/.gitignore" class="js-directory-link js-navigation-open" id="a084b794bc0759e7a6b77810e01874f2-410188f0b671c09f7aae929e98fa220498c599e4" title=".gitignore">.gitignore</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/brigade/overcommit/commit/bbf349a9bce00131236219f5639d79444e4fe719" class="message" data-pjax="true" title="Add code coverage integration with Coveralls
+
+Change-Id: I2ab5b379c035c5da72c3030da6857b7c21c47aaf
+Reviewed-on: http://gerrit.causes.com/47710
+Tested-by: jenkins &lt;jenkins@brigade.com&gt;
+Reviewed-by: Shane da Silva &lt;shane.dasilva@brigade.com&gt;">Add code coverage integration with Coveralls</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2015-03-12T21:08:52Z" is="time-ago">Mar 12, 2015</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-text"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/brigade/overcommit/blob/master/.overcommit.yml" class="js-directory-link js-navigation-open" id="5631f329a45f7142567e19118080998e-e4b4190e7d91d564bcb3a8cfc42a99ab3771a3cb" title=".overcommit.yml">.overcommit.yml</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/brigade/overcommit/commit/463b4b0a822bfb5eefd557cb42319be7760abc94" class="message" data-pjax="true" title="Ignore all executable files in hook template directory
+
+This is failing in Travis builds but not locally, likely due to the
+symlinks.">Ignore all executable files in hook template directory</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2015-08-24T00:11:49Z" is="time-ago">Aug 23, 2015</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-text"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/brigade/overcommit/blob/master/.projections.json" class="js-directory-link js-navigation-open" id="bae0b39bf6b02522be20d0d69503f285-24f5ce34d71b836316e897964c435d5c4bfcec0c" title=".projections.json">.projections.json</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/brigade/overcommit/commit/c8505e68452bd5731663fc6d9c553d685bc7ba68" class="message" data-pjax="true" title='Add .projections.json configuration file
+
+Editor plugins, like @tpope&squot;s vim-projectionist, can make use of this
+configuration file to enable easy jumping between "alternate" files,
+among other features. For example, with this configuration and
+vim-projectionist installed, you can now be editing a hook and execute
+`:A` to jump to that hook&squot;s spec file. This will save some time when
+working with this project.
+
+https://github.com/tpope/vim-projectionist
+
+Change-Id: I0500e1e6aad52e1f4da44c4ce674215a2b31f36e
+Reviewed-on: http://gerrit.causes.com/45429
+Tested-by: jenkins &lt;jenkins@brigade.com&gt;
+Reviewed-by: Shane da Silva &lt;shane.dasilva@brigade.com&gt;'>Add .projections.json configuration file</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2014-12-22T21:26:49Z" is="time-ago">Dec 22, 2014</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-text"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/brigade/overcommit/blob/master/.rubocop.yml" class="js-directory-link js-navigation-open" id="11a0d7906801d9dea0eccb85667ad811-fdb6d02d304377571276207bec823a86d96bbfd3" title=".rubocop.yml">.rubocop.yml</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/brigade/overcommit/commit/9893350643d01e641c38546f33a97b49cfcc7293" class="message" data-pjax="true" title="Upgrade RuboCop 0.35.1 -&gt; 0.36.0 for Travis builds
+
+This required a number of fixes to address new cops introduced in
+version 0.36.0.">Upgrade RuboCop 0.35.1 -&gt; 0.36.0 for Travis builds</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2016-01-20T01:16:57Z" is="time-ago">Jan 19, 2016</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-text"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/brigade/overcommit/blob/master/.simplecov" class="js-directory-link js-navigation-open" id="38d89add37c3690ad9d851aee9acd632-3cc400523d36cf94fe9ad190f12f10f6f8740f25" title=".simplecov">.simplecov</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/brigade/overcommit/commit/16d05b79b05a1c4d4221c1da7c51e34778c02c0c" class="message" data-pjax="true" title="Filter irrelevant directories in SimpleCov results
+
+Change-Id: I0265d877c745c6d79a47f11f5e14da4a6d935eeb
+Reviewed-on: http://gerrit.causes.com/48194
+Reviewed-by: Shane da Silva &lt;shane.dasilva@brigade.com&gt;
+Tested-by: jenkins &lt;jenkins@brigade.com&gt;">Filter irrelevant directories in SimpleCov results</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2015-03-24T20:45:54Z" is="time-ago">Mar 24, 2015</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-text"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/brigade/overcommit/blob/master/.travis.yml" class="js-directory-link js-navigation-open" id="354f30a63fb0907d4ad57269548329e3-2312a0d53b998e9f63503b5b5a6df7743d841c3d" title=".travis.yml">.travis.yml</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/brigade/overcommit/commit/c932384bfa6f0340cb1326597ecf7991ba9cd0c0" class="message" data-pjax="true" title="Add Ruby 2.3.0 to Travis build matrix
+
+To get things working, also:
+
+  * Add `rake` development dependency
+  * Bump `childprocess` gem dependency
+  * Fix Gemfile-related integration test on Travis">Add Ruby 2.3.0 to Travis build matrix</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2016-01-19T06:07:29Z" is="time-ago">Jan 18, 2016</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-text"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/brigade/overcommit/blob/master/CHANGELOG.md" class="js-directory-link js-navigation-open" id="4ac32a78649ca5bdd8e0ba38b7006a1e-ba0d487597412f24b91c34f6983bf65354140845" title="CHANGELOG.md">CHANGELOG.md</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/brigade/overcommit/commit/7624e705d6819e1060fc96b7cd756f3eb9f2335e" class="message" data-pjax="true" title="Cut prerelease version 0.32.0.rc1
+
+We want developers to be able to try out the parallelism feature so we
+can find bugs.">Cut prerelease version 0.32.0.rc1</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2016-01-29T17:41:51Z" is="time-ago">Jan 29, 2016</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-text"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/brigade/overcommit/blob/master/CONTRIBUTING.md" class="js-directory-link js-navigation-open" id="6a3371457528722a734f3c51d9238c13-edca7acbf100f5feceef9daceae212e701d10b16" title="CONTRIBUTING.md">CONTRIBUTING.md</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/brigade/overcommit/commit/98c712c77900e43b639eb0fca4d521fef4bae874" class="message" data-pjax="true" title="Mention `OVERCOMMIT_DEBUG=1` in CONTRIBUTING.md
+
+In 0.27.0 we added support for the `OVERCOMMIT_DEBUG` environment
+variable which toggles the display of verbose output from executed
+commands, but didn't document it anywhere. This setting might help
+people debug their problems and submit more informative bug reports, so
+documenting it here seems to make sense.">Mention `OVERCOMMIT_DEBUG=1` in CONTRIBUTING.md</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2015-09-30T18:30:17Z" is="time-ago">Sep 30, 2015</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-text"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/brigade/overcommit/blob/master/Gemfile" class="js-directory-link js-navigation-open" id="8b7db4d5cc4b8f6dc8feb7030baa2478-95cca1a8699e93e7d066d49dcf581d16343e78a4" title="Gemfile">Gemfile</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/brigade/overcommit/commit/9893350643d01e641c38546f33a97b49cfcc7293" class="message" data-pjax="true" title="Upgrade RuboCop 0.35.1 -&gt; 0.36.0 for Travis builds
+
+This required a number of fixes to address new cops introduced in
+version 0.36.0.">Upgrade RuboCop 0.35.1 -&gt; 0.36.0 for Travis builds</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2016-01-20T01:16:57Z" is="time-ago">Jan 20, 2016</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-text"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/brigade/overcommit/blob/master/MIT-LICENSE" class="js-directory-link js-navigation-open" id="6d6f69ab160d70085563c5d6eb87b978-5d9e2dcbd52628e741b1045454a95c20f41d300e" title="MIT-LICENSE">MIT-LICENSE</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/brigade/overcommit/commit/46b5ad522373ef3704de448a14f1ff5001dc2aac" class="message" data-pjax="true" title="Update Causes references to Brigade
+
+This repository is now maintained by Brigade, and is hosted under the
+`brigade` GitHub organization.
+
+Change-Id: I3b4fe0205ab638c4a07412da1f33816092515248">Update Causes references to Brigade</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2015-04-01T07:20:22Z" is="time-ago">Apr 1, 2015</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-text"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/brigade/overcommit/blob/master/README.md" class="js-directory-link js-navigation-open" id="04c6e90faac2675aa89e2176d2eec7d8-398e2a6458734f5c165f689be0313d240d443838" title="README.md">README.md</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/brigade/overcommit/commit/b55e4dab1ab74f8aa6009f5b92c3e6e7c46915ad" class="message" data-pjax="true" title="Add processors hook option
+
+Add option which allows hooks to specify that they require a specified
+number of processing units from the total number of `concurrency`
+processing units available.">Add processors hook option</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2016-01-29T06:18:30Z" is="time-ago">Jan 29, 2016</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-text"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/brigade/overcommit/blob/master/Rakefile" class="js-directory-link js-navigation-open" id="52c976fc38ed2b4e3b1192f8a8e24cff-c702cfccca1ced72a75bfd5b26e5e91d71c40b9f" title="Rakefile">Rakefile</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/brigade/overcommit/commit/c57620e6f401c6f411f15d7efba275f7a3e22daf" class="message" data-pjax="true" title="Add gem packaging tasks to Rakefile
+
+This makes it slightly easier for us to build a new gem, as now we can
+just run:
+
+    rake build
+
+...instead of:
+
+    gem build overcommit.gemspec
+
+Change-Id: I69fd23ff1dbae15c8232d13995921c0bee68e5b7
+Reviewed-on: http://gerrit.causes.com/45335
+Tested-by: jenkins &lt;jenkins@brigade.com&gt;
+Reviewed-by: Shane da Silva &lt;shane.dasilva@brigade.com&gt;">Add gem packaging tasks to Rakefile</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2014-12-17T00:07:07Z" is="time-ago">Dec 16, 2014</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-text"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/brigade/overcommit/blob/master/appveyor.yml" class="js-directory-link js-navigation-open" id="180360612c6b8c4ed830919bbb4dd459-3d9b96cc56b492b71eda7ef483324b6cd05dafe6" title="appveyor.yml">appveyor.yml</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/brigade/overcommit/commit/edab4ebf662fccadb2b3ad6711279aa6fca6d903" class="message" data-pjax="true" title="Disable verbose rspec reporter for Appveyor builds">Disable verbose rspec reporter for Appveyor builds</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2016-01-19T06:01:23Z" is="time-ago">Jan 18, 2016</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-text"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/brigade/overcommit/blob/master/overcommit.gemspec" class="js-directory-link js-navigation-open" id="08154a2cbbb2580da2e8618f4f718bc6-0ad9f3c98561fa4bea8c3b5c405780c6de2239ee" title="overcommit.gemspec">overcommit.gemspec</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/brigade/overcommit/commit/c932384bfa6f0340cb1326597ecf7991ba9cd0c0" class="message" data-pjax="true" title="Add Ruby 2.3.0 to Travis build matrix
+
+To get things working, also:
+
+  * Add `rake` development dependency
+  * Bump `childprocess` gem dependency
+  * Fix Gemfile-related integration test on Travis">Add Ruby 2.3.0 to Travis build matrix</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2016-01-19T06:07:29Z" is="time-ago">Jan 19, 2016</time></span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="readme" class="boxed-group clearfix announce instapaper_body md">
+<h3>
+<span aria-hidden="true" class="octicon octicon-book"></span>
+      README.md
+    </h3>
+<article class="markdown-body entry-content" itemprop="mainContentOfPage"></article><p><a href="https://badge.fury.io/rb/overcommit"><img src="https://camo.githubusercontent.com/b73cc23f5d20d4ac310fd191829c91ed6ed332fb/68747470733a2f2f62616467652e667572792e696f2f72622f6f766572636f6d6d69742e737667" alt="Gem Version" data-canonical-src="https://badge.fury.io/rb/overcommit.svg" style="max-width:100%;" /></a>
+<a href="https://travis-ci.org/brigade/overcommit"><img src="https://camo.githubusercontent.com/d7ccf95fa98209314e04a435399c38462550f8d2/68747470733a2f2f7472617669732d63692e6f72672f627269676164652f6f766572636f6d6d69742e7376673f6272616e63683d6d6173746572" alt="Build Status" data-canonical-src="https://travis-ci.org/brigade/overcommit.svg?branch=master" style="max-width:100%;" /></a>
+<a href="https://ci.appveyor.com/project/brigade/overcommit/branch/master"><img src="https://camo.githubusercontent.com/632bf07691c8f0002a841d9853adb13a7a83d017/68747470733a2f2f63692e6170707665796f722e636f6d2f6170692f70726f6a656374732f7374617475732f69717372366a7472713679306a6871712f6272616e63682f6d61737465723f7376673d74727565" alt="Windows Build Status" data-canonical-src="https://ci.appveyor.com/api/projects/status/iqsr6jtrq6y0jhqq/branch/master?svg=true" style="max-width:100%;" /></a>
+<a href="https://coveralls.io/r/brigade/overcommit"><img src="https://camo.githubusercontent.com/90fb6534f8b27894c314690e2e269f7745b0a108/68747470733a2f2f636f766572616c6c732e696f2f7265706f732f627269676164652f6f766572636f6d6d69742f62616467652e737667" alt="Coverage Status" data-canonical-src="https://coveralls.io/repos/brigade/overcommit/badge.svg" style="max-width:100%;" /></a>
+<a href="https://codeclimate.com/github/brigade/overcommit"><img src="https://camo.githubusercontent.com/9a52bc1ea19304fc7ab834b7b94bd021fd32d336/68747470733a2f2f636f6465636c696d6174652e636f6d2f6769746875622f627269676164652f6f766572636f6d6d69742e737667" alt="Code Climate" data-canonical-src="https://codeclimate.com/github/brigade/overcommit.svg" style="max-width:100%;" /></a>
+<a href="https://gemnasium.com/brigade/overcommit"><img src="https://camo.githubusercontent.com/3e39b5c82d09e84fe80094f0fa9a4a2d0021ec10/68747470733a2f2f67656d6e617369756d2e636f6d2f627269676164652f6f766572636f6d6d69742e737667" alt="Dependency Status" data-canonical-src="https://gemnasium.com/brigade/overcommit.svg" style="max-width:100%;" /></a>
+<a href="http://inch-ci.org/github/brigade/overcommit"><img src="https://camo.githubusercontent.com/dc64cdf738aea7f1fe6da4cc95d11902f6f885bb/687474703a2f2f696e63682d63692e6f72672f6769746875622f627269676164652f6f766572636f6d6d69742e7376673f6272616e63683d6d6173746572" alt="Inline docs" data-canonical-src="http://inch-ci.org/github/brigade/overcommit.svg?branch=master" style="max-width:100%;" /></a></p>
+<h1><a id="user-content-overcommit" class="anchor" href="#overcommit" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" role="img" version="1.1" viewbox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Overcommit</h1>
+<p><code>overcommit</code> is a tool to manage and configure
+<a href="http://git-scm.com/book/en/Customizing-Git-Git-Hooks">Git hooks</a>.</p>
+<p><a href="https://camo.githubusercontent.com/1968863cd4be5843e9e9b2ba33f0e54059035958/68747470733a2f2f627269676164652e6769746875622e696f2f6f766572636f6d6d69742f6f766572636f6d6d69742e676966" target="_blank"><img src="https://camo.githubusercontent.com/1968863cd4be5843e9e9b2ba33f0e54059035958/68747470733a2f2f627269676164652e6769746875622e696f2f6f766572636f6d6d69742f6f766572636f6d6d69742e676966" alt="Demonstration" data-canonical-src="https://brigade.github.io/overcommit/overcommit.gif" style="max-width:100%;" /></a></p>
+<p>In addition to supporting a wide variety of hooks that can be used across
+multiple repositories, you can also define hooks specific to a
+repository, but unlike regular Git hooks are stored in source control. You can
+also easily <a href="#adding-existing-git-hooks">add your existing hook scripts</a> without
+writing any Ruby code.</p>
+<ul>
+<li><a href="#requirements">Requirements</a>
+<ul>
+<li><a href="#dependencies">Dependencies</a></li>
+</ul></li>
+<li><a href="#installation">Installation</a>
+<ul>
+<li><a href="#automatically-install-overcommit-hooks">Automatically Install Overcommit Hooks</a></li>
+</ul></li>
+<li><a href="#usage">Usage</a></li>
+<li><a href="#continuous-integration">Continuous Integration</a></li>
+<li><a href="#configuration">Configuration</a>
+<ul>
+<li><a href="#hook-options">Hook Options</a></li>
+<li><a href="#hook-categories">Hook Categories</a></li>
+<li><a href="#gemfile">Gemfile</a></li>
+<li><a href="#plugin-directory">Plugin Directory</a></li>
+<li><a href="#signature-verification">Signature Verification</a></li>
+</ul></li>
+<li><a href="#built-in-hooks">Built-In Hooks</a>
+<ul>
+<li><a href="#commitmsg">CommitMsg</a></li>
+<li><a href="#postcheckout">PostCheckout</a></li>
+<li><a href="#postcommit">PostCommit</a></li>
+<li><a href="#postmerge">PostMerge</a></li>
+<li><a href="#postrewrite">PostRewrite</a></li>
+<li><a href="#precommit">PreCommit</a></li>
+<li><a href="#prepush">PrePush</a></li>
+<li><a href="#prerebase">PreRebase</a></li>
+</ul></li>
+<li><a href="#repo-specific-hooks">Repo-Specific Hooks</a>
+<ul>
+<li><a href="#adding-existing-git-hooks">Adding Existing Git Hooks</a></li>
+</ul></li>
+<li><a href="#security">Security</a></li>
+<li><a href="#contributing">Contributing</a></li>
+<li><a href="#community">Community</a></li>
+<li><a href="#changelog">Changelog</a></li>
+<li><a href="#license">License</a></li>
+</ul>
+<h2><a id="user-content-requirements" class="anchor" href="#requirements" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" role="img" version="1.1" viewbox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Requirements</h2>
+<p>This project aims to support the following Ruby runtimes:</p>
+<ul>
+<li>MRI 1.9.3 &amp; 2.x</li>
+<li>JRuby 1.7.x</li>
+<li>Rubinius 2.x</li>
+</ul>
+<p>Windows is currently supported only for MRI Ruby 2.x</p>
+<h3><a id="user-content-dependencies" class="anchor" href="#dependencies" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" role="img" version="1.1" viewbox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Dependencies</h3>
+<p>Some of the hooks have third-party dependencies. For example, to lint your
+<a href="http://sass-lang.com/">SCSS</a> files, you're going to need our
+<a href="https://github.com/brigade/scss-lint">scss_lint gem</a>.</p>
+<p>Depending on the hooks you enable/disable for your repository, you'll need to
+ensure your development environment already has those dependencies installed.
+Most hooks will display a warning if a required executable isn't available.</p>
+<p>If you are using Bundler to manage your Ruby gem dependencies, you'll likely
+want to use the <a href="#gemfile"><code>gemfile</code></a> option to control which gem versions are
+available during your hook runs.</p>
+<h2><a id="user-content-installation" class="anchor" href="#installation" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" role="img" version="1.1" viewbox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Installation</h2>
+<p><code>overcommit</code> is installed via <a href="https://rubygems.org/">RubyGems</a>:</p>
+<div class="highlight highlight-source-shell"><pre>gem install overcommit</pre></div>
+<p>You can then run the <code>overcommit</code> command to install hooks into repositories:</p>
+<div class="highlight highlight-source-shell"><pre>mkdir important-project
+<span class="pl-c1">cd</span> important-project
+git init
+overcommit --install</pre></div>
+<p>Any existing hooks for your repository which Overcommit would have replaced
+will be backed up. You can restore everything to the way it was by running
+<code>overcommit --uninstall</code>.</p>
+<h3><a id="user-content-automatically-install-overcommit-hooks" class="anchor" href="#automatically-install-overcommit-hooks" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" role="img" version="1.1" viewbox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Automatically Install Overcommit Hooks</h3>
+<p>If you want to use <code>overcommit</code> for all repositories you create/clone going
+forward, add the following to automatically run in your shell environment:</p>
+<div class="highlight highlight-source-shell"><pre><span class="pl-k">export</span> GIT_TEMPLATE_DIR=<span class="pl-s"><span class="pl-pds">`</span>overcommit --template-dir<span class="pl-pds">`</span></span></pre></div>
+<p>The <code>GIT_TEMPLATE_DIR</code> provides a directory for Git to use as a template
+for automatically populating the <code>.git</code> directory. If you have your own
+template directory, you might just want to copy the contents of
+<code>overcommit --template-dir</code> to that directory.</p>
+<h2><a id="user-content-usage" class="anchor" href="#usage" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" role="img" version="1.1" viewbox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Usage</h2>
+<p>Once you've installed the hooks via <code>overcommit --install</code>, they will
+automatically run when the appropriate hook is triggered.</p>
+<p>The <code>overcommit</code> executable supports the following command-line flags:</p>
+<table><thead>
+<tr>
+<th>Command Line Flag</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>-i</code>/<code>--install</code></td>
+<td>Install Overcommit hooks in a repository</td>
+</tr>
+<tr>
+<td><code>-u</code>/<code>--uninstall</code></td>
+<td>Remove Overcommit hooks from a repository</td>
+</tr>
+<tr>
+<td><code>-f</code>/<code>--force</code></td>
+<td>Don't bail on install if other hooks already exist--overwrite them</td>
+</tr>
+<tr>
+<td><code>-l</code>/<code>--list-hooks</code></td>
+<td>Display all available hooks in the current repository</td>
+</tr>
+<tr>
+<td><code>-r</code>/<code>--run</code></td>
+<td>Run pre-commit hook against all tracked files in repository</td>
+</tr>
+<tr>
+<td><code>-t</code>/<code>--template-dir</code></td>
+<td>Print location of template directory</td>
+</tr>
+<tr>
+<td><code>-h</code>/<code>--help</code></td>
+<td>Show command-line flag documentation</td>
+</tr>
+<tr>
+<td><code>-v</code>/<code>--version</code></td>
+<td>Show version</td>
+</tr>
+</tbody></table>
+<h3><a id="user-content-skipping-hooks" class="anchor" href="#skipping-hooks" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" role="img" version="1.1" viewbox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Skipping Hooks</h3>
+<p>Sometimes a hook will report an error that for one reason or another you'll want
+to ignore. To prevent these errors from blocking your commit, you can include
+the name of the relevant hook in the <code>SKIP</code> environment variable, e.g.</p>
+<div class="highlight highlight-source-shell"><pre>SKIP=RuboCop git commit</pre></div>
+<p>If you would prefer to specify a whitelist of hooks rather than a blacklist, use
+the <code>ONLY</code> environment variable instead.</p>
+<div class="highlight highlight-source-shell"><pre>ONLY=RuboCop git commit</pre></div>
+<p>Use this feature sparingly, as there is no point to having the hook in the first
+place if you're just going to ignore it. If you want to ensure a hook is never
+skipped, set the <code>required</code> option to <code>true</code> in its configuration. If you
+attempt to skip it, you'll see a warning telling you that the hook is required,
+and the hook will still run.</p>
+<h3><a id="user-content-disabling-overcommit" class="anchor" href="#disabling-overcommit" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" role="img" version="1.1" viewbox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Disabling Overcommit</h3>
+<p>If you have scripts that execute <code>git</code> commands where you don't want Overcommit
+hooks to run, you can disable Overcommit entirely by setting the
+<code>OVERCOMMIT_DISABLE</code> environment variable.</p>
+<div class="highlight highlight-source-shell"><pre>OVERCOMMIT_DISABLE=1 ./my-custom-script</pre></div>
+<h2><a id="user-content-continuous-integration" class="anchor" href="#continuous-integration" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" role="img" version="1.1" viewbox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Continuous Integration</h2>
+<p>You can run the same set of hooks that would be executed in a pre-commit hook
+against your entire repository by running <code>overcommit --run</code>. This makes it
+easy to have the checks verified by a CI service such as
+<a href="https://travis-ci.com/">Travis CI</a>, including custom hooks you've written
+yourself.</p>
+<p>The <code>--run</code> flag works by creating a pre-commit context that assumes <em>all</em> the
+files in your repository have changed, and follows the same rules as a normal
+pre-commit check. If any hook fails with an error, it will return a non-zero
+exit code.</p>
+<h2><a id="user-content-configuration" class="anchor" href="#configuration" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" role="img" version="1.1" viewbox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Configuration</h2>
+<p>Overcommit provides a flexible configuration system that allows you to tailor
+the built-in hooks to suit your workflow. All configuration specific to a
+repository is stored in <code>.overcommit.yml</code> in the top-level directory of the
+repository.</p>
+<p>When writing your own configuration, it will automatically extend the
+<a href="http://github.com/brigade/overcommit/blob/master/config/default.yml">default configuration</a>, so you only need to specify
+your configuration with respect to the default. In order to
+enable/disable hooks, you can add the following to your repo-specific
+configuration file:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-s"><span class="pl-ent">PreCommit:</span></span>
+  <span class="pl-s"><span class="pl-ent">RuboCop:</span></span>
+    <span class="pl-s"><span class="pl-ent">enabled:</span> <span class="pl-s">true</span></span>
+    <span class="pl-s"><span class="pl-ent">command:</span> <span class="pl-s">['bundle', 'exec', 'rubocop'] </span></span><span class="pl-c"># Invoke within Bundler context</span></pre></div>
+<h3><a id="user-content-hook-options" class="anchor" href="#hook-options" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" role="img" version="1.1" viewbox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Hook Options</h3>
+<p>Individual hooks expose both built-in configuration options as well as their
+own custom options unique to each hook. The following table lists all built-in
+configuration options:</p>
+<table><thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>enabled</code></td>
+<td>If <code>false</code>, this hook will never be run</td>
+</tr>
+<tr>
+<td><code>required</code></td>
+<td>If <code>true</code>, this hook cannot be skipped via the <code>SKIP</code> environment variable</td>
+</tr>
+<tr>
+<td><code>quiet</code></td>
+<td>If <code>true</code>, this hook does not display any output unless it warns/fails</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td>Message displayed while hook is running.</td>
+</tr>
+<tr>
+<td><code>requires_files</code></td>
+<td>If <code>true</code>, this hook runs only if files that are applicable to it have been modified. See <code>include</code> and <code>exclude</code> for how to specify applicable files.</td>
+</tr>
+<tr>
+<td><code>include</code></td>
+<td>File paths or glob patterns of files that apply to this hook. The hook will only run on the applicable files when they have been modified. Note that the concept of modified varies for different types of hooks. By default, <code>include</code> matches every file until you specify a list of patterns.</td>
+</tr>
+<tr>
+<td><code>exclude</code></td>
+<td>File paths or glob patterns of files that do not apply to this hook. This is used to exclude any files that would have been matched by <code>include</code>.</td>
+</tr>
+<tr>
+<td><code>problem_on_unmodified_line</code></td>
+<td>How to treat errors reported on lines that weren't modified during the action captured by this hook (e.g. for pre-commit hooks, warnings/errors reported on lines that were not staged with <code>git add</code> may not be warnings/errors you care about). Valid values are <code>report</code>: report errors/warnings as-is regardless of line location (default); <code>warn</code>: report errors as warnings if they are on lines you didn't modify; and <code>ignore</code>: don't display errors/warnings at all if they are on lines you didn't modify (<code>ignore</code> is <em>not</em> recommended).</td>
+</tr>
+<tr>
+<td><code>on_fail</code></td>
+<td>Change the status of a failed hook to <code>warn</code> or <code>pass</code>. This allows you to treat failures as warnings or potentially ignore them entirely, but you should use caution when doing so as you might be hiding important information.</td>
+</tr>
+<tr>
+<td><code>on_warn</code></td>
+<td>Simliar to <code>on_fail</code>, change the status of a hook that returns a warning status to either <code>pass</code> (you wish to silence warnings entirely) or <code>fail</code> (you wish to treat all warnings as errors).</td>
+</tr>
+<tr>
+<td><code>required_executable</code></td>
+<td>Name of an executable that must exist in order for the hook to run. If this is a path (e.g. <code>./bin/ruby</code>), ensures that the executable file exists at the given location relative to the repository root. Otherwise, if it just the name of an executable (e.g. <code>ruby</code>) checks if the executable can be found in one of the directories in the <code>PATH</code> environment variable. Set this to a specific path if you want to always use an executable that is stored in your repository. (e.g. RubyGems bin stubs, Node.js binaries, etc.)</td>
+</tr>
+<tr>
+<td><code>required_library</code>/<code>required_libraries</code></td>
+<td>List of Ruby libraries to load with <code>Kernel.require</code> before the hook runs. This is specifically for hooks that integrate with external Ruby libraries.</td>
+</tr>
+<tr>
+<td><code>command</code></td>
+<td>Array of arguments to use as the command. How each hook uses this is different, but it allows hooks to change the context with which they run. For example, you can change the command to be <code>['bundle', 'exec', 'rubocop']</code> instead of just <code>rubocop</code> so that you can use the gem versions specified in your local <code>Gemfile.lock</code>. This defaults to the name of the <code>required_executable</code>.</td>
+</tr>
+<tr>
+<td><code>flags</code></td>
+<td>Array of arguments to append to the <code>command</code>. This is useful for customizing the behavior of a tool. It's also useful when a newer version of a tool removes/renames existing flags, so you can update the flags via your <code>.overcommit.yml</code> instead of waiting for an upstream fix in Overcommit.</td>
+</tr>
+<tr>
+<td><code>env</code></td>
+<td>Hash of environment variables the hook should be run with. This is intended to be used as a last resort when an executable a hook runs is configured only via an environment variable. Any pre-existing environment variables with the same names as ones defined in <code>env</code> will have their original values restored after the hook runs. <strong>WARNING</strong>: If you set the same environment variable for multiple hooks and you've enabled parallel hook runs, since the environment is shared across all threads you could accidentally have these separate hooks trample on each other. In this case, you should disable parallelization for the hook using the <code>parallelize</code> option.</td>
+</tr>
+<tr>
+<td><code>parallelize</code></td>
+<td>Whether to allow this hook to be run concurrently with other hooks. Disable this if the hook requires access to a shared resource that other hooks may also access and modify (e.g. files, the git index, process environment variables, etc).</td>
+</tr>
+<tr>
+<td><code>processors</code></td>
+<td>The number of processing units to reserve for this hook. This does not reserve CPUs, but indicates that out of the total number of possible concurrent hooks allowed by the global <code>concurrency</code> option, this hook requires the specified number. Thus in the typical case where <code>concurrency</code> is set to the number of available cores (default), and you have a hook that executes an application which itself creates 2 threads (or is otherwise scheduled on 2 cores), you can indicate that Overcommit should allocate 2 <code>processors</code> to the hook. Ideally this means your hooks won't put undue load on your available cores.</td>
+</tr>
+<tr>
+<td><code>install_command</code></td>
+<td>Command the user can run to install the <code>required_executable</code> (or alternately the specified <code>required_libraries</code>). This is intended for documentation purposes, as Overcommit does not install software on your behalf since there are too many edge cases where such behavior would result in incorrectly configured installations (e.g. installing a Python package in the global package space instead of in a virtual environment).</td>
+</tr>
+</tbody></table>
+<p>In addition to the built-in configuration options, each hook can expose its
+own unique configuration options. The <code>AuthorEmail</code> hook, for example, allows
+you to customize the regex used to check commit author emails via the <code>pattern</code>
+option—useful if you want to enforce that developers use a company
+email address for their commits. This provides incredible flexibility for hook
+authors as you can make your hooks sufficiently generic and then customize them
+on a per-project basis.</p>
+<h3><a id="user-content-hook-categories" class="anchor" href="#hook-categories" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" role="img" version="1.1" viewbox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Hook Categories</h3>
+<p>Hook configurations are organized into categories based on the type of hook. So
+<code>pre-commit</code> hooks are located under the <code>PreCommit</code> option, and <code>post-commit</code>
+hooks are located under <code>PostCommit</code>. See the
+<a href="http://github.com/brigade/overcommit/blob/master/config/default.yml">default configuration</a> for a thorough example.</p>
+<h4><a id="user-content-the-all-hook" class="anchor" href="#the-all-hook" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" role="img" version="1.1" viewbox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>The <code>ALL</code> Hook</h4>
+<p>Within a hook category, there is a special type of hook configuration that
+applies to <em>all</em> hooks in the category. This configuration looks like a normal
+hook configuration, except it has the name <code>ALL</code>:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-s"><span class="pl-ent">PreCommit:</span></span>
+  <span class="pl-s"><span class="pl-ent">ALL:</span></span>
+    <span class="pl-s"><span class="pl-ent">problem_on_unmodified_line:</span> <span class="pl-s">warn</span></span>
+    <span class="pl-s"><span class="pl-ent">requires_files:</span> <span class="pl-s">true</span></span>
+    <span class="pl-s"><span class="pl-ent">required:</span> <span class="pl-s">false</span></span>
+    <span class="pl-s"><span class="pl-ent">quiet:</span> <span class="pl-s">false</span></span>
+
+  <span class="pl-s"><span class="pl-ent">SomeHook:</span></span>
+    <span class="pl-s"><span class="pl-ent">enabled:</span> <span class="pl-s">true</span></span>
+
+  ...</pre></div>
+<p>The <code>ALL</code> configuration is useful for when you want to
+<a href="http://en.wikipedia.org/wiki/Don%27t_repeat_yourself">DRY</a> up your
+configuration, or when you want to apply changes across an entire category of
+hooks.</p>
+<p>Note that array configuration options (like <code>include</code>/<code>exclude</code>) in the
+special <code>ALL</code> hook section are not merged with individual hook configurations
+if custom ones are defined for the hook.
+Any custom configuration option for <code>include</code>/<code>exclude</code> will replace the <code>ALL</code>
+hook's configuration. If you want to have a global list of default exclusions
+and extend them with a custom list, you can use YAML references, e.g.</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-s"><span class="pl-ent">PreCommit:</span></span>
+  <span class="pl-s"><span class="pl-ent">ALL:</span></span>
+    <span class="pl-s"><span class="pl-ent">exclude:</span> <span class="pl-s">&amp;default_excludes</span></span>
+      <span class="pl-s">- <span class="pl-s"><span class="pl-pds">'</span>node_modules/**/*<span class="pl-pds">'</span></span></span>
+      <span class="pl-s">- <span class="pl-s"><span class="pl-pds">'</span>vendor/**/*<span class="pl-pds">'</span></span></span>
+  <span class="pl-s"><span class="pl-ent">MyHook:</span></span>
+    <span class="pl-s"><span class="pl-ent">exclude:</span></span>
+      <span class="pl-s">- <span class="pl-s">*default_excludes</span></span>
+      <span class="pl-s">- <span class="pl-s"><span class="pl-pds">'</span>another/directory/in/addition/to/default/excludes/**/*<span class="pl-pds">'</span></span></span></pre></div>
+<p>Again, you can consult the <a href="http://github.com/brigade/overcommit/blob/master/config/default.yml">default configuration</a> for
+detailed examples of how the <code>ALL</code> hook can be used.</p>
+<h3><a id="user-content-gemfile" class="anchor" href="#gemfile" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" role="img" version="1.1" viewbox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Gemfile</h3>
+<p>You may want to enforce the version of Overcommit or other gems that you use in
+your git hooks. This can be done by specifying the <code>gemfile</code> option in your
+<code>.overcommit.yml</code>.</p>
+<p>The <code>gemfile</code> option tells Overcommit to load the specified file with
+<a href="http://bundler.io/">Bundler</a>, the standard gem dependency manager for Ruby.
+This is useful if you would like to:</p>
+<ul>
+<li>Enforce a specific version of Overcommit to use for all hook runs
+(or to use a version from the master branch that has not been released yet)</li>
+<li>Enforce a specific version or unreleased branch is used for a gem you want
+to use in your git hooks</li>
+</ul>
+<p>Loading a Bundler context necessarily adds a startup delay to your hook runs
+as Bundler parses the specified <code>Gemfile</code> and checks that the dependencies are
+satisfied. Thus for projects with many gems this can introduce a noticeable
+delay.</p>
+<p>The recommended workaround is to create a separate <code>Gemfile</code> in the root of
+your repository (call it <code>.overcommit_gems.rb</code>), and include only the gems that
+your Overcommit hooks need in order to run. Generate the associated lock file
+by running:</p>
+<div class="highlight highlight-source-shell"><pre>bundle install --gemfile=.overcommit_gems.rb</pre></div>
+<p>...and commit <code>.overcommit_gems.rb</code> and the resulting
+<code>.overcommit_gems.rb.lock</code> file to your repository. Set your <code>gemfile</code> option
+to <code>.overcommit_gems.rb</code>, and you're all set.</p>
+<p>Using a smaller Gemfile containing only the gems used by your Overcommit hooks
+significantly reduces the startup delay in your hook runs. It is thus the
+recommended approach unless your project has a relatively small number of gems
+in your <code>Gemfile</code>.</p>
+<h3><a id="user-content-plugin-directory" class="anchor" href="#plugin-directory" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" role="img" version="1.1" viewbox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Plugin Directory</h3>
+<p>You can change the directory that project-specific hooks are loaded from via
+the <code>plugin_directory</code> option. The default directory is <code>.git-hooks</code>.</p>
+<h3><a id="user-content-concurrency" class="anchor" href="#concurrency" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" role="img" version="1.1" viewbox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Concurrency</h3>
+<p>Overcommit runs hooks in parallel by default, with a number of concurrent
+workers equal to the number of logical cores on your machine. If you know your
+particular set of hooks would benefit from higher/lower number of workers, you
+can adjust the global <code>concurrency</code> option. You can define single-operator
+mathematical expressions, e.g. <code>%{processors} * 2</code>, or <code>%{processors} / 2</code>.</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-s"><span class="pl-ent">concurrency:</span> <span class="pl-s"><span class="pl-pds">'</span>%{processors} / 4<span class="pl-pds">'</span></span></span></pre></div>
+<p>Note that individual hooks can specify the number of processors they require
+with the <code>processors</code> hook option. See the <a href="#hook-options">hook options</a>
+section for more details.</p>
+<h3><a id="user-content-signature-verification" class="anchor" href="#signature-verification" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" role="img" version="1.1" viewbox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Signature Verification</h3>
+<p>You can disable manual verification of signatures by setting
+<code>verify_signatures</code> to <code>false</code>. See the <a href="#security">Security</a> section for more
+information on this option and what exactly it controls.</p>
+<h2><a id="user-content-built-in-hooks" class="anchor" href="#built-in-hooks" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" role="img" version="1.1" viewbox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Built-In Hooks</h2>
+<p>Currently, Overcommit supports the following hooks out of the box—simply
+enable them in your <code>.overcommit.yml</code>.</p>
+<p><strong>Note</strong>: Hooks with a <code>*</code> are enabled by default.</p>
+<p><strong>Warning</strong>: This list represents the list of hooks available on the <code>master</code>
+branch. Please consult the <a href="http://github.com/brigade/overcommit/blob/master/CHANGELOG.md">change log</a> to view which hooks have
+not been released yet.</p>
+<h3><a id="user-content-commitmsg" class="anchor" href="#commitmsg" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" role="img" version="1.1" viewbox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>CommitMsg</h3>
+<p><code>commit-msg</code> hooks are run against every commit message you write before a
+commit is created. A failed hook prevents a commit from being created. These
+hooks are useful for enforcing policies on your commit messages, e.g. ensuring
+a task ID is included for tracking purposes, or ensuring your commit messages
+follow <a href="http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html">proper formatting guidelines</a>.</p>
+<ul>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/commit_msg/capitalized_subject.rb"><code>*</code>CapitalizedSubject</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/commit_msg/empty_message.rb"><code>*</code>EmptyMessage</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/commit_msg/gerrit_change_id.rb">GerritChangeId</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/commit_msg/hard_tabs.rb">HardTabs</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/commit_msg/russian_novel.rb">RussianNovel</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/commit_msg/single_line_subject.rb"><code>*</code>SingleLineSubject</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/commit_msg/spell_check.rb">SpellCheck</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/commit_msg/text_width.rb"><code>*</code>TextWidth</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/commit_msg/trailing_period.rb"><code>*</code>TrailingPeriod</a></li>
+</ul>
+<h3><a id="user-content-postcheckout" class="anchor" href="#postcheckout" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" role="img" version="1.1" viewbox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>PostCheckout</h3>
+<p><code>post-checkout</code> hooks run after a successful <code>git checkout</code>, or in other words
+any time your <code>HEAD</code> changes or a file is explicitly checked out.</p>
+<ul>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/post_checkout/bower_install.rb">BowerInstall</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/post_checkout/bundle_install.rb">BundleInstall</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/post_checkout/index_tags.rb">IndexTags</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/post_checkout/npm_install.rb">NpmInstall</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/post_checkout/submodule_status.rb">SubmoduleStatus</a></li>
+</ul>
+<h3><a id="user-content-postcommit" class="anchor" href="#postcommit" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" role="img" version="1.1" viewbox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>PostCommit</h3>
+<p><code>post-commit</code> hooks run after a commit is successfully created. A hook failing
+in this case does not prevent the commit since it has already occurred;
+however, it can be used to alert the user to some issue.</p>
+<ul>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/post_commit/bower_install.rb">BowerInstall</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/post_commit/bundle_install.rb">BundleInstall</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/post_commit/git_guilt.rb">GitGuilt</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/post_commit/index_tags.rb">IndexTags</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/post_commit/npm_install.rb">NpmInstall</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/post_commit/submodule_status.rb">SubmoduleStatus</a></li>
+</ul>
+<h3><a id="user-content-postmerge" class="anchor" href="#postmerge" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" role="img" version="1.1" viewbox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>PostMerge</h3>
+<p><code>post-merge</code> hooks run after a <code>git merge</code> executes successfully with no merge
+conflicts. A hook failing in this case does not prevent the merge since it has
+already occurred; however, it can be used to alert the user to some issue.</p>
+<ul>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/post_merge/bower_install.rb">BowerInstall</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/post_merge/bundle_install.rb">BundleInstall</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/post_merge/index_tags.rb">IndexTags</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/post_merge/npm_install.rb">NpmInstall</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/post_merge/submodule_status.rb">SubmoduleStatus</a></li>
+</ul>
+<h3><a id="user-content-postrewrite" class="anchor" href="#postrewrite" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" role="img" version="1.1" viewbox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>PostRewrite</h3>
+<p><code>post-rewrite</code> hooks run after a commit is modified by a <code>git commit --amend</code>
+or <code>git rebase</code>. A hook failing in this case does not prevent the rewrite since
+it has already occurred; however, it can be used to alert the user to some
+issue.</p>
+<ul>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/post_rewrite/bower_install.rb">BowerInstall</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/post_rewrite/bundle_install.rb">BundleInstall</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/post_rewrite/index_tags.rb">IndexTags</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/post_rewrite/npm_install.rb">NpmInstall</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/post_rewrite/submodule_status.rb">SubmoduleStatus</a></li>
+</ul>
+<h3><a id="user-content-precommit" class="anchor" href="#precommit" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" role="img" version="1.1" viewbox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>PreCommit</h3>
+<p><code>pre-commit</code> hooks are run after <code>git commit</code> is executed, but before the
+commit message editor is displayed. If a hook fails, the commit will not be
+created. These hooks are ideal for syntax checkers, linters, and other checks
+that you want to run before you allow a commit to even be created.</p>
+<h4><a id="user-content-warning-pre-commit-hooks-cannot-have-side-effects" class="anchor" href="#warning-pre-commit-hooks-cannot-have-side-effects" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" role="img" version="1.1" viewbox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>WARNING: pre-commit hooks cannot have side effects</h4>
+<p><code>pre-commit</code> hooks currently do not support hooks with side effects (such as
+modifying files and adding them to the index with <code>git add</code>). This is a
+consequence of Overcommit's pre-commit hook stashing behavior to ensure hooks
+are run against <em>only the changes you are about to commit</em>.</p>
+<p>Without Overcommit, the proper way to write a <code>pre-commit</code> hook would be to
+extract the staged changes into temporary files and lint those files
+instead of whatever contents are in your working tree (as you don't want
+unstaged changes to taint your results). Overcommit takes care
+of this for you, but to do it in a generalized way introduces this
+limitation. See the <a href="https://github.com/brigade/overcommit/issues/238">thread tracking this
+issue</a> for more details.</p>
+<ul>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/pre_commit/author_email.rb"><code>*</code>AuthorEmail</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/pre_commit/author_name.rb"><code>*</code>AuthorName</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/pre_commit/berksfile_check.rb">BerksfileCheck</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/pre_commit/brakeman.rb">Brakeman</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/pre_commit/broken_symlinks.rb"><code>*</code>BrokenSymlinks</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/pre_commit/bundle_check.rb">BundleCheck</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/pre_commit/case_conflicts.rb"><code>*</code>CaseConflicts</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/pre_commit/chamber_security.rb">ChamberSecurity</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/pre_commit/coffee_lint.rb">CoffeeLint</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/pre_commit/css_lint.rb">CssLint</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/pre_commit/dogma.rb">Dogma</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/pre_commit/es_lint.rb">EsLint</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/pre_commit/execute_permissions.rb">ExecutePermissions</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/pre_commit/go_lint.rb">GoLint</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/pre_commit/go_vet.rb">GoVet</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/pre_commit/haml_lint.rb">HamlLint</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/pre_commit/hard_tabs.rb">HardTabs</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/pre_commit/hlint.rb">Hlint</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/pre_commit/html_hint.rb">HtmlHint</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/pre_commit/html_tidy.rb">HtmlTidy</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/pre_commit/image_optim.rb">ImageOptim</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/pre_commit/java_checkstyle.rb">JavaCheckstyle</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/pre_commit/jscs.rb">Jscs</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/pre_commit/js_hint.rb">JsHint</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/pre_commit/js_lint.rb">JsLint</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/pre_commit/jsl.rb">Jsl</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/pre_commit/json_syntax.rb">JsonSyntax</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/pre_commit/local_paths_in_gemfile.rb">LocalPathsInGemfile</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/pre_commit/mdl.rb">Mdl</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/pre_commit/merge_conflicts.rb"><code>*</code>MergeConflicts</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/pre_commit/nginx_test.rb">NginxTest</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/pre_commit/pep257.rb">Pep257</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/pre_commit/pep8.rb">Pep8</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/pre_commit/puppet_lint.rb">PuppetLint</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/pre_commit/pyflakes.rb">Pyflakes</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/pre_commit/pylint.rb">Pylint</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/pre_commit/python_flake8.rb">PythonFlake8</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/pre_commit/rails_best_practices.rb">RailsBestPractices</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/pre_commit/rails_schema_up_to_date.rb">RailsSchemaUpToDate</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/pre_commit/reek.rb">Reek</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/pre_commit/rubo_cop.rb">RuboCop</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/pre_commit/ruby_lint.rb">RubyLint</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/pre_commit/scalariform.rb">Scalariform</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/pre_commit/scalastyle.rb">Scalastyle</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/pre_commit/scss_lint.rb">ScssLint</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/pre_commit/semi_standard.rb">SemiStandard</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/pre_commit/shell_check.rb">ShellCheck</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/pre_commit/slim_lint.rb">SlimLint</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/pre_commit/sqlint.rb">Sqlint</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/pre_commit/standard.rb">Standard</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/pre_commit/trailing_whitespace.rb">TrailingWhitespace</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/pre_commit/travis_lint.rb">TravisLint</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/pre_commit/vint.rb">Vint</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/pre_commit/w3c_css.rb">W3cCss</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/pre_commit/w3c_html.rb">W3cHtml</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/pre_commit/xml_lint.rb">XmlLint</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/pre_commit/xml_syntax.rb">XmlSyntax</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/pre_commit/yaml_syntax.rb">YamlSyntax</a></li>
+</ul>
+<h3><a id="user-content-prepush" class="anchor" href="#prepush" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" role="img" version="1.1" viewbox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>PrePush</h3>
+<p><code>pre-push</code> hooks are run during <code>git push</code>, after remote refs have been updated
+but before any objects have been transferred. If a hook fails, the push is
+aborted.</p>
+<ul>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/pre_push/minitest.rb">Minitest</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/pre_push/protected_branches.rb">ProtectedBranches</a></li>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/pre_push/r_spec.rb">RSpec</a></li>
+</ul>
+<h3><a id="user-content-prerebase" class="anchor" href="#prerebase" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" role="img" version="1.1" viewbox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>PreRebase</h3>
+<p><code>pre-rebase</code> hooks are run during <code>git rebase</code>, before any commits are rebased.
+If a hook fails, the rebase is aborted.</p>
+<ul>
+<li><a href="http://github.com/brigade/overcommit/blob/master/lib/overcommit/hook/pre_rebase/merged_commits.rb">MergedCommits</a></li>
+</ul>
+<h2><a id="user-content-repo-specific-hooks" class="anchor" href="#repo-specific-hooks" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" role="img" version="1.1" viewbox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Repo-Specific hooks</h2>
+<p>Out of the box, <code>overcommit</code> comes with a set of hooks that enforce a variety of
+styles and lints. However, some hooks only make sense in the context of a
+specific repository.</p>
+<p>At Brigade, for example, we have a number of simple checks that we run
+against our code to catch common errors. For example, since we use
+<a href="http://rspec.info/">RSpec</a>, we want to make sure all spec files contain the
+line <code>require 'spec_helper'</code>.</p>
+<p>Inside our repository, we can add the file
+<code>.git-hooks/pre_commit/ensure_spec_helper.rb</code> in order to automatically check
+our spec files:</p>
+<div class="highlight highlight-source-ruby"><pre><span class="pl-k">module</span> <span class="pl-en"><span class="pl-e">Overcommit::</span><span class="pl-e">Hook::</span>PreCommit</span>
+  <span class="pl-k">class</span> <span class="pl-en">EnsureSpecHelper<span class="pl-e"> &lt; Base</span></span>
+    <span class="pl-k">def</span> <span class="pl-en">run</span>
+      errors <span class="pl-k">=</span> []
+
+      applicable_files.each <span class="pl-k">do </span>|<span class="pl-smi">file</span>|
+        <span class="pl-k">if</span> <span class="pl-c1">File</span>.read(file) <span class="pl-k">!~</span> <span class="pl-sr"><span class="pl-pds">/</span>^require 'spec_helper'<span class="pl-pds">/</span></span>
+          errors <span class="pl-k">&lt;&lt;</span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-pse">#{</span><span class="pl-s1">file</span><span class="pl-pse"><span class="pl-s1">}</span></span>: missing `require 'spec_helper'`<span class="pl-pds">"</span></span>
+        <span class="pl-k">end</span>
+      <span class="pl-k">end</span>
+
+      <span class="pl-k">return</span> <span class="pl-c1">:fail</span>, errors.join(<span class="pl-s"><span class="pl-pds">"</span><span class="pl-cce">\n</span><span class="pl-pds">"</span></span>) <span class="pl-k">if</span> errors.any?
+
+      <span class="pl-c1">:pass</span>
+    <span class="pl-k">end</span>
+  <span class="pl-k">end</span>
+<span class="pl-k">end</span></pre></div>
+<p>The corresponding configuration for this hook would look like:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-s"><span class="pl-ent">PreCommit:</span></span>
+  <span class="pl-s"><span class="pl-ent">EnsureSpecHelper:</span></span>
+    <span class="pl-s"><span class="pl-ent">enabled:</span> <span class="pl-s">true</span></span>
+    <span class="pl-s"><span class="pl-ent">description:</span> <span class="pl-s"><span class="pl-pds">'</span>Checking for missing inclusion of spec_helper<span class="pl-pds">'</span></span></span>
+    <span class="pl-s"><span class="pl-ent">include:</span> <span class="pl-s"><span class="pl-pds">'</span>**/*_spec.rb<span class="pl-pds">'</span></span></span></pre></div>
+<p>You can see a great example of writing custom Overcommit hooks from the
+following blog post: <a href="http://www.guoxiang.me/posts/28-how-to-write-a-custom-overcommit-precommit-git-hook-in-4-steps">How to Write a Custom Overcommit PreCommit
+Git Hook in 4 Steps</a></p>
+<h3><a id="user-content-adding-existing-git-hooks" class="anchor" href="#adding-existing-git-hooks" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" role="img" version="1.1" viewbox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Adding Existing Git Hooks</h3>
+<p>You might already have hook scripts written which you'd like to integrate with
+Overcommit right away. To make this easy, Overcommit allows you to include
+your hook script in your configuration without writing any Ruby code.
+For example:</p>
+<div class="highlight highlight-source-yaml"><pre><span class="pl-s"><span class="pl-ent">PostCheckout:</span></span>
+  <span class="pl-s"><span class="pl-ent">CustomScript:</span></span>
+    <span class="pl-s"><span class="pl-ent">enabled:</span> <span class="pl-s">true</span></span>
+    <span class="pl-s"><span class="pl-ent">required_executable:</span> <span class="pl-s"><span class="pl-pds">'</span>./bin/custom-script<span class="pl-pds">'</span></span></span></pre></div>
+<p>So long as a command is given (either by specifying the <code>command</code> option
+directly or specifying <code>required_executable</code>) a special hook is created that
+executes the command and appends any arguments and standard input stream that
+would have been passed to the regular hook. The hook passes or fails based
+on the exit status of the command.</p>
+<h2><a id="user-content-security" class="anchor" href="#security" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" role="img" version="1.1" viewbox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Security</h2>
+<p>While Overcommit can make managing Git hooks easier and more convenient,
+this convenience can come at a cost of being less secure.</p>
+<p>Since installing Overcommit hooks will allow arbitrary plugin code in your
+repository to be executed, you expose yourself to an attack where checking
+out code from a third party can result in malicious code being executed
+on your system.</p>
+<p>As an example, consider the situation where you have an open source project.
+An attacker could submit a pull request which adds a <code>post-checkout</code> hook
+that executes some malicious code. When you fetch and checkout this pull
+request, the <code>post-checkout</code> hook will be run on your machine, along with
+the malicious code that you just checked out.</p>
+<p>Overcommit attempts to address this problem by storing a signature of your
+configuration and all hook plugin code since the last time it ran. When the
+signature changes, a warning is displayed alerting you to which plugins have
+changed. It is then up to you to manually verify that the changes are not
+malicious, and then continue running the hooks.</p>
+<p>The signature is derived from the contents of the plugin's source code itself
+and any configuration for the plugin. Thus a change to the plugin's source
+code or your local repo's <code>.overcommit.yml</code> file could result in a signature
+change.</p>
+<h3><a id="user-content-disabling-signature-checking" class="anchor" href="#disabling-signature-checking" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" role="img" version="1.1" viewbox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Disabling Signature Checking</h3>
+<p>In typical usage, your plugins usually don't change too often, so this warning
+shouldn't become a nuisance. However, users who work within proprietary
+repositories where all developers who can push changes to the repository
+already have a minimum security clearance may wish to disable this check.</p>
+<p>While not recommended, you can disable signature verification by setting
+<code>verify_signatures</code> to <code>false</code> in your <code>.overcommit.yml</code> file.</p>
+<p><strong>Regardless of whether you have <code>verify_signatures</code> disabled for your project,
+if you are running Overcommit for the first time you will need to sign your
+configuration with <code>overcommit --sign</code></strong>. This needs to happen once so
+Overcommit can record in your local git repo's configuration (outside of source
+control) that you intend to enable/disable verification. This way if someone
+else changes <code>verify_signatures</code> you'll be asked to confirm the change.</p>
+<h2><a id="user-content-contributing" class="anchor" href="#contributing" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" role="img" version="1.1" viewbox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Contributing</h2>
+<p>We love contributions to Overcommit, be they bug reports, feature ideas, or
+pull requests. See our <a href="http://github.com/brigade/overcommit/blob/master/CONTRIBUTING.md">guidelines for contributing</a> to best
+ensure your thoughts, ideas, or code get merged.</p>
+<h2><a id="user-content-community" class="anchor" href="#community" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" role="img" version="1.1" viewbox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Community</h2>
+<p>All major discussion surrounding Overcommit happens on the
+<a href="https://github.com/brigade/overcommit/issues">GitHub issues list</a>.</p>
+<p>You can also follow <a href="https://twitter.com/git_overcommit">@git_overcommit on Twitter</a>.</p>
+<h2><a id="user-content-changelog" class="anchor" href="#changelog" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" role="img" version="1.1" viewbox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Changelog</h2>
+<p>If you're interested in seeing the changes and bug fixes between each version
+of <code>overcommit</code>, read the <a href="http://github.com/brigade/overcommit/blob/master/CHANGELOG.md">Overcommit Changelog</a>.</p>
+<h2><a id="user-content-license" class="anchor" href="#license" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" role="img" version="1.1" viewbox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>License</h2>
+<p>This project is released under the <a href="http://github.com/brigade/overcommit/blob/master/MIT-LICENSE">MIT license</a>.</p>
+
+</div>
+</div>
+<div class="modal-backdrop"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="container">
+<div class="site-footer" role="contentinfo">
+<ul class="site-footer-links right">
+<li><a href="https://status.github.com/" data-ga-click="Footer, go to status, text:status">Status</a></li>
+<li><a href="https://developer.github.com" data-ga-click="Footer, go to api, text:api">API</a></li>
+<li><a href="https://training.github.com" data-ga-click="Footer, go to training, text:training">Training</a></li>
+<li><a href="https://shop.github.com" data-ga-click="Footer, go to shop, text:shop">Shop</a></li>
+<li><a href="https://github.com/blog" data-ga-click="Footer, go to blog, text:blog">Blog</a></li>
+<li><a href="https://github.com/about" data-ga-click="Footer, go to about, text:about">About</a></li>
+<li><a href="https://github.com/pricing" data-ga-click="Footer, go to pricing, text:pricing">Pricing</a></li>
+</ul>
+<a href="https://github.com" aria-label="Homepage">
+<span aria-hidden="true" class="mega-octicon octicon-mark-github" title="GitHub "></span>
+</a>
+<ul class="site-footer-links">
+<li>&copy; 2016 <span title="0.05504s from github-fe125-cp1-prd.iad.github.net">GitHub</span>, Inc.</li>
+<li><a href="https://github.com/site/terms" data-ga-click="Footer, go to terms, text:terms">Terms</a></li>
+<li><a href="https://github.com/site/privacy" data-ga-click="Footer, go to privacy, text:privacy">Privacy</a></li>
+<li><a href="https://github.com/security" data-ga-click="Footer, go to security, text:security">Security</a></li>
+<li><a href="https://github.com/contact" data-ga-click="Footer, go to contact, text:contact">Contact</a></li>
+<li><a href="https://help.github.com" data-ga-click="Footer, go to help, text:help">Help</a></li>
+</ul>
+</div>
+</div>
+<div id="ajax-error-message" class="flash flash-error">
+<span aria-hidden="true" class="octicon octicon-alert"></span>
+<button type="button" class="flash-close js-flash-close js-ajax-error-dismiss" aria-label="Dismiss error">
+<span aria-hidden="true" class="octicon octicon-x"></span>
+</button>
+      Something went wrong with that request. Please try again.
+    </div>
+<script crossorigin="anonymous" src="https://assets-cdn.github.com/assets/compat-a0cee5d8d4fb535c0f41971d037b32e852a56ddca5bf67bb2124e426a2d813a5.js"></script>
+<script crossorigin="anonymous" src="https://assets-cdn.github.com/assets/frameworks-9ee55ceaf87fc34dc86334249fef6cbece88e815478e0fbe81642d57ed0fff89.js"></script>
+<script async="async" crossorigin="anonymous" src="https://assets-cdn.github.com/assets/github-8afeb971202f92778ffc73ddd92661c1977dc5e42a928ed35f8ec96e425a6e7a.js"></script>
+<div class="js-stale-session-flash stale-session-flash flash flash-warn flash-banner hidden">
+<span aria-hidden="true" class="octicon octicon-alert"></span>
+<span class="signed-in-tab-flash">You signed in with another tab or window. <a href="">Reload</a> to refresh your session.</span>
+<span class="signed-out-tab-flash">You signed out in another tab or window. <a href="">Reload</a> to refresh your session.</span>
+</div>
+<div class="facebox" id="facebox" style="display:none;">
+<div class="facebox-popup">
+<div class="facebox-content" role="dialog" aria-labelledby="facebox-header" aria-describedby="facebox-description">
+</div>
+<button type="button" class="facebox-close js-facebox-close" aria-label="Close modal">
+<span aria-hidden="true" class="octicon octicon-x"></span>
+</button>
+</div>
+</div>
+</body>
+</html>

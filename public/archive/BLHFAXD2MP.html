@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PHP: Floating point numbers - Manual </title>
+<link rel="shortcut icon" href="http://php.net/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://php.net/phpnetimprovedsearch.src" title="Add PHP.net search" />
+<link rel="alternate" type="application/atom+xml" href="http://php.net/releases/feed.php" title="PHP Release feed" />
+<link rel="alternate" type="application/atom+xml" href="http://php.net/feed.atom" title="PHP: Hypertext Preprocessor" />
+<link rel="canonical" href="http://php.net/manual/en/language.types.float.php" />
+<link rel="shorturl" href="http://php.net/types.float" />
+<link rel="alternate" href="http://php.net/types.float" hreflang="x-default" />
+<link rel="contents" href="http://php.net/manual/en/index.php" />
+<link rel="index" href="http://php.net/manual/en/language.types.php" />
+<link rel="prev" href="http://php.net/manual/en/language.types.integer.php" />
+<link rel="next" href="http://php.net/manual/en/language.types.string.php" />
+<link rel="alternate" href="http://php.net/manual/en/language.types.float.php" hreflang="en" />
+<link rel="alternate" href="http://php.net/manual/pt_BR/language.types.float.php" hreflang="pt_BR" />
+<link rel="alternate" href="http://php.net/manual/zh/language.types.float.php" hreflang="zh" />
+<link rel="alternate" href="http://php.net/manual/fr/language.types.float.php" hreflang="fr" />
+<link rel="alternate" href="http://php.net/manual/de/language.types.float.php" hreflang="de" />
+<link rel="alternate" href="http://php.net/manual/ja/language.types.float.php" hreflang="ja" />
+<link rel="alternate" href="http://php.net/manual/kr/language.types.float.php" hreflang="kr" />
+<link rel="alternate" href="http://php.net/manual/ro/language.types.float.php" hreflang="ro" />
+<link rel="alternate" href="http://php.net/manual/ru/language.types.float.php" hreflang="ru" />
+<link rel="alternate" href="http://php.net/manual/es/language.types.float.php" hreflang="es" />
+<link rel="alternate" href="http://php.net/manual/tr/language.types.float.php" hreflang="tr" />
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1421837618&amp;f=/fonts/Fira/fira.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1421837618&amp;f=/fonts/Font-Awesome/css/fontello.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1429291204&amp;f=/styles/theme-base.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1449787206&amp;f=/styles/theme-medium.css" media="screen" />
+<!--[if lte IE 7]&gt;
+ &lt;link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie7.css" media="screen"&gt;
+ &lt;![endif]-->
+<!--[if lte IE 8]&gt;
+ &lt;script type="text/javascript"&gt;
+  window.brokenIE = true;
+ &lt;/script&gt;
+ &lt;![endif]-->
+<!--[if lte IE 9]&gt;
+ &lt;link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie9.css" media="screen"&gt;
+ &lt;![endif]-->
+<!--[if IE]&gt;
+ &lt;script type="text/javascript" src="http://php.net/js/ext/html5.js"&gt;&lt;/script&gt;
+ &lt;![endif]-->
+<base href="http://php.net/manual/en/language.types.float.php" />
+</head>
+<body class="docs ">
+<nav id="head-nav" class="navbar navbar-fixed-top">
+<div class="navbar-inner clearfix">
+<a href="http://php.net/" class="brand"><img src="/images/logo.php" width="48" height="24" alt="php" /></a>
+<div id="mainmenu-toggle-overlay"></div>
+<input type="checkbox" id="mainmenu-toggle" />
+<ul class="nav">
+<li class=""><a href="http://php.net/downloads">Downloads</a></li>
+<li class="active"><a href="http://php.net/docs.php">Documentation</a></li>
+<li class=""><a href="http://php.net/get-involved">Get Involved</a></li>
+<li class=""><a href="http://php.net/support">Help</a></li>
+</ul>
+<form class="navbar-search" id="topsearch" action="/search.php">
+<input type="hidden" name="show" value="quickref" />
+<input type="search" name="pattern" class="search-query" placeholder="Search" accesskey="s" />
+</form>
+</div>
+<div id="flash-message"></div>
+</nav>
+<div class="headsup"><a href="http://php.net/conferences/index.php#id2016-01-30-1">NortheastPHP Conference CfP Opens</a></div>
+<nav id="trick"><div><dl>
+<dt><a href="http://php.net/manual/en/getting-started.php">Getting Started</a></dt>
+<dd><a href="http://php.net/manual/en/introduction.php">Introduction</a></dd>
+<dd><a href="http://php.net/manual/en/tutorial.php">A simple tutorial</a></dd>
+<dt><a href="http://php.net/manual/en/langref.php">Language Reference</a></dt>
+<dd><a href="http://php.net/manual/en/language.basic-syntax.php">Basic syntax</a></dd>
+<dd><a href="http://php.net/manual/en/language.types.php">Types</a></dd>
+<dd><a href="http://php.net/manual/en/language.variables.php">Variables</a></dd>
+<dd><a href="http://php.net/manual/en/language.constants.php">Constants</a></dd>
+<dd><a href="http://php.net/manual/en/language.expressions.php">Expressions</a></dd>
+<dd><a href="http://php.net/manual/en/language.operators.php">Operators</a></dd>
+<dd><a href="http://php.net/manual/en/language.control-structures.php">Control Structures</a></dd>
+<dd><a href="http://php.net/manual/en/language.functions.php">Functions</a></dd>
+<dd><a href="http://php.net/manual/en/language.oop5.php">Classes and Objects</a></dd>
+<dd><a href="http://php.net/manual/en/language.namespaces.php">Namespaces</a></dd>
+<dd><a href="http://php.net/manual/en/language.errors.php">Errors</a></dd>
+<dd><a href="http://php.net/manual/en/language.exceptions.php">Exceptions</a></dd>
+<dd><a href="http://php.net/manual/en/language.generators.php">Generators</a></dd>
+<dd><a href="http://php.net/manual/en/language.references.php">References Explained</a></dd>
+<dd><a href="http://php.net/manual/en/reserved.variables.php">Predefined Variables</a></dd>
+<dd><a href="http://php.net/manual/en/reserved.exceptions.php">Predefined Exceptions</a></dd>
+<dd><a href="http://php.net/manual/en/reserved.interfaces.php">Predefined Interfaces and Classes</a></dd>
+<dd><a href="http://php.net/manual/en/context.php">Context options and parameters</a></dd>
+<dd><a href="http://php.net/manual/en/wrappers.php">Supported Protocols and Wrappers</a></dd>
+</dl>
+<dl>
+<dt><a href="http://php.net/manual/en/security.php">Security</a></dt>
+<dd><a href="http://php.net/manual/en/security.intro.php">Introduction</a></dd>
+<dd><a href="http://php.net/manual/en/security.general.php">General considerations</a></dd>
+<dd><a href="http://php.net/manual/en/security.cgi-bin.php">Installed as CGI binary</a></dd>
+<dd><a href="http://php.net/manual/en/security.apache.php">Installed as an Apache module</a></dd>
+<dd><a href="http://php.net/manual/en/security.filesystem.php">Filesystem Security</a></dd>
+<dd><a href="http://php.net/manual/en/security.database.php">Database Security</a></dd>
+<dd><a href="http://php.net/manual/en/security.errors.php">Error Reporting</a></dd>
+<dd><a href="http://php.net/manual/en/security.globals.php">Using Register Globals</a></dd>
+<dd><a href="http://php.net/manual/en/security.variables.php">User Submitted Data</a></dd>
+<dd><a href="http://php.net/manual/en/security.magicquotes.php">Magic Quotes</a></dd>
+<dd><a href="http://php.net/manual/en/security.hiding.php">Hiding PHP</a></dd>
+<dd><a href="http://php.net/manual/en/security.current.php">Keeping Current</a></dd>
+<dt><a href="http://php.net/manual/en/features.php">Features</a></dt>
+<dd><a href="http://php.net/manual/en/features.http-auth.php">HTTP authentication with PHP</a></dd>
+<dd><a href="http://php.net/manual/en/features.cookies.php">Cookies</a></dd>
+<dd><a href="http://php.net/manual/en/features.sessions.php">Sessions</a></dd>
+<dd><a href="http://php.net/manual/en/features.xforms.php">Dealing with XForms</a></dd>
+<dd><a href="http://php.net/manual/en/features.file-upload.php">Handling file uploads</a></dd>
+<dd><a href="http://php.net/manual/en/features.remote-files.php">Using remote files</a></dd>
+<dd><a href="http://php.net/manual/en/features.connection-handling.php">Connection handling</a></dd>
+<dd><a href="http://php.net/manual/en/features.persistent-connections.php">Persistent Database Connections</a></dd>
+<dd><a href="http://php.net/manual/en/features.safe-mode.php">Safe Mode</a></dd>
+<dd><a href="http://php.net/manual/en/features.commandline.php">Command line usage</a></dd>
+<dd><a href="http://php.net/manual/en/features.gc.php">Garbage Collection</a></dd>
+<dd><a href="http://php.net/manual/en/features.dtrace.php">DTrace Dynamic Tracing</a></dd>
+</dl>
+<dl>
+<dt><a href="http://php.net/manual/en/funcref.php">Function Reference</a></dt>
+<dd><a href="http://php.net/manual/en/refs.basic.php.php">Affecting PHP's Behaviour</a></dd>
+<dd><a href="http://php.net/manual/en/refs.utilspec.audio.php">Audio Formats Manipulation</a></dd>
+<dd><a href="http://php.net/manual/en/refs.remote.auth.php">Authentication Services</a></dd>
+<dd><a href="http://php.net/manual/en/refs.utilspec.cmdline.php">Command Line Specific Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.compression.php">Compression and Archive Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.creditcard.php">Credit Card Processing</a></dd>
+<dd><a href="http://php.net/manual/en/refs.crypto.php">Cryptography Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.database.php">Database Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.calendar.php">Date and Time Related Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.fileprocess.file.php">File System Related Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.international.php">Human Language and Character Encoding Support</a></dd>
+<dd><a href="http://php.net/manual/en/refs.utilspec.image.php">Image Processing and Generation</a></dd>
+<dd><a href="http://php.net/manual/en/refs.remote.mail.php">Mail Related Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.math.php">Mathematical Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.utilspec.nontext.php">Non-Text MIME Output</a></dd>
+<dd><a href="http://php.net/manual/en/refs.fileprocess.process.php">Process Control Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.basic.other.php">Other Basic Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.remote.other.php">Other Services</a></dd>
+<dd><a href="http://php.net/manual/en/refs.search.php">Search Engine Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.utilspec.server.php">Server Specific Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.basic.session.php">Session Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.basic.text.php">Text Processing</a></dd>
+<dd><a href="http://php.net/manual/en/refs.basic.vartype.php">Variable and Type Related Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.webservice.php">Web Services</a></dd>
+<dd><a href="http://php.net/manual/en/refs.utilspec.windows.php">Windows Only Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.xml.php">XML Manipulation</a></dd>
+</dl>
+<dl>
+<dt>Keyboard Shortcuts</dt><dt>?</dt>
+<dd>This help</dd>
+<dt>j</dt>
+<dd>Next menu item</dd>
+<dt>k</dt>
+<dd>Previous menu item</dd>
+<dt>g p</dt>
+<dd>Previous man page</dd>
+<dt>g n</dt>
+<dd>Next man page</dd>
+<dt>G</dt>
+<dd>Scroll to bottom</dd>
+<dt>g g</dt>
+<dd>Scroll to top</dd>
+<dt>g h</dt>
+<dd>Goto homepage</dd>
+<dt>g s</dt>
+<dd>Goto search<br />(current page)</dd>
+<dt>/</dt>
+<dd>Focus search box</dd>
+</dl></div></nav>
+<div id="goto">
+<div class="search">
+<div class="text"></div>
+<div class="results"><ul></ul></div>
+</div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+<div id="breadcrumbs-inner">
+<div class="next">
+<a href="language.types.string.php">
+          Strings &raquo;
+        </a>
+</div>
+<div class="prev">
+<a href="language.types.integer.php">
+          &laquo; Integers        </a>
+</div>
+<ul>
+<li><a href="index.php">PHP Manual</a></li> <li><a href="langref.php">Language Reference</a></li> <li><a href="language.types.php">Types</a></li> </ul>
+</div>
+</div>
+<div id="layout" class="clearfix">
+<section id="layout-content">
+<div class="page-tools">
+<div class="change-language">
+<form action="/manual/change.php" method="get" id="changelang" name="changelang">
+<fieldset>
+<label for="changelang-langs">Change language:</label>
+<select onchange="document.changelang.submit()" name="page" id="changelang-langs">
+<option value="en/language.types.float.php" selected="selected">English</option>
+<option value="pt_BR/language.types.float.php">Brazilian Portuguese</option>
+<option value="zh/language.types.float.php">Chinese (Simplified)</option>
+<option value="fr/language.types.float.php">French</option>
+<option value="de/language.types.float.php">German</option>
+<option value="ja/language.types.float.php">Japanese</option>
+<option value="kr/language.types.float.php">Korean</option>
+<option value="ro/language.types.float.php">Romanian</option>
+<option value="ru/language.types.float.php">Russian</option>
+<option value="es/language.types.float.php">Spanish</option>
+<option value="tr/language.types.float.php">Turkish</option>
+<option value="help-translate.php">Other</option>
+</select>
+</fieldset>
+</form>
+</div>
+<div class="edit-bug">
+<a href="https://edit.php.net/?project=PHP&amp;perm=en/language.types.float.php">Edit</a>
+<a href="https://bugs.php.net/report.php?bug_type=Documentation+problem&amp;manpage=language.types.float">Report a Bug</a>
+</div>
+</div><div id="language.types.float" class="sect1">
+<h2 class="title">Floating point numbers</h2>
+<p class="para">
+  Floating point numbers (also known as &quot;floats&quot;, &quot;doubles&quot;, or &quot;real numbers&quot;)
+  can be specified using any of the following syntaxes:
+ </p>
+<div class="informalexample">
+<div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$a&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1.234</span><span style="color: #007700">;&nbsp;<br /></span><span style="color: #0000BB">$b&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1.2e3</span><span style="color: #007700">;&nbsp;<br /></span><span style="color: #0000BB">$c&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">7E-10</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+</div>
+</div>
+<p class="para">
+  Formally:
+ </p>
+<div class="informalexample">
+<div class="example-contents">
+<div class="cdata"><pre>
+LNUM          [0-9]+
+DNUM          ([0-9]*[\.]{LNUM}) | ({LNUM}[\.][0-9]*)
+EXPONENT_DNUM [+-]?(({LNUM} | {DNUM}) [eE][+-]? {LNUM})
+</pre></div>
+</div>
+</div>
+<p class="para">
+  The size of a float is platform-dependent, although a maximum of ~1.8e308 with
+  a precision of roughly 14 decimal digits is a common value (the 64 bit IEEE
+  format).
+ </p>
+<div class="warning"><strong class="warning">Warning</strong>
+<h1 class="title">Floating point precision</h1>
+<p class="para">
+   Floating point numbers have limited precision. Although it depends on the
+   system, PHP typically uses the IEEE 754 double precision format, which will
+   give a maximum relative error due to rounding in the order of 1.11e-16.
+   Non elementary arithmetic operations may give larger errors, and, of course,
+   error propagation must be considered when several operations are
+   compounded.
+  </p>
+<p class="para">
+   Additionally, rational numbers that are exactly representable as floating
+   point numbers in base 10, like <em>0.1</em> or
+   <em>0.7</em>, do not have an exact representation as floating
+   point numbers in base 2, which is used internally, no matter the size of
+   the mantissa. Hence, they cannot be converted into their internal binary
+   counterparts without a small loss of precision. This can lead to confusing
+   results: for example, <em>floor((0.1+0.7)*10)</em> will usually
+   return <em>7</em> instead of the expected <em>8</em>,
+   since the internal representation will be something like
+   <em>7.9999999999999991118...</em>.
+  </p>
+<p class="para">
+   So never trust floating number results to the last digit, and do not compare 
+   floating point numbers directly for equality. If higher precision is
+   necessary, the <a href="ref.bc.php" class="link">arbitrary precision math functions</a>
+   and <a href="ref.gmp.php" class="link">gmp</a> functions are available.
+  </p>
+<p class="para">
+   For a &quot;simple&quot; explanation, see the <a href="http://floating-point-gui.de/" class="link external">&raquo;&nbsp;floating point guide</a>
+   that&#039;s also titled &quot;Why donâ&euro;&trade;t my numbers add up?&quot;
+  </p>
+</div>
+<div class="sect2" id="language.types.float.casting">
+<h3 class="title">Converting to float</h3>
+<p class="para">
+   For information on converting <span class="type"><a href="language.types.string.php" class="type string">string</a></span>s to <span class="type"><a href="language.types.float.php" class="type float">float</a></span>, see
+   <a href="language.types.string.php#language.types.string.conversion" class="link">String conversion to
+   numbers</a>. For values of other types, the conversion is performed by
+   converting the value to <span class="type"><a href="language.types.integer.php" class="type integer">integer</a></span> first and then to
+   <span class="type"><a href="language.types.float.php" class="type float">float</a></span>. See
+   <a href="language.types.integer.php#language.types.integer.casting" class="link">Converting to integer</a>
+   for more information. As of PHP 5, a notice is thrown if an
+   <span class="type"><a href="language.types.object.php" class="type object">object</a></span> is converted to <span class="type"><a href="language.types.float.php" class="type float">float</a></span>.
+  </p>
+</div>
+<div class="sect2" id="language.types.float.comparison">
+<h3 class="title">Comparing floats</h3>
+<p class="para">
+   As noted in the warning above, testing floating point values for equality is
+   problematic, due to the way that they are represented internally. However,
+   there are ways to make comparisons of floating point values that work around
+   these limitations.
+  </p>
+<p class="para">
+   To test floating point values for equality, an upper bound on the relative
+   error due to rounding is used. This value is known as the machine epsilon,
+   or unit roundoff, and is the smallest acceptable difference in calculations.
+  </p>
+<div class="informalexample">
+<p class="simpara">
+<var class="varname"></var><var class="varname">$a</var> and <var class="varname"></var><var class="varname">$b</var> are equal to 5 digits of
+    precision.
+   </p>
+<div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$a&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1.23456789</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$b&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1.23456780</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$epsilon&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">0.00001</span><span style="color: #007700">;<br /><br />if(</span><span style="color: #0000BB">abs</span><span style="color: #007700">(</span><span style="color: #0000BB">$a</span><span style="color: #007700">-</span><span style="color: #0000BB">$b</span><span style="color: #007700">)&nbsp;&lt;&nbsp;</span><span style="color: #0000BB">$epsilon</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"true"</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+</div>
+</div>
+</div>
+<div class="sect2" id="language.types.float.nan">
+<h3 class="title">NaN</h3>
+<p class="para">
+   Some numeric operations can result in a value represented by the constant
+   <strong><code>NAN</code></strong>. This result represents an undefined or
+   unrepresentable value in floating-point calculations. Any loose or strict
+   comparisons of this value against any other value, including itself, will
+   have a result of <strong><code>FALSE</code></strong>.
+  </p>
+<p class="para">
+   Because <strong><code>NAN</code></strong> represents any number of different values,
+   <strong><code>NAN</code></strong> should not be compared to other values, including
+   itself, and instead should be checked for using <span class="function"><a href="function.is-nan.php" class="function">is_nan()</a></span>.
+  </p>
+</div>
+</div>
+</section><section id="usernotes">
+<div class="head">
+<span class="action"><a href="http://php.net/manual/add-note.php?sect=language.types.float&amp;redirect=http://php.net/manual/en/language.types.float.php"><img src="/images/notes-add@2x.png" alt="add a note" width="12" height="12" /> <small>add a note</small></a></span>
+<h3 class="title">User Contributed Notes <span class="count">32 notes</span></h3>
+</div><div id="allnotes">
+<div class="note" id="113703"> <div class="votes">
+<div id="Vu113703">
+<a href="http://php.net/manual/vote-note.php?id=113703&amp;page=language.types.float&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd113703">
+<a href="http://php.net/manual/vote-note.php?id=113703&amp;page=language.types.float&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V113703" title="71% like this...">
+    47
+    </div>
+</div>
+<a href="#113703" class="name">
+<strong class="user"><em>catalin dot luntraru at gmail dot com</em></strong></a><a class="genanchor" href="#113703"> &para;</a><div class="date" title="2013-11-18 03:44"><strong>2 years ago</strong></div>
+<div class="text" id="Hcom113703">
+<div class="phpcode"><code><span class="html">
+$x = 8 - 6.4;&nbsp; // which is equal to 1.6<br />$y = 1.6;<br />var_dump($x == $y); // is not true<br /><br />PHP thinks that 1.6 (coming from a difference) is not equal to 1.6. To make it work, use round()<br /><br />var_dump(round($x, 2) == round($y, 2)); // this is true<br /><br />This happens probably because $x is not really 1.6, but 1.599999.. and var_dump shows it to you as being 1.6.</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="29170"> <div class="votes">
+<div id="Vu29170">
+<a href="http://php.net/manual/vote-note.php?id=29170&amp;page=language.types.float&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd29170">
+<a href="http://php.net/manual/vote-note.php?id=29170&amp;page=language.types.float&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V29170" title="70% like this...">
+    42
+    </div>
+</div>
+<a href="#29170" class="name">
+<strong class="user"><em>www.sarioz.com</em></strong></a><a class="genanchor" href="#29170"> &para;</a><div class="date" title="2003-02-04 10:49"><strong>12 years ago</strong></div>
+<div class="text" id="Hcom29170">
+<div class="phpcode"><code><span class="html">
+just a comment on something the "Floating point precision" inset, which goes: "This is related to .... 0.3333333."<br /><br />While the author probably knows what they are talking about, this loss of precision has nothing to do with decimal notation, it has to do with representation as a floating-point binary in a finite register, such as while 0.8 terminates in decimal, it is the repeating 0.110011001100... in binary, which is truncated.&nbsp; 0.1 and 0.7 are also non-terminating in binary, so they are also truncated, and the sum of these truncated numbers does not add up to the truncated binary representation of 0.8 (which is why (floor)(0.8*10) yields a different, more intuitive, result).&nbsp; However, since 2 is a factor of 10, any number that terminates in binary also terminates in decimal.</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="30071"> <div class="votes">
+<div id="Vu30071">
+<a href="http://php.net/manual/vote-note.php?id=30071&amp;page=language.types.float&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd30071">
+<a href="http://php.net/manual/vote-note.php?id=30071&amp;page=language.types.float&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V30071" title="71% like this...">
+    19
+    </div>
+</div>
+<a href="#30071" class="name">
+<strong class="user"><em>backov at spotbrokers-nospamplz dot com</em></strong></a><a class="genanchor" href="#30071"> &para;</a><div class="date" title="2003-03-05 01:16"><strong>12 years ago</strong></div>
+<div class="text" id="Hcom30071">
+<div class="phpcode"><code><span class="html">
+I'd like to point out a "feature" of PHP's floating point support that isn't made clear anywhere here, and was driving me insane.<br /> <br />This test (where var_dump says that $a=0.1 and $b=0.1)<br /> <br />if ($a&gt;=$b) echo "blah!";<br /> <br />Will fail in some cases due to hidden precision (standard C problem, that PHP docs make no mention of, so I assumed they had gotten rid of it). I should point out that I originally thought this was an issue with the floats being stored as strings, so I forced them to be floats and they still didn't get evaluated properly (probably 2 different problems there).<br /> <br />To fix, I had to do this horrible kludge (the equivelant of anyway):<br /> <br />if (round($a,3)&gt;=round($b,3)) echo "blah!";<br /> <br />THIS works. Obviously even though var_dump says the variables are identical, and they SHOULD BE identical (started at 0.01 and added 0.001 repeatedly), they're not. There's some hidden precision there that was making me tear my hair out. Perhaps this should be added to the documentation?</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="115850"> <div class="votes">
+<div id="Vu115850">
+<a href="http://php.net/manual/vote-note.php?id=115850&amp;page=language.types.float&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd115850">
+<a href="http://php.net/manual/vote-note.php?id=115850&amp;page=language.types.float&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V115850" title="75% like this...">
+    4
+    </div>
+</div>
+<a href="#115850" class="name">
+<strong class="user"><em>Adam H</em></strong></a><a class="genanchor" href="#115850"> &para;</a><div class="date" title="2014-10-03 02:35"><strong>1 year ago</strong></div>
+<div class="text" id="Hcom115850">
+<div class="phpcode"><code><span class="html">
+I've just come across this issue with floats when writing a function for pricing. When converting from string to a float, with 2 digits of precision, the issue with comparing floats can pop up and give inconsistent results due to the conversion process.<br /><br />An easier way rather than relying on the mentioned epsilon method is to use number_format (at least for me as I'll remember it!).<br /><br />Example function that can return an unexpected result:<br /><br />if((float)$a == (float)$b) {<br />echo true;<br />} else {<br />echo false;<br />}<br /><br />echo's false in this example.<br /><br />Using number format here to trim down the precision (2 point precision being mostly used for currencies etc, although higher precisions should be correctly catered for by number_format), will return an expected result:<br /><br />if(number_format((float)$a, 2) == number_format((float)$b, 2)) {<br />echo true;<br />} else {<br />echo false;<br />}<br /><br />Correctly echo's true.</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="44692"> <div class="votes">
+<div id="Vu44692">
+<a href="http://php.net/manual/vote-note.php?id=44692&amp;page=language.types.float&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd44692">
+<a href="http://php.net/manual/vote-note.php?id=44692&amp;page=language.types.float&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V44692" title="63% like this...">
+    11
+    </div>
+</div>
+<a href="#44692" class="name">
+<strong class="user"><em>feline at NOSPAM dot penguin dot servehttp dot com</em></strong></a><a class="genanchor" href="#44692"> &para;</a><div class="date" title="2004-08-12 06:36"><strong>11 years ago</strong></div>
+<div class="text" id="Hcom44692">
+<div class="phpcode"><code><span class="html">
+General computing hint: If you're keeping track of money, do yourself and your users the favor of handling everything internally in cents and do as much math as you can in integers. Store values in cents if at all possible. Add and subtract in cents. At every operation that wii involve floats, ask yourself "what will happen in the real world if I get a fraction of a cent here" and if the answer is that this operation will generate a transaction in integer cents, do not try to carry fictional fractional accuracy that will only screw things up later.</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="117212"> <div class="votes">
+<div id="Vu117212">
+<a href="http://php.net/manual/vote-note.php?id=117212&amp;page=language.types.float&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd117212">
+<a href="http://php.net/manual/vote-note.php?id=117212&amp;page=language.types.float&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V117212" title="63% like this...">
+    3
+    </div>
+</div>
+<a href="#117212" class="name">
+<strong class="user"><em>luizvid at gmail dot com</em></strong></a><a class="genanchor" href="#117212"> &para;</a><div class="date" title="2015-05-04 12:06"><strong>8 months ago</strong></div>
+<div class="text" id="Hcom117212">
+<div class="phpcode"><code><span class="html">
+An effective way to compare two real numbers (including floating point numbers) with high accuracy and still be able to set precision is using the BC Math function bccomp();<br /><br />For instance:<br /><span class="default">&lt;?php<br />&nbsp; &nbsp; $a </span><span class="keyword">= </span><span class="default">1.23456789</span><span class="keyword">;<br />&nbsp; &nbsp; </span><span class="default">$b </span><span class="keyword">= </span><span class="default">1.23456780</span><span class="keyword">;<br />&nbsp; &nbsp; </span><span class="default">$precision </span><span class="keyword">= </span><span class="default">5</span><span class="keyword">;<br /><br />&nbsp; &nbsp; if(</span><span class="default">bccomp</span><span class="keyword">(</span><span class="default">$a</span><span class="keyword">, </span><span class="default">$b</span><span class="keyword">, </span><span class="default">$precision</span><span class="keyword">)&nbsp; === </span><span class="default">0 </span><span class="keyword">) {<br />&nbsp; &nbsp; &nbsp; &nbsp; echo </span><span class="string">"true"</span><span class="keyword">;<br />&nbsp; &nbsp; } </span><span class="comment">// true<br /></span><span class="default">?&gt;<br />&lt;?php<br />&nbsp; &nbsp; $a </span><span class="keyword">= </span><span class="default">sprintf</span><span class="keyword">(</span><span class="string">'%.17f'</span><span class="keyword">, </span><span class="default">0.1</span><span class="keyword">+</span><span class="default">0.2</span><span class="keyword">);<br />&nbsp; &nbsp; </span><span class="default">$b </span><span class="keyword">= </span><span class="default">0.3</span><span class="keyword">;<br /><br />&nbsp; &nbsp; if(</span><span class="default">bccomp</span><span class="keyword">(</span><span class="default">$a</span><span class="keyword">, </span><span class="default">$b</span><span class="keyword">, </span><span class="default">17</span><span class="keyword">)&nbsp; !== </span><span class="default">0 </span><span class="keyword">) {<br />&nbsp; &nbsp; &nbsp; &nbsp; echo </span><span class="string">"FALSE"</span><span class="keyword">;<br />&nbsp; &nbsp; } </span><span class="comment">// FALSE<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="98216"> <div class="votes">
+<div id="Vu98216">
+<a href="http://php.net/manual/vote-note.php?id=98216&amp;page=language.types.float&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd98216">
+<a href="http://php.net/manual/vote-note.php?id=98216&amp;page=language.types.float&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V98216" title="59% like this...">
+    9
+    </div>
+</div>
+<a href="#98216" class="name">
+<strong class="user"><em>magicaltux at php dot net</em></strong></a><a class="genanchor" href="#98216"> &para;</a><div class="date" title="2010-06-01 07:02"><strong>5 years ago</strong></div>
+<div class="text" id="Hcom98216">
+<div class="phpcode"><code><span class="html">
+In some cases you may want to get the maximum value for a float without getting "INF".<br /><br />var_dump(1.8e308); will usually show: float(INF)<br /><br />I wrote a tiny function that will iterate in order to find the biggest non-infinite float value. It comes with a configurable multiplicator and affine values so you can share more CPU to get a more accurate estimate.<br /><br />I haven't seen better values with more affine, but well, the possibility is here so if you really thing it's worth the cpu time, just try to affine more.<br /><br />Best results seems to be with mul=2/affine=1. You can play with the values and see what you get. The good thing is this method will work on any system.<br /><br /><span class="default">&lt;?php<br />&nbsp; </span><span class="keyword">function </span><span class="default">float_max</span><span class="keyword">(</span><span class="default">$mul </span><span class="keyword">= </span><span class="default">2</span><span class="keyword">, </span><span class="default">$affine </span><span class="keyword">= </span><span class="default">1</span><span class="keyword">) {<br />&nbsp; &nbsp; </span><span class="default">$max </span><span class="keyword">= </span><span class="default">1</span><span class="keyword">; </span><span class="default">$omax </span><span class="keyword">= </span><span class="default">0</span><span class="keyword">;<br />&nbsp; &nbsp; while((string)</span><span class="default">$max </span><span class="keyword">!= </span><span class="string">'INF'</span><span class="keyword">) { </span><span class="default">$omax </span><span class="keyword">= </span><span class="default">$max</span><span class="keyword">; </span><span class="default">$max </span><span class="keyword">*= </span><span class="default">$mul</span><span class="keyword">; }<br /><br />&nbsp; &nbsp; for(</span><span class="default">$i </span><span class="keyword">= </span><span class="default">0</span><span class="keyword">; </span><span class="default">$i </span><span class="keyword">&lt; </span><span class="default">$affine</span><span class="keyword">; </span><span class="default">$i</span><span class="keyword">++) {<br />&nbsp; &nbsp; &nbsp; </span><span class="default">$pmax </span><span class="keyword">= </span><span class="default">1</span><span class="keyword">; </span><span class="default">$max </span><span class="keyword">= </span><span class="default">$omax</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; while((string)</span><span class="default">$max </span><span class="keyword">!= </span><span class="string">'INF'</span><span class="keyword">) {<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$omax </span><span class="keyword">= </span><span class="default">$max</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$max </span><span class="keyword">+= </span><span class="default">$pmax</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$pmax </span><span class="keyword">*= </span><span class="default">$mul</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; }<br />&nbsp; &nbsp; return </span><span class="default">$omax</span><span class="keyword">;<br />&nbsp; }<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="58824"> <div class="votes">
+<div id="Vu58824">
+<a href="http://php.net/manual/vote-note.php?id=58824&amp;page=language.types.float&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd58824">
+<a href="http://php.net/manual/vote-note.php?id=58824&amp;page=language.types.float&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V58824" title="60% like this...">
+    7
+    </div>
+</div>
+<a href="#58824" class="name">
+<strong class="user"><em>Luzian</em></strong></a><a class="genanchor" href="#58824"> &para;</a><div class="date" title="2005-11-17 12:03"><strong>10 years ago</strong></div>
+<div class="text" id="Hcom58824">
+<div class="phpcode"><code><span class="html">
+Be careful when using float values in strings that are used as code later, for example when generating JavaScript code or SQL statements. The float is actually formatted according to the browser's locale setting, which means that "0.23" will result in "0,23". Imagine something like this:<br /><br />$x = 0.23;<br />$js = "var foo = doBar($x);";<br />print $js;<br /><br />This would result in a different result for users with some locales. On most systems, this would print:<br /><br />var foo = doBar(0.23);<br /><br />but when for example a user from Germany arrives, it would be different:<br /><br />var foo = doBar(0,23);<br /><br />which is obviously a different call to the function. JavaScript won't state an error, additional arguments are discarded without notice, but the function doBar(a) would get 0 as parameter. Similar problems could arise anywhere else (SQL, any string used as code somewhere else). The problem persists, if you use the "." operator instead of evaluating the variable in the string.<br /><br />So if you REALLY need to be sure to have the string correctly formatted, use number_format() to do it!</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="103209"> <div class="votes">
+<div id="Vu103209">
+<a href="http://php.net/manual/vote-note.php?id=103209&amp;page=language.types.float&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd103209">
+<a href="http://php.net/manual/vote-note.php?id=103209&amp;page=language.types.float&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V103209" title="58% like this...">
+    7
+    </div>
+</div>
+<a href="#103209" class="name">
+<strong class="user"><em>zelko at mojeime dot com</em></strong></a><a class="genanchor" href="#103209"> &para;</a><div class="date" title="2011-03-31 01:02"><strong>4 years ago</strong></div>
+<div class="text" id="Hcom103209">
+<div class="phpcode"><code><span class="html">
+<span class="default">&lt;?php<br />&nbsp;&nbsp; $binarydata32 </span><span class="keyword">= </span><span class="default">pack</span><span class="keyword">(</span><span class="string">'H*'</span><span class="keyword">,</span><span class="string">'00000000'</span><span class="keyword">);<br />&nbsp;&nbsp; </span><span class="default">$float32 </span><span class="keyword">= </span><span class="default">unpack</span><span class="keyword">(</span><span class="string">"f"</span><span class="keyword">, </span><span class="default">$binarydata32</span><span class="keyword">); </span><span class="comment">// 0.0<br /><br />&nbsp;&nbsp; </span><span class="default">$binarydata64 </span><span class="keyword">= </span><span class="default">pack</span><span class="keyword">(</span><span class="string">'H*'</span><span class="keyword">,</span><span class="string">'0000000000000000'</span><span class="keyword">);<br />&nbsp;&nbsp; </span><span class="default">$float64 </span><span class="keyword">= </span><span class="default">unpack</span><span class="keyword">(</span><span class="string">"d"</span><span class="keyword">, </span><span class="default">$binarydata64</span><span class="keyword">); </span><span class="comment">// 0.0<br /></span><span class="default">?&gt;<br /></span><br />I get 0 both for 32-bit and 64-bit numbers.<br /><br />But, please don't use your own "functions" to "convert" from float to binary and vice versa. Looping performance in PHP is horrible. Using pack/unpack you use processor's encoding, which is always correct. In C++ you can access the same 32/64 data as either float/double or 32/64 bit integer. No "conversions".<br /><br />To get binary encoding:<br /><span class="default">&lt;?php<br />&nbsp;&nbsp; $float32 </span><span class="keyword">= </span><span class="default">pack</span><span class="keyword">(</span><span class="string">"f"</span><span class="keyword">, </span><span class="default">5300231</span><span class="keyword">);<br />&nbsp;&nbsp; </span><span class="default">$binarydata32 </span><span class="keyword">=</span><span class="default">unpack</span><span class="keyword">(</span><span class="string">'H*'</span><span class="keyword">,</span><span class="default">$float32</span><span class="keyword">); </span><span class="comment">//"0EC0A14A"<br /><br />&nbsp;&nbsp; </span><span class="default">$float64 </span><span class="keyword">= </span><span class="default">pack</span><span class="keyword">(</span><span class="string">"d"</span><span class="keyword">, </span><span class="default">5300231</span><span class="keyword">);<br />&nbsp;&nbsp; </span><span class="default">$binarydata64 </span><span class="keyword">=</span><span class="default">unpack</span><span class="keyword">(</span><span class="string">'H*'</span><span class="keyword">,</span><span class="default">$float64</span><span class="keyword">); </span><span class="comment">//"000000C001385441"<br /></span><span class="default">?&gt;<br /></span><br />And my example from half a year ago:<br /><span class="default">&lt;?php<br />&nbsp; &nbsp; $binarydata32 </span><span class="keyword">= </span><span class="default">pack</span><span class="keyword">(</span><span class="string">'H*'</span><span class="keyword">,</span><span class="string">'0EC0A14A'</span><span class="keyword">);<br />&nbsp; &nbsp; </span><span class="default">$float32 </span><span class="keyword">= </span><span class="default">unpack</span><span class="keyword">(</span><span class="string">"f"</span><span class="keyword">, </span><span class="default">$binarydata32</span><span class="keyword">); </span><span class="comment">// 5300231<br />&nbsp;&nbsp; <br />&nbsp; &nbsp; </span><span class="default">$binarydata64 </span><span class="keyword">= </span><span class="default">pack</span><span class="keyword">(</span><span class="string">'H*'</span><span class="keyword">,</span><span class="string">'000000C001385441'</span><span class="keyword">);<br />&nbsp; &nbsp; </span><span class="default">$float64 </span><span class="keyword">= </span><span class="default">unpack</span><span class="keyword">(</span><span class="string">"d"</span><span class="keyword">, </span><span class="default">$binarydata64</span><span class="keyword">); </span><span class="comment">// 5300231<br /></span><span class="default">?&gt;<br /></span><br />And please mind the Big and Little endian boys...</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="54494"> <div class="votes">
+<div id="Vu54494">
+<a href="http://php.net/manual/vote-note.php?id=54494&amp;page=language.types.float&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd54494">
+<a href="http://php.net/manual/vote-note.php?id=54494&amp;page=language.types.float&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V54494" title="59% like this...">
+    6
+    </div>
+</div>
+<a href="#54494" class="name">
+<strong class="user"><em>rick at ninjafoo dot com</em></strong></a><a class="genanchor" href="#54494"> &para;</a><div class="date" title="2005-07-06 01:04"><strong>10 years ago</strong></div>
+<div class="text" id="Hcom54494">
+<div class="phpcode"><code><span class="html">
+Concider the following:<br /><br />(19.6*100) != 1960&nbsp; <br /><br />echo gettype(19.6*100) returns 'double', However even ..... <br /><br />(19.6*100) !== (double)1960 <br /><br />19.6*100 cannot be compaired to anything without manually <br />casting it as something else first. <br /><br />(string)(19.6*100) == 1960<br /><br />Rule of thumb, if it has a decimal point, use the BCMath functions.</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="31261"> <div class="votes">
+<div id="Vu31261">
+<a href="http://php.net/manual/vote-note.php?id=31261&amp;page=language.types.float&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd31261">
+<a href="http://php.net/manual/vote-note.php?id=31261&amp;page=language.types.float&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V31261" title="59% like this...">
+    6
+    </div>
+</div>
+<a href="#31261" class="name">
+<strong class="user"><em>dev at maintainfit dot com</em></strong></a><a class="genanchor" href="#31261"> &para;</a><div class="date" title="2003-04-15 11:27"><strong>12 years ago</strong></div>
+<div class="text" id="Hcom31261">
+<div class="phpcode"><code><span class="html">
+I was programming an accounting application in MySql that required me to sum a collection of floats and ensure that they equal zero before commiting a transaction, but as seen above a sum of floats cannot always be trusted (as was my case).&nbsp; I kept getting a very small remainder (like 1.4512431231e-14).&nbsp; Since I had used number_format(num,2) to set the precision of the numbers in the database to only two (2) decimal places, when the time comes to calculate the sum I simply multiply every number by ten (10), therby eliminating and decimal places and leaving me with integers to preform my sum.&nbsp; This worked great.</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="111207"> <div class="votes">
+<div id="Vu111207">
+<a href="http://php.net/manual/vote-note.php?id=111207&amp;page=language.types.float&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd111207">
+<a href="http://php.net/manual/vote-note.php?id=111207&amp;page=language.types.float&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V111207" title="55% like this...">
+    4
+    </div>
+</div>
+<a href="#111207" class="name">
+<strong class="user"><em>jack at surfacefinishtech dot com</em></strong></a><a class="genanchor" href="#111207"> &para;</a><div class="date" title="2013-01-25 07:40"><strong>3 years ago</strong></div>
+<div class="text" id="Hcom111207">
+<div class="phpcode"><code><span class="html">
+<span class="default">&lt;?php<br /></span><span class="comment">/** hex2float<br /> * (Convert 8 digit hexadecimal value to float (single-precision 32bits) <br /> * Accepts 8 digit hexadecimal values in a string<br /> * @usage: <br /> * hex2float32n("429241f0"); returns -&gt; "73.128784179688" <br /> * */<br /></span><span class="keyword">function </span><span class="default">hex2float</span><span class="keyword">(</span><span class="default">$number</span><span class="keyword">) {<br />&nbsp; &nbsp; </span><span class="default">$binfinal </span><span class="keyword">= </span><span class="default">sprintf</span><span class="keyword">(</span><span class="string">"%032b"</span><span class="keyword">,</span><span class="default">hexdec</span><span class="keyword">(</span><span class="default">$number</span><span class="keyword">));<br />&nbsp; &nbsp; </span><span class="default">$sign </span><span class="keyword">= </span><span class="default">substr</span><span class="keyword">(</span><span class="default">$binfinal</span><span class="keyword">, </span><span class="default">0</span><span class="keyword">, </span><span class="default">1</span><span class="keyword">);<br />&nbsp; &nbsp; </span><span class="default">$exp </span><span class="keyword">= </span><span class="default">substr</span><span class="keyword">(</span><span class="default">$binfinal</span><span class="keyword">, </span><span class="default">1</span><span class="keyword">, </span><span class="default">8</span><span class="keyword">);<br />&nbsp; &nbsp; </span><span class="default">$mantissa </span><span class="keyword">= </span><span class="string">"1"</span><span class="keyword">.</span><span class="default">substr</span><span class="keyword">(</span><span class="default">$binfinal</span><span class="keyword">, </span><span class="default">9</span><span class="keyword">);<br />&nbsp; &nbsp; </span><span class="default">$mantissa </span><span class="keyword">= </span><span class="default">str_split</span><span class="keyword">(</span><span class="default">$mantissa</span><span class="keyword">);<br />&nbsp; &nbsp; </span><span class="default">$exp </span><span class="keyword">= </span><span class="default">bindec</span><span class="keyword">(</span><span class="default">$exp</span><span class="keyword">)-</span><span class="default">127</span><span class="keyword">;<br />&nbsp; &nbsp; </span><span class="default">$significand</span><span class="keyword">=</span><span class="default">0</span><span class="keyword">;<br />&nbsp; &nbsp; for (</span><span class="default">$i </span><span class="keyword">= </span><span class="default">0</span><span class="keyword">; </span><span class="default">$i </span><span class="keyword">&lt; </span><span class="default">24</span><span class="keyword">; </span><span class="default">$i</span><span class="keyword">++) {<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$significand </span><span class="keyword">+= (</span><span class="default">1 </span><span class="keyword">/ </span><span class="default">pow</span><span class="keyword">(</span><span class="default">2</span><span class="keyword">,</span><span class="default">$i</span><span class="keyword">))*</span><span class="default">$mantissa</span><span class="keyword">[</span><span class="default">$i</span><span class="keyword">];<br />&nbsp; &nbsp; }<br />&nbsp; &nbsp; return </span><span class="default">$significand </span><span class="keyword">* </span><span class="default">pow</span><span class="keyword">(</span><span class="default">2</span><span class="keyword">,</span><span class="default">$exp</span><span class="keyword">) * (</span><span class="default">$sign</span><span class="keyword">*-</span><span class="default">2</span><span class="keyword">+</span><span class="default">1</span><span class="keyword">);<br />}<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="97557"> <div class="votes">
+<div id="Vu97557">
+<a href="http://php.net/manual/vote-note.php?id=97557&amp;page=language.types.float&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd97557">
+<a href="http://php.net/manual/vote-note.php?id=97557&amp;page=language.types.float&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V97557" title="56% like this...">
+    3
+    </div>
+</div>
+<a href="#97557" class="name">
+<strong class="user"><em>Anonymous</em></strong></a><a class="genanchor" href="#97557"> &para;</a><div class="date" title="2010-04-25 11:48"><strong>5 years ago</strong></div>
+<div class="text" id="Hcom97557">
+<div class="phpcode"><code><span class="html">
+Calculations involving float types become inaccurate when it deals with numbers with more than approximately 8 digits long where ever the decimal point is.&nbsp; This is because of how 32bit floats are commonly stored in memory.&nbsp; This means if you rely on float types while working with tiny fractions or large numbers, your calculations can end up between tiny fractions to several trillion off.<br /><br />This usually won't matter when converting to binary memory storage form and editing many applications' float memory addresses directly, or dealing with smaller length numbers.&nbsp; But if you're working with larger scale numbers and decimals, it's best to switch to working with other types: <a href="http://www.php.net/manual/en/refs.math.php" rel="nofollow" target="_blank">http://www.php.net/manual/en/refs.math.php</a></span>
+</code></div>
+</div>
+</div>
+<div class="note" id="108405"> <div class="votes">
+<div id="Vu108405">
+<a href="http://php.net/manual/vote-note.php?id=108405&amp;page=language.types.float&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd108405">
+<a href="http://php.net/manual/vote-note.php?id=108405&amp;page=language.types.float&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V108405" title="55% like this...">
+    3
+    </div>
+</div>
+<a href="#108405" class="name">
+<strong class="user"><em>davidszilardd at gmail dot com</em></strong></a><a class="genanchor" href="#108405"> &para;</a><div class="date" title="2012-04-24 10:58"><strong>3 years ago</strong></div>
+<div class="text" id="Hcom108405">
+<div class="phpcode"><code><span class="html">
+The function returns 5 for 5,000 because if there is no decimal point, then the first strpos will be FALSE, and FALSE &lt; 1 is TRUE so the condition will be still true.<br /><br />It should be checked whether strpos returns a valid position:<br /><br /><span class="default">&lt;?php<br /></span><span class="keyword">function </span><span class="default">str2num</span><span class="keyword">(</span><span class="default">$str</span><span class="keyword">)<br />{ <br />&nbsp; &nbsp; &nbsp; if (</span><span class="default">strpos</span><span class="keyword">(</span><span class="default">$str</span><span class="keyword">, </span><span class="string">'.'</span><span class="keyword">) !== </span><span class="default">FALSE </span><span class="keyword">&amp;&amp; </span><span class="default">strpos</span><span class="keyword">(</span><span class="default">$str</span><span class="keyword">,&nbsp; &nbsp; </span><span class="string">','</span><span class="keyword">) !== </span><span class="default">FALSE </span><span class="keyword">&amp;&amp; </span><span class="default">strpos</span><span class="keyword">(</span><span class="default">$str</span><span class="keyword">, </span><span class="string">'.'</span><span class="keyword">) &lt; </span><span class="default">strpos</span><span class="keyword">(</span><span class="default">$str</span><span class="keyword">,</span><span class="string">','</span><span class="keyword">))<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; { <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$str </span><span class="keyword">= </span><span class="default">str_replace</span><span class="keyword">(</span><span class="string">'.'</span><span class="keyword">,</span><span class="string">''</span><span class="keyword">,</span><span class="default">$str</span><span class="keyword">); <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$str </span><span class="keyword">= </span><span class="default">strtr</span><span class="keyword">(</span><span class="default">$str</span><span class="keyword">,</span><span class="string">','</span><span class="keyword">,</span><span class="string">'.'</span><span class="keyword">);&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; } <br />&nbsp; &nbsp; &nbsp; &nbsp; else<br />&nbsp; &nbsp; &nbsp; &nbsp; { <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$str </span><span class="keyword">= </span><span class="default">str_replace</span><span class="keyword">(</span><span class="string">','</span><span class="keyword">,</span><span class="string">''</span><span class="keyword">,</span><span class="default">$str</span><span class="keyword">);&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; } <br />&nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; return (float)</span><span class="default">$str</span><span class="keyword">; <br />}<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="90753"> <div class="votes">
+<div id="Vu90753">
+<a href="http://php.net/manual/vote-note.php?id=90753&amp;page=language.types.float&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd90753">
+<a href="http://php.net/manual/vote-note.php?id=90753&amp;page=language.types.float&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V90753" title="55% like this...">
+    3
+    </div>
+</div>
+<a href="#90753" class="name">
+<strong class="user"><em>Bob</em></strong></a><a class="genanchor" href="#90753"> &para;</a><div class="date" title="2009-05-07 08:34"><strong>6 years ago</strong></div>
+<div class="text" id="Hcom90753">
+<div class="phpcode"><code><span class="html">
+In MySQL, many floating point number types can have a range specified using 2 values, the "precision" and the "scale" E.g. 'float(precision,scale)' for the datatype. This syntax means a number may be &lt;precision&gt; bits long, but may only have &lt;scale&gt; bits after the decimal point. E.g. a 'float(5,2)' field may have the values -999.99 to 999.99.<br />Here is a function to validate a PHP float using this syntax:<br /><span class="default">&lt;?php<br /></span><span class="keyword">function </span><span class="default">validate_float</span><span class="keyword">(</span><span class="default">$float</span><span class="keyword">, </span><span class="default">$precision</span><span class="keyword">, </span><span class="default">$scale</span><span class="keyword">)<br />{<br />&nbsp; &nbsp; </span><span class="default">$max </span><span class="keyword">= (float)</span><span class="default">str_pad</span><span class="keyword">(</span><span class="string">""</span><span class="keyword">, </span><span class="default">$precision</span><span class="keyword">-</span><span class="default">$scale</span><span class="keyword">, </span><span class="string">'9'</span><span class="keyword">).</span><span class="string">'.'</span><span class="keyword">.</span><span class="default">str_pad</span><span class="keyword">(</span><span class="string">""</span><span class="keyword">, </span><span class="default">$scale</span><span class="keyword">, </span><span class="string">'9'</span><span class="keyword">);<br />&nbsp; &nbsp; </span><span class="default">$min </span><span class="keyword">= (float)</span><span class="string">"-</span><span class="default">$max</span><span class="string">"</span><span class="keyword">;<br /><br />&nbsp; &nbsp; if((</span><span class="default">$float </span><span class="keyword">&lt; </span><span class="default">$min</span><span class="keyword">) || (</span><span class="default">$float </span><span class="keyword">&gt; </span><span class="default">$max</span><span class="keyword">)) return </span><span class="default">false</span><span class="keyword">;<br />&nbsp; &nbsp; else return </span><span class="default">true</span><span class="keyword">;<br />}<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="81416"> <div class="votes">
+<div id="Vu81416">
+<a href="http://php.net/manual/vote-note.php?id=81416&amp;page=language.types.float&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd81416">
+<a href="http://php.net/manual/vote-note.php?id=81416&amp;page=language.types.float&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V81416" title="54% like this...">
+    2
+    </div>
+</div>
+<a href="#81416" class="name">
+<strong class="user"><em>m dot lebkowski+php at gmail dot com</em></strong></a><a class="genanchor" href="#81416"> &para;</a><div class="date" title="2008-02-27 01:18"><strong>7 years ago</strong></div>
+<div class="text" id="Hcom81416">
+<div class="phpcode"><code><span class="html">
+Just another note about the locales. Consider the following code:<br /><br /><span class="default">&lt;?php <br />&nbsp; &nbsp; </span><span class="comment">// in polish locale decimal separator is ","<br />&nbsp; &nbsp; </span><span class="default">setlocale</span><span class="keyword">(</span><span class="default">LC_ALL</span><span class="keyword">, </span><span class="string">"pl_PL"</span><span class="keyword">);<br />&nbsp; &nbsp; </span><span class="default">$a </span><span class="keyword">= </span><span class="default">5</span><span class="keyword">/</span><span class="default">2</span><span class="keyword">;<br />&nbsp; &nbsp; echo (float)(string)</span><span class="default">$a</span><span class="keyword">;<br />&nbsp; &nbsp; </span><span class="comment">/// prints "2", so the decimal part is dropped<br /></span><span class="default">?&gt;<br /></span><br />This causes very serious problems in my opinion. In some locale combination the typecasting can be destructive.<br />Maybe when locale decimal separator is ",", then (float)"2,5" should be recognized as "two and a half"? <br />Anyway - bare that in mind and be very careful when casting floats to strings and back.</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="101318"> <div class="votes">
+<div id="Vu101318">
+<a href="http://php.net/manual/vote-note.php?id=101318&amp;page=language.types.float&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd101318">
+<a href="http://php.net/manual/vote-note.php?id=101318&amp;page=language.types.float&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V101318" title="52% like this...">
+    2
+    </div>
+</div>
+<a href="#101318" class="name">
+<strong class="user"><em>Julian L</em></strong></a><a class="genanchor" href="#101318"> &para;</a><div class="date" title="2010-12-09 07:51"><strong>5 years ago</strong></div>
+<div class="text" id="Hcom101318">
+<div class="phpcode"><code><span class="html">
+Convert a hex string into a 32-bit IEEE 754 float number.&nbsp; This function is 2 times faster then the below hex to 32bit function.&nbsp; This function only changes datatypes (string to int) once. Also, this function is a port from the hex to 64bit function from below.<br /><br /><span class="default">&lt;?php<br /></span><span class="keyword">function </span><span class="default">hexTo32Float</span><span class="keyword">(</span><span class="default">$strHex</span><span class="keyword">) {<br />&nbsp; &nbsp; </span><span class="default">$v </span><span class="keyword">= </span><span class="default">hexdec</span><span class="keyword">(</span><span class="default">$strHex</span><span class="keyword">);<br />&nbsp; &nbsp; </span><span class="default">$x </span><span class="keyword">= (</span><span class="default">$v </span><span class="keyword">&amp; ((</span><span class="default">1 </span><span class="keyword">&lt;&lt; </span><span class="default">23</span><span class="keyword">) - </span><span class="default">1</span><span class="keyword">)) + (</span><span class="default">1 </span><span class="keyword">&lt;&lt; </span><span class="default">23</span><span class="keyword">) * (</span><span class="default">$v </span><span class="keyword">&gt;&gt; </span><span class="default">31 </span><span class="keyword">| </span><span class="default">1</span><span class="keyword">);<br />&nbsp; &nbsp; </span><span class="default">$exp </span><span class="keyword">= (</span><span class="default">$v </span><span class="keyword">&gt;&gt; </span><span class="default">23 </span><span class="keyword">&amp; </span><span class="default">0xFF</span><span class="keyword">) - </span><span class="default">127</span><span class="keyword">;<br />&nbsp; &nbsp; return </span><span class="default">$x </span><span class="keyword">* </span><span class="default">pow</span><span class="keyword">(</span><span class="default">2</span><span class="keyword">, </span><span class="default">$exp </span><span class="keyword">- </span><span class="default">23</span><span class="keyword">);<br />}<br /></span><span class="default">?&gt;<br /></span><br /><span class="default">&lt;?php<br /></span><span class="comment">//example<br /></span><span class="keyword">echo </span><span class="default">hexTo32Float</span><span class="keyword">(</span><span class="string">"C4028000"</span><span class="keyword">); </span><span class="comment">// outputs: -522<br /></span><span class="keyword">echo </span><span class="default">hexTo32Float</span><span class="keyword">(</span><span class="string">"457F9000"</span><span class="keyword">); </span><span class="comment">// outputs: 4089<br /></span><span class="keyword">echo </span><span class="default">hexTo32Float</span><span class="keyword">(</span><span class="string">"2D7F5"</span><span class="keyword">);&nbsp; &nbsp; </span><span class="comment">// outputs: 6.00804264307E-39<br /></span><span class="keyword">echo </span><span class="default">hexTo32Float</span><span class="keyword">(</span><span class="string">"0002D7F5"</span><span class="keyword">); </span><span class="comment">// outputs: 6.00804264307E-39<br /></span><span class="keyword">echo </span><span class="default">hexTo32Float</span><span class="keyword">(</span><span class="string">"47D9F95E"</span><span class="keyword">); </span><span class="comment">// outputs: 111602.734375<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="31622"> <div class="votes">
+<div id="Vu31622">
+<a href="http://php.net/manual/vote-note.php?id=31622&amp;page=language.types.float&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd31622">
+<a href="http://php.net/manual/vote-note.php?id=31622&amp;page=language.types.float&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V31622" title="54% like this...">
+    2
+    </div>
+</div>
+<a href="#31622" class="name">
+<strong class="user"><em>james dot cridland at virginradio dot co dot uk</em></strong></a><a class="genanchor" href="#31622"> &para;</a><div class="date" title="2003-04-28 07:44"><strong>12 years ago</strong></div>
+<div class="text" id="Hcom31622">
+<div class="phpcode"><code><span class="html">
+The 'floating point precision' box in practice means:<br /><br />&lt;? echo (69.1-floor(69.1)); ?&gt;<br />Think this'll return 0.1?<br />It doesn't - it returns 0.099999999999994<br /><br />&lt;? echo round((69.1-floor(69.1))); ?&gt;<br />This returns 0.1 and is the workaround we use.<br /><br />Note that<br />&lt;? echo (4.1-floor(4.1)); ?&gt;<br />*does* return 0.1 - so if you, like us, test this with low numbers, you won't, like us, understand why all of a sudden your script stops working, until you spend a lot of time, like us, debugging it.<br /><br />So, that's all lovely then.</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="97611"> <div class="votes">
+<div id="Vu97611">
+<a href="http://php.net/manual/vote-note.php?id=97611&amp;page=language.types.float&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd97611">
+<a href="http://php.net/manual/vote-note.php?id=97611&amp;page=language.types.float&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V97611" title="52% like this...">
+    1
+    </div>
+</div>
+<a href="#97611" class="name">
+<strong class="user"><em>inforsci at gmail dot com</em></strong></a><a class="genanchor" href="#97611"> &para;</a><div class="date" title="2010-04-27 11:48"><strong>5 years ago</strong></div>
+<div class="text" id="Hcom97611">
+<div class="phpcode"><code><span class="html">
+convert 32bit HEX values into IEEE 754 floating point <br /><span class="default">&lt;?php <br /><br />$strHex </span><span class="keyword">= </span><span class="string">"C45F82ED"</span><span class="keyword">; <br /><br /></span><span class="default">$bin </span><span class="keyword">= </span><span class="default">str_pad</span><span class="keyword">(</span><span class="default">base_convert</span><span class="keyword">(</span><span class="default">$strHex</span><span class="keyword">, </span><span class="default">16</span><span class="keyword">, </span><span class="default">2</span><span class="keyword">), </span><span class="default">32</span><span class="keyword">, </span><span class="string">"0"</span><span class="keyword">, </span><span class="default">STR_PAD_LEFT</span><span class="keyword">); <br /></span><span class="default">$sign </span><span class="keyword">= </span><span class="default">$bin</span><span class="keyword">[</span><span class="default">0</span><span class="keyword">]; <br /></span><span class="default">$exp </span><span class="keyword">= </span><span class="default">bindec</span><span class="keyword">(</span><span class="default">substr</span><span class="keyword">(</span><span class="default">$bin</span><span class="keyword">, </span><span class="default">1</span><span class="keyword">, </span><span class="default">8</span><span class="keyword">)) - </span><span class="default">127</span><span class="keyword">; <br /></span><span class="default">$man </span><span class="keyword">= (</span><span class="default">2 </span><span class="keyword">&lt;&lt; </span><span class="default">22</span><span class="keyword">) + </span><span class="default">bindec</span><span class="keyword">(</span><span class="default">substr</span><span class="keyword">(</span><span class="default">$bin</span><span class="keyword">, </span><span class="default">9</span><span class="keyword">, </span><span class="default">23</span><span class="keyword">)); <br /><br /></span><span class="default">$dec </span><span class="keyword">= </span><span class="default">$man </span><span class="keyword">* </span><span class="default">pow</span><span class="keyword">(</span><span class="default">2</span><span class="keyword">, </span><span class="default">$exp </span><span class="keyword">- </span><span class="default">23</span><span class="keyword">) * (</span><span class="default">$sign </span><span class="keyword">? -</span><span class="default">1 </span><span class="keyword">: </span><span class="default">1</span><span class="keyword">); <br /><br />echo </span><span class="string">"Answer = " </span><span class="keyword">. </span><span class="default">$dec </span><span class="keyword">. </span><span class="string">"&lt;BR&gt;\n"</span><span class="keyword">; <br /><br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="83577"> <div class="votes">
+<div id="Vu83577">
+<a href="http://php.net/manual/vote-note.php?id=83577&amp;page=language.types.float&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd83577">
+<a href="http://php.net/manual/vote-note.php?id=83577&amp;page=language.types.float&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V83577" title="52% like this...">
+    1
+    </div>
+</div>
+<a href="#83577" class="name">
+<strong class="user"><em>kjohnson at zootweb dot com</em></strong></a><a class="genanchor" href="#83577"> &para;</a><div class="date" title="2008-06-02 12:23"><strong>7 years ago</strong></div>
+<div class="text" id="Hcom83577">
+<div class="phpcode"><code><span class="html">
+PHP switches from the standard decimal notation to exponential notation for certain "special" floats. You can see a partial list of such "special" values with this:<br /><br /><span class="default">&lt;?php<br /></span><span class="keyword">for( </span><span class="default">$tmp </span><span class="keyword">= </span><span class="default">0</span><span class="keyword">, </span><span class="default">$i </span><span class="keyword">= </span><span class="default">0</span><span class="keyword">; </span><span class="default">$i </span><span class="keyword">&lt; </span><span class="default">100</span><span class="keyword">; </span><span class="default">$i</span><span class="keyword">++ ) {<br />&nbsp; &nbsp; </span><span class="default">$tmp </span><span class="keyword">+= </span><span class="default">100000</span><span class="keyword">;<br />&nbsp; &nbsp; echo </span><span class="default">round</span><span class="keyword">(</span><span class="default">$tmp</span><span class="keyword">),</span><span class="string">"\n"</span><span class="keyword">;<br />}<br /></span><span class="default">?&gt;<br /></span><br />So, if you add two floats, end up with a "special" value, e.g. 1.2E+6, then put that value unmodified into an update query to store the value in a decimal column, say, you will likely get a failed transaction, since the database will see "1.2E+6" as varchar data, not decimal. Likewise, you will likely get an XSD validation error if you put the value into xml.<br /><br />I have to be honest: this is one of the strangest things I have seen in any language in over 20 years of coding, and it is a colossal pain to work around.</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="98272"> <div class="votes">
+<div id="Vu98272">
+<a href="http://php.net/manual/vote-note.php?id=98272&amp;page=language.types.float&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd98272">
+<a href="http://php.net/manual/vote-note.php?id=98272&amp;page=language.types.float&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V98272" title="51% like this...">
+    1
+    </div>
+</div>
+<a href="#98272" class="name">
+<strong class="user"><em>zelko at mojeime dot com</em></strong></a><a class="genanchor" href="#98272"> &para;</a><div class="date" title="2010-06-05 01:43"><strong>5 years ago</strong></div>
+<div class="text" id="Hcom98272">
+<div class="phpcode"><code><span class="html">
+The was talk about "converting" 32 and 64 bit IEEE754 binary numbers to PHP float. The issue isn't as much converting, since they are already in binary form, as it is casting. PHP doesn't allow direct accessing of memory, but you can still get around a bit.<br /><br />The right was to read floats (32 and 64 bit) is this:<br /><br /><span class="default">&lt;?php<br />&nbsp; &nbsp; $binarydata32 </span><span class="keyword">= </span><span class="default">pack</span><span class="keyword">(</span><span class="string">'H*'</span><span class="keyword">,</span><span class="string">'0EC0A14A'</span><span class="keyword">);<br />&nbsp; &nbsp; </span><span class="default">$float32 </span><span class="keyword">= </span><span class="default">unpack</span><span class="keyword">(</span><span class="string">"f"</span><span class="keyword">, </span><span class="default">$binarydata32</span><span class="keyword">);<br />&nbsp; &nbsp; <br />&nbsp; &nbsp; </span><span class="default">$binarydata64 </span><span class="keyword">= </span><span class="default">pack</span><span class="keyword">(</span><span class="string">'H*'</span><span class="keyword">,</span><span class="string">'000000C001385441'</span><span class="keyword">);<br />&nbsp; &nbsp; </span><span class="default">$float64 </span><span class="keyword">= </span><span class="default">unpack</span><span class="keyword">(</span><span class="string">"d"</span><span class="keyword">, </span><span class="default">$binarydata64</span><span class="keyword">);<br />&nbsp; &nbsp; <br />&nbsp; &nbsp; </span><span class="default">var_dump</span><span class="keyword">(</span><span class="default">$float32</span><span class="keyword">,</span><span class="default">$float64</span><span class="keyword">,</span><span class="default">$float32</span><span class="keyword">==</span><span class="default">$float64</span><span class="keyword">);&nbsp;&nbsp; <br /></span><span class="default">?&gt;<br /></span><br />The result of dump():<br /><span class="default">&lt;?php<br /> </span><span class="keyword">array(</span><span class="default">1</span><span class="keyword">) {<br />&nbsp; [</span><span class="default">1</span><span class="keyword">]=&gt;<br />&nbsp; </span><span class="default">float</span><span class="keyword">(</span><span class="default">5300231</span><span class="keyword">)<br />}<br />array(</span><span class="default">1</span><span class="keyword">) {<br />&nbsp; [</span><span class="default">1</span><span class="keyword">]=&gt;<br />&nbsp; </span><span class="default">float</span><span class="keyword">(</span><span class="default">5300231</span><span class="keyword">)<br />}<br /></span><span class="default">bool</span><span class="keyword">(</span><span class="default">true</span><span class="keyword">)<br /></span><span class="default">?&gt;<br /></span><br />Note: mind the Big and Little endian boys</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="90754"> <div class="votes">
+<div id="Vu90754">
+<a href="http://php.net/manual/vote-note.php?id=90754&amp;page=language.types.float&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd90754">
+<a href="http://php.net/manual/vote-note.php?id=90754&amp;page=language.types.float&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V90754" title="51% like this...">
+    1
+    </div>
+</div>
+<a href="#90754" class="name">
+<strong class="user"><em>Bob</em></strong></a><a class="genanchor" href="#90754"> &para;</a><div class="date" title="2009-05-07 10:04"><strong>6 years ago</strong></div>
+<div class="text" id="Hcom90754">
+<div class="phpcode"><code><span class="html">
+Here is a function to convert an exponential-format float to a decimal-format float; e.g. 1.6e+12 to 1600000000000.<br />It will help addressing the problem specified by kjohnson above.<br />I have tested it, but not in any real world situation so any feedback/improvements/bug-reports would be appreciated.<br /><span class="default">&lt;?php<br /></span><span class="keyword">function </span><span class="default">exp_to_dec</span><span class="keyword">(</span><span class="default">$float_str</span><span class="keyword">)<br /></span><span class="comment">// formats a floating point number string in decimal notation, supports signed floats, also supports non-standard formatting e.g. 0.2e+2 for 20<br />// e.g. '1.6E+6' to '1600000', '-4.566e-12' to '-0.000000000004566', '+34e+10' to '340000000000'<br />// Author: Bob<br /></span><span class="keyword">{<br />&nbsp; &nbsp; </span><span class="comment">// make sure its a standard php float string (i.e. change 0.2e+2 to 20)<br />&nbsp; &nbsp; // php will automatically format floats decimally if they are within a certain range<br />&nbsp; &nbsp; </span><span class="default">$float_str </span><span class="keyword">= (string)((float)(</span><span class="default">$float_str</span><span class="keyword">));<br /><br />&nbsp; &nbsp; </span><span class="comment">// if there is an E in the float string<br />&nbsp; &nbsp; </span><span class="keyword">if((</span><span class="default">$pos </span><span class="keyword">= </span><span class="default">strpos</span><span class="keyword">(</span><span class="default">strtolower</span><span class="keyword">(</span><span class="default">$float_str</span><span class="keyword">), </span><span class="string">'e'</span><span class="keyword">)) !== </span><span class="default">false</span><span class="keyword">)<br />&nbsp; &nbsp; {<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">// get either side of the E, e.g. 1.6E+6 =&gt; exp E+6, num 1.6<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$exp </span><span class="keyword">= </span><span class="default">substr</span><span class="keyword">(</span><span class="default">$float_str</span><span class="keyword">, </span><span class="default">$pos</span><span class="keyword">+</span><span class="default">1</span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$num </span><span class="keyword">= </span><span class="default">substr</span><span class="keyword">(</span><span class="default">$float_str</span><span class="keyword">, </span><span class="default">0</span><span class="keyword">, </span><span class="default">$pos</span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">// strip off num sign, if there is one, and leave it off if its + (not required)<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="keyword">if(((</span><span class="default">$num_sign </span><span class="keyword">= </span><span class="default">$num</span><span class="keyword">[</span><span class="default">0</span><span class="keyword">]) === </span><span class="string">'+'</span><span class="keyword">) || (</span><span class="default">$num_sign </span><span class="keyword">=== </span><span class="string">'-'</span><span class="keyword">)) </span><span class="default">$num </span><span class="keyword">= </span><span class="default">substr</span><span class="keyword">(</span><span class="default">$num</span><span class="keyword">, </span><span class="default">1</span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; else </span><span class="default">$num_sign </span><span class="keyword">= </span><span class="string">''</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; if(</span><span class="default">$num_sign </span><span class="keyword">=== </span><span class="string">'+'</span><span class="keyword">) </span><span class="default">$num_sign </span><span class="keyword">= </span><span class="string">''</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">// strip off exponential sign ('+' or '-' as in 'E+6') if there is one, otherwise throw error, e.g. E+6 =&gt; '+'<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="keyword">if(((</span><span class="default">$exp_sign </span><span class="keyword">= </span><span class="default">$exp</span><span class="keyword">[</span><span class="default">0</span><span class="keyword">]) === </span><span class="string">'+'</span><span class="keyword">) || (</span><span class="default">$exp_sign </span><span class="keyword">=== </span><span class="string">'-'</span><span class="keyword">)) </span><span class="default">$exp </span><span class="keyword">= </span><span class="default">substr</span><span class="keyword">(</span><span class="default">$exp</span><span class="keyword">, </span><span class="default">1</span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; else </span><span class="default">trigger_error</span><span class="keyword">(</span><span class="string">"Could not convert exponential notation to decimal notation: invalid float string '</span><span class="default">$float_str</span><span class="string">'"</span><span class="keyword">, </span><span class="default">E_USER_ERROR</span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">// get the number of decimal places to the right of the decimal point (or 0 if there is no dec point), e.g., 1.6 =&gt; 1<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$right_dec_places </span><span class="keyword">= ((</span><span class="default">$dec_pos </span><span class="keyword">= </span><span class="default">strpos</span><span class="keyword">(</span><span class="default">$num</span><span class="keyword">, </span><span class="string">'.'</span><span class="keyword">)) === </span><span class="default">false</span><span class="keyword">) ? </span><span class="default">0 </span><span class="keyword">: </span><span class="default">strlen</span><span class="keyword">(</span><span class="default">substr</span><span class="keyword">(</span><span class="default">$num</span><span class="keyword">, </span><span class="default">$dec_pos</span><span class="keyword">+</span><span class="default">1</span><span class="keyword">));<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">// get the number of decimal places to the left of the decimal point (or the length of the entire num if there is no dec point), e.g. 1.6 =&gt; 1<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$left_dec_places </span><span class="keyword">= (</span><span class="default">$dec_pos </span><span class="keyword">=== </span><span class="default">false</span><span class="keyword">) ? </span><span class="default">strlen</span><span class="keyword">(</span><span class="default">$num</span><span class="keyword">) : </span><span class="default">strlen</span><span class="keyword">(</span><span class="default">substr</span><span class="keyword">(</span><span class="default">$num</span><span class="keyword">, </span><span class="default">0</span><span class="keyword">, </span><span class="default">$dec_pos</span><span class="keyword">));<br />&nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">// work out number of zeros from exp, exp sign and dec places, e.g. exp 6, exp sign +, dec places 1 =&gt; num zeros 5<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="keyword">if(</span><span class="default">$exp_sign </span><span class="keyword">=== </span><span class="string">'+'</span><span class="keyword">) </span><span class="default">$num_zeros </span><span class="keyword">= </span><span class="default">$exp </span><span class="keyword">- </span><span class="default">$right_dec_places</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; else </span><span class="default">$num_zeros </span><span class="keyword">= </span><span class="default">$exp </span><span class="keyword">- </span><span class="default">$left_dec_places</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">// build a string with $num_zeros zeros, e.g. '0' 5 times =&gt; '00000'<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$zeros </span><span class="keyword">= </span><span class="default">str_pad</span><span class="keyword">(</span><span class="string">''</span><span class="keyword">, </span><span class="default">$num_zeros</span><span class="keyword">, </span><span class="string">'0'</span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">// strip decimal from num, e.g. 1.6 =&gt; 16<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="keyword">if(</span><span class="default">$dec_pos </span><span class="keyword">!== </span><span class="default">false</span><span class="keyword">) </span><span class="default">$num </span><span class="keyword">= </span><span class="default">str_replace</span><span class="keyword">(</span><span class="string">'.'</span><span class="keyword">, </span><span class="string">''</span><span class="keyword">, </span><span class="default">$num</span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">// if positive exponent, return like 1600000<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="keyword">if(</span><span class="default">$exp_sign </span><span class="keyword">=== </span><span class="string">'+'</span><span class="keyword">) return </span><span class="default">$num_sign</span><span class="keyword">.</span><span class="default">$num</span><span class="keyword">.</span><span class="default">$zeros</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">// if negative exponent, return like 0.0000016<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="keyword">else return </span><span class="default">$num_sign</span><span class="keyword">.</span><span class="string">'0.'</span><span class="keyword">.</span><span class="default">$zeros</span><span class="keyword">.</span><span class="default">$num</span><span class="keyword">;<br />&nbsp; &nbsp; }<br />&nbsp; &nbsp; </span><span class="comment">// otherwise, assume already in decimal notation and return<br />&nbsp; &nbsp; </span><span class="keyword">else return </span><span class="default">$float_str</span><span class="keyword">;<br />}<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="88849"> <div class="votes">
+<div id="Vu88849">
+<a href="http://php.net/manual/vote-note.php?id=88849&amp;page=language.types.float&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd88849">
+<a href="http://php.net/manual/vote-note.php?id=88849&amp;page=language.types.float&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V88849" title="47% like this...">
+    -1
+    </div>
+</div>
+<a href="#88849" class="name">
+<strong class="user"><em>info at forrest79 dot net</em></strong></a><a class="genanchor" href="#88849"> &para;</a><div class="date" title="2009-02-10 12:55"><strong>6 years ago</strong></div>
+<div class="text" id="Hcom88849">
+<div class="phpcode"><code><span class="html">
+My BIN to FLOAT (IEEE754), the first one doesn't work for me:<br /> <br /><span class="default">&lt;?php<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="keyword">function </span><span class="default">binToFloat</span><span class="keyword">(</span><span class="default">$bin</span><span class="keyword">) {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if(</span><span class="default">strlen</span><span class="keyword">(</span><span class="default">$bin</span><span class="keyword">) &gt; </span><span class="default">32</span><span class="keyword">) {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return </span><span class="default">false</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } else if(</span><span class="default">strlen</span><span class="keyword">(</span><span class="default">$bin</span><span class="keyword">) &lt; </span><span class="default">32</span><span class="keyword">) {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$bin </span><span class="keyword">= </span><span class="default">str_repeat</span><span class="keyword">(</span><span class="string">'0'</span><span class="keyword">, (</span><span class="default">32 </span><span class="keyword">- </span><span class="default">strlen</span><span class="keyword">(</span><span class="default">$bin</span><span class="keyword">))) . </span><span class="default">$bin</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br /> <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$sign </span><span class="keyword">= </span><span class="default">1</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if(</span><span class="default">intval</span><span class="keyword">(</span><span class="default">$bin</span><span class="keyword">[</span><span class="default">0</span><span class="keyword">]) == </span><span class="default">1</span><span class="keyword">) {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$sign </span><span class="keyword">= -</span><span class="default">1</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br /> <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$binExponent </span><span class="keyword">= </span><span class="default">substr</span><span class="keyword">(</span><span class="default">$bin</span><span class="keyword">, </span><span class="default">1</span><span class="keyword">, </span><span class="default">8</span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$exponent </span><span class="keyword">= -</span><span class="default">127</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for(</span><span class="default">$i </span><span class="keyword">= </span><span class="default">0</span><span class="keyword">; </span><span class="default">$i </span><span class="keyword">&lt; </span><span class="default">8</span><span class="keyword">; </span><span class="default">$i</span><span class="keyword">++) {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$exponent </span><span class="keyword">+= (</span><span class="default">intval</span><span class="keyword">(</span><span class="default">$binExponent</span><span class="keyword">[</span><span class="default">7 </span><span class="keyword">- </span><span class="default">$i</span><span class="keyword">]) * </span><span class="default">pow</span><span class="keyword">(</span><span class="default">2</span><span class="keyword">, </span><span class="default">$i</span><span class="keyword">));<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br /> <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$binBase </span><span class="keyword">= </span><span class="default">substr</span><span class="keyword">(</span><span class="default">$bin</span><span class="keyword">, </span><span class="default">9</span><span class="keyword">);&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$base </span><span class="keyword">= </span><span class="default">1.0</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for(</span><span class="default">$x </span><span class="keyword">= </span><span class="default">0</span><span class="keyword">; </span><span class="default">$x </span><span class="keyword">&lt; </span><span class="default">23</span><span class="keyword">; </span><span class="default">$x</span><span class="keyword">++) {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$base </span><span class="keyword">+= (</span><span class="default">intval</span><span class="keyword">(</span><span class="default">$binBase</span><span class="keyword">[</span><span class="default">$x</span><span class="keyword">]) * </span><span class="default">pow</span><span class="keyword">(</span><span class="default">0.5</span><span class="keyword">, (</span><span class="default">$x </span><span class="keyword">+ </span><span class="default">1</span><span class="keyword">)));<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br /> <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$float </span><span class="keyword">= (float) </span><span class="default">$sign </span><span class="keyword">* </span><span class="default">pow</span><span class="keyword">(</span><span class="default">2</span><span class="keyword">, </span><span class="default">$exponent</span><span class="keyword">) * </span><span class="default">$base</span><span class="keyword">;<br /> <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return </span><span class="default">$float</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; }<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="92885"> <div class="votes">
+<div id="Vu92885">
+<a href="http://php.net/manual/vote-note.php?id=92885&amp;page=language.types.float&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd92885">
+<a href="http://php.net/manual/vote-note.php?id=92885&amp;page=language.types.float&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V92885" title="46% like this...">
+    -2
+    </div>
+</div>
+<a href="#92885" class="name">
+<strong class="user"><em>francois dot barbier at gmail dot com</em></strong></a><a class="genanchor" href="#92885"> &para;</a><div class="date" title="2009-08-12 08:49"><strong>6 years ago</strong></div>
+<div class="text" id="Hcom92885">
+<div class="phpcode"><code><span class="html">
+As "m dot lebkowski+php at gmail dot com" (<a href="http://www.php.net/language.types.float#81416" rel="nofollow" target="_blank">http://www.php.net/language.types.float#81416</a>) noted 9 comments below :<br /><br />When PHP converts a float to a string, the decimal separator used depends on the current locale conventions.<br /><br />However, to declare a floating point number, one must always use a full stop otherwhise the code would be locale dependent (imagine the nightmare):<br /><span class="default">&lt;?php<br />$float </span><span class="keyword">= </span><span class="default">1.5</span><span class="keyword">;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="comment">// float(1.5)<br /></span><span class="default">$float </span><span class="keyword">= </span><span class="default">1</span><span class="keyword">,</span><span class="default">5</span><span class="keyword">;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="comment">// Parse error: syntax error, unexpected ','<br /></span><span class="default">$float </span><span class="keyword">= (float) </span><span class="string">'1.5'</span><span class="keyword">; </span><span class="comment">// float(1.5)<br /></span><span class="default">$float </span><span class="keyword">= (float) </span><span class="string">'1,5'</span><span class="keyword">; </span><span class="comment">// float(1)<br /></span><span class="default">?&gt;<br /></span><br />Now, if you have a string containing a localized number, you can convert it back to a floating point number using the following function:<br /><span class="default">&lt;?php<br /></span><span class="comment">/**<br /> * Convert a localized number string into a floating point number<br /> *<br /> * @param&nbsp; &nbsp; &nbsp; string $sNumber The localized number string to convert.<br /> * @return&nbsp; &nbsp;&nbsp; float The converted number.<br /> */<br /></span><span class="keyword">function </span><span class="default">str2num</span><span class="keyword">(</span><span class="default">$sNumber</span><span class="keyword">)<br />{<br />&nbsp; &nbsp; </span><span class="default">$aConventions </span><span class="keyword">= </span><span class="default">localeConv</span><span class="keyword">();<br />&nbsp; &nbsp; </span><span class="default">$sNumber </span><span class="keyword">= </span><span class="default">trim</span><span class="keyword">((string) </span><span class="default">$sNumber</span><span class="keyword">);<br />&nbsp; &nbsp; </span><span class="default">$bIsNegative </span><span class="keyword">= (</span><span class="default">0 </span><span class="keyword">=== </span><span class="default">$aConventions</span><span class="keyword">[</span><span class="string">'n_sign_posn'</span><span class="keyword">] &amp;&amp; </span><span class="string">'(' </span><span class="keyword">=== </span><span class="default">$sNumber</span><span class="keyword">{</span><span class="default">0</span><span class="keyword">} &amp;&amp; </span><span class="string">')' </span><span class="keyword">=== </span><span class="default">$sNumber</span><span class="keyword">{</span><span class="default">strlen</span><span class="keyword">(</span><span class="default">$sNumber</span><span class="keyword">) - </span><span class="default">1</span><span class="keyword">});<br />&nbsp; &nbsp; </span><span class="default">$sCharacters </span><span class="keyword">= </span><span class="default">$aConventions</span><span class="keyword">[</span><span class="string">'decimal_point'</span><span class="keyword">].<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="default">$aConventions</span><span class="keyword">[</span><span class="string">'mon_decimal_point'</span><span class="keyword">].<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="default">$aConventions</span><span class="keyword">[</span><span class="string">'negative_sign'</span><span class="keyword">];<br />&nbsp; &nbsp; </span><span class="default">$sNumber </span><span class="keyword">= </span><span class="default">preg_replace</span><span class="keyword">(</span><span class="string">'/[^'</span><span class="keyword">.</span><span class="default">preg_quote</span><span class="keyword">(</span><span class="default">$sCharacters</span><span class="keyword">).</span><span class="string">'\d]+/'</span><span class="keyword">, </span><span class="string">''</span><span class="keyword">, </span><span class="default">trim</span><span class="keyword">((string) </span><span class="default">$sNumber</span><span class="keyword">));<br />&nbsp; &nbsp; </span><span class="default">$iLength </span><span class="keyword">= </span><span class="default">strlen</span><span class="keyword">(</span><span class="default">$sNumber</span><span class="keyword">);<br />&nbsp; &nbsp; if (</span><span class="default">strlen</span><span class="keyword">(</span><span class="default">$aConventions</span><span class="keyword">[</span><span class="string">'decimal_point'</span><span class="keyword">]))<br />&nbsp; &nbsp; {<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$sNumber </span><span class="keyword">= </span><span class="default">str_replace</span><span class="keyword">(</span><span class="default">$aConventions</span><span class="keyword">[</span><span class="string">'decimal_point'</span><span class="keyword">], </span><span class="string">'.'</span><span class="keyword">, </span><span class="default">$sNumber</span><span class="keyword">);<br />&nbsp; &nbsp; }<br />&nbsp; &nbsp; if (</span><span class="default">strlen</span><span class="keyword">(</span><span class="default">$aConventions</span><span class="keyword">[</span><span class="string">'mon_decimal_point'</span><span class="keyword">]))<br />&nbsp; &nbsp; {<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$sNumber </span><span class="keyword">= </span><span class="default">str_replace</span><span class="keyword">(</span><span class="default">$aConventions</span><span class="keyword">[</span><span class="string">'mon_decimal_point'</span><span class="keyword">], </span><span class="string">'.'</span><span class="keyword">, </span><span class="default">$sNumber</span><span class="keyword">);<br />&nbsp; &nbsp; }<br />&nbsp; &nbsp; </span><span class="default">$sNegativeSign </span><span class="keyword">= </span><span class="default">$aConventions</span><span class="keyword">[</span><span class="string">'negative_sign'</span><span class="keyword">];<br />&nbsp; &nbsp; if (</span><span class="default">strlen</span><span class="keyword">(</span><span class="default">$sNegativeSign</span><span class="keyword">) &amp;&amp; </span><span class="default">0 </span><span class="keyword">!== </span><span class="default">$aConventions</span><span class="keyword">[</span><span class="string">'n_sign_posn'</span><span class="keyword">])<br />&nbsp; &nbsp; {<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$bIsNegative </span><span class="keyword">= (</span><span class="default">$sNegativeSign </span><span class="keyword">=== </span><span class="default">$sNumber</span><span class="keyword">{</span><span class="default">0</span><span class="keyword">} || </span><span class="default">$sNegativeSign </span><span class="keyword">=== </span><span class="default">$sNumber</span><span class="keyword">{</span><span class="default">$iLength </span><span class="keyword">- </span><span class="default">1</span><span class="keyword">});<br />&nbsp; &nbsp; &nbsp; &nbsp; if (</span><span class="default">$bIsNegative</span><span class="keyword">)<br />&nbsp; &nbsp; &nbsp; &nbsp; {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$sNumber </span><span class="keyword">= </span><span class="default">str_replace</span><span class="keyword">(</span><span class="default">$aConventions</span><span class="keyword">[</span><span class="string">'negative_sign'</span><span class="keyword">], </span><span class="string">''</span><span class="keyword">, </span><span class="default">$sNumber</span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; }<br />&nbsp; &nbsp; </span><span class="default">$fNumber </span><span class="keyword">= (float) </span><span class="default">$sNumber</span><span class="keyword">;<br />&nbsp; &nbsp; if (</span><span class="default">$bIsNegative</span><span class="keyword">)<br />&nbsp; &nbsp; {<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$fNumber </span><span class="keyword">= -</span><span class="default">$fNumber</span><span class="keyword">;<br />&nbsp; &nbsp; }<br />&nbsp; &nbsp; return </span><span class="default">$fNumber</span><span class="keyword">;<br />}<br /></span><span class="default">?&gt;<br /></span><br />Example:<br /><span class="default">&lt;?php<br />setLocale</span><span class="keyword">(</span><span class="default">LC_ALL</span><span class="keyword">, </span><span class="string">'fr_BE.UTF-8'</span><span class="keyword">); </span><span class="comment">// decimal separator is now a comma<br /></span><span class="default">$float </span><span class="keyword">= -</span><span class="default">123456.789</span><span class="keyword">;<br /></span><span class="default">$string </span><span class="keyword">= (string) </span><span class="default">$float</span><span class="keyword">;<br /></span><span class="default">var_dump</span><span class="keyword">(</span><span class="default">$float</span><span class="keyword">);&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="comment">// float(-123456,789)<br /></span><span class="default">var_dump</span><span class="keyword">(</span><span class="default">$string</span><span class="keyword">);&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">// string(11) "-123456,789"<br /></span><span class="default">var_dump</span><span class="keyword">((float) </span><span class="default">$string</span><span class="keyword">);&nbsp; </span><span class="comment">// float(-123456)<br /></span><span class="default">var_dump</span><span class="keyword">(</span><span class="default">str2num</span><span class="keyword">(</span><span class="default">$string</span><span class="keyword">)); </span><span class="comment">// float(-123456,789)<br /></span><span class="default">?&gt;<br /></span><br />It also works with strings returned by the number_format() function:<br /><span class="default">&lt;?php<br />setLocale</span><span class="keyword">(</span><span class="default">LC_ALL</span><span class="keyword">, </span><span class="string">'fr_BE.UTF-8'</span><span class="keyword">); </span><span class="comment">// decimal separator is now a comma<br /></span><span class="default">$conv </span><span class="keyword">= </span><span class="default">localeconv</span><span class="keyword">();<br /></span><span class="default">$float </span><span class="keyword">= -</span><span class="default">123456.789</span><span class="keyword">;<br /></span><span class="default">$string </span><span class="keyword">= </span><span class="default">$conv</span><span class="keyword">[</span><span class="string">'int_curr_symbol'</span><span class="keyword">].</span><span class="default">number_format</span><span class="keyword">(</span><span class="default">$float</span><span class="keyword">, </span><span class="default">$conv</span><span class="keyword">[</span><span class="string">'frac_digits'</span><span class="keyword">], </span><span class="default">$conv</span><span class="keyword">[</span><span class="string">'decimal_point'</span><span class="keyword">], </span><span class="default">$conv</span><span class="keyword">[</span><span class="string">'thousands_sep'</span><span class="keyword">]);<br /></span><span class="default">var_dump</span><span class="keyword">(</span><span class="default">$float</span><span class="keyword">);&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="comment">// float(-123456,789)<br /></span><span class="default">var_dump</span><span class="keyword">(</span><span class="default">$string</span><span class="keyword">);&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">// string(15) "EUR -123.456,79"<br /></span><span class="default">var_dump</span><span class="keyword">((float) </span><span class="default">$string</span><span class="keyword">);&nbsp; </span><span class="comment">// float(0)<br /></span><span class="default">var_dump</span><span class="keyword">(</span><span class="default">str2num</span><span class="keyword">(</span><span class="default">$string</span><span class="keyword">)); </span><span class="comment">// float(-123456,79)<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="102789"> <div class="votes">
+<div id="Vu102789">
+<a href="http://php.net/manual/vote-note.php?id=102789&amp;page=language.types.float&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd102789">
+<a href="http://php.net/manual/vote-note.php?id=102789&amp;page=language.types.float&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V102789" title="45% like this...">
+    -2
+    </div>
+</div>
+<a href="#102789" class="name">
+<strong class="user"><em>manasseh at smartcomputerinc.com</em></strong></a><a class="genanchor" href="#102789"> &para;</a><div class="date" title="2011-03-06 07:35"><strong>4 years ago</strong></div>
+<div class="text" id="Hcom102789">
+<div class="phpcode"><code><span class="html">
+I found that 00000000 hex was converting to 1.0 decimal. From the Wikipedia article on IEEE-754 floating point:<br /><br />The true significand includes 23 fraction bits to the right of the binary point and an implicit leading bit (to the left of the binary point) with value 1 unless the exponent is stored with all zeros.<br /><br />In hex2float32n, replace:<br /><br />&nbsp; &nbsp; &nbsp; $intnumber=bindec("1".$binint);<br /><br />with<br /><br />&nbsp;&nbsp; if ($exp &lt;&gt; -127)<br />&nbsp; &nbsp; &nbsp; { $intnumber=bindec("1".$binint); };<br /><br />and then 00000000 works correctly without affecting "normal" numbers.</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="78668"> <div class="votes">
+<div id="Vu78668">
+<a href="http://php.net/manual/vote-note.php?id=78668&amp;page=language.types.float&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd78668">
+<a href="http://php.net/manual/vote-note.php?id=78668&amp;page=language.types.float&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V78668" title="44% like this...">
+    -2
+    </div>
+</div>
+<a href="#78668" class="name">
+<strong class="user"><em>helly at php dot net</em></strong></a><a class="genanchor" href="#78668"> &para;</a><div class="date" title="2007-10-22 12:10"><strong>8 years ago</strong></div>
+<div class="text" id="Hcom78668">
+<div class="phpcode"><code><span class="html">
+Floating point values have a limited precision. Hence a value might not have the same string representation after any processing. That also includes writing a floating point value in your script and directly printing it without any mathematical operations.<br /><br />If you would like to know more about "floats" and what IEEE 754 is read this: <a href="http://docs.sun.com/source/806-3568/ncg_goldberg.html" rel="nofollow" target="_blank">http://docs.sun.com/source/806-3568/ncg_goldberg.html</a></span>
+</code></div>
+</div>
+</div>
+<div class="note" id="95624"> <div class="votes">
+<div id="Vu95624">
+<a href="http://php.net/manual/vote-note.php?id=95624&amp;page=language.types.float&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd95624">
+<a href="http://php.net/manual/vote-note.php?id=95624&amp;page=language.types.float&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V95624" title="44% like this...">
+    -3
+    </div>
+</div>
+<a href="#95624" class="name">
+<strong class="user"><em>pgarvin76+phpmanual at gmail dot com</em></strong></a><a class="genanchor" href="#95624"> &para;</a><div class="date" title="2010-01-12 07:36"><strong>6 years ago</strong></div>
+<div class="text" id="Hcom95624">
+<div class="phpcode"><code><span class="html">
+When converting from float to string trailing zeros will be dropped. Consider the following example. Tested on PHP 5.3.1.<br /><br /><span class="default">&lt;?php<br />$a </span><span class="keyword">= </span><span class="default">5.00500</span><span class="keyword">;<br /></span><span class="default">$b </span><span class="keyword">= </span><span class="default">30.00</span><span class="keyword">;<br />echo </span><span class="string">"a = </span><span class="default">$a</span><span class="string">\n"</span><span class="keyword">;<br />echo </span><span class="string">"b = </span><span class="default">$b</span><span class="string">\n"</span><span class="keyword">;<br /></span><span class="comment">/* outputs:<br />a = 5.005<br />b = 30<br />*/<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="91267"> <div class="votes">
+<div id="Vu91267">
+<a href="http://php.net/manual/vote-note.php?id=91267&amp;page=language.types.float&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd91267">
+<a href="http://php.net/manual/vote-note.php?id=91267&amp;page=language.types.float&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V91267" title="43% like this...">
+    -3
+    </div>
+</div>
+<a href="#91267" class="name">
+<strong class="user"><em>rob at willo dot org</em></strong></a><a class="genanchor" href="#91267"> &para;</a><div class="date" title="2009-06-02 09:18"><strong>6 years ago</strong></div>
+<div class="text" id="Hcom91267">
+<div class="phpcode"><code><span class="html">
+PHP will parse ".123" with no leading digit; just a decimal point. For a command-line example:<br /><br />php -r "echo 1 + .123;"<br /><br />The regular expression provided above does not parse it.<br />My correction is:<br /><br />EXPONENT_DNUM = "[+-]?({DNUM} | ({LNUM} | {DNUM}) [eE][+-]? {LNUM})"<br /><br />NOTE: {LNUM} by itself is an integer, not a floating point.</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="110450"> <div class="votes">
+<div id="Vu110450">
+<a href="http://php.net/manual/vote-note.php?id=110450&amp;page=language.types.float&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd110450">
+<a href="http://php.net/manual/vote-note.php?id=110450&amp;page=language.types.float&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V110450" title="42% like this...">
+    -3
+    </div>
+</div>
+<a href="#110450" class="name">
+<strong class="user"><em>pcunha at gmail dot com</em></strong></a><a class="genanchor" href="#110450"> &para;</a><div class="date" title="2012-10-23 02:12"><strong>3 years ago</strong></div>
+<div class="text" id="Hcom110450">
+<div class="phpcode"><code><span class="html">
+To simply convert 32 bits float from hex to float:<br /> <br /><span class="default">&lt;?php<br /></span><span class="keyword">function </span><span class="default">hexfloat </span><span class="keyword">(</span><span class="default">$hex</span><span class="keyword">){<br />&nbsp; &nbsp; return (</span><span class="default">unpack</span><span class="keyword">(</span><span class="string">"f"</span><span class="keyword">, </span><span class="default">pack</span><span class="keyword">(</span><span class="string">'H*'</span><span class="keyword">,</span><span class="default">$hex</span><span class="keyword">))[</span><span class="default">1</span><span class="keyword">]);<br />}<br /></span><span class="default">?&gt;<br /></span> <br />This may be useful for arduino interface with php.</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="117027"> <div class="votes">
+<div id="Vu117027">
+<a href="http://php.net/manual/vote-note.php?id=117027&amp;page=language.types.float&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd117027">
+<a href="http://php.net/manual/vote-note.php?id=117027&amp;page=language.types.float&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V117027" title="33% like this...">
+    -2
+    </div>
+</div>
+<a href="#117027" class="name">
+<strong class="user"><em>nathanb at php dot net</em></strong></a><a class="genanchor" href="#117027"> &para;</a><div class="date" title="2015-04-03 05:45"><strong>9 months ago</strong></div>
+<div class="text" id="Hcom117027">
+<div class="phpcode"><code><span class="html">
+An extremely small and simple example of this is:<br /><span class="default">&lt;?php<br />&nbsp; </span><span class="keyword">echo </span><span class="default">intval</span><span class="keyword">(</span><span class="default">19.31 </span><span class="keyword">* </span><span class="default">100</span><span class="keyword">);<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="106145"> <div class="votes">
+<div id="Vu106145">
+<a href="http://php.net/manual/vote-note.php?id=106145&amp;page=language.types.float&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd106145">
+<a href="http://php.net/manual/vote-note.php?id=106145&amp;page=language.types.float&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V106145" title="37% like this...">
+    -7
+    </div>
+</div>
+<a href="#106145" class="name">
+<strong class="user"><em>reinaldorock at yahoo dot com dot br</em></strong></a><a class="genanchor" href="#106145"> &para;</a><div class="date" title="2011-10-13 07:12"><strong>4 years ago</strong></div>
+<div class="text" id="Hcom106145">
+<div class="phpcode"><code><span class="html">
+Convert locale string into float number<br /> <br /><span class="default">&lt;?php<br /></span><span class="keyword">function </span><span class="default">str2num</span><span class="keyword">(</span><span class="default">$str</span><span class="keyword">){<br />&nbsp; if(</span><span class="default">strpos</span><span class="keyword">(</span><span class="default">$str</span><span class="keyword">, </span><span class="string">'.'</span><span class="keyword">) &lt; </span><span class="default">strpos</span><span class="keyword">(</span><span class="default">$str</span><span class="keyword">,</span><span class="string">','</span><span class="keyword">)){<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$str </span><span class="keyword">= </span><span class="default">str_replace</span><span class="keyword">(</span><span class="string">'.'</span><span class="keyword">,</span><span class="string">''</span><span class="keyword">,</span><span class="default">$str</span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$str </span><span class="keyword">= </span><span class="default">strtr</span><span class="keyword">(</span><span class="default">$str</span><span class="keyword">,</span><span class="string">','</span><span class="keyword">,</span><span class="string">'.'</span><span class="keyword">);&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; &nbsp; &nbsp; else{<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$str </span><span class="keyword">= </span><span class="default">str_replace</span><span class="keyword">(</span><span class="string">','</span><span class="keyword">,</span><span class="string">''</span><span class="keyword">,</span><span class="default">$str</span><span class="keyword">);&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; &nbsp; &nbsp; return (float)</span><span class="default">$str</span><span class="keyword">;<br />}<br /> <br /></span><span class="default">str2num</span><span class="keyword">(</span><span class="string">'25,01'</span><span class="keyword">); </span><span class="comment">//25.01<br /></span><span class="default">str2num</span><span class="keyword">(</span><span class="string">'2.5,01'</span><span class="keyword">); </span><span class="comment">//25.01<br /></span><span class="default">str2num</span><span class="keyword">(</span><span class="string">'25.01'</span><span class="keyword">); </span><span class="comment">//25.01<br /></span><span class="default">str2num</span><span class="keyword">(</span><span class="string">'2,5.01'</span><span class="keyword">); </span><span class="comment">//25.01<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="57110"> <div class="votes">
+<div id="Vu57110">
+<a href="http://php.net/manual/vote-note.php?id=57110&amp;page=language.types.float&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd57110">
+<a href="http://php.net/manual/vote-note.php?id=57110&amp;page=language.types.float&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V57110" title="37% like this...">
+    -7
+    </div>
+</div>
+<a href="#57110" class="name">
+<strong class="user"><em>TRI0N</em></strong></a><a class="genanchor" href="#57110"> &para;</a><div class="date" title="2005-09-23 07:01"><strong>10 years ago</strong></div>
+<div class="text" id="Hcom57110">
+<div class="phpcode"><code><span class="html">
+Here is a simple formula to break down a number and get rid of the decimal values.&nbsp; I built this to take a number in seconds and convert it to a readable value for Server Uptimes.<br /><br /><span class="default">&lt;?php<br />$day </span><span class="keyword">= </span><span class="default">floor</span><span class="keyword">((</span><span class="default">$uptime </span><span class="keyword">/ </span><span class="default">86400</span><span class="keyword">)*</span><span class="default">1.0</span><span class="keyword">) ;<br /></span><span class="default">$calc1 </span><span class="keyword">= </span><span class="default">$day </span><span class="keyword">* </span><span class="default">86400 </span><span class="keyword">;<br /></span><span class="default">$calc2 </span><span class="keyword">= </span><span class="default">$uptime </span><span class="keyword">- </span><span class="default">$calc1 </span><span class="keyword">;<br /></span><span class="default">$hour </span><span class="keyword">= </span><span class="default">floor</span><span class="keyword">((</span><span class="default">$calc2 </span><span class="keyword">/ </span><span class="default">3600</span><span class="keyword">)*</span><span class="default">1.0</span><span class="keyword">) ;<br />if (</span><span class="default">$hour </span><span class="keyword">&lt; </span><span class="default">10</span><span class="keyword">) {<br /></span><span class="default">$hour </span><span class="keyword">= </span><span class="string">"0"</span><span class="keyword">.</span><span class="default">$hour </span><span class="keyword">;<br />}<br /></span><span class="default">$calc3 </span><span class="keyword">= </span><span class="default">$hour </span><span class="keyword">* </span><span class="default">3600 </span><span class="keyword">;<br /></span><span class="default">$calc4 </span><span class="keyword">= </span><span class="default">$calc2 </span><span class="keyword">- </span><span class="default">$calc3 </span><span class="keyword">;<br /></span><span class="default">$min </span><span class="keyword">= </span><span class="default">floor</span><span class="keyword">((</span><span class="default">$calc4 </span><span class="keyword">/ </span><span class="default">60</span><span class="keyword">)*</span><span class="default">1.0</span><span class="keyword">) ;<br />if (</span><span class="default">$min </span><span class="keyword">&lt; </span><span class="default">10</span><span class="keyword">) {<br /></span><span class="default">$min </span><span class="keyword">= </span><span class="string">"0"</span><span class="keyword">.</span><span class="default">$min </span><span class="keyword">;<br />}<br /></span><span class="default">$calc5 </span><span class="keyword">= </span><span class="default">$min </span><span class="keyword">* </span><span class="default">60 </span><span class="keyword">;<br /></span><span class="default">$sec </span><span class="keyword">= </span><span class="default">floor</span><span class="keyword">((</span><span class="default">$calc4 </span><span class="keyword">- </span><span class="default">$calc5</span><span class="keyword">)*</span><span class="default">1.0</span><span class="keyword">) ;<br />if (</span><span class="default">$min </span><span class="keyword">&lt; </span><span class="default">10</span><span class="keyword">) {<br /></span><span class="default">$sec </span><span class="keyword">= </span><span class="string">"0"</span><span class="keyword">.</span><span class="default">$sec </span><span class="keyword">;<br />}<br /></span><span class="default">$uptime2 </span><span class="keyword">= </span><span class="default">$day</span><span class="keyword">.</span><span class="string">" Days, "</span><span class="keyword">.</span><span class="default">$hour</span><span class="keyword">.</span><span class="string">":"</span><span class="keyword">.</span><span class="default">$min</span><span class="keyword">.</span><span class="string">":"</span><span class="keyword">.</span><span class="default">$sec </span><span class="keyword">;<br /></span><span class="default">?&gt;<br /></span><br />Place this where you want the results to be seen:<br /><span class="default">&lt;?php </span><span class="keyword">echo </span><span class="default">$uptime2 </span><span class="keyword">; </span><span class="default">?&gt;<br /></span><br />For a Value of 1455587 seconds the results will show as followed:<br />16 Days, 20:19:47<br /><br />Enjoy</span>
+</code></div>
+</div>
+</div></div>
+<div class="foot"><a href="http://php.net/manual/add-note.php?sect=language.types.float&amp;redirect=http://php.net/manual/en/language.types.float.php"><img src="/images/notes-add@2x.png" alt="add a note" width="12" height="12" /> <small>add a note</small></a></div>
+</section> <!-- layout-content -->
+<aside class="layout-menu">
+<ul class="parent-menu-list">
+<li>
+<a href="language.types.php">Types</a>
+<ul class="child-menu-list">
+<li class="">
+<a href="language.types.intro.php" title="Introduction">Introduction</a>
+</li>
+<li class="">
+<a href="language.types.boolean.php" title="Booleans">Booleans</a>
+</li>
+<li class="">
+<a href="language.types.integer.php" title="Integers">Integers</a>
+</li>
+<li class="current">
+<a href="language.types.float.php" title="Floating point numbers">Floating point numbers</a>
+</li>
+<li class="">
+<a href="language.types.string.php" title="Strings">Strings</a>
+</li>
+<li class="">
+<a href="language.types.array.php" title="Arrays">Arrays</a>
+</li>
+<li class="">
+<a href="language.types.object.php" title="Objects">Objects</a>
+</li>
+<li class="">
+<a href="language.types.resource.php" title="Resources">Resources</a>
+</li>
+<li class="">
+<a href="language.types.null.php" title="NULL">NULL</a>
+</li>
+<li class="">
+<a href="language.types.callable.php" title="Callbacks / Callables">Callbacks / Callables</a>
+</li>
+<li class="">
+<a href="language.pseudo-types.php" title="Pseudo-​types and variables used in this documentation">Pseudo-&#8203;types and variables used in this documentation</a>
+</li>
+<li class="">
+<a href="language.types.type-juggling.php" title="Type Juggling">Type Juggling</a>
+</li>
+</ul>
+</li>
+</ul>
+</aside>
+</div><!-- layout -->
+<footer>
+<div class="container footer-content">
+<div class="row-fluid">
+<ul class="footmenu">
+<li><a href="http://php.net/copyright.php">Copyright &copy; 2001-2016 The PHP Group</a></li>
+<li><a href="http://php.net/my.php">My PHP.net</a></li>
+<li><a href="http://php.net/contact.php">Contact</a></li>
+<li><a href="http://php.net/sites.php">Other PHP.net sites</a></li>
+<li><a href="http://php.net/mirrors.php">Mirror sites</a></li>
+<li><a href="http://php.net/privacy.php">Privacy policy</a></li>
+</ul>
+</div>
+</div>
+</footer>
+<!-- External and third party libraries. -->
+<script type="text/javascript" src="http://php.net//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/modernizr.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/hogan-2.0.0.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/typeahead.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/mousetrap.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/search.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1435099203&amp;f=/js/common.js"></script>
+<a id="toTop" href="javascript:;"><span id="toTopHover"></span><img width="40" height="40" alt="To Top" src="/images/to-top@2x.png" /></a>
+</body>
+</html>

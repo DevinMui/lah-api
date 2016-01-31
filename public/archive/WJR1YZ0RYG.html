@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PHP: Basic curl example - Manual </title>
+<link rel="shortcut icon" href="http://php.net/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://php.net/phpnetimprovedsearch.src" title="Add PHP.net search" />
+<link rel="alternate" type="application/atom+xml" href="http://php.net/releases/feed.php" title="PHP Release feed" />
+<link rel="alternate" type="application/atom+xml" href="http://php.net/feed.atom" title="PHP: Hypertext Preprocessor" />
+<link rel="canonical" href="http://php.net/manual/en/curl.examples-basic.php" />
+<link rel="shorturl" href="http://php.net/manual/en/curl.examples-basic.php" />
+<link rel="alternate" href="http://php.net/manual/en/curl.examples-basic.php" hreflang="x-default" />
+<link rel="contents" href="http://php.net/manual/en/index.php" />
+<link rel="index" href="http://php.net/manual/en/curl.examples.php" />
+<link rel="prev" href="http://php.net/manual/en/curl.examples.php" />
+<link rel="next" href="http://php.net/manual/en/ref.curl.php" />
+<link rel="alternate" href="http://php.net/manual/en/curl.examples-basic.php" hreflang="en" />
+<link rel="alternate" href="http://php.net/manual/pt_BR/curl.examples-basic.php" hreflang="pt_BR" />
+<link rel="alternate" href="http://php.net/manual/zh/curl.examples-basic.php" hreflang="zh" />
+<link rel="alternate" href="http://php.net/manual/fr/curl.examples-basic.php" hreflang="fr" />
+<link rel="alternate" href="http://php.net/manual/de/curl.examples-basic.php" hreflang="de" />
+<link rel="alternate" href="http://php.net/manual/ja/curl.examples-basic.php" hreflang="ja" />
+<link rel="alternate" href="http://php.net/manual/kr/curl.examples-basic.php" hreflang="kr" />
+<link rel="alternate" href="http://php.net/manual/ro/curl.examples-basic.php" hreflang="ro" />
+<link rel="alternate" href="http://php.net/manual/ru/curl.examples-basic.php" hreflang="ru" />
+<link rel="alternate" href="http://php.net/manual/es/curl.examples-basic.php" hreflang="es" />
+<link rel="alternate" href="http://php.net/manual/tr/curl.examples-basic.php" hreflang="tr" />
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1421837618&amp;f=/fonts/Fira/fira.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1421837618&amp;f=/fonts/Font-Awesome/css/fontello.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1429291204&amp;f=/styles/theme-base.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1449787206&amp;f=/styles/theme-medium.css" media="screen" />
+<!--[if lte IE 7]&gt;
+ &lt;link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie7.css" media="screen"&gt;
+ &lt;![endif]-->
+<!--[if lte IE 8]&gt;
+ &lt;script type="text/javascript"&gt;
+  window.brokenIE = true;
+ &lt;/script&gt;
+ &lt;![endif]-->
+<!--[if lte IE 9]&gt;
+ &lt;link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie9.css" media="screen"&gt;
+ &lt;![endif]-->
+<!--[if IE]&gt;
+ &lt;script type="text/javascript" src="http://php.net/js/ext/html5.js"&gt;&lt;/script&gt;
+ &lt;![endif]-->
+<base href="http://php.net/manual/en/curl.examples-basic.php" />
+</head>
+<body class="docs ">
+<nav id="head-nav" class="navbar navbar-fixed-top">
+<div class="navbar-inner clearfix">
+<a href="http://php.net/" class="brand"><img src="/images/logo.php" width="48" height="24" alt="php" /></a>
+<div id="mainmenu-toggle-overlay"></div>
+<input type="checkbox" id="mainmenu-toggle" />
+<ul class="nav">
+<li class=""><a href="http://php.net/downloads">Downloads</a></li>
+<li class="active"><a href="http://php.net/docs.php">Documentation</a></li>
+<li class=""><a href="http://php.net/get-involved">Get Involved</a></li>
+<li class=""><a href="http://php.net/support">Help</a></li>
+</ul>
+<form class="navbar-search" id="topsearch" action="/search.php">
+<input type="hidden" name="show" value="quickref" />
+<input type="search" name="pattern" class="search-query" placeholder="Search" accesskey="s" />
+</form>
+</div>
+<div id="flash-message"></div>
+</nav>
+<div class="headsup"><a href="http://php.net/conferences/index.php#id2016-01-30-1">NortheastPHP Conference CfP Opens</a></div>
+<nav id="trick"><div><dl>
+<dt><a href="http://php.net/manual/en/getting-started.php">Getting Started</a></dt>
+<dd><a href="http://php.net/manual/en/introduction.php">Introduction</a></dd>
+<dd><a href="http://php.net/manual/en/tutorial.php">A simple tutorial</a></dd>
+<dt><a href="http://php.net/manual/en/langref.php">Language Reference</a></dt>
+<dd><a href="http://php.net/manual/en/language.basic-syntax.php">Basic syntax</a></dd>
+<dd><a href="http://php.net/manual/en/language.types.php">Types</a></dd>
+<dd><a href="http://php.net/manual/en/language.variables.php">Variables</a></dd>
+<dd><a href="http://php.net/manual/en/language.constants.php">Constants</a></dd>
+<dd><a href="http://php.net/manual/en/language.expressions.php">Expressions</a></dd>
+<dd><a href="http://php.net/manual/en/language.operators.php">Operators</a></dd>
+<dd><a href="http://php.net/manual/en/language.control-structures.php">Control Structures</a></dd>
+<dd><a href="http://php.net/manual/en/language.functions.php">Functions</a></dd>
+<dd><a href="http://php.net/manual/en/language.oop5.php">Classes and Objects</a></dd>
+<dd><a href="http://php.net/manual/en/language.namespaces.php">Namespaces</a></dd>
+<dd><a href="http://php.net/manual/en/language.errors.php">Errors</a></dd>
+<dd><a href="http://php.net/manual/en/language.exceptions.php">Exceptions</a></dd>
+<dd><a href="http://php.net/manual/en/language.generators.php">Generators</a></dd>
+<dd><a href="http://php.net/manual/en/language.references.php">References Explained</a></dd>
+<dd><a href="http://php.net/manual/en/reserved.variables.php">Predefined Variables</a></dd>
+<dd><a href="http://php.net/manual/en/reserved.exceptions.php">Predefined Exceptions</a></dd>
+<dd><a href="http://php.net/manual/en/reserved.interfaces.php">Predefined Interfaces and Classes</a></dd>
+<dd><a href="http://php.net/manual/en/context.php">Context options and parameters</a></dd>
+<dd><a href="http://php.net/manual/en/wrappers.php">Supported Protocols and Wrappers</a></dd>
+</dl>
+<dl>
+<dt><a href="http://php.net/manual/en/security.php">Security</a></dt>
+<dd><a href="http://php.net/manual/en/security.intro.php">Introduction</a></dd>
+<dd><a href="http://php.net/manual/en/security.general.php">General considerations</a></dd>
+<dd><a href="http://php.net/manual/en/security.cgi-bin.php">Installed as CGI binary</a></dd>
+<dd><a href="http://php.net/manual/en/security.apache.php">Installed as an Apache module</a></dd>
+<dd><a href="http://php.net/manual/en/security.filesystem.php">Filesystem Security</a></dd>
+<dd><a href="http://php.net/manual/en/security.database.php">Database Security</a></dd>
+<dd><a href="http://php.net/manual/en/security.errors.php">Error Reporting</a></dd>
+<dd><a href="http://php.net/manual/en/security.globals.php">Using Register Globals</a></dd>
+<dd><a href="http://php.net/manual/en/security.variables.php">User Submitted Data</a></dd>
+<dd><a href="http://php.net/manual/en/security.magicquotes.php">Magic Quotes</a></dd>
+<dd><a href="http://php.net/manual/en/security.hiding.php">Hiding PHP</a></dd>
+<dd><a href="http://php.net/manual/en/security.current.php">Keeping Current</a></dd>
+<dt><a href="http://php.net/manual/en/features.php">Features</a></dt>
+<dd><a href="http://php.net/manual/en/features.http-auth.php">HTTP authentication with PHP</a></dd>
+<dd><a href="http://php.net/manual/en/features.cookies.php">Cookies</a></dd>
+<dd><a href="http://php.net/manual/en/features.sessions.php">Sessions</a></dd>
+<dd><a href="http://php.net/manual/en/features.xforms.php">Dealing with XForms</a></dd>
+<dd><a href="http://php.net/manual/en/features.file-upload.php">Handling file uploads</a></dd>
+<dd><a href="http://php.net/manual/en/features.remote-files.php">Using remote files</a></dd>
+<dd><a href="http://php.net/manual/en/features.connection-handling.php">Connection handling</a></dd>
+<dd><a href="http://php.net/manual/en/features.persistent-connections.php">Persistent Database Connections</a></dd>
+<dd><a href="http://php.net/manual/en/features.safe-mode.php">Safe Mode</a></dd>
+<dd><a href="http://php.net/manual/en/features.commandline.php">Command line usage</a></dd>
+<dd><a href="http://php.net/manual/en/features.gc.php">Garbage Collection</a></dd>
+<dd><a href="http://php.net/manual/en/features.dtrace.php">DTrace Dynamic Tracing</a></dd>
+</dl>
+<dl>
+<dt><a href="http://php.net/manual/en/funcref.php">Function Reference</a></dt>
+<dd><a href="http://php.net/manual/en/refs.basic.php.php">Affecting PHP's Behaviour</a></dd>
+<dd><a href="http://php.net/manual/en/refs.utilspec.audio.php">Audio Formats Manipulation</a></dd>
+<dd><a href="http://php.net/manual/en/refs.remote.auth.php">Authentication Services</a></dd>
+<dd><a href="http://php.net/manual/en/refs.utilspec.cmdline.php">Command Line Specific Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.compression.php">Compression and Archive Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.creditcard.php">Credit Card Processing</a></dd>
+<dd><a href="http://php.net/manual/en/refs.crypto.php">Cryptography Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.database.php">Database Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.calendar.php">Date and Time Related Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.fileprocess.file.php">File System Related Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.international.php">Human Language and Character Encoding Support</a></dd>
+<dd><a href="http://php.net/manual/en/refs.utilspec.image.php">Image Processing and Generation</a></dd>
+<dd><a href="http://php.net/manual/en/refs.remote.mail.php">Mail Related Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.math.php">Mathematical Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.utilspec.nontext.php">Non-Text MIME Output</a></dd>
+<dd><a href="http://php.net/manual/en/refs.fileprocess.process.php">Process Control Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.basic.other.php">Other Basic Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.remote.other.php">Other Services</a></dd>
+<dd><a href="http://php.net/manual/en/refs.search.php">Search Engine Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.utilspec.server.php">Server Specific Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.basic.session.php">Session Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.basic.text.php">Text Processing</a></dd>
+<dd><a href="http://php.net/manual/en/refs.basic.vartype.php">Variable and Type Related Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.webservice.php">Web Services</a></dd>
+<dd><a href="http://php.net/manual/en/refs.utilspec.windows.php">Windows Only Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.xml.php">XML Manipulation</a></dd>
+</dl>
+<dl>
+<dt>Keyboard Shortcuts</dt><dt>?</dt>
+<dd>This help</dd>
+<dt>j</dt>
+<dd>Next menu item</dd>
+<dt>k</dt>
+<dd>Previous menu item</dd>
+<dt>g p</dt>
+<dd>Previous man page</dd>
+<dt>g n</dt>
+<dd>Next man page</dd>
+<dt>G</dt>
+<dd>Scroll to bottom</dd>
+<dt>g g</dt>
+<dd>Scroll to top</dd>
+<dt>g h</dt>
+<dd>Goto homepage</dd>
+<dt>g s</dt>
+<dd>Goto search<br />(current page)</dd>
+<dt>/</dt>
+<dd>Focus search box</dd>
+</dl></div></nav>
+<div id="goto">
+<div class="search">
+<div class="text"></div>
+<div class="results"><ul></ul></div>
+</div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+<div id="breadcrumbs-inner">
+<div class="next">
+<a href="ref.curl.php">
+          cURL Functions &raquo;
+        </a>
+</div>
+<div class="prev">
+<a href="curl.examples.php">
+          &laquo; Examples        </a>
+</div>
+<ul>
+<li><a href="index.php">PHP Manual</a></li> <li><a href="funcref.php">Function Reference</a></li> <li><a href="refs.remote.other.php">Other Services</a></li> <li><a href="book.curl.php">cURL</a></li> <li><a href="curl.examples.php">Examples</a></li> </ul>
+</div>
+</div>
+<div id="layout" class="clearfix">
+<section id="layout-content">
+<div class="page-tools">
+<div class="change-language">
+<form action="/manual/change.php" method="get" id="changelang" name="changelang">
+<fieldset>
+<label for="changelang-langs">Change language:</label>
+<select onchange="document.changelang.submit()" name="page" id="changelang-langs">
+<option value="en/curl.examples-basic.php" selected="selected">English</option>
+<option value="pt_BR/curl.examples-basic.php">Brazilian Portuguese</option>
+<option value="zh/curl.examples-basic.php">Chinese (Simplified)</option>
+<option value="fr/curl.examples-basic.php">French</option>
+<option value="de/curl.examples-basic.php">German</option>
+<option value="ja/curl.examples-basic.php">Japanese</option>
+<option value="kr/curl.examples-basic.php">Korean</option>
+<option value="ro/curl.examples-basic.php">Romanian</option>
+<option value="ru/curl.examples-basic.php">Russian</option>
+<option value="es/curl.examples-basic.php">Spanish</option>
+<option value="tr/curl.examples-basic.php">Turkish</option>
+<option value="help-translate.php">Other</option>
+</select>
+</fieldset>
+</form>
+</div>
+<div class="edit-bug">
+<a href="https://edit.php.net/?project=PHP&amp;perm=en/curl.examples-basic.php">Edit</a>
+<a href="https://bugs.php.net/report.php?bug_type=Documentation+problem&amp;manpage=curl.examples-basic">Report a Bug</a>
+</div>
+</div><div id="curl.examples-basic" class="section">
+<h2 class="title">Basic curl example</h2>
+<p class="para">
+   Once you&#039;ve compiled PHP with cURL support, you can begin using
+   the cURL functions. The basic idea behind the cURL functions is
+   that you initialize a cURL session using the
+   <span class="function"><a href="function.curl-init.php" class="function">curl_init()</a></span>, then you can set all your
+   options for the transfer via the <span class="function"><a href="function.curl-setopt.php" class="function">curl_setopt()</a></span>,
+   then you can execute the session with the 
+   <span class="function"><a href="function.curl-exec.php" class="function">curl_exec()</a></span> and then you finish off 
+   your session using the <span class="function"><a href="function.curl-close.php" class="function">curl_close()</a></span>. 
+   Here is an example that uses the cURL functions to fetch the 
+   example.com homepage into a file:
+   <div class="example" id="example-4749">
+<p><strong>Example #1 Using PHP&#039;s cURL module to fetch the example.com homepage</strong></p>
+<div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br />$ch&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">curl_init</span><span style="color: #007700">(</span><span style="color: #DD0000">"http://www.example.com/"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$fp&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">"example_homepage.txt"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"w"</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">curl_setopt</span><span style="color: #007700">(</span><span style="color: #0000BB">$ch</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">CURLOPT_FILE</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$fp</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">curl_setopt</span><span style="color: #007700">(</span><span style="color: #0000BB">$ch</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">CURLOPT_HEADER</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">curl_exec</span><span style="color: #007700">(</span><span style="color: #0000BB">$ch</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">curl_close</span><span style="color: #007700">(</span><span style="color: #0000BB">$ch</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">fclose</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+</div>
+</div>
+</p>
+</div>
+</section><section id="usernotes">
+<div class="head">
+<span class="action"><a href="http://php.net/manual/add-note.php?sect=curl.examples-basic&amp;redirect=http://php.net/manual/en/curl.examples-basic.php"><img src="/images/notes-add@2x.png" alt="add a note" width="12" height="12" /> <small>add a note</small></a></span>
+<h3 class="title">User Contributed Notes <span class="count">4 notes</span></h3>
+</div><div id="allnotes">
+<div class="note" id="114417"> <div class="votes">
+<div id="Vu114417">
+<a href="http://php.net/manual/vote-note.php?id=114417&amp;page=curl.examples-basic&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd114417">
+<a href="http://php.net/manual/vote-note.php?id=114417&amp;page=curl.examples-basic&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V114417" title="59% like this...">
+    51
+    </div>
+</div>
+<a href="#114417" class="name">
+<strong class="user"><em>Anon</em></strong></a><a class="genanchor" href="#114417"> &para;</a><div class="date" title="2014-02-18 11:16"><strong>1 year ago</strong></div>
+<div class="text" id="Hcom114417">
+<div class="phpcode"><code><span class="html">
+IMO this example would have been better if it had done a check for curl_error(), in order to advertize the existence of this function to people learning about cURL who try the example but mysteriously get no response back for whatever reason.</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="117009"> <div class="votes">
+<div id="Vu117009">
+<a href="http://php.net/manual/vote-note.php?id=117009&amp;page=curl.examples-basic&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd117009">
+<a href="http://php.net/manual/vote-note.php?id=117009&amp;page=curl.examples-basic&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V117009" title="62% like this...">
+    18
+    </div>
+</div>
+<a href="#117009" class="name">
+<strong class="user"><em>Roberto Braga</em></strong></a><a class="genanchor" href="#117009"> &para;</a><div class="date" title="2015-04-01 09:45"><strong>9 months ago</strong></div>
+<div class="text" id="Hcom117009">
+<div class="phpcode"><code><span class="html">
+It is important to notice that when using curl to post form data and you use an array for CURLOPT_POSTFIELDS option, the post will be in multipart format<br /><br /><span class="default">&lt;?php<br />$params</span><span class="keyword">=[</span><span class="string">'name'</span><span class="keyword">=&gt;</span><span class="string">'John'</span><span class="keyword">, </span><span class="string">'surname'</span><span class="keyword">=&gt;</span><span class="string">'Doe'</span><span class="keyword">, </span><span class="string">'age'</span><span class="keyword">=&gt;</span><span class="default">36</span><span class="keyword">)<br /></span><span class="default">$defaults </span><span class="keyword">= array(<br /></span><span class="default">CURLOPT_URL </span><span class="keyword">=&gt; </span><span class="string">'<a href="http://myremoteservice/" rel="nofollow" target="_blank">http://myremoteservice/</a>'</span><span class="keyword">, <br /></span><span class="default">CURLOPT_POST </span><span class="keyword">=&gt; </span><span class="default">true</span><span class="keyword">,<br /></span><span class="default">CURLOPT_POSTFIELDS </span><span class="keyword">=&gt; </span><span class="default">$params</span><span class="keyword">,<br />);<br /></span><span class="default">$ch </span><span class="keyword">= </span><span class="default">curl_init</span><span class="keyword">();<br /></span><span class="default">curl_setopt_array</span><span class="keyword">(</span><span class="default">$ch</span><span class="keyword">, (</span><span class="default">$options </span><span class="keyword">+ </span><span class="default">$defaults</span><span class="keyword">));<br /></span><span class="default">?&gt;<br /></span>This produce the following post header:<br /><br />--------------------------fd1c4191862e3566<br />Content-Disposition: form-data; name="name"<br /><br />Jhon<br />--------------------------fd1c4191862e3566<br />Content-Disposition: form-data; name="surnname"<br /><br />Doe<br />--------------------------fd1c4191862e3566<br />Content-Disposition: form-data; name="age"<br /><br />36<br />--------------------------fd1c4191862e3566--<br /><br />Setting CURLOPT_POSTFIELDS as follow produce a standard post header<br /><br />CURLOPT_POSTFIELDS =&gt; http_build_query($params),<br /><br />Which is:<br />name=John&amp;surname=Doe&amp;age=36<br /><br />This caused me 2 days of debug while interacting with a java service which was sensible to this difference, while the equivalent one in php got both format without problem.</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="112076"> <div class="votes">
+<div id="Vu112076">
+<a href="http://php.net/manual/vote-note.php?id=112076&amp;page=curl.examples-basic&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd112076">
+<a href="http://php.net/manual/vote-note.php?id=112076&amp;page=curl.examples-basic&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V112076" title="43% like this...">
+    -30
+    </div>
+</div>
+<a href="#112076" class="name">
+<strong class="user"><em>simon dot riget at gmail dot com</em></strong></a><a class="genanchor" href="#112076"> &para;</a><div class="date" title="2013-04-30 10:23"><strong>2 years ago</strong></div>
+<div class="text" id="Hcom112076">
+<div class="phpcode"><code><span class="html">
+Using ArangoDB with PHP<br /><br />Coding with a NoSQL data base like ArangoDB can be made more complicated then need be. A simple solution to code for ArangoDB is to use the REST interface directly.<br />All you need is a few initialization variables and a small function to ease the typing - and of cause install the php5-curls module... <br />See ArangoDB REST API documentation for options and request types.<br /><br /><span class="default">&lt;?php<br /></span><span class="comment">// Initialize options for REST interface<br /></span><span class="default">$adb_url</span><span class="keyword">=</span><span class="string">"<a href="http://127.0.0.1:8529" rel="nofollow" target="_blank">http://127.0.0.1:8529</a>"</span><span class="keyword">;<br /></span><span class="default">$adb_option_defaults </span><span class="keyword">= array(<br />&nbsp; &nbsp; </span><span class="default">CURLOPT_HEADER </span><span class="keyword">=&gt; </span><span class="default">false</span><span class="keyword">,<br />&nbsp; &nbsp; </span><span class="default">CURLOPT_RETURNTRANSFER </span><span class="keyword">=&gt; </span><span class="default">true</span><span class="keyword">,<br />&nbsp; &nbsp; </span><span class="default">CURLOPT_TIMEOUT </span><span class="keyword">=&gt; </span><span class="default">2<br />&nbsp; </span><span class="keyword">); <br /><br /></span><span class="comment">// ArangoDB REST function.<br />// Connection are created demand and closed by PHP on exit.<br /></span><span class="keyword">function </span><span class="default">adb_rest</span><span class="keyword">(</span><span class="default">$method</span><span class="keyword">,</span><span class="default">$uri</span><span class="keyword">,</span><span class="default">$querry</span><span class="keyword">=</span><span class="default">NULL</span><span class="keyword">,</span><span class="default">$json</span><span class="keyword">=</span><span class="default">NULL</span><span class="keyword">,</span><span class="default">$options</span><span class="keyword">=</span><span class="default">NULL</span><span class="keyword">){<br />&nbsp; global </span><span class="default">$adb_url</span><span class="keyword">,</span><span class="default">$adb_handle</span><span class="keyword">,</span><span class="default">$adb_option_defaults</span><span class="keyword">;<br /><br />&nbsp; </span><span class="comment">// Connect <br />&nbsp; </span><span class="keyword">if(!isset(</span><span class="default">$adb_handle</span><span class="keyword">)) </span><span class="default">$adb_handle </span><span class="keyword">= </span><span class="default">curl_init</span><span class="keyword">();<br /><br />&nbsp; echo </span><span class="string">"DB operation: </span><span class="default">$method</span><span class="string"> </span><span class="default">$uri</span><span class="string"> </span><span class="default">$querry</span><span class="string"> </span><span class="default">$json</span><span class="string">\n"</span><span class="keyword">;<br /><br />&nbsp; </span><span class="comment">// Compose querry<br />&nbsp; </span><span class="default">$options </span><span class="keyword">= array(<br />&nbsp; &nbsp; </span><span class="default">CURLOPT_URL </span><span class="keyword">=&gt; </span><span class="default">$adb_url</span><span class="keyword">.</span><span class="default">$uri</span><span class="keyword">.</span><span class="string">"?"</span><span class="keyword">.</span><span class="default">$querry</span><span class="keyword">,<br />&nbsp; &nbsp; </span><span class="default">CURLOPT_CUSTOMREQUEST </span><span class="keyword">=&gt; </span><span class="default">$method</span><span class="keyword">, </span><span class="comment">// GET POST PUT PATCH DELETE HEAD OPTIONS <br />&nbsp; &nbsp; </span><span class="default">CURLOPT_POSTFIELDS </span><span class="keyword">=&gt; </span><span class="default">$json</span><span class="keyword">,<br />&nbsp; ); <br />&nbsp; </span><span class="default">curl_setopt_array</span><span class="keyword">(</span><span class="default">$adb_handle</span><span class="keyword">,(</span><span class="default">$options </span><span class="keyword">+ </span><span class="default">$adb_option_defaults</span><span class="keyword">)); <br /><br />&nbsp; </span><span class="comment">// send request and wait for responce<br />&nbsp; </span><span class="default">$responce </span><span class="keyword">=&nbsp; </span><span class="default">json_decode</span><span class="keyword">(</span><span class="default">curl_exec</span><span class="keyword">(</span><span class="default">$adb_handle</span><span class="keyword">),</span><span class="default">true</span><span class="keyword">);<br /><br />&nbsp; echo </span><span class="string">"Responce from DB: \n"</span><span class="keyword">;<br />&nbsp; </span><span class="default">print_r</span><span class="keyword">(</span><span class="default">$responce</span><span class="keyword">);<br />&nbsp; <br />&nbsp; return(</span><span class="default">$responce</span><span class="keyword">);<br />}<br /></span><span class="default">?&gt;<br /></span><br />Here's some examples:<br /><br /><span class="default">&lt;?php<br /></span><span class="comment">// Create a collection<br /></span><span class="default">$responce </span><span class="keyword">= </span><span class="default">adb_rest</span><span class="keyword">(</span><span class="string">"POST"</span><span class="keyword">,</span><span class="string">"/_api/collection"</span><span class="keyword">,</span><span class="string">""</span><span class="keyword">,</span><span class="string">'{"name" : "test"}'</span><span class="keyword">);<br /><br /></span><span class="comment">// Create a document <br /></span><span class="default">$responce </span><span class="keyword">= </span><span class="default">adb_rest</span><span class="keyword">(</span><span class="string">"POST"</span><span class="keyword">,</span><span class="string">"/_api/document"</span><span class="keyword">,</span><span class="string">"collection=test"</span><span class="keyword">,</span><span class="string">'{ "hello" : "World" }'</span><span class="keyword">);<br /><br /></span><span class="comment">// List documents in a collection<br /></span><span class="default">$responce</span><span class="keyword">=</span><span class="default">adb_rest</span><span class="keyword">(</span><span class="string">"GET"</span><span class="keyword">,</span><span class="string">"/_api/document"</span><span class="keyword">,</span><span class="string">"collection=test"</span><span class="keyword">);<br /><br /></span><span class="comment">// Change document<br /></span><span class="default">$document_handle</span><span class="keyword">=</span><span class="default">$responce</span><span class="keyword">[</span><span class="string">'documents'</span><span class="keyword">][</span><span class="default">0</span><span class="keyword">];<br /></span><span class="default">$responce</span><span class="keyword">=</span><span class="default">adb_rest</span><span class="keyword">(</span><span class="string">"PATCH"</span><span class="keyword">,</span><span class="default">$document_handle</span><span class="keyword">,</span><span class="string">""</span><span class="keyword">,</span><span class="string">'{ "hello" : "World of mine" }'</span><span class="keyword">);<br /><br /></span><span class="comment">// Show document<br /></span><span class="default">$responce</span><span class="keyword">=</span><span class="default">adb_rest</span><span class="keyword">(</span><span class="string">"GET"</span><span class="keyword">,</span><span class="default">$document_handle</span><span class="keyword">);<br /><br /></span><span class="comment">// Search<br /></span><span class="default">$responce</span><span class="keyword">=</span><span class="default">adb_rest</span><span class="keyword">(</span><span class="string">"POST"</span><span class="keyword">,</span><span class="string">"/_api/cursor"</span><span class="keyword">,</span><span class="string">""</span><span class="keyword">,</span><span class="string">'{ <br />&nbsp; "query" : "FOR t IN test RETURN t",<br />&nbsp; "count" : true,<br />&nbsp; "batchSize" : 50<br />}'</span><span class="keyword">);<br /><br />while(</span><span class="default">$responce</span><span class="keyword">[</span><span class="string">'hasMore'</span><span class="keyword">])<br />&nbsp; </span><span class="default">$responce</span><span class="keyword">=</span><span class="default">adb_rest</span><span class="keyword">(</span><span class="string">"PUT"</span><span class="keyword">,</span><span class="string">"/_api/cursor/"</span><span class="keyword">.</span><span class="default">$responce</span><span class="keyword">[</span><span class="string">'id'</span><span class="keyword">]);<br /><br /></span><span class="comment">// Delete document<br /></span><span class="default">$responce</span><span class="keyword">=</span><span class="default">adb_rest</span><span class="keyword">(</span><span class="string">"DELETE"</span><span class="keyword">,</span><span class="default">$document_handle</span><span class="keyword">);<br /><br /></span><span class="comment">// DB Delete collection<br /></span><span class="default">$responce</span><span class="keyword">=</span><span class="default">adb_rest</span><span class="keyword">(</span><span class="string">"DELETE"</span><span class="keyword">,</span><span class="string">"/_api/collection/test"</span><span class="keyword">);<br /><br /></span><span class="comment">// to handle errors, add something like this:<br /></span><span class="keyword">if(</span><span class="default">$responce</span><span class="keyword">[</span><span class="string">'error'</span><span class="keyword">]) die (</span><span class="string">"can't create collection"</span><span class="keyword">);<br /><br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="114416"> <div class="votes">
+<div id="Vu114416">
+<a href="http://php.net/manual/vote-note.php?id=114416&amp;page=curl.examples-basic&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd114416">
+<a href="http://php.net/manual/vote-note.php?id=114416&amp;page=curl.examples-basic&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V114416" title="34% like this...">
+    -48
+    </div>
+</div>
+<a href="#114416" class="name">
+<strong class="user"><em>Anon</em></strong></a><a class="genanchor" href="#114416"> &para;</a><div class="date" title="2014-02-18 10:25"><strong>1 year ago</strong></div>
+<div class="text" id="Hcom114416">
+<div class="phpcode"><code><span class="html">
+The example fetches a resource (the homepage of a website) and writes it to the the file represented by $fp.<br /><br />Judging from comments elsewhere in this chapter, the example given ought to set CURLOPT_RETURNTRANSFER to true prior to setting CURLOPT_FILE.</span>
+</code></div>
+</div>
+</div></div>
+<div class="foot"><a href="http://php.net/manual/add-note.php?sect=curl.examples-basic&amp;redirect=http://php.net/manual/en/curl.examples-basic.php"><img src="/images/notes-add@2x.png" alt="add a note" width="12" height="12" /> <small>add a note</small></a></div>
+</section> <!-- layout-content -->
+<aside class="layout-menu">
+<ul class="parent-menu-list">
+<li>
+<a href="curl.examples.php">Examples</a>
+<ul class="child-menu-list">
+<li class="current">
+<a href="curl.examples-basic.php" title="Basic curl example">Basic curl example</a>
+</li>
+</ul>
+</li>
+</ul>
+</aside>
+</div><!-- layout -->
+<footer>
+<div class="container footer-content">
+<div class="row-fluid">
+<ul class="footmenu">
+<li><a href="http://php.net/copyright.php">Copyright &copy; 2001-2016 The PHP Group</a></li>
+<li><a href="http://php.net/my.php">My PHP.net</a></li>
+<li><a href="http://php.net/contact.php">Contact</a></li>
+<li><a href="http://php.net/sites.php">Other PHP.net sites</a></li>
+<li><a href="http://php.net/mirrors.php">Mirror sites</a></li>
+<li><a href="http://php.net/privacy.php">Privacy policy</a></li>
+</ul>
+</div>
+</div>
+</footer>
+<!-- External and third party libraries. -->
+<script type="text/javascript" src="http://php.net//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/modernizr.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/hogan-2.0.0.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/typeahead.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/mousetrap.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/search.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1435099203&amp;f=/js/common.js"></script>
+<a id="toTop" href="javascript:;"><span id="toTopHover"></span><img width="40" height="40" alt="To Top" src="/images/to-top@2x.png" /></a>
+</body>
+</html>

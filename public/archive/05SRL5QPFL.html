@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt_BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PHP: Deprecated features in PHP 5.5.x - Manual </title>
+<link rel="shortcut icon" href="http://php.net/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://php.net/phpnetimprovedsearch.src" title="Add PHP.net search" />
+<link rel="alternate" type="application/atom+xml" href="http://php.net/releases/feed.php" title="PHP Release feed" />
+<link rel="alternate" type="application/atom+xml" href="http://php.net/feed.atom" title="PHP: Hypertext Preprocessor" />
+<link rel="canonical" href="http://php.net/manual/pt_BR/migration55.deprecated.php" />
+<link rel="shorturl" href="http://php.net/manual/pt_BR/migration55.deprecated.php" />
+<link rel="alternate" href="http://php.net/manual/pt_BR/migration55.deprecated.php" hreflang="x-default" />
+<link rel="contents" href="http://php.net/manual/pt_BR/index.php" />
+<link rel="index" href="http://php.net/manual/pt_BR/migration55.php" />
+<link rel="prev" href="http://php.net/manual/pt_BR/migration55.new-features.php" />
+<link rel="next" href="http://php.net/manual/pt_BR/migration55.changed-functions.php" />
+<link rel="alternate" href="http://php.net/manual/en/migration55.deprecated.php" hreflang="en" />
+<link rel="alternate" href="http://php.net/manual/pt_BR/migration55.deprecated.php" hreflang="pt_BR" />
+<link rel="alternate" href="http://php.net/manual/zh/migration55.deprecated.php" hreflang="zh" />
+<link rel="alternate" href="http://php.net/manual/fr/migration55.deprecated.php" hreflang="fr" />
+<link rel="alternate" href="http://php.net/manual/de/migration55.deprecated.php" hreflang="de" />
+<link rel="alternate" href="http://php.net/manual/ja/migration55.deprecated.php" hreflang="ja" />
+<link rel="alternate" href="http://php.net/manual/kr/migration55.deprecated.php" hreflang="kr" />
+<link rel="alternate" href="http://php.net/manual/ro/migration55.deprecated.php" hreflang="ro" />
+<link rel="alternate" href="http://php.net/manual/ru/migration55.deprecated.php" hreflang="ru" />
+<link rel="alternate" href="http://php.net/manual/es/migration55.deprecated.php" hreflang="es" />
+<link rel="alternate" href="http://php.net/manual/tr/migration55.deprecated.php" hreflang="tr" />
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1421837618&amp;f=/fonts/Fira/fira.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1421837618&amp;f=/fonts/Font-Awesome/css/fontello.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1429291204&amp;f=/styles/theme-base.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1449787206&amp;f=/styles/theme-medium.css" media="screen" />
+<!--[if lte IE 7]&gt;
+ &lt;link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie7.css" media="screen"&gt;
+ &lt;![endif]-->
+<!--[if lte IE 8]&gt;
+ &lt;script type="text/javascript"&gt;
+  window.brokenIE = true;
+ &lt;/script&gt;
+ &lt;![endif]-->
+<!--[if lte IE 9]&gt;
+ &lt;link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie9.css" media="screen"&gt;
+ &lt;![endif]-->
+<!--[if IE]&gt;
+ &lt;script type="text/javascript" src="http://php.net/js/ext/html5.js"&gt;&lt;/script&gt;
+ &lt;![endif]-->
+<base href="http://php.net/manual/pt_BR/migration55.deprecated.php" />
+</head>
+<body class="docs ">
+<nav id="head-nav" class="navbar navbar-fixed-top">
+<div class="navbar-inner clearfix">
+<a href="http://php.net/" class="brand"><img src="/images/logo.php" width="48" height="24" alt="php" /></a>
+<div id="mainmenu-toggle-overlay"></div>
+<input type="checkbox" id="mainmenu-toggle" />
+<ul class="nav">
+<li class=""><a href="http://php.net/downloads">Downloads</a></li>
+<li class="active"><a href="http://php.net/docs.php">Documentation</a></li>
+<li class=""><a href="http://php.net/get-involved">Get Involved</a></li>
+<li class=""><a href="http://php.net/support">Help</a></li>
+</ul>
+<form class="navbar-search" id="topsearch" action="/search.php">
+<input type="hidden" name="show" value="quickref" />
+<input type="search" name="pattern" class="search-query" placeholder="Search" accesskey="s" />
+</form>
+</div>
+<div id="flash-message"></div>
+</nav>
+<div class="headsup"><a href="http://php.net/conferences/index.php#id2016-01-30-1">NortheastPHP Conference CfP Opens</a></div>
+<nav id="trick"><div><dl>
+<dt><a href="http://php.net/manual/en/getting-started.php">Getting Started</a></dt>
+<dd><a href="http://php.net/manual/en/introduction.php">Introduction</a></dd>
+<dd><a href="http://php.net/manual/en/tutorial.php">A simple tutorial</a></dd>
+<dt><a href="http://php.net/manual/en/langref.php">Language Reference</a></dt>
+<dd><a href="http://php.net/manual/en/language.basic-syntax.php">Basic syntax</a></dd>
+<dd><a href="http://php.net/manual/en/language.types.php">Types</a></dd>
+<dd><a href="http://php.net/manual/en/language.variables.php">Variables</a></dd>
+<dd><a href="http://php.net/manual/en/language.constants.php">Constants</a></dd>
+<dd><a href="http://php.net/manual/en/language.expressions.php">Expressions</a></dd>
+<dd><a href="http://php.net/manual/en/language.operators.php">Operators</a></dd>
+<dd><a href="http://php.net/manual/en/language.control-structures.php">Control Structures</a></dd>
+<dd><a href="http://php.net/manual/en/language.functions.php">Functions</a></dd>
+<dd><a href="http://php.net/manual/en/language.oop5.php">Classes and Objects</a></dd>
+<dd><a href="http://php.net/manual/en/language.namespaces.php">Namespaces</a></dd>
+<dd><a href="http://php.net/manual/en/language.errors.php">Errors</a></dd>
+<dd><a href="http://php.net/manual/en/language.exceptions.php">Exceptions</a></dd>
+<dd><a href="http://php.net/manual/en/language.generators.php">Generators</a></dd>
+<dd><a href="http://php.net/manual/en/language.references.php">References Explained</a></dd>
+<dd><a href="http://php.net/manual/en/reserved.variables.php">Predefined Variables</a></dd>
+<dd><a href="http://php.net/manual/en/reserved.exceptions.php">Predefined Exceptions</a></dd>
+<dd><a href="http://php.net/manual/en/reserved.interfaces.php">Predefined Interfaces and Classes</a></dd>
+<dd><a href="http://php.net/manual/en/context.php">Context options and parameters</a></dd>
+<dd><a href="http://php.net/manual/en/wrappers.php">Supported Protocols and Wrappers</a></dd>
+</dl>
+<dl>
+<dt><a href="http://php.net/manual/en/security.php">Security</a></dt>
+<dd><a href="http://php.net/manual/en/security.intro.php">Introduction</a></dd>
+<dd><a href="http://php.net/manual/en/security.general.php">General considerations</a></dd>
+<dd><a href="http://php.net/manual/en/security.cgi-bin.php">Installed as CGI binary</a></dd>
+<dd><a href="http://php.net/manual/en/security.apache.php">Installed as an Apache module</a></dd>
+<dd><a href="http://php.net/manual/en/security.filesystem.php">Filesystem Security</a></dd>
+<dd><a href="http://php.net/manual/en/security.database.php">Database Security</a></dd>
+<dd><a href="http://php.net/manual/en/security.errors.php">Error Reporting</a></dd>
+<dd><a href="http://php.net/manual/en/security.globals.php">Using Register Globals</a></dd>
+<dd><a href="http://php.net/manual/en/security.variables.php">User Submitted Data</a></dd>
+<dd><a href="http://php.net/manual/en/security.magicquotes.php">Magic Quotes</a></dd>
+<dd><a href="http://php.net/manual/en/security.hiding.php">Hiding PHP</a></dd>
+<dd><a href="http://php.net/manual/en/security.current.php">Keeping Current</a></dd>
+<dt><a href="http://php.net/manual/en/features.php">Features</a></dt>
+<dd><a href="http://php.net/manual/en/features.http-auth.php">HTTP authentication with PHP</a></dd>
+<dd><a href="http://php.net/manual/en/features.cookies.php">Cookies</a></dd>
+<dd><a href="http://php.net/manual/en/features.sessions.php">Sessions</a></dd>
+<dd><a href="http://php.net/manual/en/features.xforms.php">Dealing with XForms</a></dd>
+<dd><a href="http://php.net/manual/en/features.file-upload.php">Handling file uploads</a></dd>
+<dd><a href="http://php.net/manual/en/features.remote-files.php">Using remote files</a></dd>
+<dd><a href="http://php.net/manual/en/features.connection-handling.php">Connection handling</a></dd>
+<dd><a href="http://php.net/manual/en/features.persistent-connections.php">Persistent Database Connections</a></dd>
+<dd><a href="http://php.net/manual/en/features.safe-mode.php">Safe Mode</a></dd>
+<dd><a href="http://php.net/manual/en/features.commandline.php">Command line usage</a></dd>
+<dd><a href="http://php.net/manual/en/features.gc.php">Garbage Collection</a></dd>
+<dd><a href="http://php.net/manual/en/features.dtrace.php">DTrace Dynamic Tracing</a></dd>
+</dl>
+<dl>
+<dt><a href="http://php.net/manual/en/funcref.php">Function Reference</a></dt>
+<dd><a href="http://php.net/manual/en/refs.basic.php.php">Affecting PHP's Behaviour</a></dd>
+<dd><a href="http://php.net/manual/en/refs.utilspec.audio.php">Audio Formats Manipulation</a></dd>
+<dd><a href="http://php.net/manual/en/refs.remote.auth.php">Authentication Services</a></dd>
+<dd><a href="http://php.net/manual/en/refs.utilspec.cmdline.php">Command Line Specific Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.compression.php">Compression and Archive Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.creditcard.php">Credit Card Processing</a></dd>
+<dd><a href="http://php.net/manual/en/refs.crypto.php">Cryptography Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.database.php">Database Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.calendar.php">Date and Time Related Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.fileprocess.file.php">File System Related Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.international.php">Human Language and Character Encoding Support</a></dd>
+<dd><a href="http://php.net/manual/en/refs.utilspec.image.php">Image Processing and Generation</a></dd>
+<dd><a href="http://php.net/manual/en/refs.remote.mail.php">Mail Related Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.math.php">Mathematical Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.utilspec.nontext.php">Non-Text MIME Output</a></dd>
+<dd><a href="http://php.net/manual/en/refs.fileprocess.process.php">Process Control Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.basic.other.php">Other Basic Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.remote.other.php">Other Services</a></dd>
+<dd><a href="http://php.net/manual/en/refs.search.php">Search Engine Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.utilspec.server.php">Server Specific Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.basic.session.php">Session Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.basic.text.php">Text Processing</a></dd>
+<dd><a href="http://php.net/manual/en/refs.basic.vartype.php">Variable and Type Related Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.webservice.php">Web Services</a></dd>
+<dd><a href="http://php.net/manual/en/refs.utilspec.windows.php">Windows Only Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.xml.php">XML Manipulation</a></dd>
+</dl>
+<dl>
+<dt>Keyboard Shortcuts</dt><dt>?</dt>
+<dd>This help</dd>
+<dt>j</dt>
+<dd>Next menu item</dd>
+<dt>k</dt>
+<dd>Previous menu item</dd>
+<dt>g p</dt>
+<dd>Previous man page</dd>
+<dt>g n</dt>
+<dd>Next man page</dd>
+<dt>G</dt>
+<dd>Scroll to bottom</dd>
+<dt>g g</dt>
+<dd>Scroll to top</dd>
+<dt>g h</dt>
+<dd>Goto homepage</dd>
+<dt>g s</dt>
+<dd>Goto search<br />(current page)</dd>
+<dt>/</dt>
+<dd>Focus search box</dd>
+</dl></div></nav>
+<div id="goto">
+<div class="search">
+<div class="text"></div>
+<div class="results"><ul></ul></div>
+</div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+<div id="breadcrumbs-inner">
+<div class="next">
+<a href="migration55.changed-functions.php">
+          Changed Functions &raquo;
+        </a>
+</div>
+<div class="prev">
+<a href="migration55.new-features.php">
+          &laquo; New features        </a>
+</div>
+<ul>
+<li><a href="index.php">Manual do PHP</a></li> <li><a href="appendices.php">Ap&ecirc;ndices</a></li> <li><a href="migration55.php">Migrating from PHP 5.4.x to PHP 5.5.x</a></li> </ul>
+</div>
+</div>
+<div id="layout" class="clearfix">
+<section id="layout-content">
+<div class="page-tools">
+<div class="change-language">
+<form action="/manual/change.php" method="get" id="changelang" name="changelang">
+<fieldset>
+<label for="changelang-langs">Change language:</label>
+<select onchange="document.changelang.submit()" name="page" id="changelang-langs">
+<option value="en/migration55.deprecated.php">English</option>
+<option value="pt_BR/migration55.deprecated.php" selected="selected">Brazilian Portuguese</option>
+<option value="zh/migration55.deprecated.php">Chinese (Simplified)</option>
+<option value="fr/migration55.deprecated.php">French</option>
+<option value="de/migration55.deprecated.php">German</option>
+<option value="ja/migration55.deprecated.php">Japanese</option>
+<option value="kr/migration55.deprecated.php">Korean</option>
+<option value="ro/migration55.deprecated.php">Romanian</option>
+<option value="ru/migration55.deprecated.php">Russian</option>
+<option value="es/migration55.deprecated.php">Spanish</option>
+<option value="tr/migration55.deprecated.php">Turkish</option>
+<option value="help-translate.php">Other</option>
+</select>
+</fieldset>
+</form>
+</div>
+<div class="edit-bug">
+<a href="https://edit.php.net/?project=PHP&amp;perm=pt_BR/migration55.deprecated.php">Edit</a>
+<a href="https://bugs.php.net/report.php?bug_type=Documentation+problem&amp;manpage=migration55.deprecated">Report a Bug</a>
+</div>
+</div><div id="migration55.deprecated" class="sect1">
+<h2 class="title">Deprecated features in PHP 5.5.x</h2>
+<div class="sect2" id="migration55.deprecated.mysql">
+<h3 class="title"><a href="book.mysql.php" class="link">ext/mysql</a> deprecation</h3>
+<p class="para">
+    The <a href="book.mysql.php" class="link">original MySQL extension</a> is now
+    deprecated, and will generate <strong><code>E_DEPRECATED</code></strong> errors
+    when connecting to a database. Instead, use the
+    <a href="book.mysqli.php" class="link">MySQLi</a> or
+    <a href="ref.pdo-mysql.php" class="link">PDO_MySQL</a> extensions.
+   </p>
+</div>
+<div class="sect2" id="migration55.deprecated.preg-replace-e">
+<h3 class="title"><span class="function"><a href="function.preg-replace.php" class="function">preg_replace()</a></span> <em>/e</em> modifier</h3>
+<p class="para">
+    The <span class="function"><a href="function.preg-replace.php" class="function">preg_replace()</a></span> <em>/e</em> modifier is
+    now deprecated. Instead, use the
+    <span class="function"><a href="function.preg-replace-callback.php" class="function">preg_replace_callback()</a></span> function.
+   </p>
+</div>
+<div class="sect2" id="migration55.deprecated.intl">
+<h3 class="title"><a href="book.intl.php" class="link">intl</a> deprecations</h3>
+<p class="para">
+<span class="methodname"><a href="intldateformatter.settimezoneid.php" class="methodname">IntlDateFormatter::setTimeZoneID()</a></span> and
+    <span class="function"><a href="intldateformatter.settimezoneid.php" class="function">datefmt_set_timezone_id()</a></span> are now deprecated. Instead,
+    use the <span class="methodname"><a href="intldateformatter.settimezone.php" class="methodname">IntlDateFormatter::setTimeZone()</a></span> method and
+    <span class="function"><a href="intldateformatter.settimezone.php" class="function">datefmt_set_timezone()</a></span> function, respectively.
+   </p>
+</div>
+<div class="sect2" id="migration55.deprecated.mcrypt">
+<h3 class="title"><a href="book.mcrypt.php" class="link">mcrypt</a> deprecations</h3>
+<p class="simpara">
+    The following functions have been deprecated:
+   </p>
+<ul class="itemizedlist">
+<li class="listitem">
+<span class="simpara">
+<span class="function"><a href="function.mcrypt-cbc.php" class="function">mcrypt_cbc()</a></span>
+</span>
+</li>
+<li class="listitem">
+<span class="simpara">
+<span class="function"><a href="function.mcrypt-cfb.php" class="function">mcrypt_cfb()</a></span>
+</span>
+</li>
+<li class="listitem">
+<span class="simpara">
+<span class="function"><a href="function.mcrypt-ecb.php" class="function">mcrypt_ecb()</a></span>
+</span>
+</li>
+<li class="listitem">
+<span class="simpara">
+<span class="function"><a href="function.mcrypt-ofb.php" class="function">mcrypt_ofb()</a></span>
+</span>
+</li>
+</ul>
+</div>
+</div>
+</section><section id="usernotes">
+<div class="head">
+<span class="action"><a href="http://php.net/manual/add-note.php?sect=migration55.deprecated&amp;redirect=http://php.net/manual/pt_BR/migration55.deprecated.php"><img src="/images/notes-add@2x.png" alt="add a note" width="12" height="12" /> <small>add a note</small></a></span>
+<h3 class="title">User Contributed Notes </h3>
+</div>
+<div class="note">There are no user contributed notes for this page.</div></section> <!-- layout-content -->
+<aside class="layout-menu">
+<ul class="parent-menu-list">
+<li>
+<a href="migration55.php">Migrating from PHP 5.4.x to PHP 5.5.x</a>
+<ul class="child-menu-list">
+<li class="">
+<a href="migration55.changes.php" title="What has changed in PHP 5.5.x">What has changed in PHP 5.5.x</a>
+</li>
+<li class="">
+<a href="migration55.incompatible.php" title="Backward Incompatible Changes">Backward Incompatible Changes</a>
+</li>
+<li class="">
+<a href="migration55.new-features.php" title="New features">New features</a>
+</li>
+<li class="current">
+<a href="migration55.deprecated.php" title="Deprecated features in PHP 5.5.x">Deprecated features in PHP 5.5.x</a>
+</li>
+<li class="">
+<a href="migration55.changed-functions.php" title="Changed Functions">Changed Functions</a>
+</li>
+<li class="">
+<a href="migration55.new-functions.php" title="New Functions">New Functions</a>
+</li>
+<li class="">
+<a href="migration55.classes.php" title="New Classes and Interfaces">New Classes and Interfaces</a>
+</li>
+<li class="">
+<a href="migration55.new-methods.php" title="New Methods">New Methods</a>
+</li>
+<li class="">
+<a href="migration55.extensions-other.php" title="Other changes to extensions">Other changes to extensions</a>
+</li>
+<li class="">
+<a href="migration55.global-constants.php" title="New Global Constants">New Global Constants</a>
+</li>
+<li class="">
+<a href="migration55.ini.php" title="Changes to INI file handling">Changes to INI file handling</a>
+</li>
+<li class="">
+<a href="migration55.internals.php" title="Changes to PHP Internals">Changes to PHP Internals</a>
+</li>
+</ul>
+</li>
+</ul>
+</aside>
+</div><!-- layout -->
+<footer>
+<div class="container footer-content">
+<div class="row-fluid">
+<ul class="footmenu">
+<li><a href="http://php.net/copyright.php">Copyright &copy; 2001-2016 The PHP Group</a></li>
+<li><a href="http://php.net/my.php">My PHP.net</a></li>
+<li><a href="http://php.net/contact.php">Contact</a></li>
+<li><a href="http://php.net/sites.php">Other PHP.net sites</a></li>
+<li><a href="http://php.net/mirrors.php">Mirror sites</a></li>
+<li><a href="http://php.net/privacy.php">Privacy policy</a></li>
+</ul>
+</div>
+</div>
+</footer>
+<!-- External and third party libraries. -->
+<script type="text/javascript" src="http://php.net//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/modernizr.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/hogan-2.0.0.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/typeahead.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/mousetrap.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/search.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1435099203&amp;f=/js/common.js"></script>
+<a id="toTop" href="javascript:;"><span id="toTopHover"></span><img width="40" height="40" alt="To Top" src="/images/to-top@2x.png" /></a>
+</body>
+</html>

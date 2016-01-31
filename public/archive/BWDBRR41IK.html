@@ -1,0 +1,970 @@
+
+<!DOCTYPE html>
+<html lang="en" class="">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article# profile: http://ogp.me/ns/profile#">
+<meta charset="utf-8" />
+<link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/github-d0dea0e5376d5c42aabf467726e0cffb7034a0d94eb947b9328eb6c9c4fcbba3.css" media="all" rel="stylesheet" />
+<link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/github2-5f7255544b25f937224217b1c37ee5c139a0a00a3decd8020b9aabc550340903.css" media="all" rel="stylesheet" />
+<link as="script" href="https://assets-cdn.github.com/assets/frameworks-9ee55ceaf87fc34dc86334249fef6cbece88e815478e0fbe81642d57ed0fff89.js" rel="preload" />
+<link as="script" href="https://assets-cdn.github.com/assets/github-8afeb971202f92778ffc73ddd92661c1977dc5e42a928ed35f8ec96e425a6e7a.js" rel="preload" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Content-Language" content="en" />
+<meta name="viewport" content="width=1020" />
+<title>airbnb/polyglot.js - JavaScript - GitHub</title>
+<link rel="search" type="application/opensearchdescription+xml" href="http://github.com/opensearch.xml" title="GitHub" />
+<link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub" />
+<link rel="apple-touch-icon" href="http://github.com/apple-touch-icon.png" />
+<link rel="apple-touch-icon" sizes="57x57" href="http://github.com/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon" sizes="60x60" href="http://github.com/apple-touch-icon-60x60.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="http://github.com/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon" sizes="76x76" href="http://github.com/apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="http://github.com/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon" sizes="120x120" href="http://github.com/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="http://github.com/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon" sizes="152x152" href="http://github.com/apple-touch-icon-152x152.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="http://github.com/apple-touch-icon-180x180.png" />
+<meta property="fb:app_id" content="1401488693436528" />
+<meta content="https://avatars2.githubusercontent.com/u/698437?v=3&amp;s=400" name="twitter:image:src" /><meta content="@github" name="twitter:site" /><meta content="summary" name="twitter:card" /><meta content="airbnb/polyglot.js" name="twitter:title" /><meta content="polyglot.js - Give your JavaScript the ability to speak many languages." name="twitter:description" />
+<meta content="https://avatars2.githubusercontent.com/u/698437?v=3&amp;s=400" property="og:image" /><meta content="GitHub" property="og:site_name" /><meta content="object" property="og:type" /><meta content="airbnb/polyglot.js" property="og:title" /><meta content="https://github.com/airbnb/polyglot.js" property="og:url" /><meta content="polyglot.js - Give your JavaScript the ability to speak many languages." property="og:description" />
+<meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats" />
+<meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors" />
+<link rel="assets" href="https://assets-cdn.github.com/" />
+<meta name="pjax-timeout" content="1000" />
+<meta name="msapplication-TileImage" content="/windows-tile.png" />
+<meta name="msapplication-TileColor" content="#ffffff" />
+<meta name="selected-link" value="repo_source" data-pjax-transient="data-pjax-transient" />
+<meta name="google-site-verification" content="KT5gs8h0wvaagLKAVWq8bbeNwnZZK1r1XQysX3xurLU" />
+<meta name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA" />
+<meta name="google-analytics" content="UA-3769691-2" />
+<meta content="collector.githubapp.com" name="octolytics-host" /><meta content="github" name="octolytics-app-id" /><meta content="68C5BF7F:3B68:664F530:56ADB28E" name="octolytics-dimension-request_id" />
+<meta content="/&lt;user-name&gt;/&lt;repo-name&gt;" data-pjax-transient="true" name="analytics-location" />
+<meta class="js-ga-set" name="dimension1" content="Logged Out" />
+<meta name="hostname" content="github.com" />
+<meta name="user-login" content="" />
+<meta name="expected-hostname" content="github.com" />
+<link rel="mask-icon" href="https://assets-cdn.github.com/pinned-octocat.svg" color="#4078c0" />
+<link rel="icon" type="image/x-icon" href="https://assets-cdn.github.com/favicon.ico" />
+<meta content="efaf32f1af876862cf0c9270dff5ce04f6d38307" name="form-nonce" />
+<meta http-equiv="x-pjax-version" content="55b41dd856d04e698e17bd7fc2020079" />
+<meta name="description" content="polyglot.js - Give your JavaScript the ability to speak many languages." />
+<meta name="go-import" content="github.com/airbnb/polyglot.js git https://github.com/airbnb/polyglot.js.git" />
+<meta content="698437" name="octolytics-dimension-user_id" /><meta content="airbnb" name="octolytics-dimension-user_login" /><meta content="5987222" name="octolytics-dimension-repository_id" /><meta content="airbnb/polyglot.js" name="octolytics-dimension-repository_nwo" /><meta content="true" name="octolytics-dimension-repository_public" /><meta content="false" name="octolytics-dimension-repository_is_fork" /><meta content="5987222" name="octolytics-dimension-repository_network_root_id" /><meta content="airbnb/polyglot.js" name="octolytics-dimension-repository_network_root_nwo" />
+<link href="https://github.com/airbnb/polyglot.js/commits/master.atom" rel="alternate" title="Recent Commits to polyglot.js:master" type="application/atom+xml" />
+<link rel="canonical" href="https://github.com/airbnb/polyglot.js" data-pjax-transient="data-pjax-transient" />
+</head>
+<body class="logged_out   env-production  vis-public">
+<a href="#start-of-content" tabindex="1" class="accessibility-aid js-skip-to-content">Skip to content</a>
+<div class="header header-logged-out" role="banner">
+<div class="container clearfix">
+<a class="header-logo-wordmark" href="https://github.com/" data-ga-click="(Logged out) Header, go to homepage, icon:logo-wordmark">
+<span aria-hidden="true" class="mega-octicon octicon-logo-github"></span>
+</a>
+<div class="header-actions" role="navigation">
+<a class="btn btn-primary" href="http://github.com/join?source=header-repo" data-ga-click="(Logged out) Header, clicked Sign up, text:sign-up">Sign up</a>
+<a class="btn" href="http://github.com/login?return_to=%2Fairbnb%2Fpolyglot.js" data-ga-click="(Logged out) Header, clicked Sign in, text:sign-in">Sign in</a>
+</div>
+<div class="site-search repo-scope js-site-search" role="search">
+<!-- &lt;/textarea&gt; --><!-- '"` --><form accept-charset="UTF-8" action="/airbnb/polyglot.js/search" class="js-site-search-form" data-global-search-url="/search" data-repo-search-url="/airbnb/polyglot.js/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓" /></div>
+<label class="js-chromeless-input-container form-control">
+<div class="scope-badge">This repository</div>
+<input type="text" class="js-site-search-focus js-site-search-field is-clearable chromeless-input" data-hotkey="s" name="q" placeholder="Search" aria-label="Search this repository" data-global-scope-placeholder="Search GitHub" data-repo-scope-placeholder="Search" tabindex="1" autocapitalize="off" />
+</label>
+</form>
+</div>
+<ul class="header-nav left" role="navigation">
+<li class="header-nav-item">
+<a class="header-nav-link" href="http://github.com/explore" data-ga-click="(Logged out) Header, go to explore, text:explore">Explore</a>
+</li>
+<li class="header-nav-item">
+<a class="header-nav-link" href="http://github.com/features" data-ga-click="(Logged out) Header, go to features, text:features">Features</a>
+</li>
+<li class="header-nav-item">
+<a class="header-nav-link" href="https://enterprise.github.com/" data-ga-click="(Logged out) Header, go to enterprise, text:enterprise">Enterprise</a>
+</li>
+<li class="header-nav-item">
+<a class="header-nav-link" href="http://github.com/pricing" data-ga-click="(Logged out) Header, go to pricing, text:pricing">Pricing</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="start-of-content" class="accessibility-aid"></div>
+<div id="js-flash-container">
+</div>
+<div role="main" class="main-content">
+<div itemscope="itemscope" itemtype="http://schema.org/WebPage">
+<div id="js-repo-pjax-container" class="context-loader-container js-repo-nav-next" data-pjax-container="data-pjax-container">
+<div class="pagehead repohead instapaper_ignore readability-menu experiment-repo-nav">
+<div class="container repohead-details-container">
+<ul class="pagehead-actions">
+<li>
+<a href="http://github.com/login?return_to=%2Fairbnb%2Fpolyglot.js" class="btn btn-sm btn-with-count tooltipped tooltipped-n" aria-label="You must be signed in to watch a repository" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-eye"></span>
+    Watch
+  </a>
+<a class="social-count" href="http://github.com/airbnb/polyglot.js/watchers">
+    174
+  </a>
+</li>
+<li>
+<a href="http://github.com/login?return_to=%2Fairbnb%2Fpolyglot.js" class="btn btn-sm btn-with-count tooltipped tooltipped-n" aria-label="You must be signed in to star a repository" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-star"></span>
+    Star
+  </a>
+<a class="social-count js-social-count" href="http://github.com/airbnb/polyglot.js/stargazers">
+      1,610
+    </a>
+</li>
+<li>
+<a href="http://github.com/login?return_to=%2Fairbnb%2Fpolyglot.js" class="btn btn-sm btn-with-count tooltipped tooltipped-n" aria-label="You must be signed in to fork a repository" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-repo-forked"></span>
+        Fork
+      </a>
+<a href="http://github.com/airbnb/polyglot.js/network" class="social-count">
+      79
+    </a>
+</li>
+</ul>
+<h1 itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb" class="entry-title public ">
+<span aria-hidden="true" class="octicon octicon-repo"></span>
+<span class="author"><a href="http://github.com/airbnb" class="url fn" itemprop="url" rel="author"><span itemprop="title">airbnb</span></a></span><!--
+--><span class="path-divider">/</span><!--
+--><strong><a href="http://github.com/airbnb/polyglot.js" data-pjax="#js-repo-pjax-container">polyglot.js</a></strong>
+<span class="page-context-loader">
+<img alt="" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</span>
+</h1>
+</div>
+<div class="container">
+<nav class="reponav js-repo-nav js-sidenav-container-pjax js-octicon-loaders" role="navigation" data-pjax="#js-repo-pjax-container">
+<a href="http://github.com/airbnb/polyglot.js" aria-label="Code" aria-selected="true" class="js-selected-navigation-item selected reponav-item" data-hotkey="g c" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches /airbnb/polyglot.js">
+<span aria-hidden="true" class="octicon octicon-code"></span>
+    Code
+</a>
+<a href="http://github.com/airbnb/polyglot.js/issues" class="js-selected-navigation-item reponav-item" data-hotkey="g i" data-selected-links="repo_issues repo_labels repo_milestones /airbnb/polyglot.js/issues">
+<span aria-hidden="true" class="octicon octicon-issue-opened"></span>
+      Issues
+      <span class="counter">8</span>
+</a>
+<a href="http://github.com/airbnb/polyglot.js/pulls" class="js-selected-navigation-item reponav-item" data-hotkey="g p" data-selected-links="repo_pulls /airbnb/polyglot.js/pulls">
+<span aria-hidden="true" class="octicon octicon-git-pull-request"></span>
+    Pull requests
+    <span class="counter">6</span>
+</a>
+<a href="http://github.com/airbnb/polyglot.js/pulse" class="js-selected-navigation-item reponav-item" data-selected-links="pulse /airbnb/polyglot.js/pulse">
+<span aria-hidden="true" class="octicon octicon-pulse"></span>
+    Pulse
+</a>
+<a href="http://github.com/airbnb/polyglot.js/graphs" class="js-selected-navigation-item reponav-item" data-selected-links="repo_graphs repo_contributors /airbnb/polyglot.js/graphs">
+<span aria-hidden="true" class="octicon octicon-graph"></span>
+    Graphs
+</a>
+</nav>
+</div>
+</div>
+<div class="container new-discussion-timeline experiment-repo-nav">
+<div class="repository-content">
+<div class="repository-meta js-details-container">
+<span class="repository-meta-content">
+        Give your JavaScript the ability to speak many languages.
+        <a href="http://airbnb.github.io/polyglot.js" rel="nofollow">http://airbnb.github.io/polyglot.js</a>
+</span>
+</div>
+<div class="overall-summary overall-summary-bottomless">
+<div class="stats-switcher-viewport js-stats-switcher-viewport">
+<div class="stats-switcher-wrapper">
+<ul class="numbers-summary">
+<li class="commits">
+<a data-pjax="data-pjax" href="http://github.com/airbnb/polyglot.js/commits/master">
+<span aria-hidden="true" class="octicon octicon-history"></span>
+<span class="num text-emphasized">
+              100
+            </span>
+            commits
+        </a>
+</li>
+<li>
+<a data-pjax="data-pjax" href="http://github.com/airbnb/polyglot.js/branches">
+<span aria-hidden="true" class="octicon octicon-git-branch"></span>
+<span class="num text-emphasized">
+            2
+          </span>
+          branches
+        </a>
+</li>
+<li>
+<a data-pjax="data-pjax" href="http://github.com/airbnb/polyglot.js/releases">
+<span aria-hidden="true" class="octicon octicon-tag"></span>
+<span class="num text-emphasized">
+            11
+          </span>
+          releases
+        </a>
+</li>
+<li>
+<a href="http://github.com/airbnb/polyglot.js/graphs/contributors">
+<span aria-hidden="true" class="octicon octicon-organization"></span>
+<span class="num text-emphasized">
+      14
+    </span>
+    contributors
+</a>
+</li>
+</ul>
+<div class="repository-lang-stats">
+<ol class="repository-lang-stats-numbers">
+<li>
+<a href="http://github.com/airbnb/polyglot.js/search?l=javascript" data-ga-click="Repository, language stats search click, location:repo overview">
+<span class="color-block language-color" style="background-color:#f1e05a;"></span>
+<span class="lang">JavaScript</span>
+<span class="percent">74.3%</span>
+</a>
+</li>
+<li>
+<a href="http://github.com/airbnb/polyglot.js/search?l=coffeescript" data-ga-click="Repository, language stats search click, location:repo overview">
+<span class="color-block language-color" style="background-color:#244776;"></span>
+<span class="lang">CoffeeScript</span>
+<span class="percent">24.4%</span>
+</a>
+</li>
+<li>
+<a href="http://github.com/airbnb/polyglot.js/search?l=makefile" data-ga-click="Repository, language stats search click, location:repo overview">
+<span class="color-block language-color" style="background-color:#427819;"></span>
+<span class="lang">Makefile</span>
+<span class="percent">1.3%</span>
+</a>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="repository-lang-stats-graph js-toggle-lang-stats" title="Click for language details" data-ga-click="Repository, language bar stats toggle, location:repo overview">
+<span class="language-color" aria-label="JavaScript 74.3%" style="width:74.3%; background-color:#f1e05a;" itemprop="keywords">JavaScript</span>
+<span class="language-color" aria-label="CoffeeScript 24.4%" style="width:24.4%; background-color:#244776;" itemprop="keywords">CoffeeScript</span>
+<span class="language-color" aria-label="Makefile 1.3%" style="width:1.3%; background-color:#427819;" itemprop="keywords">Makefile</span>
+</div>
+<div class="file-navigation in-mid-page">
+<div class="right">
+<div class="btn-group">
+<button class="btn btn-sm disabled tooltipped tooltipped-n" aria-label="You must be signed in to make or propose changes" type="button">
+    New file
+  </button>
+<a href="http://github.com/airbnb/polyglot.js/find/master" class="btn btn-sm empty-icon right js-show-file-finder" data-pjax="data-pjax" data-hotkey="t" data-ga-click="Repository, find file, location:repo overview">
+        Find file
+      </a>
+</div>
+<div class="file-navigation-options" data-multiple="data-multiple">
+<div class="file-navigation-option">
+<!-- &lt;/textarea&gt; --><!-- '"` --><form accept-charset="UTF-8" action="/users/set_protocol" class="js-set-user-protocol-preference" data-form-nonce="efaf32f1af876862cf0c9270dff5ce04f6d38307" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓" /><input name="authenticity_token" type="hidden" value="FPutb/dB6vnS+D1bw8Wjp/YOf1z/oQ8fQkJMi42uOFBdDHI6lnjkNjf5vKLqkhs7Bglo9QSgfj4ByY4nEERTeQ==" /></div>
+<input type="hidden" name="protocol_type" value="clone" />
+<div class="select-menu js-menu-container js-select-menu">
+<div class="input-group js-select-button js-zeroclipboard-container">
+<div class="input-group-button">
+<button type="button" class="btn btn-sm select-menu-button js-menu-target" data-ga-click="Repository, clone HTTPS, location:repo overview">
+    HTTPS
+  </button>
+</div>
+<input type="text" class="input-monospace input-mini js-zeroclipboard-target js-url-field" value="https://github.com/airbnb/polyglot.js.git" readonly="readonly" />
+<div class="input-group-button">
+<button aria-label="Copy to clipboard" class="js-zeroclipboard btn btn-sm zeroclipboard-button tooltipped tooltipped-s" data-copied-hint="Copied!" type="button"><span aria-hidden="true" class="octicon octicon-clippy"></span></button>
+</div>
+</div>
+<div class="select-menu-modal-holder">
+<div class="select-menu-modal js-menu-content" aria-hidden="true">
+<div class="select-menu-header">
+<span aria-label="Close" class="octicon octicon-x js-menu-close" role="button"></span>
+<span class="select-menu-title">Choose a clone URL</span>
+</div>
+<div class="select-menu-list js-navigation-container" role="menu">
+<div class="select-menu-item js-navigation-item selected" role="menuitem" tabindex="0">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<div class="select-menu-item-text">
+<input type="radio" name="protocol_selector" value="http" checked="checked" />
+<span class="select-menu-item-heading">
+                            HTTPS
+                            (recommended)
+                          </span>
+<span class="description">
+                              Clone with Git or checkout with SVN using the repository's web address.
+                            </span>
+<span class="js-select-button-text hidden-select-button-text">
+<div class="input-group-button">
+<button type="button" class="btn btn-sm select-menu-button js-menu-target" data-ga-click="Repository, clone HTTPS, location:repo overview">
+    HTTPS
+  </button>
+</div>
+<input type="text" class="input-monospace input-mini js-zeroclipboard-target js-url-field" value="https://github.com/airbnb/polyglot.js.git" readonly="readonly" />
+<div class="input-group-button">
+<button aria-label="Copy to clipboard" class="js-zeroclipboard btn btn-sm zeroclipboard-button tooltipped tooltipped-s" data-copied-hint="Copied!" type="button"><span aria-hidden="true" class="octicon octicon-clippy"></span></button>
+</div>
+</span>
+</div>
+</div>
+</div>
+<div class="select-menu-list" role="menu">
+<a class="select-menu-item select-menu-action" href="https://help.github.com/articles/which-remote-url-should-i-use" target="_blank">
+<span aria-hidden="true" class="octicon octicon-question select-menu-item-icon"></span>
+<div class="select-menu-item-text">
+                        Learn more about clone URLs
+                      </div>
+</a>
+</div>
+</div>
+</div>
+</div>
+</form> </div>
+<div class="file-navigation-option">
+</div>
+<div class="file-navigation-option">
+<a href="http://github.com/airbnb/polyglot.js/archive/master.zip" class="btn btn-sm" rel="nofollow" data-ga-click="Repository, download zip, location:repo overview">
+            Download ZIP
+          </a>
+</div>
+</div>
+</div>
+<div class="select-menu js-menu-container js-select-menu left">
+<button class="btn btn-sm select-menu-button js-menu-target css-truncate" data-hotkey="w" title="master" type="button" aria-label="Switch branches or tags" tabindex="0" aria-haspopup="true">
+<i>Branch:</i>
+<span class="js-select-button css-truncate-target">master</span>
+</button>
+<div class="select-menu-modal-holder js-menu-content js-navigation-container" data-pjax="data-pjax" aria-hidden="true">
+<div class="select-menu-modal">
+<div class="select-menu-header">
+<span aria-label="Close" class="octicon octicon-x js-menu-close" role="button"></span>
+<span class="select-menu-title">Switch branches/tags</span>
+</div>
+<div class="select-menu-filters">
+<div class="select-menu-text-filter">
+<input type="text" aria-label="Filter branches/tags" id="context-commitish-filter-field" class="js-filterable-field js-navigation-enable" placeholder="Filter branches/tags" />
+</div>
+<div class="select-menu-tabs">
+<ul>
+<li class="select-menu-tab">
+<a href="#" data-tab-filter="branches" data-filter-placeholder="Filter branches/tags" class="js-select-menu-tab" role="tab">Branches</a>
+</li>
+<li class="select-menu-tab">
+<a href="#" data-tab-filter="tags" data-filter-placeholder="Find a tag…" class="js-select-menu-tab" role="tab">Tags</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="branches" role="menu">
+<div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/airbnb/polyglot.js/tree/gh-pages" data-name="gh-pages" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="gh-pages">
+                gh-pages
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open selected" href="http://github.com/airbnb/polyglot.js/tree/master" data-name="master" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="master">
+                master
+              </span>
+</a>
+</div>
+<div class="select-menu-no-results">Nothing to show</div>
+</div>
+<div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="tags">
+<div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/airbnb/polyglot.js/tree/v1.0.0" data-name="v1.0.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v1.0.0">
+                v1.0.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/airbnb/polyglot.js/tree/v0.4.5" data-name="v0.4.5" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.4.5">
+                v0.4.5
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/airbnb/polyglot.js/tree/v0.4.4" data-name="v0.4.4" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.4.4">
+                v0.4.4
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/airbnb/polyglot.js/tree/v0.4.3" data-name="v0.4.3" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.4.3">
+                v0.4.3
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/airbnb/polyglot.js/tree/v0.4.2" data-name="v0.4.2" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.4.2">
+                v0.4.2
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/airbnb/polyglot.js/tree/v0.4.1" data-name="v0.4.1" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.4.1">
+                v0.4.1
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/airbnb/polyglot.js/tree/v0.3.0" data-name="v0.3.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.3.0">
+                v0.3.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/airbnb/polyglot.js/tree/v0.2.2" data-name="v0.2.2" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.2.2">
+                v0.2.2
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/airbnb/polyglot.js/tree/v0.2.1" data-name="v0.2.1" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.2.1">
+                v0.2.1
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/airbnb/polyglot.js/tree/v0.2.0" data-name="v0.2.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.2.0">
+                v0.2.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/airbnb/polyglot.js/tree/v0.1.0" data-name="v0.1.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.1.0">
+                v0.1.0
+              </span>
+</a>
+</div>
+<div class="select-menu-no-results">Nothing to show</div>
+</div>
+</div>
+</div>
+</div>
+<button type="button" class="btn btn-sm btn-primary disabled tooltipped tooltipped-n" aria-label="You must be signed in to create a pull request">
+        New pull request
+      </button>
+<div class="breadcrumb">
+</div>
+</div>
+<div class="commit-tease js-details-container">
+<span class="right">
+      Latest commit
+      <a class="commit-tease-sha" href="http://github.com/airbnb/polyglot.js/commit/79f24ff38cef07fcdfacfee6a24701dfb01a71f9" data-pjax="data-pjax">
+        79f24ff
+      </a>
+<time datetime="2016-01-12T18:22:30Z" is="relative-time">Jan 12, 2016</time>
+</span>
+<span class="commit-author-section">
+<img alt="@spikebrehm" class="avatar" height="20" src="https://avatars0.githubusercontent.com/u/133937?v=3&amp;s=40" width="20" />
+<a href="http://github.com/spikebrehm" class="user-mention" rel="contributor">spikebrehm</a>
+</span>
+<a href="http://github.com/airbnb/polyglot.js/commit/79f24ff38cef07fcdfacfee6a24701dfb01a71f9" class="message" data-pjax="true" title="Update copyright in docs">Update copyright in docs</a>
+
+</div>
+<div class="file-wrap ">
+<a href="http://github.com/airbnb/polyglot.js/tree/79f24ff38cef07fcdfacfee6a24701dfb01a71f9" class="hidden js-permalink-shortcut" data-hotkey="y">Permalink</a>
+<table class="files js-navigation-container js-active-navigation-container" data-pjax="data-pjax">
+<tbody>
+<tr class="warning include-fragment-error">
+<td class="icon"><span aria-hidden="true" class="octicon octicon-alert"></span></td>
+<td class="content" colspan="3">Failed to load latest commit information.</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-directory"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/airbnb/polyglot.js/tree/master/build" class="js-directory-link js-navigation-open" id="b0da275520918e23dd615e2a747528f1-160bf0ba0c5eb9c4bfaf6f54491154d53bcbaf99" title="build">build</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/airbnb/polyglot.js/commit/eec8d157a6e0147a6d698d4be50a92b7f91dd671" class="message" data-pjax="true" title="Release 0.4.3">Release 0.4.3</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2015-06-26T19:16:39Z" is="time-ago">Jun 26, 2015</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-directory"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/airbnb/polyglot.js/tree/master/docs" class="js-directory-link js-navigation-open" id="e3e2a9bfd88566b05001b02a3f51d286-d85f81146c3b2f8c9d8f8bd3432d7ba68aa434aa" title="docs">docs</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/airbnb/polyglot.js/commit/79f24ff38cef07fcdfacfee6a24701dfb01a71f9" class="message" data-pjax="true" title="Update copyright in docs">Update copyright in docs</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2016-01-12T18:22:30Z" is="time-ago">Jan 12, 2016</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-directory"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/airbnb/polyglot.js/tree/master/lib" class="js-directory-link js-navigation-open" id="e8acc63b1e238f3255c900eed37254b8-8b07b940b041b5399aab753ac5c1c574b8d473c9" title="lib">lib</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/airbnb/polyglot.js/commit/0ac050e518a211a2a7e5a0ca82b00801c8fa1dd4" class="message" data-pjax="true" title="Update copyright to 2012-2016">Update copyright to 2012-2016</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2016-01-12T18:16:31Z" is="time-ago">Jan 12, 2016</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-directory"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/airbnb/polyglot.js/tree/master/test" class="js-directory-link js-navigation-open" id="098f6bcd4621d373cade4e832627b4f6-dc1a2ad53f28aa842c3efc6d066ab17a2174c915" title="test">test</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/airbnb/polyglot.js/commit/89ca1b0f63379de6a0e2b8a653488688b77c779a" class="message" data-pjax="true" title="[Dev Deps] update `uglify-js`, `docco`, `should`, `mocha`, and fix test pollution">[Dev Deps] update `uglify-js`, `docco`, `should`, `mocha`, and fix te…</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2015-11-30T03:02:11Z" is="time-ago">Nov 29, 2015</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-text"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/airbnb/polyglot.js/blob/master/.gitignore" class="js-directory-link js-navigation-open" id="a084b794bc0759e7a6b77810e01874f2-54d059ab5859f686b1b2bfde5f9dfb8d73d1aaf7" title=".gitignore">.gitignore</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/airbnb/polyglot.js/commit/9e2b0ef8379cc972e28a33a054deedc03d7e63cf" class="message" data-pjax="true" title="Support nested phrase objects
+
+* Support both in `extend()` and in the constructor.
+* Update docs &amp; README.
+* Update version to 0.4.0.">Support nested phrase objects</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2014-05-22T16:44:15Z" is="time-ago">May 22, 2014</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-text"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/airbnb/polyglot.js/blob/master/.travis.yml" class="js-directory-link js-navigation-open" id="354f30a63fb0907d4ad57269548329e3-30d0972fc2b1e1a1e224da5bbfda654fa58dded3" title=".travis.yml">.travis.yml</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/airbnb/polyglot.js/commit/592bd252d8231b1f4be06078d51e4073090f84e2" class="message" data-pjax="true" title="[Tests] up to `node` `v5.1`">[Tests] up to `node` `v5.1`</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2015-11-30T03:05:41Z" is="time-ago">Nov 29, 2015</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-text"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/airbnb/polyglot.js/blob/master/CHANGELOG.md" class="js-directory-link js-navigation-open" id="4ac32a78649ca5bdd8e0ba38b7006a1e-7747fade2ec3b05a7dbd347c8497050888d13a34" title="CHANGELOG.md">CHANGELOG.md</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/airbnb/polyglot.js/commit/0bd43e79262db39834c010e8e77c44010e04e08c" class="message" data-pjax="true" title="Update changelog with v0.4.4, v0.4.5, and v1.0.0">Update changelog with v0.4.4, v0.4.5, and v1.0.0</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2015-12-01T00:53:29Z" is="time-ago">Nov 30, 2015</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-text"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/airbnb/polyglot.js/blob/master/LICENSE" class="js-directory-link js-navigation-open" id="9879d6db96fd29134fc802214163b95a-24fafaca1d2e8d6b7bb210e805659c3a6cac2c4d" title="LICENSE">LICENSE</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/airbnb/polyglot.js/commit/39c65219e54b1e6b63d2ddb6817e7224cd991113" class="message" data-pjax="true" title="Build for 0.4.1">Build for 0.4.1</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2014-07-14T23:05:56Z" is="time-ago">Jul 14, 2014</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-text"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/airbnb/polyglot.js/blob/master/Makefile" class="js-directory-link js-navigation-open" id="b67911656ef5d18c4ae36cb6741b7965-1fb2bca9ad1f8a21bb5ec08f08cc95a971972e38" title="Makefile">Makefile</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/airbnb/polyglot.js/commit/ce090186922d9d21e0c3482dcdce45da5753bada" class="message" data-pjax="true" title="initial commit">initial commit</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2012-09-28T02:06:10Z" is="time-ago">Sep 27, 2012</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-text"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/airbnb/polyglot.js/blob/master/README.md" class="js-directory-link js-navigation-open" id="04c6e90faac2675aa89e2176d2eec7d8-62fce60229f79dd7335276da426b22db88b7b4a6" title="README.md">README.md</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/airbnb/polyglot.js/commit/e2dac9fbb8eb6b6550169297505fb38856754ac5" class="message" data-pjax="true" title="[Docs] Move the changelog to a separate file.">[Docs] Move the changelog to a separate file.</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2015-12-01T00:30:22Z" is="time-ago">Nov 30, 2015</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-text"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/airbnb/polyglot.js/blob/master/bower.json" class="js-directory-link js-navigation-open" id="0a08a7565aba4405282251491979bb6b-4d6a8c40103ad8b0745fee9a77f6221c42226b08" title="bower.json">bower.json</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/airbnb/polyglot.js/commit/eec8d157a6e0147a6d698d4be50a92b7f91dd671" class="message" data-pjax="true" title="Release 0.4.3">Release 0.4.3</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2015-06-26T19:16:39Z" is="time-ago">Jun 26, 2015</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-text"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/airbnb/polyglot.js/blob/master/component.json" class="js-directory-link js-navigation-open" id="162d38b326426c84ac91e51f931105bb-4c0d0a323e6168616d2b3a475778ba8e1b7be039" title="component.json">component.json</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/airbnb/polyglot.js/commit/eec8d157a6e0147a6d698d4be50a92b7f91dd671" class="message" data-pjax="true" title="Release 0.4.3">Release 0.4.3</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2015-06-26T19:16:39Z" is="time-ago">Jun 26, 2015</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-text"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/airbnb/polyglot.js/blob/master/index.js" class="js-directory-link js-navigation-open" id="168726dbe96b3ce427e7fedce31bb0bc-027f448ad0710ca94ec573cfa508eba73d481742" title="index.js">index.js</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/airbnb/polyglot.js/commit/ce090186922d9d21e0c3482dcdce45da5753bada" class="message" data-pjax="true" title="initial commit">initial commit</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2012-09-28T02:06:10Z" is="time-ago">Sep 28, 2012</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-text"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/airbnb/polyglot.js/blob/master/package.json" class="js-directory-link js-navigation-open" id="b9cfc7f2cdf78a7f4b91a753d10865a2-58a86888a1cbfaccd6d7bbddbd2a25c2f467059f" title="package.json">package.json</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/airbnb/polyglot.js/commit/a898edb9d6358769565145aa04bc118d5b2aab3d" class="message" data-pjax="true" title="Update docs; add `npm run docs` task
+
+The annotated docs via the `docco` library hadn't been updated since
+0.3.0. Here we update them to match the latest, and also add a `npm run
+docs` task for generating the docs.">Update docs; add `npm run docs` task</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2016-01-12T17:53:48Z" is="time-ago">Jan 12, 2016</time></span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="readme" class="boxed-group clearfix announce instapaper_body md">
+<h3>
+<span aria-hidden="true" class="octicon octicon-book"></span>
+      README.md
+    </h3>
+<article class="markdown-body entry-content" itemprop="mainContentOfPage"><h1><a id="user-content-polyglotjs" class="anchor" href="#polyglotjs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Polyglot.js</h1>
+</article><p><a href="https://travis-ci.org/airbnb/polyglot.js"><img src="https://camo.githubusercontent.com/8c8b7d0f15e88b360d832721208d5cfc68fb8965/68747470733a2f2f7472617669732d63692e6f72672f616972626e622f706f6c79676c6f742e6a732e737667" alt="Build Status" data-canonical-src="https://travis-ci.org/airbnb/polyglot.js.svg" style="max-width:100%;" /></a></p>
+<p><a href="https://gitter.im/airbnb/polyglot.js?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge"><img src="https://camo.githubusercontent.com/da2edb525cde1455a622c58c0effc3a90b9a181c/68747470733a2f2f6261646765732e6769747465722e696d2f4a6f696e253230436861742e737667" alt="Join the chat at https://gitter.im/airbnb/polyglot.js" data-canonical-src="https://badges.gitter.im/Join%20Chat.svg" style="max-width:100%;" /></a></p>
+<p>Polyglot.js is a tiny I18n helper library written in JavaScript, made to
+work both in the browser and in CommonJS environments (Node). It provides a simple solution for interpolation and pluralization, based off of Airbnb's
+experience adding I18n functionality to its Backbone.js and Node apps. Polyglot has zero dependencies.</p>
+<p>I18n is incredibly important for us at <a href="https://www.airbnb.com/">Airbnb</a>,
+as we have listings in 192 countries, and we translate our site into 30-odd different languages.
+We're also <a href="https://www.airbnb.com/jobs/departments/engineering">hiring talented engineers</a>
+to help us scale up to meet the challenges of buliding a global marketplace.</p>
+<p>View the <a href="http://airbnb.github.com/polyglot.js">documentation on Github</a>.</p>
+<p>View the <a href="http://airbnb.github.com/polyglot.js/polyglot.html">annotated source</a>.</p>
+<p>Download the <a href="https://raw.github.com/airbnb/polyglot.js/master/build/polyglot.js">development version</a>: 7.9kb, unminified with comments.</p>
+<p>Download the <a href="https://raw.github.com/airbnb/polyglot.js/master/build/polyglot.min.js">production version</a>: 2.8kb, minified (1.3kb gzipped).</p>
+<p>Polylglot is agnostic to your translation backend. It doesn't perform any
+translation; it simply gives you a way to manage translated phrases from
+your client- or server-side JavaScript application.</p>
+<h2><a id="user-content-installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
+<p>For use with Node, install with <a href="http://npmjs.org">NPM</a>:</p>
+<pre><code>$ npm install node-polyglot
+</code></pre>
+<h3><a id="user-content-running-the-tests" class="anchor" href="#running-the-tests" aria-hidden="true"><span class="octicon octicon-link"></span></a>Running the tests</h3>
+<pre><code>$ npm install
+
+$ npm test
+
+  t
+    ✓ should translate a simple string
+    ✓ should return the key if translation not found
+    ✓ should interpolate
+    ✓ should interpolate the same placeholder multiple times
+    ✓ should allow you to supply default values
+    ◦ should return the non-interpolated key if not initialized with allowMissing     ✓ should return the non-interpolated key if not initialized with allowMissing and translation not found
+    ◦ should return an interpolated key if initialized with allowMissing and trans    ✓ should return an interpolated key if initialized with allowMissing and translation not found
+    ✓ should support nested phrase objects
+
+  pluralize
+    ✓ should support pluralization with an integer
+    ✓ should accept a number as a shortcut to pluralize a word
+
+  locale
+    ✓ should default to 'en'
+    ✓ should get and set locale
+
+  extend
+    ✓ should support multiple extends, overriding old keys
+    ✓ shouldn't forget old keys
+    ✓ should support optional `prefix` argument
+    ✓ should support nested object
+
+  clear
+    ✓ should wipe out old phrases
+
+  replace
+    ✓ should wipe out old phrases and replace with new phrases
+
+
+  ✔ 18 tests complete (12ms)
+</code></pre>
+<h2><a id="user-content-usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+<h3><a id="user-content-instantiation" class="anchor" href="#instantiation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Instantiation</h3>
+<p>First, create an instance of the <code>Polyglot</code> class, which you will use for translation.</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> polyglot <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Polyglot</span>();</pre></div>
+<p>Polyglot is class-based so you can maintain different sets of phrases at the same time, possibly in different locales. This is very useful for example when serving requests with <a href="http://expressjs.com">Express</a>, because each request may have a different locale, and you don't want concurrent requests to clobber each other's phrases.</p>
+<h3><a id="user-content-translation" class="anchor" href="#translation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Translation</h3>
+<p>Tell Polyglot what to say by simply giving it a phrases object,
+where the key is the canonical name of the phrase and the value is
+the already-translated string.</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">polyglot</span>.<span class="pl-en">extend</span>({
+  <span class="pl-s"><span class="pl-pds">"</span>hello<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>Hello<span class="pl-pds">"</span></span>
+});
+
+<span class="pl-smi">polyglot</span>.<span class="pl-en">t</span>(<span class="pl-s"><span class="pl-pds">"</span>hello<span class="pl-pds">"</span></span>);
+<span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">"</span>Hello<span class="pl-pds">"</span></span></pre></div>
+<p>You can also pass a mapping at instantiation, using the key <code>phrases</code>:</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> polyglot <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Polyglot</span>({phrases<span class="pl-k">:</span> {<span class="pl-s"><span class="pl-pds">"</span>hello<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>Hello<span class="pl-pds">"</span></span>}});</pre></div>
+<p>Polyglot doesn't do the translation for you. It's up to you to give it
+the proper phrases for the user's locale.</p>
+<p>A common pattern is to gather a hash of phrases in your backend, and output
+them in a <code>&lt;script&gt;</code> tag at the bottom of the document.  For example, in Rails:</p>
+<p><code>app/controllers/home_controller.rb</code></p>
+<div class="highlight highlight-source-ruby"><pre><span class="pl-k">def</span> <span class="pl-en">index</span>
+  <span class="pl-smi">@phrases</span> <span class="pl-k">=</span> {
+    <span class="pl-s"><span class="pl-pds">"</span>home.login<span class="pl-pds">"</span></span> =&gt; <span class="pl-c1">I18n</span>.t(<span class="pl-s"><span class="pl-pds">"</span>home.login<span class="pl-pds">"</span></span>),
+    <span class="pl-s"><span class="pl-pds">"</span>home.signup<span class="pl-pds">"</span></span> =&gt; <span class="pl-c1">I18n</span>.t(<span class="pl-s"><span class="pl-pds">"</span>home.signup<span class="pl-pds">"</span></span>),
+    ...
+  }
+<span class="pl-k">end</span></pre></div>
+<p><code>app/views/home/index.html.erb</code></p>
+<div class="highlight highlight-text-html-basic"><pre><span class="pl-s1">&lt;<span class="pl-ent">script</span>&gt;</span>
+<span class="pl-s1">  <span class="pl-k">var</span> polyglot <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Polyglot</span>({phrases<span class="pl-k">:</span> <span class="pl-k">&lt;</span><span class="pl-k">%=</span> raw @<span class="pl-smi">phrases</span>.<span class="pl-smi">to_json</span> <span class="pl-k">%</span><span class="pl-k">&gt;</span>});</span>
+<span class="pl-s1">&lt;/<span class="pl-ent">script</span>&gt;</span></pre></div>
+<p>And now you can utilize i.e. <code>polyglot.t("home.login")</code> in your JavaScript application
+or Handlebars templates.</p>
+<h3><a id="user-content-interpolation" class="anchor" href="#interpolation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Interpolation</h3>
+<p><code>Polyglot.t()</code> also provides interpolation. Pass an object with key-value pairs of
+interpolation arguments as the second parameter.</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">polyglot</span>.<span class="pl-en">extend</span>({
+  <span class="pl-s"><span class="pl-pds">"</span>hello_name<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>Hola, %{name}.<span class="pl-pds">"</span></span>
+});
+
+<span class="pl-smi">polyglot</span>.<span class="pl-en">t</span>(<span class="pl-s"><span class="pl-pds">"</span>hello_name<span class="pl-pds">"</span></span>, {name<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>DeNiro<span class="pl-pds">"</span></span>});
+<span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">"</span>Hola, DeNiro.<span class="pl-pds">"</span></span></pre></div>
+<p>Polyglot also supports nested phrase objects.</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">polyglot</span>.<span class="pl-en">extend</span>({
+  <span class="pl-s"><span class="pl-pds">"</span>nav<span class="pl-pds">"</span></span><span class="pl-k">:</span> {
+    <span class="pl-s"><span class="pl-pds">"</span>hello<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>Hello<span class="pl-pds">"</span></span>,
+    <span class="pl-s"><span class="pl-pds">"</span>hello_name<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>Hello, %{name}<span class="pl-pds">"</span></span>,
+    <span class="pl-s"><span class="pl-pds">"</span>sidebar<span class="pl-pds">"</span></span><span class="pl-k">:</span> {
+      <span class="pl-s"><span class="pl-pds">"</span>welcome<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>Welcome<span class="pl-pds">"</span></span>
+    }
+  }
+});
+
+<span class="pl-smi">polyglot</span>.<span class="pl-en">t</span>(<span class="pl-s"><span class="pl-pds">"</span>nav.sidebar.welcome<span class="pl-pds">"</span></span>);
+<span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">"</span>Welcome<span class="pl-pds">"</span></span></pre></div>
+<h3><a id="user-content-pluralization" class="anchor" href="#pluralization" aria-hidden="true"><span class="octicon octicon-link"></span></a>Pluralization</h3>
+<p>For pluralization to work properly, you need to tell Polyglot what the current locale is.  You can use <code>polyglot.locale("fr")</code> to set the locale to, for example, French. This method is also a getter:</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">polyglot</span>.<span class="pl-en">locale</span>()
+<span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">"</span>fr<span class="pl-pds">"</span></span></pre></div>
+<p>You can also pass this in during instantiation.</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> polyglot <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Polyglot</span>({locale<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>fr<span class="pl-pds">"</span></span>});</pre></div>
+<p>Currently, the <em>only</em> thing that Polyglot uses this locale setting for is pluralization.</p>
+<p>Polyglot provides a very basic pattern for providing
+pluralization based on a single string that contains all plural forms for a given phrase. Because various languages have different nominal forms for zero, one, and multiple, and because the noun can be before or after the count, we have to be overly explicit
+about the possible phrases.</p>
+<p>To get a pluralized phrase, still use <code>polyglot.t()</code> but use a specially-formatted phrase string that separates the plural forms by the delimeter <code>||||</code>, or four vertical pipe characters.</p>
+<p>For pluralizing "car" in English, Polyglot assumes you have a phrase of the form:</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">polyglot</span>.<span class="pl-en">extend</span>({
+  <span class="pl-s"><span class="pl-pds">"</span>num_cars<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>%{smart_count} car |||| %{smart_count} cars<span class="pl-pds">"</span></span>,
+});</pre></div>
+<p>In English (and German, Spanish, Italian, and a few others) there are only two plural forms: singular and not-singular.</p>
+<p>Some languages get a bit more complicated. In Czech, there are three separate forms: 1, 2 through 4, and 5 and up. Russian is even crazier.</p>
+<p><code>polyglot.t()</code> will choose the appropriate phrase based
+on the provided <code>smart_count</code> option, whose value is a number.</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">polyglot</span>.<span class="pl-en">t</span>(<span class="pl-s"><span class="pl-pds">"</span>num_cars<span class="pl-pds">"</span></span>, {smart_count<span class="pl-k">:</span> <span class="pl-c1">0</span>});
+<span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">"</span>0 cars<span class="pl-pds">"</span></span>
+
+<span class="pl-smi">polyglot</span>.<span class="pl-en">t</span>(<span class="pl-s"><span class="pl-pds">"</span>num_cars<span class="pl-pds">"</span></span>, {smart_count<span class="pl-k">:</span> <span class="pl-c1">1</span>});
+<span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">"</span>1 car<span class="pl-pds">"</span></span>
+
+<span class="pl-smi">polyglot</span>.<span class="pl-en">t</span>(<span class="pl-s"><span class="pl-pds">"</span>num_cars<span class="pl-pds">"</span></span>, {smart_count<span class="pl-k">:</span> <span class="pl-c1">2</span>});
+<span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">"</span>2 cars<span class="pl-pds">"</span></span></pre></div>
+<p>As a shortcut, you can also pass a number to the second parameter:</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">polyglot</span>.<span class="pl-en">t</span>(<span class="pl-s"><span class="pl-pds">"</span>num_cars<span class="pl-pds">"</span></span>, <span class="pl-c1">2</span>);
+<span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">"</span>2 cars<span class="pl-pds">"</span></span></pre></div>
+<h2><a id="user-content-public-methods" class="anchor" href="#public-methods" aria-hidden="true"><span class="octicon octicon-link"></span></a>Public Methods</h2>
+<h3><a id="user-content-polyglotprototypeextendphrases" class="anchor" href="#polyglotprototypeextendphrases" aria-hidden="true"><span class="octicon octicon-link"></span></a>Polyglot.prototype.extend(phrases)</h3>
+<p>Use <code>extend</code> to tell Polyglot how to translate a given key.</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">polyglot</span>.<span class="pl-en">extend</span>({
+  <span class="pl-s"><span class="pl-pds">"</span>hello<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>Hello<span class="pl-pds">"</span></span>,
+  <span class="pl-s"><span class="pl-pds">"</span>hello_name<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>Hello, %{name}<span class="pl-pds">"</span></span>
+});</pre></div>
+<p>The key can be any string.  Feel free to call <code>extend</code> multiple times;
+it will override any phrases with the same key, but leave existing phrases
+untouched.</p>
+<h3><a id="user-content-polyglotprototypeclear" class="anchor" href="#polyglotprototypeclear" aria-hidden="true"><span class="octicon octicon-link"></span></a>Polyglot.prototype.clear()</h3>
+<p>Clears all phrases. Useful for special cases, such as freeing
+up memory if you have lots of phrases but no longer need to
+perform any translation. Also used internally by <code>replace</code>.</p>
+<h3><a id="user-content-polyglotprototypereplacephrases" class="anchor" href="#polyglotprototypereplacephrases" aria-hidden="true"><span class="octicon octicon-link"></span></a>Polyglot.prototype.replace(phrases)</h3>
+<p>Completely replace the existing phrases with a new set of phrases.
+Normally, just use <code>extend</code> to add more phrases, but under certain
+circumstances, you may want to make sure no old phrases are lying around.</p>
+<h3><a id="user-content-polyglotprototypetkey-interpolationoptions" class="anchor" href="#polyglotprototypetkey-interpolationoptions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Polyglot.prototype.t(key, interpolationOptions)</h3>
+<p>The most-used method. Provide a key, and <code>t()</code> will return the
+phrase.</p>
+<pre><code>polyglot.t("hello");
+=&gt; "Hello"
+</code></pre>
+<p>The phrase value is provided first by a call to <code>polyglot.extend()</code> or
+<code>polyglot.replace()</code>.</p>
+<p>Pass in an object as the second argument to perform interpolation.</p>
+<pre><code>polyglot.t("hello_name", {name: "Spike"});
+=&gt; "Hello, Spike"
+</code></pre>
+<p>Pass a number as the second argument as a shortcut to <code>smart_count</code>:</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-c">// same as: polyglot.t("car", {smart_count: 2});</span>
+<span class="pl-smi">polyglot</span>.<span class="pl-en">t</span>(<span class="pl-s"><span class="pl-pds">"</span>car<span class="pl-pds">"</span></span>, <span class="pl-c1">2</span>);
+<span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">"</span>2 cars<span class="pl-pds">"</span></span></pre></div>
+<p>If you like, you can provide a default value in case the phrase is missing.
+Use the special option key "_" to specify a default.</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">polyglot</span>.<span class="pl-en">t</span>(<span class="pl-s"><span class="pl-pds">"</span>i_like_to_write_in_language<span class="pl-pds">"</span></span>, {
+  _<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>I like to write in %{language}.<span class="pl-pds">"</span></span>,
+  language<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>JavaScript<span class="pl-pds">"</span></span>
+});
+<span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">"</span>I like to write in JavaScript.<span class="pl-pds">"</span></span></pre></div>
+<h2><a id="user-content-history" class="anchor" href="#history" aria-hidden="true"><span class="octicon octicon-link"></span></a><a href="http://github.com/airbnb/polyglot.js/blob/master/CHANGELOG.md">History</a></h2>
+
+</div>
+</div>
+<div class="modal-backdrop"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="container">
+<div class="site-footer" role="contentinfo">
+<ul class="site-footer-links right">
+<li><a href="https://status.github.com/" data-ga-click="Footer, go to status, text:status">Status</a></li>
+<li><a href="https://developer.github.com" data-ga-click="Footer, go to api, text:api">API</a></li>
+<li><a href="https://training.github.com" data-ga-click="Footer, go to training, text:training">Training</a></li>
+<li><a href="https://shop.github.com" data-ga-click="Footer, go to shop, text:shop">Shop</a></li>
+<li><a href="https://github.com/blog" data-ga-click="Footer, go to blog, text:blog">Blog</a></li>
+<li><a href="https://github.com/about" data-ga-click="Footer, go to about, text:about">About</a></li>
+<li><a href="https://github.com/pricing" data-ga-click="Footer, go to pricing, text:pricing">Pricing</a></li>
+</ul>
+<a href="https://github.com" aria-label="Homepage">
+<span aria-hidden="true" class="mega-octicon octicon-mark-github" title="GitHub "></span>
+</a>
+<ul class="site-footer-links">
+<li>&copy; 2016 <span title="0.05300s from github-fe134-cp1-prd.iad.github.net">GitHub</span>, Inc.</li>
+<li><a href="https://github.com/site/terms" data-ga-click="Footer, go to terms, text:terms">Terms</a></li>
+<li><a href="https://github.com/site/privacy" data-ga-click="Footer, go to privacy, text:privacy">Privacy</a></li>
+<li><a href="https://github.com/security" data-ga-click="Footer, go to security, text:security">Security</a></li>
+<li><a href="https://github.com/contact" data-ga-click="Footer, go to contact, text:contact">Contact</a></li>
+<li><a href="https://help.github.com" data-ga-click="Footer, go to help, text:help">Help</a></li>
+</ul>
+</div>
+</div>
+<div id="ajax-error-message" class="flash flash-error">
+<span aria-hidden="true" class="octicon octicon-alert"></span>
+<button type="button" class="flash-close js-flash-close js-ajax-error-dismiss" aria-label="Dismiss error">
+<span aria-hidden="true" class="octicon octicon-x"></span>
+</button>
+      Something went wrong with that request. Please try again.
+    </div>
+<script crossorigin="anonymous" src="https://assets-cdn.github.com/assets/compat-a0cee5d8d4fb535c0f41971d037b32e852a56ddca5bf67bb2124e426a2d813a5.js"></script>
+<script crossorigin="anonymous" src="https://assets-cdn.github.com/assets/frameworks-9ee55ceaf87fc34dc86334249fef6cbece88e815478e0fbe81642d57ed0fff89.js"></script>
+<script async="async" crossorigin="anonymous" src="https://assets-cdn.github.com/assets/github-8afeb971202f92778ffc73ddd92661c1977dc5e42a928ed35f8ec96e425a6e7a.js"></script>
+<div class="js-stale-session-flash stale-session-flash flash flash-warn flash-banner hidden">
+<span aria-hidden="true" class="octicon octicon-alert"></span>
+<span class="signed-in-tab-flash">You signed in with another tab or window. <a href="">Reload</a> to refresh your session.</span>
+<span class="signed-out-tab-flash">You signed out in another tab or window. <a href="">Reload</a> to refresh your session.</span>
+</div>
+<div class="facebox" id="facebox" style="display:none;">
+<div class="facebox-popup">
+<div class="facebox-content" role="dialog" aria-labelledby="facebox-header" aria-describedby="facebox-description">
+</div>
+<button type="button" class="facebox-close js-facebox-close" aria-label="Close modal">
+<span aria-hidden="true" class="octicon octicon-x"></span>
+</button>
+</div>
+</div>
+</body>
+</html>

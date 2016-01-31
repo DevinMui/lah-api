@@ -1,0 +1,1040 @@
+
+<!DOCTYPE html>
+<html lang="en" class="">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article# profile: http://ogp.me/ns/profile#">
+<meta charset="utf-8" />
+<link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/github-d0dea0e5376d5c42aabf467726e0cffb7034a0d94eb947b9328eb6c9c4fcbba3.css" media="all" rel="stylesheet" />
+<link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/github2-5f7255544b25f937224217b1c37ee5c139a0a00a3decd8020b9aabc550340903.css" media="all" rel="stylesheet" />
+<link as="script" href="https://assets-cdn.github.com/assets/frameworks-9ee55ceaf87fc34dc86334249fef6cbece88e815478e0fbe81642d57ed0fff89.js" rel="preload" />
+<link as="script" href="https://assets-cdn.github.com/assets/github-8afeb971202f92778ffc73ddd92661c1977dc5e42a928ed35f8ec96e425a6e7a.js" rel="preload" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Content-Language" content="en" />
+<meta name="viewport" content="width=1020" />
+<title>facebook/fresco: An Android library for managing images and the memory they use.</title>
+<link rel="search" type="application/opensearchdescription+xml" href="http://github.com/opensearch.xml" title="GitHub" />
+<link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub" />
+<link rel="apple-touch-icon" href="http://github.com/apple-touch-icon.png" />
+<link rel="apple-touch-icon" sizes="57x57" href="http://github.com/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon" sizes="60x60" href="http://github.com/apple-touch-icon-60x60.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="http://github.com/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon" sizes="76x76" href="http://github.com/apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="http://github.com/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon" sizes="120x120" href="http://github.com/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="http://github.com/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon" sizes="152x152" href="http://github.com/apple-touch-icon-152x152.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="http://github.com/apple-touch-icon-180x180.png" />
+<meta property="fb:app_id" content="1401488693436528" />
+<meta content="https://avatars2.githubusercontent.com/u/69631?v=3&amp;s=400" name="twitter:image:src" /><meta content="@github" name="twitter:site" /><meta content="summary" name="twitter:card" /><meta content="facebook/fresco" name="twitter:title" /><meta content="fresco - An Android library for managing images and the memory they use." name="twitter:description" />
+<meta content="https://avatars2.githubusercontent.com/u/69631?v=3&amp;s=400" property="og:image" /><meta content="GitHub" property="og:site_name" /><meta content="object" property="og:type" /><meta content="facebook/fresco" property="og:title" /><meta content="https://github.com/facebook/fresco" property="og:url" /><meta content="fresco - An Android library for managing images and the memory they use." property="og:description" />
+<meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats" />
+<meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors" />
+<link rel="assets" href="https://assets-cdn.github.com/" />
+<meta name="pjax-timeout" content="1000" />
+<meta name="msapplication-TileImage" content="/windows-tile.png" />
+<meta name="msapplication-TileColor" content="#ffffff" />
+<meta name="selected-link" value="repo_source" data-pjax-transient="data-pjax-transient" />
+<meta name="google-site-verification" content="KT5gs8h0wvaagLKAVWq8bbeNwnZZK1r1XQysX3xurLU" />
+<meta name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA" />
+<meta name="google-analytics" content="UA-3769691-2" />
+<meta content="collector.githubapp.com" name="octolytics-host" /><meta content="github" name="octolytics-app-id" /><meta content="68C5BF7F:160D:6AD9B9F:56ADAAAE" name="octolytics-dimension-request_id" />
+<meta content="/&lt;user-name&gt;/&lt;repo-name&gt;" data-pjax-transient="true" name="analytics-location" />
+<meta class="js-ga-set" name="dimension1" content="Logged Out" />
+<meta name="hostname" content="github.com" />
+<meta name="user-login" content="" />
+<meta name="expected-hostname" content="github.com" />
+<link rel="mask-icon" href="https://assets-cdn.github.com/pinned-octocat.svg" color="#4078c0" />
+<link rel="icon" type="image/x-icon" href="https://assets-cdn.github.com/favicon.ico" />
+<meta content="831ba4f9e51d7c51d710eff40f91d2100bfe2942" name="form-nonce" />
+<meta http-equiv="x-pjax-version" content="55b41dd856d04e698e17bd7fc2020079" />
+<meta name="description" content="fresco - An Android library for managing images and the memory they use." />
+<meta name="go-import" content="github.com/facebook/fresco git https://github.com/facebook/fresco.git" />
+<meta content="69631" name="octolytics-dimension-user_id" /><meta content="facebook" name="octolytics-dimension-user_login" /><meta content="31533997" name="octolytics-dimension-repository_id" /><meta content="facebook/fresco" name="octolytics-dimension-repository_nwo" /><meta content="true" name="octolytics-dimension-repository_public" /><meta content="false" name="octolytics-dimension-repository_is_fork" /><meta content="31533997" name="octolytics-dimension-repository_network_root_id" /><meta content="facebook/fresco" name="octolytics-dimension-repository_network_root_nwo" />
+<link href="https://github.com/facebook/fresco/commits/master.atom" rel="alternate" title="Recent Commits to fresco:master" type="application/atom+xml" />
+<link rel="canonical" href="https://github.com/facebook/fresco" data-pjax-transient="data-pjax-transient" />
+</head>
+<body class="logged_out   env-production  vis-public">
+<a href="#start-of-content" tabindex="1" class="accessibility-aid js-skip-to-content">Skip to content</a>
+<div class="header header-logged-out" role="banner">
+<div class="container clearfix">
+<a class="header-logo-wordmark" href="https://github.com/" data-ga-click="(Logged out) Header, go to homepage, icon:logo-wordmark">
+<span aria-hidden="true" class="mega-octicon octicon-logo-github"></span>
+</a>
+<div class="header-actions" role="navigation">
+<a class="btn btn-primary" href="http://github.com/join?source=header-repo" data-ga-click="(Logged out) Header, clicked Sign up, text:sign-up">Sign up</a>
+<a class="btn" href="http://github.com/login?return_to=%2Ffacebook%2Ffresco" data-ga-click="(Logged out) Header, clicked Sign in, text:sign-in">Sign in</a>
+</div>
+<div class="site-search repo-scope js-site-search" role="search">
+<!-- &lt;/textarea&gt; --><!-- '"` --><form accept-charset="UTF-8" action="/facebook/fresco/search" class="js-site-search-form" data-global-search-url="/search" data-repo-search-url="/facebook/fresco/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓" /></div>
+<label class="js-chromeless-input-container form-control">
+<div class="scope-badge">This repository</div>
+<input type="text" class="js-site-search-focus js-site-search-field is-clearable chromeless-input" data-hotkey="s" name="q" placeholder="Search" aria-label="Search this repository" data-global-scope-placeholder="Search GitHub" data-repo-scope-placeholder="Search" tabindex="1" autocapitalize="off" />
+</label>
+</form>
+</div>
+<ul class="header-nav left" role="navigation">
+<li class="header-nav-item">
+<a class="header-nav-link" href="http://github.com/explore" data-ga-click="(Logged out) Header, go to explore, text:explore">Explore</a>
+</li>
+<li class="header-nav-item">
+<a class="header-nav-link" href="http://github.com/features" data-ga-click="(Logged out) Header, go to features, text:features">Features</a>
+</li>
+<li class="header-nav-item">
+<a class="header-nav-link" href="https://enterprise.github.com/" data-ga-click="(Logged out) Header, go to enterprise, text:enterprise">Enterprise</a>
+</li>
+<li class="header-nav-item">
+<a class="header-nav-link" href="http://github.com/pricing" data-ga-click="(Logged out) Header, go to pricing, text:pricing">Pricing</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="start-of-content" class="accessibility-aid"></div>
+<div id="js-flash-container">
+</div>
+<div role="main" class="main-content">
+<div itemscope="itemscope" itemtype="http://schema.org/WebPage">
+<div id="js-repo-pjax-container" class="context-loader-container js-repo-nav-next" data-pjax-container="data-pjax-container">
+<div class="pagehead repohead instapaper_ignore readability-menu experiment-repo-nav">
+<div class="container repohead-details-container">
+<ul class="pagehead-actions">
+<li>
+<a href="http://github.com/login?return_to=%2Ffacebook%2Ffresco" class="btn btn-sm btn-with-count tooltipped tooltipped-n" aria-label="You must be signed in to watch a repository" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-eye"></span>
+    Watch
+  </a>
+<a class="social-count" href="http://github.com/facebook/fresco/watchers">
+    761
+  </a>
+</li>
+<li>
+<a href="http://github.com/login?return_to=%2Ffacebook%2Ffresco" class="btn btn-sm btn-with-count tooltipped tooltipped-n" aria-label="You must be signed in to star a repository" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-star"></span>
+    Star
+  </a>
+<a class="social-count js-social-count" href="http://github.com/facebook/fresco/stargazers">
+      7,869
+    </a>
+</li>
+<li>
+<a href="http://github.com/login?return_to=%2Ffacebook%2Ffresco" class="btn btn-sm btn-with-count tooltipped tooltipped-n" aria-label="You must be signed in to fork a repository" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-repo-forked"></span>
+        Fork
+      </a>
+<a href="http://github.com/facebook/fresco/network" class="social-count">
+      2,275
+    </a>
+</li>
+</ul>
+<h1 itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb" class="entry-title public ">
+<span aria-hidden="true" class="octicon octicon-repo"></span>
+<span class="author"><a href="http://github.com/facebook" class="url fn" itemprop="url" rel="author"><span itemprop="title">facebook</span></a></span><!--
+--><span class="path-divider">/</span><!--
+--><strong><a href="http://github.com/facebook/fresco" data-pjax="#js-repo-pjax-container">fresco</a></strong>
+<span class="page-context-loader">
+<img alt="" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</span>
+</h1>
+</div>
+<div class="container">
+<nav class="reponav js-repo-nav js-sidenav-container-pjax js-octicon-loaders" role="navigation" data-pjax="#js-repo-pjax-container">
+<a href="http://github.com/facebook/fresco" aria-label="Code" aria-selected="true" class="js-selected-navigation-item selected reponav-item" data-hotkey="g c" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches /facebook/fresco">
+<span aria-hidden="true" class="octicon octicon-code"></span>
+    Code
+</a>
+<a href="http://github.com/facebook/fresco/issues" class="js-selected-navigation-item reponav-item" data-hotkey="g i" data-selected-links="repo_issues repo_labels repo_milestones /facebook/fresco/issues">
+<span aria-hidden="true" class="octicon octicon-issue-opened"></span>
+      Issues
+      <span class="counter">180</span>
+</a>
+<a href="http://github.com/facebook/fresco/pulls" class="js-selected-navigation-item reponav-item" data-hotkey="g p" data-selected-links="repo_pulls /facebook/fresco/pulls">
+<span aria-hidden="true" class="octicon octicon-git-pull-request"></span>
+    Pull requests
+    <span class="counter">9</span>
+</a>
+<a href="http://github.com/facebook/fresco/wiki" class="js-selected-navigation-item reponav-item" data-hotkey="g w" data-selected-links="repo_wiki /facebook/fresco/wiki">
+<span aria-hidden="true" class="octicon octicon-book"></span>
+      Wiki
+</a>
+<a href="http://github.com/facebook/fresco/pulse" class="js-selected-navigation-item reponav-item" data-selected-links="pulse /facebook/fresco/pulse">
+<span aria-hidden="true" class="octicon octicon-pulse"></span>
+    Pulse
+</a>
+<a href="http://github.com/facebook/fresco/graphs" class="js-selected-navigation-item reponav-item" data-selected-links="repo_graphs repo_contributors /facebook/fresco/graphs">
+<span aria-hidden="true" class="octicon octicon-graph"></span>
+    Graphs
+</a>
+</nav>
+</div>
+</div>
+<div class="container new-discussion-timeline experiment-repo-nav">
+<div class="repository-content">
+<div class="repository-meta js-details-container">
+<span class="repository-meta-content">
+        An Android library for managing images and the memory they use.
+        <a href="http://frescolib.org/" rel="nofollow">http://frescolib.org/</a>
+</span>
+</div>
+<div class="overall-summary overall-summary-bottomless">
+<div class="stats-switcher-viewport js-stats-switcher-viewport">
+<div class="stats-switcher-wrapper">
+<ul class="numbers-summary">
+<li class="commits">
+<a data-pjax="data-pjax" href="http://github.com/facebook/fresco/commits/master">
+<span aria-hidden="true" class="octicon octicon-history"></span>
+<span class="num text-emphasized">
+              494
+            </span>
+            commits
+        </a>
+</li>
+<li>
+<a data-pjax="data-pjax" href="http://github.com/facebook/fresco/branches">
+<span aria-hidden="true" class="octicon octicon-git-branch"></span>
+<span class="num text-emphasized">
+            3
+          </span>
+          branches
+        </a>
+</li>
+<li>
+<a data-pjax="data-pjax" href="http://github.com/facebook/fresco/releases">
+<span aria-hidden="true" class="octicon octicon-tag"></span>
+<span class="num text-emphasized">
+            14
+          </span>
+          releases
+        </a>
+</li>
+<li>
+<a href="http://github.com/facebook/fresco/graphs/contributors">
+<span aria-hidden="true" class="octicon octicon-organization"></span>
+<span class="num text-emphasized">
+      28
+    </span>
+    contributors
+</a>
+</li>
+</ul>
+<div class="repository-lang-stats">
+<ol class="repository-lang-stats-numbers">
+<li>
+<a href="http://github.com/facebook/fresco/search?l=java" data-ga-click="Repository, language stats search click, location:repo overview">
+<span class="color-block language-color" style="background-color:#b07219;"></span>
+<span class="lang">Java</span>
+<span class="percent">90.2%</span>
+</a>
+</li>
+<li>
+<a href="http://github.com/facebook/fresco/search?l=cpp" data-ga-click="Repository, language stats search click, location:repo overview">
+<span class="color-block language-color" style="background-color:#f34b7d;"></span>
+<span class="lang">C++</span>
+<span class="percent">8.7%</span>
+</a>
+</li>
+<li>
+<a href="http://github.com/facebook/fresco/search?l=python" data-ga-click="Repository, language stats search click, location:repo overview">
+<span class="color-block language-color" style="background-color:#3572A5;"></span>
+<span class="lang">Python</span>
+<span class="percent">0.4%</span>
+</a>
+</li>
+<li>
+<a href="http://github.com/facebook/fresco/search?l=c" data-ga-click="Repository, language stats search click, location:repo overview">
+<span class="color-block language-color" style="background-color:#555555;"></span>
+<span class="lang">C</span>
+<span class="percent">0.4%</span>
+</a>
+</li>
+<li>
+<a href="http://github.com/facebook/fresco/search?l=makefile" data-ga-click="Repository, language stats search click, location:repo overview">
+<span class="color-block language-color" style="background-color:#427819;"></span>
+<span class="lang">Makefile</span>
+<span class="percent">0.3%</span>
+</a>
+</li>
+<li>
+<a href="http://github.com/facebook/fresco/search?l=idl" data-ga-click="Repository, language stats search click, location:repo overview">
+<span class="color-block language-color" style="background-color:#a3522f;"></span>
+<span class="lang">IDL</span>
+<span class="percent">0.0%</span>
+</a>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="repository-lang-stats-graph js-toggle-lang-stats" title="Click for language details" data-ga-click="Repository, language bar stats toggle, location:repo overview">
+<span class="language-color" aria-label="Java 90.2%" style="width:90.2%; background-color:#b07219;" itemprop="keywords">Java</span>
+<span class="language-color" aria-label="C++ 8.7%" style="width:8.7%; background-color:#f34b7d;" itemprop="keywords">C++</span>
+<span class="language-color" aria-label="Python 0.4%" style="width:0.4%; background-color:#3572A5;" itemprop="keywords">Python</span>
+<span class="language-color" aria-label="C 0.4%" style="width:0.4%; background-color:#555555;" itemprop="keywords">C</span>
+<span class="language-color" aria-label="Makefile 0.3%" style="width:0.3%; background-color:#427819;" itemprop="keywords">Makefile</span>
+<span class="language-color" aria-label="IDL 0.0%" style="width:0.0%; background-color:#a3522f;" itemprop="keywords">IDL</span>
+</div>
+<div class="file-navigation in-mid-page">
+<div class="right">
+<div class="btn-group">
+<button class="btn btn-sm disabled tooltipped tooltipped-n" aria-label="You must be signed in to make or propose changes" type="button">
+    New file
+  </button>
+<a href="http://github.com/facebook/fresco/find/master" class="btn btn-sm empty-icon right js-show-file-finder" data-pjax="data-pjax" data-hotkey="t" data-ga-click="Repository, find file, location:repo overview">
+        Find file
+      </a>
+</div>
+<div class="file-navigation-options" data-multiple="data-multiple">
+<div class="file-navigation-option">
+<!-- &lt;/textarea&gt; --><!-- '"` --><form accept-charset="UTF-8" action="/users/set_protocol" class="js-set-user-protocol-preference" data-form-nonce="831ba4f9e51d7c51d710eff40f91d2100bfe2942" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓" /><input name="authenticity_token" type="hidden" value="qGovJNCvrlYE4AUtLd+5fUXhFgnTeA3+mgJxN48GZ2rOWT4CeckZUxnqqwsGfhGafZjeUkLltRWpUIe4O2CMsA==" /></div>
+<input type="hidden" name="protocol_type" value="clone" />
+<div class="select-menu js-menu-container js-select-menu">
+<div class="input-group js-select-button js-zeroclipboard-container">
+<div class="input-group-button">
+<button type="button" class="btn btn-sm select-menu-button js-menu-target" data-ga-click="Repository, clone HTTPS, location:repo overview">
+    HTTPS
+  </button>
+</div>
+<input type="text" class="input-monospace input-mini js-zeroclipboard-target js-url-field" value="https://github.com/facebook/fresco.git" readonly="readonly" />
+<div class="input-group-button">
+<button aria-label="Copy to clipboard" class="js-zeroclipboard btn btn-sm zeroclipboard-button tooltipped tooltipped-s" data-copied-hint="Copied!" type="button"><span aria-hidden="true" class="octicon octicon-clippy"></span></button>
+</div>
+</div>
+<div class="select-menu-modal-holder">
+<div class="select-menu-modal js-menu-content" aria-hidden="true">
+<div class="select-menu-header">
+<span aria-label="Close" class="octicon octicon-x js-menu-close" role="button"></span>
+<span class="select-menu-title">Choose a clone URL</span>
+</div>
+<div class="select-menu-list js-navigation-container" role="menu">
+<div class="select-menu-item js-navigation-item selected" role="menuitem" tabindex="0">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<div class="select-menu-item-text">
+<input type="radio" name="protocol_selector" value="http" checked="checked" />
+<span class="select-menu-item-heading">
+                            HTTPS
+                            (recommended)
+                          </span>
+<span class="description">
+                              Clone with Git or checkout with SVN using the repository's web address.
+                            </span>
+<span class="js-select-button-text hidden-select-button-text">
+<div class="input-group-button">
+<button type="button" class="btn btn-sm select-menu-button js-menu-target" data-ga-click="Repository, clone HTTPS, location:repo overview">
+    HTTPS
+  </button>
+</div>
+<input type="text" class="input-monospace input-mini js-zeroclipboard-target js-url-field" value="https://github.com/facebook/fresco.git" readonly="readonly" />
+<div class="input-group-button">
+<button aria-label="Copy to clipboard" class="js-zeroclipboard btn btn-sm zeroclipboard-button tooltipped tooltipped-s" data-copied-hint="Copied!" type="button"><span aria-hidden="true" class="octicon octicon-clippy"></span></button>
+</div>
+</span>
+</div>
+</div>
+</div>
+<div class="select-menu-list" role="menu">
+<a class="select-menu-item select-menu-action" href="https://help.github.com/articles/which-remote-url-should-i-use" target="_blank">
+<span aria-hidden="true" class="octicon octicon-question select-menu-item-icon"></span>
+<div class="select-menu-item-text">
+                        Learn more about clone URLs
+                      </div>
+</a>
+</div>
+</div>
+</div>
+</div>
+</form> </div>
+<div class="file-navigation-option">
+</div>
+<div class="file-navigation-option">
+<a href="http://github.com/facebook/fresco/archive/master.zip" class="btn btn-sm" rel="nofollow" data-ga-click="Repository, download zip, location:repo overview">
+            Download ZIP
+          </a>
+</div>
+</div>
+</div>
+<div class="select-menu js-menu-container js-select-menu left">
+<button class="btn btn-sm select-menu-button js-menu-target css-truncate" data-hotkey="w" title="master" type="button" aria-label="Switch branches or tags" tabindex="0" aria-haspopup="true">
+<i>Branch:</i>
+<span class="js-select-button css-truncate-target">master</span>
+</button>
+<div class="select-menu-modal-holder js-menu-content js-navigation-container" data-pjax="data-pjax" aria-hidden="true">
+<div class="select-menu-modal">
+<div class="select-menu-header">
+<span aria-label="Close" class="octicon octicon-x js-menu-close" role="button"></span>
+<span class="select-menu-title">Switch branches/tags</span>
+</div>
+<div class="select-menu-filters">
+<div class="select-menu-text-filter">
+<input type="text" aria-label="Filter branches/tags" id="context-commitish-filter-field" class="js-filterable-field js-navigation-enable" placeholder="Filter branches/tags" />
+</div>
+<div class="select-menu-tabs">
+<ul>
+<li class="select-menu-tab">
+<a href="#" data-tab-filter="branches" data-filter-placeholder="Filter branches/tags" class="js-select-menu-tab" role="tab">Branches</a>
+</li>
+<li class="select-menu-tab">
+<a href="#" data-tab-filter="tags" data-filter-placeholder="Find a tagâ&euro;Ś" class="js-select-menu-tab" role="tab">Tags</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="branches" role="menu">
+<div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/facebook/fresco/tree/caller_context_description" data-name="caller_context_description" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="caller_context_description">
+                caller_context_description
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/facebook/fresco/tree/gh-pages" data-name="gh-pages" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="gh-pages">
+                gh-pages
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open selected" href="http://github.com/facebook/fresco/tree/master" data-name="master" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="master">
+                master
+              </span>
+</a>
+</div>
+<div class="select-menu-no-results">Nothing to show</div>
+</div>
+<div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="tags">
+<div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/facebook/fresco/tree/v0.9.0" data-name="v0.9.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.9.0">
+                v0.9.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/facebook/fresco/tree/v0.8.1" data-name="v0.8.1" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.8.1">
+                v0.8.1
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/facebook/fresco/tree/v0.8.0" data-name="v0.8.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.8.0">
+                v0.8.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/facebook/fresco/tree/v0.7.0" data-name="v0.7.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.7.0">
+                v0.7.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/facebook/fresco/tree/v0.6.1" data-name="v0.6.1" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.6.1">
+                v0.6.1
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/facebook/fresco/tree/v0.6.0" data-name="v0.6.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.6.0">
+                v0.6.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/facebook/fresco/tree/v0.5.3" data-name="v0.5.3" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.5.3">
+                v0.5.3
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/facebook/fresco/tree/v0.5.2" data-name="v0.5.2" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.5.2">
+                v0.5.2
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/facebook/fresco/tree/v0.5.1" data-name="v0.5.1" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.5.1">
+                v0.5.1
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/facebook/fresco/tree/v0.5.0" data-name="v0.5.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.5.0">
+                v0.5.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/facebook/fresco/tree/v0.4.0" data-name="v0.4.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.4.0">
+                v0.4.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/facebook/fresco/tree/v0.3.0" data-name="v0.3.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.3.0">
+                v0.3.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/facebook/fresco/tree/v0.2.0" data-name="v0.2.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.2.0">
+                v0.2.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/facebook/fresco/tree/v0.1.0" data-name="v0.1.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.1.0">
+                v0.1.0
+              </span>
+</a>
+</div>
+<div class="select-menu-no-results">Nothing to show</div>
+</div>
+</div>
+</div>
+</div>
+<button type="button" class="btn btn-sm btn-primary disabled tooltipped tooltipped-n" aria-label="You must be signed in to create a pull request">
+        New pull request
+      </button>
+<div class="breadcrumb">
+</div>
+</div>
+<div class="commit-tease js-details-container">
+<span class="right">
+      Latest commit
+      <a class="commit-tease-sha" href="http://github.com/facebook/fresco/commit/df2854a76786f58e044a71617309cc3c0a0c358c" data-pjax="data-pjax">
+        df2854a
+      </a>
+<time datetime="2016-01-15T11:17:57Z" is="relative-time">Jan 15, 2016</time>
+</span>
+<span class="commit-author-section">
+<img alt="@tyronen" class="avatar" height="20" src="https://avatars0.githubusercontent.com/u/958570?v=3&amp;s=40" width="20" />
+<a href="http://github.com/tyronen" class="user-mention" rel="contributor">tyronen</a>
+</span>
+<a href="http://github.com/facebook/fresco/commit/df2854a76786f58e044a71617309cc3c0a0c358c" class="message" data-pjax="true" title="Update .lastsync">Update .lastsync</a>
+
+</div>
+<div class="file-wrap ">
+<a href="http://github.com/facebook/fresco/tree/df2854a76786f58e044a71617309cc3c0a0c358c" class="hidden js-permalink-shortcut" data-hotkey="y">Permalink</a>
+<table class="files js-navigation-container js-active-navigation-container" data-pjax="data-pjax">
+<tbody>
+<tr class="warning include-fragment-error">
+<td class="icon"><span aria-hidden="true" class="octicon octicon-alert"></span></td>
+<td class="content" colspan="3">Failed to load latest commit information.</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-directory"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/facebook/fresco/tree/master/drawee-backends" class="js-directory-link js-navigation-open" id="0b515cd0c8ff8f51ed6cc1458b17d10f-29b9ea74ea9f3fd19aa09a902e534586d8f66371" title="drawee-backends">drawee-backends</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/facebook/fresco/commit/da37e303a888611a3340b82bfb131757c2c86d47" class="message" data-pjax="true" title="fix the broken comparison app due to change in SimpleControllerBuilder">fix the broken comparison app due to change in SimpleControllerBuilder</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2015-10-19T14:26:48Z" is="time-ago">Oct 19, 2015</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-directory"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/facebook/fresco/tree/master/drawee" class="js-directory-link js-navigation-open" id="04325bbd777f661128bf51fd101c66e1-4071622a305ecada57f95654922061292d41d48a" title="drawee">drawee</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/facebook/fresco/commit/71845c98b3cc462d81454535b09096ccdeca70c1" class="message" data-pjax="true" title="Add equals/hashCode to RoundingParams">Add equals/hashCode to RoundingParams</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2016-01-15T11:38:40Z" is="time-ago">Jan 15, 2016</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-directory"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/facebook/fresco/tree/master/fbcore" class="js-directory-link js-navigation-open" id="a76aa385cde3c6ab5a8eecd2695ebf24-a2a072ff9b375e0494c58301ec73f32e1a7bd442" title="fbcore">fbcore</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/facebook/fresco/commit/e908033cdf3934f3408fa44c5d352841f06c18a4" class="message" data-pjax="true" title="Two fixed typos in Java source files.">Two fixed typos in Java source files.</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2016-01-15T11:38:39Z" is="time-ago">Jan 15, 2016</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-directory"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/facebook/fresco/tree/master/gradle/wrapper" class="js-directory-link js-navigation-open" id="04f339d50ad8be9d7500be3f70cd5d57-e183c754d9ea10412aef4c4864153016b355918c" title="This path skips through empty directories"><span class="simplified-path">gradle/</span>wrapper</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/facebook/fresco/commit/b63ec6c5b6c1a0afff78d64094fdc4ec62f5706b" class="message" data-pjax="true" title="Upgrade to Gradle 2.7">Upgrade to Gradle 2.7</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2015-10-19T14:26:49Z" is="time-ago">Oct 19, 2015</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-directory"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/facebook/fresco/tree/master/imagepipeline-backends/imagepipeline-okhttp" class="js-directory-link js-navigation-open" id="7b0bb8d034e34bf30d84599449be8455-d9bceae2e180c6423700726afc773b5d8783aa5c" title="This path skips through empty directories"><span class="simplified-path">imagepipeline-backends/</span>imagepipeline-okhttp</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/facebook/fresco/commit/29ad3abbbeb0ab90f95e0ff0753358bf81390599" class="message" data-pjax="true" title="Fix for OkHttp backend caching 404 responses as images">Fix for OkHttp backend caching 404 responses as images</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2016-01-15T11:38:34Z" is="time-ago">Jan 15, 2016</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-directory"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/facebook/fresco/tree/master/imagepipeline-base" class="js-directory-link js-navigation-open" id="3501b4a39367af45b10153f1e346d4da-49c5cbf1c5ac8ecca7e7ac7c6e086bd281690f37" title="imagepipeline-base">imagepipeline-base</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/facebook/fresco/commit/745f3033e1df54debca6659fbcd0424d269d749c" class="message" data-pjax="true" title="Move default disk cache parameters into DiskCacheConfig">Move default disk cache parameters into DiskCacheConfig</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2016-01-15T11:38:40Z" is="time-ago">Jan 15, 2016</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-directory"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/facebook/fresco/tree/master/imagepipeline" class="js-directory-link js-navigation-open" id="a440c35cdcc1833af24df1db7244db98-7d1c2c08162b90c0cc36b52ef94ec93988116949" title="imagepipeline">imagepipeline</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/facebook/fresco/commit/6abd727c90ef398cbc6c991d23a1171d7efbbdc9" class="message" data-pjax="true" title="Simplify PostprocessedBitmapMemoryCacheProducer">Simplify PostprocessedBitmapMemoryCacheProducer</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2016-01-15T11:38:40Z" is="time-ago">Jan 15, 2016</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-directory"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/facebook/fresco/tree/master/samples" class="js-directory-link js-navigation-open" id="6ef9161b900632671022358216c7dfe7-bc441922078f7a0f0411018621ed6d982faaf37a" title="samples">samples</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/facebook/fresco/commit/745f3033e1df54debca6659fbcd0424d269d749c" class="message" data-pjax="true" title="Move default disk cache parameters into DiskCacheConfig">Move default disk cache parameters into DiskCacheConfig</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2016-01-15T11:38:40Z" is="time-ago">Jan 15, 2016</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-directory"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/facebook/fresco/tree/master/static-webp" class="js-directory-link js-navigation-open" id="26adf64b1ed7b9ed08cff270e30de721-93a5237e0e925f8f7d766b60b57c9ad39ec3aef5" title="static-webp">static-webp</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/facebook/fresco/commit/64daf1ef58f59f8c90f28263db89bee143faf287" class="message" data-pjax="true" title="Created gradle files for static-webp">Created gradle files for static-webp</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2016-01-15T11:38:38Z" is="time-ago">Jan 15, 2016</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-directory"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/facebook/fresco/tree/master/tools/stetho" class="js-directory-link js-navigation-open" id="ce8a7f5a9eafe332a8d34a85713c5e09-c4e8ff7671a6ca5be844537f2fbd132a3782a019" title="This path skips through empty directories"><span class="simplified-path">tools/</span>stetho</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/facebook/fresco/commit/3e333939693ebd2899c891f02022c78aa4842f8b" class="message" data-pjax="true" title="Add histogram of image sizes to Stetho plugin">Add histogram of image sizes to Stetho plugin</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2016-01-15T11:38:38Z" is="time-ago">Jan 15, 2016</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-text"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/facebook/fresco/blob/master/.gitignore" class="js-directory-link js-navigation-open" id="a084b794bc0759e7a6b77810e01874f2-29183dceced77eb72ab93b18599ff84c0a8ca42a" title=".gitignore">.gitignore</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/facebook/fresco/commit/c02c3eb292e1daa0b0d3f78fc7d3fc6cfad17228" class="message" data-pjax="true" title="Initial commit">Initial commit</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2015-03-26T22:05:16Z" is="time-ago">Mar 26, 2015</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-text"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/facebook/fresco/blob/master/.lastsync" class="js-directory-link js-navigation-open" id="253b272c5972719a4c9d483c3d292bc5-3ca5c04030418031ee4700aac38ab1ee77befb29" title=".lastsync">.lastsync</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/facebook/fresco/commit/df2854a76786f58e044a71617309cc3c0a0c358c" class="message" data-pjax="true" title="Update .lastsync">Update .lastsync</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2016-01-15T11:38:40Z" is="time-ago">Jan 15, 2016</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-text"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/facebook/fresco/blob/master/CONTRIBUTING.md" class="js-directory-link js-navigation-open" id="6a3371457528722a734f3c51d9238c13-587d4e1ffd82bf926c9e01c1b7a8f7c0ee4a8f49" title="CONTRIBUTING.md">CONTRIBUTING.md</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/facebook/fresco/commit/13c60f2475e71f800dd365f55c57e1f3d083918a" class="message" data-pjax="true" title="Update contributor guidelines">Update contributor guidelines</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2015-05-14T20:17:29Z" is="time-ago">May 14, 2015</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-text"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/facebook/fresco/blob/master/LICENSE" class="js-directory-link js-navigation-open" id="9879d6db96fd29134fc802214163b95a-30ea1e09804bfa6f48f4c12769449c18bdcb30ef" title="LICENSE">LICENSE</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/facebook/fresco/commit/c02c3eb292e1daa0b0d3f78fc7d3fc6cfad17228" class="message" data-pjax="true" title="Initial commit">Initial commit</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2015-03-26T22:05:16Z" is="time-ago">Mar 26, 2015</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-text"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/facebook/fresco/blob/master/PATENTS" class="js-directory-link js-navigation-open" id="7373d27f0ea94a5b649f893e20fffeda-bd597fc7c36ff1e952f8ba174b813e02fc63aea3" title="PATENTS">PATENTS</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/facebook/fresco/commit/8ef45c62f47c0fb45122ee26e9d232592af938f9" class="message" data-pjax="true" title="Update Patent Grant">Update Patent Grant</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2015-04-15T09:13:28Z" is="time-ago">Apr 15, 2015</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-text"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/facebook/fresco/blob/master/README.md" class="js-directory-link js-navigation-open" id="04c6e90faac2675aa89e2176d2eec7d8-8144091a8bce4a519d94049bc68f07913c010ea4" title="README.md">README.md</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/facebook/fresco/commit/30d7d6070cd50a3030874b211b5500cc9cd0e167" class="message" data-pjax="true" title="Version 0.9.0">Version 0.9.0</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2016-01-15T11:38:34Z" is="time-ago">Jan 15, 2016</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-text"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/facebook/fresco/blob/master/build.gradle" class="js-directory-link js-navigation-open" id="c197962302397baf3a4cc36463dce5ea-5033e1229858abaea6c3203463568081edda93e6" title="build.gradle">build.gradle</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/facebook/fresco/commit/94df8153284d3b04966f4c34a0795f43d1dbbada" class="message" data-pjax="true" title="upgraded to 23 build tools and sdk">upgraded to 23 build tools and sdk</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2015-10-19T14:26:49Z" is="time-ago">Oct 19, 2015</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-text"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/facebook/fresco/blob/master/gradle.properties" class="js-directory-link js-navigation-open" id="503f218d646c10f484fdc9d6315bf2e3-ee1195ae006a44e1f62d259db033aada3b8873f4" title="gradle.properties">gradle.properties</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/facebook/fresco/commit/bdc33afdea14a296670f5537cd630b7fd991f6f2" class="message" data-pjax="true" title="Add open-source -Stetho to the comparison app">Add open-source -Stetho to the comparison app</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2016-01-15T11:38:37Z" is="time-ago">Jan 15, 2016</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-text"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/facebook/fresco/blob/master/gradlew" class="js-directory-link js-navigation-open" id="36ffbd2ea7085cf19547193a7faf30c8-91a7e269e19dfc62e27137a0b57ef3e430cee4fd" title="gradlew">gradlew</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/facebook/fresco/commit/c02c3eb292e1daa0b0d3f78fc7d3fc6cfad17228" class="message" data-pjax="true" title="Initial commit">Initial commit</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2015-03-26T22:05:16Z" is="time-ago">Mar 26, 2015</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-text"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/facebook/fresco/blob/master/gradlew.bat" class="js-directory-link js-navigation-open" id="c9b677a57d25a366595a35b2230d0502-aec99730b4e8fcd90b57a0e8e01544fea7c31a89" title="gradlew.bat">gradlew.bat</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/facebook/fresco/commit/c02c3eb292e1daa0b0d3f78fc7d3fc6cfad17228" class="message" data-pjax="true" title="Initial commit">Initial commit</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2015-03-26T22:05:16Z" is="time-ago">Mar 26, 2015</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-text"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/facebook/fresco/blob/master/proguard-fresco.pro" class="js-directory-link js-navigation-open" id="e655a6f17de51ebe4dbdfaa5635f2c6d-d176e638fe117db046a5e71be750fa90de77a789" title="proguard-fresco.pro">proguard-fresco.pro</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/facebook/fresco/commit/94df8153284d3b04966f4c34a0795f43d1dbbada" class="message" data-pjax="true" title="upgraded to 23 build tools and sdk">upgraded to 23 build tools and sdk</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2015-10-19T14:26:49Z" is="time-ago">Oct 19, 2015</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-text"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/facebook/fresco/blob/master/release.gradle" class="js-directory-link js-navigation-open" id="fce4664552fe80240456c8cc2095fd45-0784b1fac93baf1f56106fea9da53bf276f54554" title="release.gradle">release.gradle</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/facebook/fresco/commit/d914f2c8fd60108fab6ae19f62dae04429aa0825" class="message" data-pjax="true" title="Fixed typos">Fixed typos</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2015-04-01T17:03:16Z" is="time-ago">Apr 1, 2015</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-text"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/facebook/fresco/blob/master/release.sh" class="js-directory-link js-navigation-open" id="e55bb7573f1110c8b2a6922fe8cccf48-a7775262747772f44e6917fd97ee476bf81437c7" title="release.sh">release.sh</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/facebook/fresco/commit/170067bd03db7174df7643ea5bd5f7c7d7078500" class="message" data-pjax="true" title="New clean build script">New clean build script</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2015-10-30T14:07:11Z" is="time-ago">Oct 30, 2015</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-text"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/facebook/fresco/blob/master/run_comparison.py" class="js-directory-link js-navigation-open" id="386f9693a6d61db7b3b5ca968f382af4-6437dbb7f25ab453d026491c80e25f1aa6516f5d" title="run_comparison.py">run_comparison.py</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/facebook/fresco/commit/cc43c869cbf47431fc4461c28a2df10a9cfb56c0" class="message" data-pjax="true" title="Go by pipeline first, then by source">Go by pipeline first, then by source</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2015-08-27T12:36:23Z" is="time-ago">Aug 27, 2015</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-text"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/facebook/fresco/blob/master/settings.gradle" class="js-directory-link js-navigation-open" id="88b7c47e47b8ee65263b6784b86fa0a7-a1a223cf068760ed00b4e951a6194c7d4b6bba5f" title="settings.gradle">settings.gradle</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/facebook/fresco/commit/bdc33afdea14a296670f5537cd630b7fd991f6f2" class="message" data-pjax="true" title="Add open-source -Stetho to the comparison app">Add open-source -Stetho to the comparison app</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2016-01-15T11:38:37Z" is="time-ago">Jan 15, 2016</time></span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="readme" class="boxed-group clearfix announce instapaper_body md">
+<h3>
+<span aria-hidden="true" class="octicon octicon-book"></span>
+      README.md
+    </h3>
+<article class="markdown-body entry-content" itemprop="mainContentOfPage"><h1><a id="user-content-fresco" class="anchor" href="#fresco" aria-hidden="true"><span class="octicon octicon-link"></span></a>Fresco</h1>
+</article><p>Fresco is a powerful system for displaying images in Android applications.</p>
+<p>Fresco takes care of image loading and display, so you don't have to. It will load images from the network, local storage, or local resources, and display a placeholder until the image has arrived. It has two levels of cache; one in memory and another in internal storage.</p>
+<p>In Android 4.x and lower, Fresco puts images in a special region of Android memory. This lets your application run faster - and suffer the dreaded <code>OutOfMemoryError</code> much less often.</p>
+<p>Fresco also supports:</p>
+<ul>
+<li>streaming of progressive JPEGs</li>
+<li>display of animated GIFs and WebPs</li>
+<li>extensive customization of image loading and display</li>
+<li>and much more!</li>
+</ul>
+<p>Find out more at our <a href="http://frescolib.org/index.html">website</a>.</p>
+<h2><a id="user-content-requirements" class="anchor" href="#requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirements</h2>
+<p>Fresco can be included in any Android application. </p>
+<p>Fresco supports Android 2.3 (Gingerbread) and later. </p>
+<h2><a id="user-content-using-fresco-in-your-application" class="anchor" href="#using-fresco-in-your-application" aria-hidden="true"><span class="octicon octicon-link"></span></a>Using Fresco in your application</h2>
+<p>If you are building with Gradle, simply add the following line to the <code>dependencies</code> section of your <code>build.gradle</code> file:</p>
+<div class="highlight highlight-source-groovy"><pre>compile <span class="pl-s"><span class="pl-pds">'</span>com.facebook.fresco:fresco:0.9.0+<span class="pl-pds">'</span></span></pre></div>
+<p>For full details, visit the documentation on our web site, available in English, Chinese, and Korean:</p>
+<p><a href="http://frescolib.org/docs/index.html"><img src="https://camo.githubusercontent.com/02994d84d65ab40e6e53ccbfa8c01e454b77509c/687474703a2f2f66726573636f6c69622e6f72672f7374617469632f476574537461727465642d656e2e706e67" width="150" height="42" data-canonical-src="http://frescolib.org/static/GetStarted-en.png" style="max-width:100%;" /></a></p>
+<p><a href="http://fresco-cn.org/docs/index.html"><img src="https://camo.githubusercontent.com/729b70a49322512b5fcc25b86febc7b2b2030939/687474703a2f2f66726573636f6c69622e6f72672f7374617469632f476574537461727465642d7a682e706e67" width="104" height="42" data-canonical-src="http://frescolib.org/static/GetStarted-zh.png" style="max-width:100%;" /></a></p>
+<p><a href="http://fresco.recrack.com/docs/index.html"><img src="https://camo.githubusercontent.com/d35fef96ad67ad08b1712f5b5febe0e937e0eb65/687474703a2f2f66726573636f6c69622e6f72672f7374617469632f476574537461727465642d6b6f2e706e67" width="104" height="42" data-canonical-src="http://frescolib.org/static/GetStarted-ko.png" style="max-width:100%;" /></a></p>
+<h2><a id="user-content-join-the-fresco-community" class="anchor" href="#join-the-fresco-community" aria-hidden="true"><span class="octicon octicon-link"></span></a>Join the Fresco community</h2>
+<p>Please use our <a href="https://github.com/facebook/fresco/issues">issues page</a> to let us know of any problems.</p>
+<p>For pull requests, please see the <a href="https://github.com/facebook/fresco/blob/master/CONTRIBUTING.md">CONTRIBUTING</a> file for information on how to help out. See our <a href="http://frescolib.org/docs/building-from-source.html">documentation</a> for information how to build from source.</p>
+<h2><a id="user-content-license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
+<p>Fresco is <a href="https://github.com/facebook/fresco/blob/master/LICENSE">BSD-licensed</a>. We also provide an additional <a href="https://github.com/facebook/fresco/blob/master/PATENTS">patent grant</a>.</p>
+
+</div>
+</div>
+<div class="modal-backdrop"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="container">
+<div class="site-footer" role="contentinfo">
+<ul class="site-footer-links right">
+<li><a href="https://status.github.com/" data-ga-click="Footer, go to status, text:status">Status</a></li>
+<li><a href="https://developer.github.com" data-ga-click="Footer, go to api, text:api">API</a></li>
+<li><a href="https://training.github.com" data-ga-click="Footer, go to training, text:training">Training</a></li>
+<li><a href="https://shop.github.com" data-ga-click="Footer, go to shop, text:shop">Shop</a></li>
+<li><a href="https://github.com/blog" data-ga-click="Footer, go to blog, text:blog">Blog</a></li>
+<li><a href="https://github.com/about" data-ga-click="Footer, go to about, text:about">About</a></li>
+<li><a href="https://github.com/pricing" data-ga-click="Footer, go to pricing, text:pricing">Pricing</a></li>
+</ul>
+<a href="https://github.com" aria-label="Homepage">
+<span aria-hidden="true" class="mega-octicon octicon-mark-github" title="GitHub "></span>
+</a>
+<ul class="site-footer-links">
+<li>&copy; 2016 <span title="0.05968s from github-fe139-cp1-prd.iad.github.net">GitHub</span>, Inc.</li>
+<li><a href="https://github.com/site/terms" data-ga-click="Footer, go to terms, text:terms">Terms</a></li>
+<li><a href="https://github.com/site/privacy" data-ga-click="Footer, go to privacy, text:privacy">Privacy</a></li>
+<li><a href="https://github.com/security" data-ga-click="Footer, go to security, text:security">Security</a></li>
+<li><a href="https://github.com/contact" data-ga-click="Footer, go to contact, text:contact">Contact</a></li>
+<li><a href="https://help.github.com" data-ga-click="Footer, go to help, text:help">Help</a></li>
+</ul>
+</div>
+</div>
+<div id="ajax-error-message" class="flash flash-error">
+<span aria-hidden="true" class="octicon octicon-alert"></span>
+<button type="button" class="flash-close js-flash-close js-ajax-error-dismiss" aria-label="Dismiss error">
+<span aria-hidden="true" class="octicon octicon-x"></span>
+</button>
+      Something went wrong with that request. Please try again.
+    </div>
+<script crossorigin="anonymous" src="https://assets-cdn.github.com/assets/compat-a0cee5d8d4fb535c0f41971d037b32e852a56ddca5bf67bb2124e426a2d813a5.js"></script>
+<script crossorigin="anonymous" src="https://assets-cdn.github.com/assets/frameworks-9ee55ceaf87fc34dc86334249fef6cbece88e815478e0fbe81642d57ed0fff89.js"></script>
+<script async="async" crossorigin="anonymous" src="https://assets-cdn.github.com/assets/github-8afeb971202f92778ffc73ddd92661c1977dc5e42a928ed35f8ec96e425a6e7a.js"></script>
+<div class="js-stale-session-flash stale-session-flash flash flash-warn flash-banner hidden">
+<span aria-hidden="true" class="octicon octicon-alert"></span>
+<span class="signed-in-tab-flash">You signed in with another tab or window. <a href="">Reload</a> to refresh your session.</span>
+<span class="signed-out-tab-flash">You signed out in another tab or window. <a href="">Reload</a> to refresh your session.</span>
+</div>
+<div class="facebox" id="facebox" style="display:none;">
+<div class="facebox-popup">
+<div class="facebox-content" role="dialog" aria-labelledby="facebox-header" aria-describedby="facebox-description">
+</div>
+<button type="button" class="facebox-close js-facebox-close" aria-label="Close modal">
+<span aria-hidden="true" class="octicon octicon-x"></span>
+</button>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PHP: floatval - Manual </title>
+<link rel="shortcut icon" href="http://php.net/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://php.net/phpnetimprovedsearch.src" title="Add PHP.net search" />
+<link rel="alternate" type="application/atom+xml" href="http://php.net/releases/feed.php" title="PHP Release feed" />
+<link rel="alternate" type="application/atom+xml" href="http://php.net/feed.atom" title="PHP: Hypertext Preprocessor" />
+<link rel="canonical" href="http://php.net/manual/en/function.floatval.php" />
+<link rel="shorturl" href="http://php.net/floatval" />
+<link rel="alternate" href="http://php.net/floatval" hreflang="x-default" />
+<link rel="contents" href="http://php.net/manual/en/index.php" />
+<link rel="index" href="http://php.net/manual/en/ref.var.php" />
+<link rel="prev" href="http://php.net/manual/en/function.empty.php" />
+<link rel="next" href="http://php.net/manual/en/function.get-defined-vars.php" />
+<link rel="alternate" href="http://php.net/manual/en/function.floatval.php" hreflang="en" />
+<link rel="alternate" href="http://php.net/manual/pt_BR/function.floatval.php" hreflang="pt_BR" />
+<link rel="alternate" href="http://php.net/manual/zh/function.floatval.php" hreflang="zh" />
+<link rel="alternate" href="http://php.net/manual/fr/function.floatval.php" hreflang="fr" />
+<link rel="alternate" href="http://php.net/manual/de/function.floatval.php" hreflang="de" />
+<link rel="alternate" href="http://php.net/manual/ja/function.floatval.php" hreflang="ja" />
+<link rel="alternate" href="http://php.net/manual/kr/function.floatval.php" hreflang="kr" />
+<link rel="alternate" href="http://php.net/manual/ro/function.floatval.php" hreflang="ro" />
+<link rel="alternate" href="http://php.net/manual/ru/function.floatval.php" hreflang="ru" />
+<link rel="alternate" href="http://php.net/manual/es/function.floatval.php" hreflang="es" />
+<link rel="alternate" href="http://php.net/manual/tr/function.floatval.php" hreflang="tr" />
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1421837618&amp;f=/fonts/Fira/fira.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1421837618&amp;f=/fonts/Font-Awesome/css/fontello.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1429291204&amp;f=/styles/theme-base.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1449787206&amp;f=/styles/theme-medium.css" media="screen" />
+<!--[if lte IE 7]&gt;
+ &lt;link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie7.css" media="screen"&gt;
+ &lt;![endif]-->
+<!--[if lte IE 8]&gt;
+ &lt;script type="text/javascript"&gt;
+  window.brokenIE = true;
+ &lt;/script&gt;
+ &lt;![endif]-->
+<!--[if lte IE 9]&gt;
+ &lt;link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie9.css" media="screen"&gt;
+ &lt;![endif]-->
+<!--[if IE]&gt;
+ &lt;script type="text/javascript" src="http://php.net/js/ext/html5.js"&gt;&lt;/script&gt;
+ &lt;![endif]-->
+<base href="http://php.net/manual/en/function.floatval.php" />
+</head>
+<body class="docs ">
+<nav id="head-nav" class="navbar navbar-fixed-top">
+<div class="navbar-inner clearfix">
+<a href="http://php.net/" class="brand"><img src="/images/logo.php" width="48" height="24" alt="php" /></a>
+<div id="mainmenu-toggle-overlay"></div>
+<input type="checkbox" id="mainmenu-toggle" />
+<ul class="nav">
+<li class=""><a href="http://php.net/downloads">Downloads</a></li>
+<li class="active"><a href="http://php.net/docs.php">Documentation</a></li>
+<li class=""><a href="http://php.net/get-involved">Get Involved</a></li>
+<li class=""><a href="http://php.net/support">Help</a></li>
+</ul>
+<form class="navbar-search" id="topsearch" action="/search.php">
+<input type="hidden" name="show" value="quickref" />
+<input type="search" name="pattern" class="search-query" placeholder="Search" accesskey="s" />
+</form>
+</div>
+<div id="flash-message"></div>
+</nav>
+<div class="headsup"><a href="http://php.net/conferences/index.php#id2016-01-30-1">NortheastPHP Conference CfP Opens</a></div>
+<nav id="trick"><div><dl>
+<dt><a href="http://php.net/manual/en/getting-started.php">Getting Started</a></dt>
+<dd><a href="http://php.net/manual/en/introduction.php">Introduction</a></dd>
+<dd><a href="http://php.net/manual/en/tutorial.php">A simple tutorial</a></dd>
+<dt><a href="http://php.net/manual/en/langref.php">Language Reference</a></dt>
+<dd><a href="http://php.net/manual/en/language.basic-syntax.php">Basic syntax</a></dd>
+<dd><a href="http://php.net/manual/en/language.types.php">Types</a></dd>
+<dd><a href="http://php.net/manual/en/language.variables.php">Variables</a></dd>
+<dd><a href="http://php.net/manual/en/language.constants.php">Constants</a></dd>
+<dd><a href="http://php.net/manual/en/language.expressions.php">Expressions</a></dd>
+<dd><a href="http://php.net/manual/en/language.operators.php">Operators</a></dd>
+<dd><a href="http://php.net/manual/en/language.control-structures.php">Control Structures</a></dd>
+<dd><a href="http://php.net/manual/en/language.functions.php">Functions</a></dd>
+<dd><a href="http://php.net/manual/en/language.oop5.php">Classes and Objects</a></dd>
+<dd><a href="http://php.net/manual/en/language.namespaces.php">Namespaces</a></dd>
+<dd><a href="http://php.net/manual/en/language.errors.php">Errors</a></dd>
+<dd><a href="http://php.net/manual/en/language.exceptions.php">Exceptions</a></dd>
+<dd><a href="http://php.net/manual/en/language.generators.php">Generators</a></dd>
+<dd><a href="http://php.net/manual/en/language.references.php">References Explained</a></dd>
+<dd><a href="http://php.net/manual/en/reserved.variables.php">Predefined Variables</a></dd>
+<dd><a href="http://php.net/manual/en/reserved.exceptions.php">Predefined Exceptions</a></dd>
+<dd><a href="http://php.net/manual/en/reserved.interfaces.php">Predefined Interfaces and Classes</a></dd>
+<dd><a href="http://php.net/manual/en/context.php">Context options and parameters</a></dd>
+<dd><a href="http://php.net/manual/en/wrappers.php">Supported Protocols and Wrappers</a></dd>
+</dl>
+<dl>
+<dt><a href="http://php.net/manual/en/security.php">Security</a></dt>
+<dd><a href="http://php.net/manual/en/security.intro.php">Introduction</a></dd>
+<dd><a href="http://php.net/manual/en/security.general.php">General considerations</a></dd>
+<dd><a href="http://php.net/manual/en/security.cgi-bin.php">Installed as CGI binary</a></dd>
+<dd><a href="http://php.net/manual/en/security.apache.php">Installed as an Apache module</a></dd>
+<dd><a href="http://php.net/manual/en/security.filesystem.php">Filesystem Security</a></dd>
+<dd><a href="http://php.net/manual/en/security.database.php">Database Security</a></dd>
+<dd><a href="http://php.net/manual/en/security.errors.php">Error Reporting</a></dd>
+<dd><a href="http://php.net/manual/en/security.globals.php">Using Register Globals</a></dd>
+<dd><a href="http://php.net/manual/en/security.variables.php">User Submitted Data</a></dd>
+<dd><a href="http://php.net/manual/en/security.magicquotes.php">Magic Quotes</a></dd>
+<dd><a href="http://php.net/manual/en/security.hiding.php">Hiding PHP</a></dd>
+<dd><a href="http://php.net/manual/en/security.current.php">Keeping Current</a></dd>
+<dt><a href="http://php.net/manual/en/features.php">Features</a></dt>
+<dd><a href="http://php.net/manual/en/features.http-auth.php">HTTP authentication with PHP</a></dd>
+<dd><a href="http://php.net/manual/en/features.cookies.php">Cookies</a></dd>
+<dd><a href="http://php.net/manual/en/features.sessions.php">Sessions</a></dd>
+<dd><a href="http://php.net/manual/en/features.xforms.php">Dealing with XForms</a></dd>
+<dd><a href="http://php.net/manual/en/features.file-upload.php">Handling file uploads</a></dd>
+<dd><a href="http://php.net/manual/en/features.remote-files.php">Using remote files</a></dd>
+<dd><a href="http://php.net/manual/en/features.connection-handling.php">Connection handling</a></dd>
+<dd><a href="http://php.net/manual/en/features.persistent-connections.php">Persistent Database Connections</a></dd>
+<dd><a href="http://php.net/manual/en/features.safe-mode.php">Safe Mode</a></dd>
+<dd><a href="http://php.net/manual/en/features.commandline.php">Command line usage</a></dd>
+<dd><a href="http://php.net/manual/en/features.gc.php">Garbage Collection</a></dd>
+<dd><a href="http://php.net/manual/en/features.dtrace.php">DTrace Dynamic Tracing</a></dd>
+</dl>
+<dl>
+<dt><a href="http://php.net/manual/en/funcref.php">Function Reference</a></dt>
+<dd><a href="http://php.net/manual/en/refs.basic.php.php">Affecting PHP's Behaviour</a></dd>
+<dd><a href="http://php.net/manual/en/refs.utilspec.audio.php">Audio Formats Manipulation</a></dd>
+<dd><a href="http://php.net/manual/en/refs.remote.auth.php">Authentication Services</a></dd>
+<dd><a href="http://php.net/manual/en/refs.utilspec.cmdline.php">Command Line Specific Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.compression.php">Compression and Archive Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.creditcard.php">Credit Card Processing</a></dd>
+<dd><a href="http://php.net/manual/en/refs.crypto.php">Cryptography Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.database.php">Database Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.calendar.php">Date and Time Related Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.fileprocess.file.php">File System Related Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.international.php">Human Language and Character Encoding Support</a></dd>
+<dd><a href="http://php.net/manual/en/refs.utilspec.image.php">Image Processing and Generation</a></dd>
+<dd><a href="http://php.net/manual/en/refs.remote.mail.php">Mail Related Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.math.php">Mathematical Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.utilspec.nontext.php">Non-Text MIME Output</a></dd>
+<dd><a href="http://php.net/manual/en/refs.fileprocess.process.php">Process Control Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.basic.other.php">Other Basic Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.remote.other.php">Other Services</a></dd>
+<dd><a href="http://php.net/manual/en/refs.search.php">Search Engine Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.utilspec.server.php">Server Specific Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.basic.session.php">Session Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.basic.text.php">Text Processing</a></dd>
+<dd><a href="http://php.net/manual/en/refs.basic.vartype.php">Variable and Type Related Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.webservice.php">Web Services</a></dd>
+<dd><a href="http://php.net/manual/en/refs.utilspec.windows.php">Windows Only Extensions</a></dd>
+<dd><a href="http://php.net/manual/en/refs.xml.php">XML Manipulation</a></dd>
+</dl>
+<dl>
+<dt>Keyboard Shortcuts</dt><dt>?</dt>
+<dd>This help</dd>
+<dt>j</dt>
+<dd>Next menu item</dd>
+<dt>k</dt>
+<dd>Previous menu item</dd>
+<dt>g p</dt>
+<dd>Previous man page</dd>
+<dt>g n</dt>
+<dd>Next man page</dd>
+<dt>G</dt>
+<dd>Scroll to bottom</dd>
+<dt>g g</dt>
+<dd>Scroll to top</dd>
+<dt>g h</dt>
+<dd>Goto homepage</dd>
+<dt>g s</dt>
+<dd>Goto search<br />(current page)</dd>
+<dt>/</dt>
+<dd>Focus search box</dd>
+</dl></div></nav>
+<div id="goto">
+<div class="search">
+<div class="text"></div>
+<div class="results"><ul></ul></div>
+</div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+<div id="breadcrumbs-inner">
+<div class="next">
+<a href="function.get-defined-vars.php">
+          get_defined_vars &raquo;
+        </a>
+</div>
+<div class="prev">
+<a href="function.empty.php">
+          &laquo; empty        </a>
+</div>
+<ul>
+<li><a href="index.php">PHP Manual</a></li> <li><a href="funcref.php">Function Reference</a></li> <li><a href="refs.basic.vartype.php">Variable and Type Related Extensions</a></li> <li><a href="book.var.php">Variable handling</a></li> <li><a href="ref.var.php">Variable handling Functions</a></li> </ul>
+</div>
+</div>
+<div id="layout" class="clearfix">
+<section id="layout-content">
+<div class="page-tools">
+<div class="change-language">
+<form action="/manual/change.php" method="get" id="changelang" name="changelang">
+<fieldset>
+<label for="changelang-langs">Change language:</label>
+<select onchange="document.changelang.submit()" name="page" id="changelang-langs">
+<option value="en/function.floatval.php" selected="selected">English</option>
+<option value="pt_BR/function.floatval.php">Brazilian Portuguese</option>
+<option value="zh/function.floatval.php">Chinese (Simplified)</option>
+<option value="fr/function.floatval.php">French</option>
+<option value="de/function.floatval.php">German</option>
+<option value="ja/function.floatval.php">Japanese</option>
+<option value="kr/function.floatval.php">Korean</option>
+<option value="ro/function.floatval.php">Romanian</option>
+<option value="ru/function.floatval.php">Russian</option>
+<option value="es/function.floatval.php">Spanish</option>
+<option value="tr/function.floatval.php">Turkish</option>
+<option value="help-translate.php">Other</option>
+</select>
+</fieldset>
+</form>
+</div>
+<div class="edit-bug">
+<a href="https://edit.php.net/?project=PHP&amp;perm=en/function.floatval.php">Edit</a>
+<a href="https://bugs.php.net/report.php?bug_type=Documentation+problem&amp;manpage=function.floatval">Report a Bug</a>
+</div>
+</div><div id="function.floatval" class="refentry">
+<div class="refnamediv">
+<h1 class="refname">floatval</h1>
+<p class="verinfo">(PHP 4 &gt;= 4.2.0, PHP 5, PHP 7)</p><p class="refpurpose"><span class="refname">floatval</span> &mdash; <span class="dc-title">Get float value of a variable</span></p>
+</div>
+<div class="refsect1 description" id="refsect1-function.floatval-description">
+<h3 class="title">Description</h3>
+<div class="methodsynopsis dc-description">
+<span class="type">float</span> <span class="methodname"><strong>floatval</strong></span>
+    ( <span class="methodparam"><span class="type"><a href="language.pseudo-types.php#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$var</code></span>
+   )</div>
+<p class="para rdfs-comment">
+   Gets the <span class="type"><a href="language.types.float.php" class="type float">float</a></span> value of <code class="parameter">var</code>.
+  </p>
+</div>
+<div class="refsect1 parameters" id="refsect1-function.floatval-parameters">
+<h3 class="title">Parameters</h3>
+<p class="para">
+<dl>
+<dt>
+<code class="parameter">var</code></dt>
+<dd>
+<p class="para">
+       May be any scalar type. <span class="function"><strong>floatval()</strong></span> should not be used
+       on objects, as doing so will emit an <strong><code>E_NOTICE</code></strong> level
+       error and return 1.
+      </p>
+</dd>
+</dl>
+</p>
+</div>
+<div class="refsect1 returnvalues" id="refsect1-function.floatval-returnvalues">
+<h3 class="title">Return Values</h3>
+<p class="para">
+   The float value of the given variable. Empty arrays return 0, non-empty
+   arrays return 1.
+  </p>
+<p class="para">
+   Strings will most likely return 0 although this depends on the 
+   leftmost characters of the string. The common rules of 
+   <a href="language.types.float.php#language.types.float.casting" class="link">float casting</a> 
+   apply.
+  </p>
+</div>
+<div class="refsect1 examples" id="refsect1-function.floatval-examples">
+<h3 class="title">Examples</h3>
+<p class="para">
+<div class="example" id="example-5830">
+<p><strong>Example #1 <span class="function"></span></strong><strong>floatval()</strong> Example</p>
+<div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$var&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'122.34343The'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$float_value_of_var&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">floatval</span><span style="color: #007700">(</span><span style="color: #0000BB">$var</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">$float_value_of_var</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;122.34343<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+</div>
+</div>
+</p>
+<p class="para">
+<div class="example" id="example-5831">
+<p><strong>Example #2 <span class="function"></span></strong><strong>floatval()</strong> non-numeric leftmost characters Example</p>
+<div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$var&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'The122.34343'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$float_value_of_var&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">floatval</span><span style="color: #007700">(</span><span style="color: #0000BB">$var</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">$float_value_of_var</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;0<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+</div>
+</div>
+</p>
+</div>
+<div class="refsect1 seealso" id="refsect1-function.floatval-seealso">
+<h3 class="title">See Also</h3>
+<p class="para">
+<ul class="simplelist">
+<li class="member"><span class="function"><a href="function.boolval.php" class="function" rel="rdfs-seeAlso">boolval()</a> - Get the boolean value of a variable</span></li>
+<li class="member"><span class="function"><a href="function.intval.php" class="function" rel="rdfs-seeAlso">intval()</a> - Get the integer value of a variable</span></li>
+<li class="member"><span class="function"><a href="function.strval.php" class="function" rel="rdfs-seeAlso">strval()</a> - Get string value of a variable</span></li>
+<li class="member"><span class="function"><a href="function.settype.php" class="function" rel="rdfs-seeAlso">settype()</a> - Set the type of a variable</span></li>
+<li class="member"><a href="language.types.type-juggling.php" class="link">Type juggling</a></li>
+</ul>
+</p>
+</div>
+</div>
+</section><section id="usernotes">
+<div class="head">
+<span class="action"><a href="http://php.net/manual/add-note.php?sect=function.floatval&amp;redirect=http://php.net/manual/en/function.floatval.php"><img src="/images/notes-add@2x.png" alt="add a note" width="12" height="12" /> <small>add a note</small></a></span>
+<h3 class="title">User Contributed Notes <span class="count">18 notes</span></h3>
+</div><div id="allnotes">
+<div class="note" id="114486"> <div class="votes">
+<div id="Vu114486">
+<a href="http://php.net/manual/vote-note.php?id=114486&amp;page=function.floatval&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd114486">
+<a href="http://php.net/manual/vote-note.php?id=114486&amp;page=function.floatval&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V114486" title="79% like this...">
+    23
+    </div>
+</div>
+<a href="#114486" class="name">
+<strong class="user"><em>brewal dot renault at gmail dot com</em></strong></a><a class="genanchor" href="#114486"> &para;</a><div class="date" title="2014-02-26 09:25"><strong>1 year ago</strong></div>
+<div class="text" id="Hcom114486">
+<div class="phpcode"><code><span class="html">
+This function takes the last comma or dot (if any) to make a clean float, ignoring thousand separator, currency or any other letter :<br /><br />function tofloat($num) {<br />&nbsp; &nbsp; $dotPos = strrpos($num, '.');<br />&nbsp; &nbsp; $commaPos = strrpos($num, ',');<br />&nbsp; &nbsp; $sep = (($dotPos &gt; $commaPos) &amp;&amp; $dotPos) ? $dotPos : <br />&nbsp; &nbsp; &nbsp; &nbsp; ((($commaPos &gt; $dotPos) &amp;&amp; $commaPos) ? $commaPos : false);<br />&nbsp;&nbsp; <br />&nbsp; &nbsp; if (!$sep) {<br />&nbsp; &nbsp; &nbsp; &nbsp; return floatval(preg_replace("/[^0-9]/", "", $num));<br />&nbsp; &nbsp; } <br /><br />&nbsp; &nbsp; return floatval(<br />&nbsp; &nbsp; &nbsp; &nbsp; preg_replace("/[^0-9]/", "", substr($num, 0, $sep)) . '.' .<br />&nbsp; &nbsp; &nbsp; &nbsp; preg_replace("/[^0-9]/", "", substr($num, $sep+1, strlen($num)))<br />&nbsp; &nbsp; );<br />}<br /><br />$num = '1.999,369€';<br />var_dump(tofloat($num)); // float(1999.369)<br />$otherNum = '126,564,789.33 m²';<br />var_dump(tofloat($otherNum)); // float(126564789.33)<br /><br />Demo : <a href="http://codepad.org/NW4e9hQH" rel="nofollow" target="_blank">http://codepad.org/NW4e9hQH</a></span>
+</code></div>
+</div>
+</div>
+<div class="note" id="52028"> <div class="votes">
+<div id="Vu52028">
+<a href="http://php.net/manual/vote-note.php?id=52028&amp;page=function.floatval&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd52028">
+<a href="http://php.net/manual/vote-note.php?id=52028&amp;page=function.floatval&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V52028" title="75% like this...">
+    28
+    </div>
+</div>
+<a href="#52028" class="name"><strong class="user"><em>Anonymous</em></strong></a><a class="genanchor" href="#52028"> &para;</a><div class="date" title="2005-04-19 05:30"><strong>10 years ago</strong></div>
+<div class="text" id="Hcom52028">
+<div class="phpcode"><code><span class="html">
+you can also use typecasting instead of functions:<br /><br />(float) $value;</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="43262"> <div class="votes">
+<div id="Vu43262">
+<a href="http://php.net/manual/vote-note.php?id=43262&amp;page=function.floatval&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd43262">
+<a href="http://php.net/manual/vote-note.php?id=43262&amp;page=function.floatval&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V43262" title="69% like this...">
+    10
+    </div>
+</div>
+<a href="#43262" class="name">
+<strong class="user"><em>anonymous at start dot be</em></strong></a><a class="genanchor" href="#43262"> &para;</a><div class="date" title="2004-06-15 07:00"><strong>11 years ago</strong></div>
+<div class="text" id="Hcom43262">
+<div class="phpcode"><code><span class="html">
+Easier-to-grasp-function for the ',' problem.<br /> <br /><span class="default">&lt;?php<br /></span><span class="keyword">function </span><span class="default">Getfloat</span><span class="keyword">(</span><span class="default">$str</span><span class="keyword">) {<br />&nbsp; if(</span><span class="default">strstr</span><span class="keyword">(</span><span class="default">$str</span><span class="keyword">, </span><span class="string">","</span><span class="keyword">)) {<br />&nbsp; &nbsp; </span><span class="default">$str </span><span class="keyword">= </span><span class="default">str_replace</span><span class="keyword">(</span><span class="string">"."</span><span class="keyword">, </span><span class="string">""</span><span class="keyword">, </span><span class="default">$str</span><span class="keyword">); </span><span class="comment">// replace dots (thousand seps) with blancs<br />&nbsp; &nbsp; </span><span class="default">$str </span><span class="keyword">= </span><span class="default">str_replace</span><span class="keyword">(</span><span class="string">","</span><span class="keyword">, </span><span class="string">"."</span><span class="keyword">, </span><span class="default">$str</span><span class="keyword">); </span><span class="comment">// replace ',' with '.'<br />&nbsp; </span><span class="keyword">}<br />&nbsp; <br />&nbsp; if(</span><span class="default">preg_match</span><span class="keyword">(</span><span class="string">"#([0-9\.]+)#"</span><span class="keyword">, </span><span class="default">$str</span><span class="keyword">, </span><span class="default">$match</span><span class="keyword">)) { </span><span class="comment">// search for number that may contain '.'<br />&nbsp; &nbsp; </span><span class="keyword">return </span><span class="default">floatval</span><span class="keyword">(</span><span class="default">$match</span><span class="keyword">[</span><span class="default">0</span><span class="keyword">]);<br />&nbsp; } else {<br />&nbsp; &nbsp; return </span><span class="default">floatval</span><span class="keyword">(</span><span class="default">$str</span><span class="keyword">); </span><span class="comment">// take some last chances with floatval<br />&nbsp; </span><span class="keyword">}<br />}<br /> <br />echo </span><span class="default">Getfloat</span><span class="keyword">(</span><span class="string">"$ 19.332,35-"</span><span class="keyword">); </span><span class="comment">// will print: 19332.35<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="106367"> <div class="votes">
+<div id="Vu106367">
+<a href="http://php.net/manual/vote-note.php?id=106367&amp;page=function.floatval&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd106367">
+<a href="http://php.net/manual/vote-note.php?id=106367&amp;page=function.floatval&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V106367" title="68% like this...">
+    9
+    </div>
+</div>
+<a href="#106367" class="name">
+<strong class="user"><em>PapaPinguoin</em></strong></a><a class="genanchor" href="#106367"> &para;</a><div class="date" title="2011-10-31 07:26"><strong>4 years ago</strong></div>
+<div class="text" id="Hcom106367">
+<div class="phpcode"><code><span class="html">
+To view the very large and very small numbers (eg from a database DECIMAL), without displaying scientific notation, or leading zeros.<br /><br />FR : Pour afficher les très grand et très petits nombres (ex. depuis une base de données DECIMAL), sans afficher la notation scientifique, ni les zéros non significatifs.<br /><br /><span class="default">&lt;?php<br /></span><span class="keyword">function </span><span class="default">floattostr</span><span class="keyword">( </span><span class="default">$val </span><span class="keyword">)<br />{<br />&nbsp; &nbsp; </span><span class="default">preg_match</span><span class="keyword">( </span><span class="string">"#^([\+\-]|)([0-9]*)(\.([0-9]*?)|)(0*)$#"</span><span class="keyword">, </span><span class="default">trim</span><span class="keyword">(</span><span class="default">$val</span><span class="keyword">), </span><span class="default">$o </span><span class="keyword">);<br />&nbsp; &nbsp; return </span><span class="default">$o</span><span class="keyword">[</span><span class="default">1</span><span class="keyword">].</span><span class="default">sprintf</span><span class="keyword">(</span><span class="string">'%d'</span><span class="keyword">,</span><span class="default">$o</span><span class="keyword">[</span><span class="default">2</span><span class="keyword">]).(</span><span class="default">$o</span><span class="keyword">[</span><span class="default">3</span><span class="keyword">]!=</span><span class="string">'.'</span><span class="keyword">?</span><span class="default">$o</span><span class="keyword">[</span><span class="default">3</span><span class="keyword">]:</span><span class="string">''</span><span class="keyword">);<br />}<br /></span><span class="default">?&gt;<br /></span><br /><span class="default">&lt;?php<br /></span><span class="keyword">echo </span><span class="default">floattostr</span><span class="keyword">(</span><span class="string">"0000000000000001"</span><span class="keyword">);<br />echo </span><span class="default">floattostr</span><span class="keyword">(</span><span class="string">"1.00000000000000"</span><span class="keyword">);<br />echo </span><span class="default">floattostr</span><span class="keyword">(</span><span class="string">"0.00000000001000"</span><span class="keyword">);<br />echo </span><span class="default">floattostr</span><span class="keyword">(</span><span class="string">"0000.00010000000"</span><span class="keyword">);<br />echo </span><span class="default">floattostr</span><span class="keyword">(</span><span class="string">"000000010000000000.00000000000010000000000"</span><span class="keyword">);<br />echo </span><span class="default">floattostr</span><span class="keyword">(</span><span class="string">"-0000000000000.1"</span><span class="keyword">);<br />echo </span><span class="default">floattostr</span><span class="keyword">(</span><span class="string">"-00000001.100000"</span><span class="keyword">);<br /><br /></span><span class="comment">// result<br />// 1<br />// 1<br />// 0.00000000001<br />// 0.0001<br />// 10000000000.0000000000001<br />// -0.1<br />// -1.1<br /><br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="92563"> <div class="votes">
+<div id="Vu92563">
+<a href="http://php.net/manual/vote-note.php?id=92563&amp;page=function.floatval&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd92563">
+<a href="http://php.net/manual/vote-note.php?id=92563&amp;page=function.floatval&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V92563" title="64% like this...">
+    4
+    </div>
+</div>
+<a href="#92563" class="name">
+<strong class="user"><em>chris at georgakopoulos dot com</em></strong></a><a class="genanchor" href="#92563"> &para;</a><div class="date" title="2009-07-29 08:12"><strong>6 years ago</strong></div>
+<div class="text" id="Hcom92563">
+<div class="phpcode"><code><span class="html">
+locale aware floatval:<br /> <br /><span class="default">&lt;?php<br /></span><span class="keyword">function </span><span class="default">ParseFloat</span><span class="keyword">(</span><span class="default">$floatString</span><span class="keyword">){<br />&nbsp; &nbsp; </span><span class="default">$LocaleInfo </span><span class="keyword">= </span><span class="default">localeconv</span><span class="keyword">();<br />&nbsp; &nbsp; </span><span class="default">$floatString </span><span class="keyword">= </span><span class="default">str_replace</span><span class="keyword">(</span><span class="default">$LocaleInfo</span><span class="keyword">[</span><span class="string">"mon_thousands_sep"</span><span class="keyword">] , </span><span class="string">""</span><span class="keyword">, </span><span class="default">$floatString</span><span class="keyword">);<br />&nbsp; &nbsp; </span><span class="default">$floatString </span><span class="keyword">= </span><span class="default">str_replace</span><span class="keyword">(</span><span class="default">$LocaleInfo</span><span class="keyword">[</span><span class="string">"mon_decimal_point"</span><span class="keyword">] , </span><span class="string">"."</span><span class="keyword">, </span><span class="default">$floatString</span><span class="keyword">);<br />&nbsp; &nbsp; return </span><span class="default">floatval</span><span class="keyword">(</span><span class="default">$floatString</span><span class="keyword">);<br />}<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="84590"> <div class="votes">
+<div id="Vu84590">
+<a href="http://php.net/manual/vote-note.php?id=84590&amp;page=function.floatval&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd84590">
+<a href="http://php.net/manual/vote-note.php?id=84590&amp;page=function.floatval&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V84590" title="61% like this...">
+    4
+    </div>
+</div>
+<a href="#84590" class="name">
+<strong class="user"><em>steve at opilo dot net</em></strong></a><a class="genanchor" href="#84590"> &para;</a><div class="date" title="2008-07-20 06:07"><strong>7 years ago</strong></div>
+<div class="text" id="Hcom84590">
+<div class="phpcode"><code><span class="html">
+Most of the functions listed here that deal with $ and , are unnecessarily complicated. You can use ereg_replace() to strip out ALL of the characters that will cause floatval to fail in one simple line of code:<br /> <br /><span class="default">&lt;?php $output </span><span class="keyword">= </span><span class="default">floatval</span><span class="keyword">(</span><span class="default">ereg_replace</span><span class="keyword">(</span><span class="string">"[^-0-9\.]"</span><span class="keyword">,</span><span class="string">""</span><span class="keyword">,</span><span class="default">$input</span><span class="keyword">)); </span><span class="default">?&gt;</span>
+</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="48163"> <div class="votes">
+<div id="Vu48163">
+<a href="http://php.net/manual/vote-note.php?id=48163&amp;page=function.floatval&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd48163">
+<a href="http://php.net/manual/vote-note.php?id=48163&amp;page=function.floatval&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V48163" title="57% like this...">
+    1
+    </div>
+</div>
+<a href="#48163" class="name">
+<strong class="user"><em>pillepop2003 at yahoo dot de</em></strong></a><a class="genanchor" href="#48163"> &para;</a><div class="date" title="2004-12-14 02:38"><strong>11 years ago</strong></div>
+<div class="text" id="Hcom48163">
+<div class="phpcode"><code><span class="html">
+Use this snippet to extract any float out of a string. You can choose how a single dot is treated with the (bool) 'single_dot_as_decimal' directive.<br />This function should be able to cover almost all floats that appear in an european environment.<br /><br /><span class="default">&lt;?php<br /><br />&nbsp; &nbsp; </span><span class="keyword">function </span><span class="default">float</span><span class="keyword">(</span><span class="default">$str</span><span class="keyword">, </span><span class="default">$set</span><span class="keyword">=</span><span class="default">FALSE</span><span class="keyword">) <br />&nbsp; &nbsp; {&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; if(</span><span class="default">preg_match</span><span class="keyword">(</span><span class="string">"/([0-9\.,-]+)/"</span><span class="keyword">, </span><span class="default">$str</span><span class="keyword">, </span><span class="default">$match</span><span class="keyword">))<br />&nbsp; &nbsp; &nbsp; &nbsp; {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">// Found number in $str, so set $str that number<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$str </span><span class="keyword">= </span><span class="default">$match</span><span class="keyword">[</span><span class="default">0</span><span class="keyword">];<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if(</span><span class="default">strstr</span><span class="keyword">(</span><span class="default">$str</span><span class="keyword">, </span><span class="string">','</span><span class="keyword">)) <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">// A comma exists, that makes it easy, cos we assume it separates the decimal part.<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$str </span><span class="keyword">= </span><span class="default">str_replace</span><span class="keyword">(</span><span class="string">'.'</span><span class="keyword">, </span><span class="string">''</span><span class="keyword">, </span><span class="default">$str</span><span class="keyword">);&nbsp; &nbsp; </span><span class="comment">// Erase thousand seps<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$str </span><span class="keyword">= </span><span class="default">str_replace</span><span class="keyword">(</span><span class="string">','</span><span class="keyword">, </span><span class="string">'.'</span><span class="keyword">, </span><span class="default">$str</span><span class="keyword">);&nbsp; &nbsp; </span><span class="comment">// Convert , to . for floatval command<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="keyword">return </span><span class="default">floatval</span><span class="keyword">(</span><span class="default">$str</span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; else<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">// No comma exists, so we have to decide, how a single dot shall be treated<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="keyword">if(</span><span class="default">preg_match</span><span class="keyword">(</span><span class="string">"/^[0-9]*[\.]{1}[0-9-]+$/"</span><span class="keyword">, </span><span class="default">$str</span><span class="keyword">) == </span><span class="default">TRUE </span><span class="keyword">&amp;&amp; </span><span class="default">$set</span><span class="keyword">[</span><span class="string">'single_dot_as_decimal'</span><span class="keyword">] == </span><span class="default">TRUE</span><span class="keyword">)<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">// Treat single dot as decimal separator<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="keyword">return </span><span class="default">floatval</span><span class="keyword">(</span><span class="default">$str</span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; else<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">// Else, treat all dots as thousand seps<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$str </span><span class="keyword">= </span><span class="default">str_replace</span><span class="keyword">(</span><span class="string">'.'</span><span class="keyword">, </span><span class="string">''</span><span class="keyword">, </span><span class="default">$str</span><span class="keyword">);&nbsp; &nbsp; </span><span class="comment">// Erase thousand seps<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="keyword">return </span><span class="default">floatval</span><span class="keyword">(</span><span class="default">$str</span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; else<br />&nbsp; &nbsp; &nbsp; &nbsp; {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">// No number found, return zero<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="keyword">return </span><span class="default">0</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; }<br /><br /></span><span class="comment">// Examples<br /><br /></span><span class="keyword">echo </span><span class="default">float</span><span class="keyword">(</span><span class="string">'foo 123,00 bar'</span><span class="keyword">); </span><span class="comment">// returns 123.00<br /></span><span class="keyword">echo </span><span class="default">float</span><span class="keyword">(</span><span class="string">'foo 123.00 bar' </span><span class="keyword">array(</span><span class="string">'single_dot_as_decimal'</span><span class="keyword">=&gt; </span><span class="default">TRUE</span><span class="keyword">)); </span><span class="comment">//returns 123.000<br /></span><span class="keyword">echo </span><span class="default">float</span><span class="keyword">(</span><span class="string">'foo 123.00 bar' </span><span class="keyword">array(</span><span class="string">'single_dot_as_decimal'</span><span class="keyword">=&gt; </span><span class="default">FALSE</span><span class="keyword">)); </span><span class="comment">//returns 123000<br /></span><span class="keyword">echo </span><span class="default">float</span><span class="keyword">(</span><span class="string">'foo 222.123.00 bar' </span><span class="keyword">array(</span><span class="string">'single_dot_as_decimal'</span><span class="keyword">=&gt; </span><span class="default">TRUE</span><span class="keyword">)); </span><span class="comment">//returns 222123000<br /></span><span class="keyword">echo </span><span class="default">float</span><span class="keyword">(</span><span class="string">'foo 222.123.00 bar' </span><span class="keyword">array(</span><span class="string">'single_dot_as_decimal'</span><span class="keyword">=&gt; </span><span class="default">FALSE</span><span class="keyword">)); </span><span class="comment">//returns 222123000<br /><br />// The decimal part can also consist of '-'<br /></span><span class="keyword">echo </span><span class="default">float</span><span class="keyword">(</span><span class="string">'foo 123,-- bar'</span><span class="keyword">); </span><span class="comment">// returns 123.00<br /><br /></span><span class="default">?&gt;<br /></span><br />Big Up.<br />Philipp</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="84793"> <div class="votes">
+<div id="Vu84793">
+<a href="http://php.net/manual/vote-note.php?id=84793&amp;page=function.floatval&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd84793">
+<a href="http://php.net/manual/vote-note.php?id=84793&amp;page=function.floatval&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V84793" title="54% like this...">
+    1
+    </div>
+</div>
+<a href="#84793" class="name">
+<strong class="user"><em>Michiel</em></strong></a><a class="genanchor" href="#84793"> &para;</a><div class="date" title="2008-07-30 05:21"><strong>7 years ago</strong></div>
+<div class="text" id="Hcom84793">
+<div class="phpcode"><code><span class="html">
+The last getFloat() function is not completely correct.<br /> <br />1.000.000 and 1,000,000 and its negative variants are not correctly parsed. For the sake of comparing and to make myself clear I use the name parseFloat in stead of getFloat for the new function:<br /> <br /><span class="default">&lt;?php<br /></span><span class="keyword">function </span><span class="default">parseFloat</span><span class="keyword">(</span><span class="default">$ptString</span><span class="keyword">) {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (</span><span class="default">strlen</span><span class="keyword">(</span><span class="default">$ptString</span><span class="keyword">) == </span><span class="default">0</span><span class="keyword">) {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return </span><span class="default">false</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$pString </span><span class="keyword">= </span><span class="default">str_replace</span><span class="keyword">(</span><span class="string">" "</span><span class="keyword">, </span><span class="string">""</span><span class="keyword">, </span><span class="default">$ptString</span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (</span><span class="default">substr_count</span><span class="keyword">(</span><span class="default">$pString</span><span class="keyword">, </span><span class="string">","</span><span class="keyword">) &gt; </span><span class="default">1</span><span class="keyword">)<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$pString </span><span class="keyword">= </span><span class="default">str_replace</span><span class="keyword">(</span><span class="string">","</span><span class="keyword">, </span><span class="string">""</span><span class="keyword">, </span><span class="default">$pString</span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (</span><span class="default">substr_count</span><span class="keyword">(</span><span class="default">$pString</span><span class="keyword">, </span><span class="string">"."</span><span class="keyword">) &gt; </span><span class="default">1</span><span class="keyword">)<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$pString </span><span class="keyword">= </span><span class="default">str_replace</span><span class="keyword">(</span><span class="string">"."</span><span class="keyword">, </span><span class="string">""</span><span class="keyword">, </span><span class="default">$pString</span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$pregResult </span><span class="keyword">= array();<br />&nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$commaset </span><span class="keyword">= </span><span class="default">strpos</span><span class="keyword">(</span><span class="default">$pString</span><span class="keyword">,</span><span class="string">','</span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (</span><span class="default">$commaset </span><span class="keyword">=== </span><span class="default">false</span><span class="keyword">) {</span><span class="default">$commaset </span><span class="keyword">= -</span><span class="default">1</span><span class="keyword">;}<br />&nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$pointset </span><span class="keyword">= </span><span class="default">strpos</span><span class="keyword">(</span><span class="default">$pString</span><span class="keyword">,</span><span class="string">'.'</span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (</span><span class="default">$pointset </span><span class="keyword">=== </span><span class="default">false</span><span class="keyword">) {</span><span class="default">$pointset </span><span class="keyword">= -</span><span class="default">1</span><span class="keyword">;}<br />&nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$pregResultA </span><span class="keyword">= array();<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$pregResultB </span><span class="keyword">= array();<br />&nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (</span><span class="default">$pointset </span><span class="keyword">&lt; </span><span class="default">$commaset</span><span class="keyword">) {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">preg_match</span><span class="keyword">(</span><span class="string">'#(([-]?[0-9]+(\.[0-9])?)+(,[0-9]+)?)#'</span><span class="keyword">, </span><span class="default">$pString</span><span class="keyword">, </span><span class="default">$pregResultA</span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">preg_match</span><span class="keyword">(</span><span class="string">'#(([-]?[0-9]+(,[0-9])?)+(\.[0-9]+)?)#'</span><span class="keyword">, </span><span class="default">$pString</span><span class="keyword">, </span><span class="default">$pregResultB</span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ((isset(</span><span class="default">$pregResultA</span><span class="keyword">[</span><span class="default">0</span><span class="keyword">]) &amp;&amp; (!isset(</span><span class="default">$pregResultB</span><span class="keyword">[</span><span class="default">0</span><span class="keyword">])<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; || </span><span class="default">strstr</span><span class="keyword">(</span><span class="default">$preResultA</span><span class="keyword">[</span><span class="default">0</span><span class="keyword">],</span><span class="default">$pregResultB</span><span class="keyword">[</span><span class="default">0</span><span class="keyword">]) == </span><span class="default">0<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="keyword">|| !</span><span class="default">$pointset</span><span class="keyword">))) {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$numberString </span><span class="keyword">= </span><span class="default">$pregResultA</span><span class="keyword">[</span><span class="default">0</span><span class="keyword">];<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$numberString </span><span class="keyword">= </span><span class="default">str_replace</span><span class="keyword">(</span><span class="string">'.'</span><span class="keyword">,</span><span class="string">''</span><span class="keyword">,</span><span class="default">$numberString</span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$numberString </span><span class="keyword">= </span><span class="default">str_replace</span><span class="keyword">(</span><span class="string">','</span><span class="keyword">,</span><span class="string">'.'</span><span class="keyword">,</span><span class="default">$numberString</span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; elseif (isset(</span><span class="default">$pregResultB</span><span class="keyword">[</span><span class="default">0</span><span class="keyword">]) &amp;&amp; (!isset(</span><span class="default">$pregResultA</span><span class="keyword">[</span><span class="default">0</span><span class="keyword">])<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; || </span><span class="default">strstr</span><span class="keyword">(</span><span class="default">$pregResultB</span><span class="keyword">[</span><span class="default">0</span><span class="keyword">],</span><span class="default">$preResultA</span><span class="keyword">[</span><span class="default">0</span><span class="keyword">]) == </span><span class="default">0<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="keyword">|| !</span><span class="default">$commaset</span><span class="keyword">)) {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$numberString </span><span class="keyword">= </span><span class="default">$pregResultB</span><span class="keyword">[</span><span class="default">0</span><span class="keyword">];<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$numberString </span><span class="keyword">= </span><span class="default">str_replace</span><span class="keyword">(</span><span class="string">','</span><span class="keyword">,</span><span class="string">''</span><span class="keyword">,</span><span class="default">$numberString</span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; else {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return </span><span class="default">false</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$result </span><span class="keyword">= (float)</span><span class="default">$numberString</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return </span><span class="default">$result</span><span class="keyword">;<br />}<br /></span><span class="default">?&gt;<br /></span> <br />Comparing of float parsing functions with the following function:<br /> <br /><span class="default">&lt;?php<br /></span><span class="keyword">function </span><span class="default">testFloatParsing</span><span class="keyword">() {<br />&nbsp; &nbsp; </span><span class="default">$floatvals </span><span class="keyword">= array(<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">"22 000,76"</span><span class="keyword">,<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">"22.000,76"</span><span class="keyword">,<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">"22,000.76"</span><span class="keyword">,<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">"22 000"</span><span class="keyword">,<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">"22,000"</span><span class="keyword">,<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">"22.000"</span><span class="keyword">,<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">"22000.76"</span><span class="keyword">,<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">"22000,76"</span><span class="keyword">,<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">"1.022.000,76"</span><span class="keyword">,<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">"1,022,000.76"</span><span class="keyword">,<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">"1,000,000"</span><span class="keyword">,<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">"1.000.000"</span><span class="keyword">,<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">"1022000.76"</span><span class="keyword">,<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">"1022000,76"</span><span class="keyword">,<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">"1022000"</span><span class="keyword">,<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">"0.76"</span><span class="keyword">,<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">"0,76"</span><span class="keyword">,<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">"0.00"</span><span class="keyword">,<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">"0,00"</span><span class="keyword">,<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">"1.00"</span><span class="keyword">,<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">"1,00"</span><span class="keyword">,<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">"-22 000,76"</span><span class="keyword">,<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">"-22.000,76"</span><span class="keyword">,<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">"-22,000.76"</span><span class="keyword">,<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">"-22 000"</span><span class="keyword">,<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">"-22,000"</span><span class="keyword">,<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">"-22.000"</span><span class="keyword">,<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">"-22000.76"</span><span class="keyword">,<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">"-22000,76"</span><span class="keyword">,<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">"-1.022.000,76"</span><span class="keyword">,<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">"-1,022,000.76"</span><span class="keyword">,<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">"-1,000,000"</span><span class="keyword">,<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">"-1.000.000"</span><span class="keyword">,<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">"-1022000.76"</span><span class="keyword">,<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">"-1022000,76"</span><span class="keyword">,<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">"-1022000"</span><span class="keyword">,<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">"-0.76"</span><span class="keyword">,<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">"-0,76"</span><span class="keyword">,<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">"-0.00"</span><span class="keyword">,<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">"-0,00"</span><span class="keyword">,<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">"-1.00"</span><span class="keyword">,<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">"-1,00"<br />&nbsp; &nbsp; </span><span class="keyword">);<br />&nbsp; &nbsp; <br />&nbsp; &nbsp; echo </span><span class="string">"&lt;table&gt;<br />&nbsp; &nbsp; &nbsp; &nbsp; &lt;tr&gt;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;th&gt;String&lt;/th&gt;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;th&gt;floatval()&lt;/th&gt;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;th&gt;getFloat()&lt;/th&gt;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;th&gt;parseFloat()&lt;/th&gt;<br />&nbsp; &nbsp; &nbsp; &nbsp; &lt;/tr&gt;"</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; foreach (</span><span class="default">$floatvals </span><span class="keyword">as </span><span class="default">$fval</span><span class="keyword">) {<br />&nbsp; &nbsp; &nbsp; &nbsp; echo </span><span class="string">"&lt;tr&gt;"</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; echo </span><span class="string">"&lt;td&gt;" </span><span class="keyword">. (string) </span><span class="default">$fval </span><span class="keyword">. </span><span class="string">"&lt;/td&gt;"</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; echo </span><span class="string">"&lt;td&gt;" </span><span class="keyword">. (float) </span><span class="default">floatval</span><span class="keyword">(</span><span class="default">$fval</span><span class="keyword">) . </span><span class="string">"&lt;/td&gt;"</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; echo </span><span class="string">"&lt;td&gt;" </span><span class="keyword">. (float) </span><span class="default">getFloat</span><span class="keyword">(</span><span class="default">$fval</span><span class="keyword">) . </span><span class="string">"&lt;/td&gt;"</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; echo </span><span class="string">"&lt;td&gt;" </span><span class="keyword">. (float) </span><span class="default">parseFloat</span><span class="keyword">(</span><span class="default">$fval</span><span class="keyword">) . </span><span class="string">"&lt;/td&gt;"</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; echo </span><span class="string">"&lt;/tr&gt;"</span><span class="keyword">;<br />&nbsp; &nbsp; }<br />&nbsp; &nbsp; echo </span><span class="string">"&lt;/table&gt;"</span><span class="keyword">;<br />}<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="69391"> <div class="votes">
+<div id="Vu69391">
+<a href="http://php.net/manual/vote-note.php?id=69391&amp;page=function.floatval&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd69391">
+<a href="http://php.net/manual/vote-note.php?id=69391&amp;page=function.floatval&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V69391" title="53% like this...">
+    1
+    </div>
+</div>
+<a href="#69391" class="name">
+<strong class="user"><em>aa at geb-team dot de</em></strong></a><a class="genanchor" href="#69391"> &para;</a><div class="date" title="2006-09-04 08:03"><strong>9 years ago</strong></div>
+<div class="text" id="Hcom69391">
+<div class="phpcode"><code><span class="html">
+@pillepop2003 at yahoo dot de<br /><br /><span class="default">&lt;?php<br />float</span><span class="keyword">(</span><span class="string">'-100.00'</span><span class="keyword">, array(</span><span class="string">'single_dot_as_decimal' </span><span class="keyword">=&gt; </span><span class="default">true</span><span class="keyword">)); </span><span class="comment">// whoops, returns -10000<br /></span><span class="default">?&gt;<br /></span><br />use: "/^[0-9-]*[\.]{1}[0-9-]+$/"<br />instead of: "/^[0-9]*[\.]{1}[0-9-]+$/"</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="118195"> <div class="votes">
+<div id="Vu118195">
+<a href="http://php.net/manual/vote-note.php?id=118195&amp;page=function.floatval&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd118195">
+<a href="http://php.net/manual/vote-note.php?id=118195&amp;page=function.floatval&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V118195" title="100% like this...">
+    1
+    </div>
+</div>
+<a href="#118195" class="name">
+<strong class="user"><em>zfcb13 at gmail dot com</em></strong></a><a class="genanchor" href="#118195"> &para;</a><div class="date" title="2015-10-24 10:18"><strong>3 months ago</strong></div>
+<div class="text" id="Hcom118195">
+<div class="phpcode"><code><span class="html">
+More elegant function with selection of decimal point (deafault ,):<br /><span class="default">&lt;?php<br /></span><span class="keyword">function </span><span class="default">floatvaldec</span><span class="keyword">(</span><span class="default">$v</span><span class="keyword">, </span><span class="default">$dec</span><span class="keyword">=</span><span class="string">','</span><span class="keyword">) { return </span><span class="default">floatval</span><span class="keyword">(</span><span class="default">ereg_replace</span><span class="keyword">(</span><span class="string">"," </span><span class="keyword">, </span><span class="string">"." </span><span class="keyword">, </span><span class="default">ereg_replace</span><span class="keyword">(</span><span class="string">"[^-0-9</span><span class="default">$dec</span><span class="string">]"</span><span class="keyword">,</span><span class="string">""</span><span class="keyword">,</span><span class="default">$v</span><span class="keyword">))); }<br /><br /></span><span class="comment">// examples:<br /></span><span class="keyword">echo </span><span class="string">'&lt;br&gt;'</span><span class="keyword">.</span><span class="default">floatvaldec</span><span class="keyword">(</span><span class="string">'somthing123.456.789,12Euro'</span><span class="keyword">) ; <br />echo </span><span class="string">'&lt;br&gt;'</span><span class="keyword">.</span><span class="default">floatvaldec</span><span class="keyword">(</span><span class="string">'x123,456 789.12 Euro'</span><span class="keyword">, </span><span class="string">'.'</span><span class="keyword">) ; <br />echo </span><span class="string">'&lt;br&gt;'</span><span class="keyword">.</span><span class="default">floatvaldec</span><span class="keyword">(</span><span class="string">'123.456 789,12$'</span><span class="keyword">) ;<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="30146"> <div class="votes">
+<div id="Vu30146">
+<a href="http://php.net/manual/vote-note.php?id=30146&amp;page=function.floatval&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd30146">
+<a href="http://php.net/manual/vote-note.php?id=30146&amp;page=function.floatval&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V30146" title="50% like this...">
+    0
+    </div>
+</div>
+<a href="#30146" class="name">
+<strong class="user"><em>jason at shadonet dot com</em></strong></a><a class="genanchor" href="#30146"> &para;</a><div class="date" title="2003-03-07 07:07"><strong>12 years ago</strong></div>
+<div class="text" id="Hcom30146">
+<div class="phpcode"><code><span class="html">
+Instead of using floatval which only appeared in PHP 4.2 you could juse use $variable = (float)$variable<br /><br />This function doesn't seem to add any functionality that wasn't already there.</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="89475"> <div class="votes">
+<div id="Vu89475">
+<a href="http://php.net/manual/vote-note.php?id=89475&amp;page=function.floatval&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd89475">
+<a href="http://php.net/manual/vote-note.php?id=89475&amp;page=function.floatval&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V89475" title="47% like this...">
+    -1
+    </div>
+</div>
+<a href="#89475" class="name">
+<strong class="user"><em>ted devito</em></strong></a><a class="genanchor" href="#89475"> &para;</a><div class="date" title="2009-03-09 09:10"><strong>6 years ago</strong></div>
+<div class="text" id="Hcom89475">
+<div class="phpcode"><code><span class="html">
+i noticed all (well, unless i missed something) the functions working with decimals destroy trailing decimal places. this function restores them in case you want to be able to display a consistent precision for users. <br /> <br /><span class="default">&lt;?php<br /></span><span class="keyword">function </span><span class="default">decimal</span><span class="keyword">(</span><span class="default">$val</span><span class="keyword">, </span><span class="default">$precision </span><span class="keyword">= </span><span class="default">0</span><span class="keyword">) {<br />&nbsp; &nbsp; if ((float) </span><span class="default">$val</span><span class="keyword">) :<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$val </span><span class="keyword">= </span><span class="default">round</span><span class="keyword">((float) </span><span class="default">$val</span><span class="keyword">, (int) </span><span class="default">$precision</span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; list(</span><span class="default">$a</span><span class="keyword">, </span><span class="default">$b</span><span class="keyword">) = </span><span class="default">explode</span><span class="keyword">(</span><span class="string">'.'</span><span class="keyword">, </span><span class="default">$val</span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; if (</span><span class="default">strlen</span><span class="keyword">(</span><span class="default">$b</span><span class="keyword">) &lt; </span><span class="default">$precision</span><span class="keyword">) </span><span class="default">$b </span><span class="keyword">= </span><span class="default">str_pad</span><span class="keyword">(</span><span class="default">$b</span><span class="keyword">, </span><span class="default">$precision</span><span class="keyword">, </span><span class="string">'0'</span><span class="keyword">, </span><span class="default">STR_PAD_RIGHT</span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; return </span><span class="default">$precision </span><span class="keyword">? </span><span class="string">"</span><span class="default">$a</span><span class="string">.</span><span class="default">$b</span><span class="string">" </span><span class="keyword">: </span><span class="default">$a</span><span class="keyword">;<br />&nbsp; &nbsp; else : </span><span class="comment">// do whatever you want with values that do not have a float<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="keyword">return </span><span class="default">$val</span><span class="keyword">;<br />&nbsp; &nbsp; endif;<br />}<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="76537"> <div class="votes">
+<div id="Vu76537">
+<a href="http://php.net/manual/vote-note.php?id=76537&amp;page=function.floatval&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd76537">
+<a href="http://php.net/manual/vote-note.php?id=76537&amp;page=function.floatval&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V76537" title="45% like this...">
+    -1
+    </div>
+</div>
+<a href="#76537" class="name">
+<strong class="user"><em>leprau at leprau dot de</em></strong></a><a class="genanchor" href="#76537"> &para;</a><div class="date" title="2007-07-19 09:26"><strong>8 years ago</strong></div>
+<div class="text" id="Hcom76537">
+<div class="phpcode"><code><span class="html">
+For those of you, who are looking for a function that rips the first,<br />but longest possible float (or at least integer) from a string,<br />like 123.45 from the string "Price: 123,45$"<br /><br />If no useable value is found, the function returns false.<br /><br />Checks for both comma and dot as decimal-separator,<br />but does not check for 3 digits between thousands,<br />so 1,234.5 is as valid as 1,23,4.5 (both will return 1234.5)<br /><br />12,.3 will return 12<br />1,000,000 will return 1000.0 !<br /><br />(if thousands separator is defined,<br />decimals should be defined too ... <br />in fact I was too lazy to check for that too)<br /><br />Here you go, and feel free to optimize the function ;)<br /><span class="default">&lt;?php<br /></span><span class="keyword">function </span><span class="default">getFloat</span><span class="keyword">(</span><span class="default">$pString</span><span class="keyword">) {<br />&nbsp; &nbsp; if (</span><span class="default">strlen</span><span class="keyword">(</span><span class="default">$pString</span><span class="keyword">) == </span><span class="default">0</span><span class="keyword">) {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return </span><span class="default">false</span><span class="keyword">;<br />&nbsp; &nbsp; }<br />&nbsp; &nbsp; </span><span class="default">$pregResult </span><span class="keyword">= array();<br /><br />&nbsp; &nbsp; </span><span class="default">$commaset </span><span class="keyword">= </span><span class="default">strpos</span><span class="keyword">(</span><span class="default">$pString</span><span class="keyword">,</span><span class="string">','</span><span class="keyword">);<br />&nbsp; &nbsp; if (</span><span class="default">$commaset </span><span class="keyword">=== </span><span class="default">false</span><span class="keyword">) {</span><span class="default">$commaset </span><span class="keyword">= -</span><span class="default">1</span><span class="keyword">;}<br /><br />&nbsp; &nbsp; </span><span class="default">$pointset </span><span class="keyword">= </span><span class="default">strpos</span><span class="keyword">(</span><span class="default">$pString</span><span class="keyword">,</span><span class="string">'.'</span><span class="keyword">);<br />&nbsp; &nbsp; if (</span><span class="default">$pointset </span><span class="keyword">=== </span><span class="default">false</span><span class="keyword">) {</span><span class="default">$pointset </span><span class="keyword">= -</span><span class="default">1</span><span class="keyword">;}<br /><br />&nbsp; &nbsp; </span><span class="default">$pregResultA </span><span class="keyword">= array();<br />&nbsp; &nbsp; </span><span class="default">$pregResultB </span><span class="keyword">= array();<br /><br />&nbsp; &nbsp; if (</span><span class="default">$pointset </span><span class="keyword">&lt; </span><span class="default">$commaset</span><span class="keyword">) {<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">preg_match</span><span class="keyword">(</span><span class="string">'#(([-]?[0-9]+(\.[0-9])?)+(,[0-9]+)?)#'</span><span class="keyword">, </span><span class="default">$pString</span><span class="keyword">, </span><span class="default">$pregResultA</span><span class="keyword">);<br />&nbsp; &nbsp; }<br />&nbsp; &nbsp; </span><span class="default">preg_match</span><span class="keyword">(</span><span class="string">'#(([-]?[0-9]+(,[0-9])?)+(\.[0-9]+)?)#'</span><span class="keyword">, </span><span class="default">$pString</span><span class="keyword">, </span><span class="default">$pregResultB</span><span class="keyword">);<br />&nbsp; &nbsp; if ((isset(</span><span class="default">$pregResultA</span><span class="keyword">[</span><span class="default">0</span><span class="keyword">]) &amp;&amp; (!isset(</span><span class="default">$pregResultB</span><span class="keyword">[</span><span class="default">0</span><span class="keyword">]) <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; || </span><span class="default">strstr</span><span class="keyword">(</span><span class="default">$preResultA</span><span class="keyword">[</span><span class="default">0</span><span class="keyword">],</span><span class="default">$pregResultB</span><span class="keyword">[</span><span class="default">0</span><span class="keyword">]) == </span><span class="default">0 <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="keyword">|| !</span><span class="default">$pointset</span><span class="keyword">))) {<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$numberString </span><span class="keyword">= </span><span class="default">$pregResultA</span><span class="keyword">[</span><span class="default">0</span><span class="keyword">];<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$numberString </span><span class="keyword">= </span><span class="default">str_replace</span><span class="keyword">(</span><span class="string">'.'</span><span class="keyword">,</span><span class="string">''</span><span class="keyword">,</span><span class="default">$numberString</span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$numberString </span><span class="keyword">= </span><span class="default">str_replace</span><span class="keyword">(</span><span class="string">','</span><span class="keyword">,</span><span class="string">'.'</span><span class="keyword">,</span><span class="default">$numberString</span><span class="keyword">);<br />&nbsp; &nbsp; }<br />&nbsp; &nbsp; elseif (isset(</span><span class="default">$pregResultB</span><span class="keyword">[</span><span class="default">0</span><span class="keyword">]) &amp;&amp; (!isset(</span><span class="default">$pregResultA</span><span class="keyword">[</span><span class="default">0</span><span class="keyword">]) <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; || </span><span class="default">strstr</span><span class="keyword">(</span><span class="default">$pregResultB</span><span class="keyword">[</span><span class="default">0</span><span class="keyword">],</span><span class="default">$preResultA</span><span class="keyword">[</span><span class="default">0</span><span class="keyword">]) == </span><span class="default">0 <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="keyword">|| !</span><span class="default">$commaset</span><span class="keyword">)) {<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$numberString </span><span class="keyword">= </span><span class="default">$pregResultB</span><span class="keyword">[</span><span class="default">0</span><span class="keyword">];<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$numberString </span><span class="keyword">= </span><span class="default">str_replace</span><span class="keyword">(</span><span class="string">','</span><span class="keyword">,</span><span class="string">''</span><span class="keyword">,</span><span class="default">$numberString</span><span class="keyword">);<br />&nbsp; &nbsp; }<br />&nbsp; &nbsp; else {<br />&nbsp; &nbsp; &nbsp; &nbsp; return </span><span class="default">false</span><span class="keyword">;<br />&nbsp; &nbsp; }<br />&nbsp; &nbsp; </span><span class="default">$result </span><span class="keyword">= (float)</span><span class="default">$numberString</span><span class="keyword">;<br />&nbsp; &nbsp; return </span><span class="default">$result</span><span class="keyword">;<br />}<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="101666"> <div class="votes">
+<div id="Vu101666">
+<a href="http://php.net/manual/vote-note.php?id=101666&amp;page=function.floatval&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd101666">
+<a href="http://php.net/manual/vote-note.php?id=101666&amp;page=function.floatval&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V101666" title="42% like this...">
+    -2
+    </div>
+</div>
+<a href="#101666" class="name">
+<strong class="user"><em>secretr at NOSPAM dot e107 dot org</em></strong></a><a class="genanchor" href="#101666"> &para;</a><div class="date" title="2011-01-03 08:37"><strong>5 years ago</strong></div>
+<div class="text" id="Hcom101666">
+<div class="phpcode"><code><span class="html">
+setlocale() and floatval() duo could break your DB queries in a very simple way:<br /><br /><span class="default">&lt;?php<br />setlocale</span><span class="keyword">(</span><span class="default">LC_ALL</span><span class="keyword">, </span><span class="string">'bg_BG'</span><span class="keyword">, </span><span class="string">'bgr_BGR'</span><span class="keyword">); <br />echo </span><span class="default">floatval</span><span class="keyword">(</span><span class="default">0.15</span><span class="keyword">); </span><span class="comment">// output 0,15<br /></span><span class="default">?&gt;<br /></span><br />You would need simple workaround like:<br /><br /><span class="default">&lt;?php<br /></span><span class="keyword">function </span><span class="default">number2db</span><span class="keyword">(</span><span class="default">$value</span><span class="keyword">)<br />{<br />&nbsp; &nbsp; </span><span class="default">$larr </span><span class="keyword">= </span><span class="default">localeconv</span><span class="keyword">();<br />&nbsp; &nbsp; </span><span class="default">$search </span><span class="keyword">= array(<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$larr</span><span class="keyword">[</span><span class="string">'decimal_point'</span><span class="keyword">], <br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$larr</span><span class="keyword">[</span><span class="string">'mon_decimal_point'</span><span class="keyword">], <br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$larr</span><span class="keyword">[</span><span class="string">'thousands_sep'</span><span class="keyword">], <br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$larr</span><span class="keyword">[</span><span class="string">'mon_thousands_sep'</span><span class="keyword">], <br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$larr</span><span class="keyword">[</span><span class="string">'currency_symbol'</span><span class="keyword">], <br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$larr</span><span class="keyword">[</span><span class="string">'int_curr_symbol'</span><span class="keyword">]<br />&nbsp; &nbsp; );<br />&nbsp; &nbsp; </span><span class="default">$replace </span><span class="keyword">= array(</span><span class="string">'.'</span><span class="keyword">, </span><span class="string">'.'</span><span class="keyword">, </span><span class="string">''</span><span class="keyword">, </span><span class="string">''</span><span class="keyword">, </span><span class="string">''</span><span class="keyword">, </span><span class="string">''</span><span class="keyword">);<br /><br />&nbsp; &nbsp; return </span><span class="default">str_replace</span><span class="keyword">(</span><span class="default">$search</span><span class="keyword">, </span><span class="default">$replace</span><span class="keyword">, </span><span class="default">$value</span><span class="keyword">);<br />}<br /><br /></span><span class="default">setlocale</span><span class="keyword">(</span><span class="default">LC_ALL</span><span class="keyword">, </span><span class="string">'bg_BG'</span><span class="keyword">, </span><span class="string">'bgr_BGR'</span><span class="keyword">); <br /></span><span class="default">$testVal </span><span class="keyword">= </span><span class="default">floatval</span><span class="keyword">(</span><span class="default">0.15</span><span class="keyword">); </span><span class="comment">// result 0,15<br /></span><span class="default">var_dump</span><span class="keyword">(</span><span class="default">$testVal</span><span class="keyword">, </span><span class="default">number2db</span><span class="keyword">(</span><span class="default">$testVal</span><span class="keyword">));<br /><br /></span><span class="comment">// Result:<br />// float(0,15) <br />// string(4) "0.15" <br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="85346"> <div class="votes">
+<div id="Vu85346">
+<a href="http://php.net/manual/vote-note.php?id=85346&amp;page=function.floatval&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd85346">
+<a href="http://php.net/manual/vote-note.php?id=85346&amp;page=function.floatval&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V85346" title="42% like this...">
+    -2
+    </div>
+</div>
+<a href="#85346" class="name">
+<strong class="user"><em>info at marc-gutt dot de</em></strong></a><a class="genanchor" href="#85346"> &para;</a><div class="date" title="2008-08-26 03:55"><strong>7 years ago</strong></div>
+<div class="text" id="Hcom85346">
+<div class="phpcode"><code><span class="html">
+<span class="default">&lt;?php<br /></span><span class="keyword">function </span><span class="default">floatvalue</span><span class="keyword">(</span><span class="default">$value</span><span class="keyword">) {<br />&nbsp; &nbsp;&nbsp; return </span><span class="default">floatval</span><span class="keyword">(</span><span class="default">preg_replace</span><span class="keyword">(</span><span class="string">'#^([-]*[0-9\.,\' ]+?)((\.|,){1}([0-9-]{1,2}))*$#e'</span><span class="keyword">, </span><span class="string">"str_replace(array('.', ',', \"'\", ' '), '', '\\1') . '.\\4'"</span><span class="keyword">, </span><span class="default">$value</span><span class="keyword">));<br />}<br /></span><span class="default">?&gt;<br /></span> <br />It is much shorter and able to handle those one, too:<br />xx,-<br />xx,--<br />xx'xxx,xx<br /> <br />After using floatvalue() you can go forward with number_format() as usual.</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="31533"> <div class="votes">
+<div id="Vu31533">
+<a href="http://php.net/manual/vote-note.php?id=31533&amp;page=function.floatval&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd31533">
+<a href="http://php.net/manual/vote-note.php?id=31533&amp;page=function.floatval&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V31533" title="43% like this...">
+    -2
+    </div>
+</div>
+<a href="#31533" class="name">
+<strong class="user"><em>Zipi</em></strong></a><a class="genanchor" href="#31533"> &para;</a><div class="date" title="2003-04-25 02:51"><strong>12 years ago</strong></div>
+<div class="text" id="Hcom31533">
+<div class="phpcode"><code><span class="html">
+This function converts a string to a float no matter is the decimal separator dot (.) or comma (,). It also converts integers correctly. It takes the digits from the beginning of the string and ignores all other characters.<br /> <br /><span class="default">&lt;?php<br /></span><span class="keyword">function </span><span class="default">floatval</span><span class="keyword">(</span><span class="default">$strValue</span><span class="keyword">) {<br />&nbsp;&nbsp; </span><span class="default">$floatValue </span><span class="keyword">= </span><span class="default">ereg_replace</span><span class="keyword">(</span><span class="string">"(^[0-9]*)(\\.|,)([0-9]*)(.*)"</span><span class="keyword">, </span><span class="string">"\\1.\\3"</span><span class="keyword">, </span><span class="default">$strValue</span><span class="keyword">);<br />&nbsp;&nbsp; if (!</span><span class="default">is_numeric</span><span class="keyword">(</span><span class="default">$floatValue</span><span class="keyword">)) </span><span class="default">$floatValue </span><span class="keyword">= </span><span class="default">ereg_replace</span><span class="keyword">(</span><span class="string">"(^[0-9]*)(.*)"</span><span class="keyword">, </span><span class="string">"\\1"</span><span class="keyword">, </span><span class="default">$strValue</span><span class="keyword">);<br />&nbsp;&nbsp; if (!</span><span class="default">is_numeric</span><span class="keyword">(</span><span class="default">$floatValue</span><span class="keyword">)) </span><span class="default">$floatValue </span><span class="keyword">= </span><span class="default">0</span><span class="keyword">;<br />&nbsp;&nbsp; return </span><span class="default">$floatValue</span><span class="keyword">;<br />&nbsp; }<br /></span><span class="default">?&gt;<br /></span> <br />-Zipi (Finland)</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="39379"> <div class="votes">
+<div id="Vu39379">
+<a href="http://php.net/manual/vote-note.php?id=39379&amp;page=function.floatval&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd39379">
+<a href="http://php.net/manual/vote-note.php?id=39379&amp;page=function.floatval&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V39379" title="40% like this...">
+    -1
+    </div>
+</div>
+<a href="#39379" class="name">
+<strong class="user"><em>vickers at hotpop dot com</em></strong></a><a class="genanchor" href="#39379"> &para;</a><div class="date" title="2004-01-26 03:45"><strong>12 years ago</strong></div>
+<div class="text" id="Hcom39379">
+<div class="phpcode"><code><span class="html">
+floatval() does not work with "$35,234.43", as it could not handle the '$' and the ','.&nbsp; The following takes care of all values, such that only numeric and the decimal sign are input into floatval().&nbsp; (It probably shows I'm an old 'c' guy)...this function only lightly tested.<br /> <br /><span class="default">&lt;?php<br /></span><span class="keyword">function </span><span class="default">strtflt</span><span class="keyword">(</span><span class="default">$str</span><span class="keyword">) {<br />&nbsp; &nbsp; </span><span class="default">$il </span><span class="keyword">= </span><span class="default">strlen</span><span class="keyword">(</span><span class="default">$str</span><span class="keyword">);<br />&nbsp; &nbsp; </span><span class="default">$flt </span><span class="keyword">= </span><span class="string">""</span><span class="keyword">;<br />&nbsp; &nbsp; </span><span class="default">$cstr </span><span class="keyword">= </span><span class="string">""</span><span class="keyword">;<br />&nbsp; &nbsp; <br />&nbsp; &nbsp; for(</span><span class="default">$i</span><span class="keyword">=</span><span class="default">0</span><span class="keyword">;</span><span class="default">$i</span><span class="keyword">&lt;</span><span class="default">$il</span><span class="keyword">;</span><span class="default">$i</span><span class="keyword">++) {<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$cstr </span><span class="keyword">= </span><span class="default">substr</span><span class="keyword">(</span><span class="default">$str</span><span class="keyword">, </span><span class="default">$i</span><span class="keyword">, </span><span class="default">1</span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; if(</span><span class="default">is_numeric</span><span class="keyword">(</span><span class="default">$cstr</span><span class="keyword">) || </span><span class="default">$cstr </span><span class="keyword">== </span><span class="string">"."</span><span class="keyword">)<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$flt </span><span class="keyword">= </span><span class="default">$flt</span><span class="keyword">.</span><span class="default">$cstr</span><span class="keyword">;<br />&nbsp; &nbsp; }<br />&nbsp; &nbsp; return </span><span class="default">floatval</span><span class="keyword">(</span><span class="default">$flt</span><span class="keyword">);<br />}<br /></span><span class="default">?&gt;<br /></span> <br />Richard Vickers<br />vickers@hotpop.com</span>
+</code></div>
+</div>
+</div>
+<div class="note" id="100397"> <div class="votes">
+<div id="Vu100397">
+<a href="http://php.net/manual/vote-note.php?id=100397&amp;page=function.floatval&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+</div>
+<div id="Vd100397">
+<a href="http://php.net/manual/vote-note.php?id=100397&amp;page=function.floatval&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+</div>
+<div class="tally" id="V100397" title="27% like this...">
+    -5
+    </div>
+</div>
+<a href="#100397" class="name">
+<strong class="user"><em>balai01 at yahoo dot com</em></strong></a><a class="genanchor" href="#100397"> &para;</a><div class="date" title="2010-10-13 03:56"><strong>5 years ago</strong></div>
+<div class="text" id="Hcom100397">
+<div class="phpcode"><code><span class="html">
+//changes comma to dot if any<br />//removes any currency symbol and gets the floatVar<br /><br />$price_fl_point=(preg_replace("/,/",".",$price));<br />$price_c=floatval(preg_replace("/^[^0-9\.]/","",$price_fl_point));</span>
+</code></div>
+</div>
+</div></div>
+<div class="foot"><a href="http://php.net/manual/add-note.php?sect=function.floatval&amp;redirect=http://php.net/manual/en/function.floatval.php"><img src="/images/notes-add@2x.png" alt="add a note" width="12" height="12" /> <small>add a note</small></a></div>
+</section> <!-- layout-content -->
+<aside class="layout-menu">
+<ul class="parent-menu-list">
+<li>
+<a href="ref.var.php">Variable handling Functions</a>
+<ul class="child-menu-list">
+<li class="">
+<a href="function.boolval.php" title="boolval">boolval</a>
+</li>
+<li class="">
+<a href="function.debug-zval-dump.php" title="debug_​zval_​dump">debug_&#8203;zval_&#8203;dump</a>
+</li>
+<li class="">
+<a href="function.doubleval.php" title="doubleval">doubleval</a>
+</li>
+<li class="">
+<a href="function.empty.php" title="empty">empty</a>
+</li>
+<li class="current">
+<a href="function.floatval.php" title="floatval">floatval</a>
+</li>
+<li class="">
+<a href="function.get-defined-vars.php" title="get_​defined_​vars">get_&#8203;defined_&#8203;vars</a>
+</li>
+<li class="">
+<a href="function.get-resource-type.php" title="get_​resource_​type">get_&#8203;resource_&#8203;type</a>
+</li>
+<li class="">
+<a href="function.gettype.php" title="gettype">gettype</a>
+</li>
+<li class="">
+<a href="function.import-request-variables.php" title="import_​request_​variables">import_&#8203;request_&#8203;variables</a>
+</li>
+<li class="">
+<a href="function.intval.php" title="intval">intval</a>
+</li>
+<li class="">
+<a href="function.is-array.php" title="is_​array">is_&#8203;array</a>
+</li>
+<li class="">
+<a href="function.is-bool.php" title="is_​bool">is_&#8203;bool</a>
+</li>
+<li class="">
+<a href="function.is-callable.php" title="is_​callable">is_&#8203;callable</a>
+</li>
+<li class="">
+<a href="function.is-double.php" title="is_​double">is_&#8203;double</a>
+</li>
+<li class="">
+<a href="function.is-float.php" title="is_​float">is_&#8203;float</a>
+</li>
+<li class="">
+<a href="function.is-int.php" title="is_​int">is_&#8203;int</a>
+</li>
+<li class="">
+<a href="function.is-integer.php" title="is_​integer">is_&#8203;integer</a>
+</li>
+<li class="">
+<a href="function.is-long.php" title="is_​long">is_&#8203;long</a>
+</li>
+<li class="">
+<a href="function.is-null.php" title="is_​null">is_&#8203;null</a>
+</li>
+<li class="">
+<a href="function.is-numeric.php" title="is_​numeric">is_&#8203;numeric</a>
+</li>
+<li class="">
+<a href="function.is-object.php" title="is_​object">is_&#8203;object</a>
+</li>
+<li class="">
+<a href="function.is-real.php" title="is_​real">is_&#8203;real</a>
+</li>
+<li class="">
+<a href="function.is-resource.php" title="is_​resource">is_&#8203;resource</a>
+</li>
+<li class="">
+<a href="function.is-scalar.php" title="is_​scalar">is_&#8203;scalar</a>
+</li>
+<li class="">
+<a href="function.is-string.php" title="is_​string">is_&#8203;string</a>
+</li>
+<li class="">
+<a href="function.isset.php" title="isset">isset</a>
+</li>
+<li class="">
+<a href="function.print-r.php" title="print_​r">print_&#8203;r</a>
+</li>
+<li class="">
+<a href="function.serialize.php" title="serialize">serialize</a>
+</li>
+<li class="">
+<a href="function.settype.php" title="settype">settype</a>
+</li>
+<li class="">
+<a href="function.strval.php" title="strval">strval</a>
+</li>
+<li class="">
+<a href="function.unserialize.php" title="unserialize">unserialize</a>
+</li>
+<li class="">
+<a href="function.unset.php" title="unset">unset</a>
+</li>
+<li class="">
+<a href="function.var-dump.php" title="var_​dump">var_&#8203;dump</a>
+</li>
+<li class="">
+<a href="function.var-export.php" title="var_​export">var_&#8203;export</a>
+</li>
+</ul>
+</li>
+</ul>
+</aside>
+</div><!-- layout -->
+<footer>
+<div class="container footer-content">
+<div class="row-fluid">
+<ul class="footmenu">
+<li><a href="http://php.net/copyright.php">Copyright &copy; 2001-2016 The PHP Group</a></li>
+<li><a href="http://php.net/my.php">My PHP.net</a></li>
+<li><a href="http://php.net/contact.php">Contact</a></li>
+<li><a href="http://php.net/sites.php">Other PHP.net sites</a></li>
+<li><a href="http://php.net/mirrors.php">Mirror sites</a></li>
+<li><a href="http://php.net/privacy.php">Privacy policy</a></li>
+</ul>
+</div>
+</div>
+</footer>
+<!-- External and third party libraries. -->
+<script type="text/javascript" src="http://php.net//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/modernizr.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/hogan-2.0.0.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/typeahead.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/mousetrap.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/search.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1435099203&amp;f=/js/common.js"></script>
+<a id="toTop" href="javascript:;"><span id="toTopHover"></span><img width="40" height="40" alt="To Top" src="/images/to-top@2x.png" /></a>
+</body>
+</html>

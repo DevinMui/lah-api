@@ -1,0 +1,578 @@
+
+<!DOCTYPE html>
+<html lang="en" class="">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article# profile: http://ogp.me/ns/profile#">
+<meta charset="utf-8" />
+<link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/github-d0dea0e5376d5c42aabf467726e0cffb7034a0d94eb947b9328eb6c9c4fcbba3.css" media="all" rel="stylesheet" />
+<link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/github2-5f7255544b25f937224217b1c37ee5c139a0a00a3decd8020b9aabc550340903.css" media="all" rel="stylesheet" />
+<link as="script" href="https://assets-cdn.github.com/assets/frameworks-9ee55ceaf87fc34dc86334249fef6cbece88e815478e0fbe81642d57ed0fff89.js" rel="preload" />
+<link as="script" href="https://assets-cdn.github.com/assets/github-8afeb971202f92778ffc73ddd92661c1977dc5e42a928ed35f8ec96e425a6e7a.js" rel="preload" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Content-Language" content="en" />
+<meta name="viewport" content="width=1020" />
+<title>Issue with ESDK, Scenario 3 · Issue #15 · froatsnook/meteor-shopify · GitHub</title>
+<link rel="search" type="application/opensearchdescription+xml" href="http://github.com/opensearch.xml" title="GitHub" />
+<link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub" />
+<link rel="apple-touch-icon" href="http://github.com/apple-touch-icon.png" />
+<link rel="apple-touch-icon" sizes="57x57" href="http://github.com/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon" sizes="60x60" href="http://github.com/apple-touch-icon-60x60.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="http://github.com/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon" sizes="76x76" href="http://github.com/apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="http://github.com/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon" sizes="120x120" href="http://github.com/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="http://github.com/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon" sizes="152x152" href="http://github.com/apple-touch-icon-152x152.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="http://github.com/apple-touch-icon-180x180.png" />
+<meta property="fb:app_id" content="1401488693436528" />
+<meta content="https://avatars2.githubusercontent.com/u/705001?v=3&amp;s=400" name="twitter:image:src" /><meta content="@github" name="twitter:site" /><meta content="summary" name="twitter:card" /><meta content="Issue with ESDK, Scenario 3 · Issue #15 · froatsnook/meteor-shopify" name="twitter:title" /><meta content="Trying to get this working... I posted a question on Stack Overflow, would appreciate any help from you if you can spare me some time :-)
+
+http://stackoverflow.com/questions/35095722/meteor-shopify..." name="twitter:description" />
+<meta content="https://avatars2.githubusercontent.com/u/705001?v=3&amp;s=400" property="og:image" /><meta content="GitHub" property="og:site_name" /><meta content="object" property="og:type" /><meta content="Issue with ESDK, Scenario 3 · Issue #15 · froatsnook/meteor-shopify" property="og:title" /><meta content="https://github.com/froatsnook/meteor-shopify/issues/15" property="og:url" /><meta content="Trying to get this working... I posted a question on Stack Overflow, would appreciate any help from you if you can spare me some time :-)
+
+http://stackoverflow.com/questions/35095722/meteor-shopify..." property="og:description" />
+<meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats" />
+<meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors" />
+<link rel="assets" href="https://assets-cdn.github.com/" />
+<meta name="pjax-timeout" content="1000" />
+<meta name="msapplication-TileImage" content="/windows-tile.png" />
+<meta name="msapplication-TileColor" content="#ffffff" />
+<meta name="selected-link" value="repo_issues" data-pjax-transient="data-pjax-transient" />
+<meta name="google-site-verification" content="KT5gs8h0wvaagLKAVWq8bbeNwnZZK1r1XQysX3xurLU" />
+<meta name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA" />
+<meta name="google-analytics" content="UA-3769691-2" />
+<meta content="collector.githubapp.com" name="octolytics-host" /><meta content="github" name="octolytics-app-id" /><meta content="68C5BF7F:160C:6A87579:56ADD26C" name="octolytics-dimension-request_id" />
+<meta content="/&lt;user-name&gt;/&lt;repo-name&gt;/issues/show" data-pjax-transient="true" name="analytics-location" />
+<meta class="js-ga-set" name="dimension1" content="Logged Out" />
+<meta name="hostname" content="github.com" />
+<meta name="user-login" content="" />
+<meta name="expected-hostname" content="github.com" />
+<link rel="mask-icon" href="https://assets-cdn.github.com/pinned-octocat.svg" color="#4078c0" />
+<link rel="icon" type="image/x-icon" href="https://assets-cdn.github.com/favicon.ico" />
+<meta content="5a39bef97d32280994700c53a4671cf81b43a936" name="form-nonce" />
+<meta http-equiv="x-pjax-version" content="55b41dd856d04e698e17bd7fc2020079" />
+<meta name="description" content="meteor-shopify - Shopify API access for Meteor" />
+<meta name="go-import" content="github.com/froatsnook/meteor-shopify git https://github.com/froatsnook/meteor-shopify.git" />
+<meta content="10405574" name="octolytics-dimension-user_id" /><meta content="froatsnook" name="octolytics-dimension-user_login" /><meta content="32402320" name="octolytics-dimension-repository_id" /><meta content="froatsnook/meteor-shopify" name="octolytics-dimension-repository_nwo" /><meta content="true" name="octolytics-dimension-repository_public" /><meta content="false" name="octolytics-dimension-repository_is_fork" /><meta content="32402320" name="octolytics-dimension-repository_network_root_id" /><meta content="froatsnook/meteor-shopify" name="octolytics-dimension-repository_network_root_nwo" />
+<link href="https://github.com/froatsnook/meteor-shopify/commits/master.atom" rel="alternate" title="Recent Commits to meteor-shopify:master" type="application/atom+xml" />
+</head>
+<body class="logged_out   env-production  vis-public">
+<a href="#start-of-content" tabindex="1" class="accessibility-aid js-skip-to-content">Skip to content</a>
+<div class="header header-logged-out" role="banner">
+<div class="container clearfix">
+<a class="header-logo-wordmark" href="https://github.com/" data-ga-click="(Logged out) Header, go to homepage, icon:logo-wordmark">
+<span aria-hidden="true" class="mega-octicon octicon-logo-github"></span>
+</a>
+<div class="header-actions" role="navigation">
+<a class="btn btn-primary" href="http://github.com/join?source=header-repo" data-ga-click="(Logged out) Header, clicked Sign up, text:sign-up">Sign up</a>
+<a class="btn" href="http://github.com/login?return_to=%2Ffroatsnook%2Fmeteor-shopify%2Fissues%2F15" data-ga-click="(Logged out) Header, clicked Sign in, text:sign-in">Sign in</a>
+</div>
+<div class="site-search repo-scope js-site-search" role="search">
+<!-- &lt;/textarea&gt; --><!-- '"` --><form accept-charset="UTF-8" action="/froatsnook/meteor-shopify/search" class="js-site-search-form" data-global-search-url="/search" data-repo-search-url="/froatsnook/meteor-shopify/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓" /></div>
+<label class="js-chromeless-input-container form-control">
+<div class="scope-badge">This repository</div>
+<input type="text" class="js-site-search-focus js-site-search-field is-clearable chromeless-input" data-hotkey="s" name="q" placeholder="Search" aria-label="Search this repository" data-global-scope-placeholder="Search GitHub" data-repo-scope-placeholder="Search" tabindex="1" autocapitalize="off" />
+</label>
+</form>
+</div>
+<ul class="header-nav left" role="navigation">
+<li class="header-nav-item">
+<a class="header-nav-link" href="http://github.com/explore" data-ga-click="(Logged out) Header, go to explore, text:explore">Explore</a>
+</li>
+<li class="header-nav-item">
+<a class="header-nav-link" href="http://github.com/features" data-ga-click="(Logged out) Header, go to features, text:features">Features</a>
+</li>
+<li class="header-nav-item">
+<a class="header-nav-link" href="https://enterprise.github.com/" data-ga-click="(Logged out) Header, go to enterprise, text:enterprise">Enterprise</a>
+</li>
+<li class="header-nav-item">
+<a class="header-nav-link" href="http://github.com/pricing" data-ga-click="(Logged out) Header, go to pricing, text:pricing">Pricing</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="start-of-content" class="accessibility-aid"></div>
+<div id="js-flash-container">
+</div>
+<div role="main" class="main-content">
+<div itemscope="itemscope" itemtype="http://schema.org/WebPage">
+<div id="js-repo-pjax-container" class="context-loader-container js-repo-nav-next" data-pjax-container="data-pjax-container">
+<div class="pagehead repohead instapaper_ignore readability-menu experiment-repo-nav">
+<div class="container repohead-details-container">
+<ul class="pagehead-actions">
+<li>
+<a href="http://github.com/login?return_to=%2Ffroatsnook%2Fmeteor-shopify" class="btn btn-sm btn-with-count tooltipped tooltipped-n" aria-label="You must be signed in to watch a repository" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-eye"></span>
+    Watch
+  </a>
+<a class="social-count" href="http://github.com/froatsnook/meteor-shopify/watchers">
+    4
+  </a>
+</li>
+<li>
+<a href="http://github.com/login?return_to=%2Ffroatsnook%2Fmeteor-shopify" class="btn btn-sm btn-with-count tooltipped tooltipped-n" aria-label="You must be signed in to star a repository" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-star"></span>
+    Star
+  </a>
+<a class="social-count js-social-count" href="http://github.com/froatsnook/meteor-shopify/stargazers">
+      20
+    </a>
+</li>
+<li>
+<a href="http://github.com/login?return_to=%2Ffroatsnook%2Fmeteor-shopify" class="btn btn-sm btn-with-count tooltipped tooltipped-n" aria-label="You must be signed in to fork a repository" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-repo-forked"></span>
+        Fork
+      </a>
+<a href="http://github.com/froatsnook/meteor-shopify/network" class="social-count">
+      4
+    </a>
+</li>
+</ul>
+<h1 itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb" class="entry-title public ">
+<span aria-hidden="true" class="octicon octicon-repo"></span>
+<span class="author"><a href="http://github.com/froatsnook" class="url fn" itemprop="url" rel="author"><span itemprop="title">froatsnook</span></a></span><!--
+--><span class="path-divider">/</span><!--
+--><strong><a href="http://github.com/froatsnook/meteor-shopify" data-pjax="#js-repo-pjax-container">meteor-shopify</a></strong>
+<span class="page-context-loader">
+<img alt="" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</span>
+</h1>
+</div>
+<div class="container">
+<nav class="reponav js-repo-nav js-sidenav-container-pjax js-octicon-loaders" role="navigation" data-pjax="#js-repo-pjax-container">
+<a href="http://github.com/froatsnook/meteor-shopify" aria-label="Code" class="js-selected-navigation-item reponav-item" data-hotkey="g c" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches /froatsnook/meteor-shopify">
+<span aria-hidden="true" class="octicon octicon-code"></span>
+    Code
+</a>
+<a href="http://github.com/froatsnook/meteor-shopify/issues" aria-selected="true" class="js-selected-navigation-item selected reponav-item" data-hotkey="g i" data-selected-links="repo_issues repo_labels repo_milestones /froatsnook/meteor-shopify/issues">
+<span aria-hidden="true" class="octicon octicon-issue-opened"></span>
+      Issues
+      <span class="counter">2</span>
+</a>
+<a href="http://github.com/froatsnook/meteor-shopify/pulls" class="js-selected-navigation-item reponav-item" data-hotkey="g p" data-selected-links="repo_pulls /froatsnook/meteor-shopify/pulls">
+<span aria-hidden="true" class="octicon octicon-git-pull-request"></span>
+    Pull requests
+    <span class="counter">0</span>
+</a>
+<a href="http://github.com/froatsnook/meteor-shopify/pulse" class="js-selected-navigation-item reponav-item" data-selected-links="pulse /froatsnook/meteor-shopify/pulse">
+<span aria-hidden="true" class="octicon octicon-pulse"></span>
+    Pulse
+</a>
+<a href="http://github.com/froatsnook/meteor-shopify/graphs" class="js-selected-navigation-item reponav-item" data-selected-links="repo_graphs repo_contributors /froatsnook/meteor-shopify/graphs">
+<span aria-hidden="true" class="octicon octicon-graph"></span>
+    Graphs
+</a>
+</nav>
+</div>
+</div>
+<div class="container new-discussion-timeline experiment-repo-nav">
+<div class="repository-content">
+<style type="text/css" media="screen">
+  span.labelstyle-fc2929, .linked-labelstyle-fc2929 {  background-color: #fc2929 !important;  color: #fff !important;}.labelstyle-fc2929.selected {  background-color: #fc2929 !important;  color: #fff !important;}.label-select-menu .labelstyle-fc2929.selected {  background:rgba(252, 41, 41, 0.12) !important;  color: #991818 !important;}
+
+span.labelstyle-cccccc, .linked-labelstyle-cccccc {  background-color: #cccccc !important;  color: #333333 !important;}.labelstyle-cccccc.selected {  background-color: #cccccc !important;  color: #333333 !important;}.label-select-menu .labelstyle-cccccc.selected {  background:rgba(204, 204, 204, 0.12) !important;  color: #999999 !important;}
+
+span.labelstyle-84b6eb, .linked-labelstyle-84b6eb {  background-color: #84b6eb !important;  color: #1c2733 !important;}.labelstyle-84b6eb.selected {  background-color: #84b6eb !important;  color: #1c2733 !important;}.label-select-menu .labelstyle-84b6eb.selected {  background:rgba(132, 182, 235, 0.12) !important;  color: #557699 !important;}
+
+span.labelstyle-159818, .linked-labelstyle-159818 {  background-color: #159818 !important;  color: #fff !important;}.labelstyle-159818.selected {  background-color: #159818 !important;  color: #fff !important;}.label-select-menu .labelstyle-159818.selected {  background:rgba(21, 152, 24, 0.12) !important;  color: #159918 !important;}
+
+span.labelstyle-e6e6e6, .linked-labelstyle-e6e6e6 {  background-color: #e6e6e6 !important;  color: #333333 !important;}.labelstyle-e6e6e6.selected {  background-color: #e6e6e6 !important;  color: #333333 !important;}.label-select-menu .labelstyle-e6e6e6.selected {  background:rgba(230, 230, 230, 0.12) !important;  color: #999999 !important;}
+
+span.labelstyle-cc317c, .linked-labelstyle-cc317c {  background-color: #cc317c !important;  color: #fff !important;}.labelstyle-cc317c.selected {  background-color: #cc317c !important;  color: #fff !important;}.label-select-menu .labelstyle-cc317c.selected {  background:rgba(204, 49, 124, 0.12) !important;  color: #99245c !important;}
+
+span.labelstyle-ffffff, .linked-labelstyle-ffffff {  background-color: #ffffff !important;  color: #333333 !important;}.labelstyle-ffffff.selected {  background-color: #ffffff !important;  color: #333333 !important;}.label-select-menu .labelstyle-ffffff.selected {  background:rgba(255, 255, 255, 0.12) !important;  color: #999999 !important;}
+</style>
+<div class="issues-listing" data-pjax="data-pjax">
+<div class="context-loader large-format-loader">
+<p><img alt="" height="64" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-128.gif" width="64" /></p>
+<p>Loading…</p>
+</div>
+<div id="show_issue" class="js-issues-results">
+<div id="partial-discussion-header" class="gh-header js-details-container js-socket-channel js-updatable-content issue" data-channel="froatsnook/meteor-shopify:issue:129908681" data-url="/froatsnook/meteor-shopify/issues/15/show_partial?partial=issues%2Ftitle">
+<div class="gh-header-show ">
+<div class="gh-header-actions">
+<a href="http://github.com/froatsnook/meteor-shopify/issues/new" class="btn btn-sm btn-primary right" data-hotkey="c">
+            New issue
+          </a>
+</div>
+<h1 class="gh-header-title">
+<span class="js-issue-title">Issue with ESDK, Scenario 3</span>
+<span class="gh-header-number">#15</span>
+</h1>
+</div>
+<div class="flex-table gh-header-meta">
+<div class="flex-table-item">
+<div class="state state-open">
+<span aria-hidden="true" class="octicon octicon-issue-opened"></span>
+          Open
+        </div>
+</div>
+<div class="flex-table-item flex-table-item-primary">
+<a href="http://github.com/ArdentKid" class="author">ArdentKid</a> opened this <span class="noun">Issue</span> <time datetime="2016-01-29T23:13:44Z" is="relative-time">Jan 29, 2016</time>
+        &middot; 4 comments
+    </div>
+</div>
+</div>
+<div id="discussion_bucket" class="tab-content clearfix">
+<div id="partial-discussion-sidebar" class="discussion-sidebar js-socket-channel js-updatable-content" data-channel="froatsnook/meteor-shopify:issue:129908681" data-url="/froatsnook/meteor-shopify/issues/15/show_partial?partial=issues%2Fsidebar">
+<div class="discussion-sidebar-item sidebar-labels js-discussion-sidebar-item">
+<!-- &lt;/textarea&gt; --><!-- '"` --><form accept-charset="UTF-8" action="/froatsnook/meteor-shopify/issues/15?partial=issues%2Fsidebar%2Fshow%2Flabels" class="js-issue-sidebar-form" data-form-nonce="5a39bef97d32280994700c53a4671cf81b43a936" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓" /><input name="_method" type="hidden" value="put" /><input name="authenticity_token" type="hidden" value="0wJMbGZpVN/yum5UtJCPl8CGg+zcC7Dg3eojvxJuQL/YH8mqgrTYDkoD8DgLJG9kUBALKzTI3Bo00WrfI/WUmQ==" /></div>
+<h3 class="discussion-sidebar-heading">
+    Labels
+  </h3>
+<div class="labels css-truncate">
+    None yet
+</div>
+</form></div>
+<div class="discussion-sidebar-item sidebar-milestone js-discussion-sidebar-item">
+<!-- &lt;/textarea&gt; --><!-- '"` --><form accept-charset="UTF-8" action="/froatsnook/meteor-shopify/issues/15/set_milestone?partial=issues%2Fsidebar%2Fshow%2Fmilestone" class="js-issue-sidebar-form" data-form-nonce="5a39bef97d32280994700c53a4671cf81b43a936" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓" /><input name="_method" type="hidden" value="put" /><input name="authenticity_token" type="hidden" value="EWb3kW7kvqHvnA6cVUvm8eb7OP7L2fDVmbpVuo/5XRwJVY0ZFuW1A60p9uFCxv6ZrQf0xr+kuoVq28FnHU6Ulg==" /></div>
+<h3 class="discussion-sidebar-heading">
+    Milestone
+  </h3>
+
+
+      No milestone
+
+</form></div>
+<div class="discussion-sidebar-item sidebar-assignee js-discussion-sidebar-item">
+<!-- &lt;/textarea&gt; --><!-- '"` --><form accept-charset="UTF-8" action="/froatsnook/meteor-shopify/issues/15?partial=issues%2Fsidebar%2Fshow%2Fassignee" class="js-issue-sidebar-form" data-form-nonce="5a39bef97d32280994700c53a4671cf81b43a936" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓" /><input name="_method" type="hidden" value="put" /><input name="authenticity_token" type="hidden" value="HsmuVldYPj5zerwNtNS9KNzvkNNEdieWz3wDszSNDsBhyIze2phoN6/yf0oX8iKf+06RlVCXaRZvVdTYfu49CQ==" /></div>
+<h3 class="discussion-sidebar-heading">
+    Assignee
+  </h3>
+<span class="css-truncate">
+      No one assigned
+</span>
+</form></div>
+<div id="partial-users-participants" class="discussion-sidebar-item">
+<div class="participation">
+<h3 class="discussion-sidebar-heading">
+      2 participants
+    </h3>
+<div class="participation-avatars">
+<a class="participant-avatar tooltipped tooltipped-s" aria-label="ArdentKid" href="http://github.com/ArdentKid"><img alt="@ArdentKid" class="avatar" height="20" src="https://avatars3.githubusercontent.com/u/705001?v=3&amp;s=40" width="20" /> </a>
+<a class="participant-avatar tooltipped tooltipped-s" aria-label="dbnoble" href="http://github.com/dbnoble"><img alt="@dbnoble" class="avatar" height="20" src="https://avatars1.githubusercontent.com/u/3032305?v=3&amp;s=40" width="20" /> </a>
+</div>
+</div>
+</div>
+</div>
+<div class="discussion-timeline js-quote-selection-container ">
+<div class="js-discussion js-socket-channel" data-channel="froatsnook/meteor-shopify:marked-as-read:129908681">
+<div class="timeline-comment-wrapper js-comment-container">
+<a href="http://github.com/ArdentKid"><img alt="@ArdentKid" class="timeline-comment-avatar" height="48" src="https://avatars3.githubusercontent.com/u/705001?v=3&amp;s=96" width="48" /></a>
+<div id="issue-129908681" class="comment previewable-edit timeline-comment js-comment js-task-list-container " data-body-version="47c7de705c4b86af2aa9b9c0778c2a0f">
+<div class="timeline-comment-header ">
+<div class="timeline-comment-header-text">
+<strong>
+<a href="http://github.com/ArdentKid" class="author">ArdentKid</a>
+</strong>
+
+    commented
+
+    <a href="#issue-129908681" class="timestamp">
+<time datetime="2016-01-29T23:13:44Z" is="relative-time">Jan 29, 2016</time>
+</a>
+</div>
+</div>
+<div class="comment-content">
+<div class="edit-comment-hide">
+<div class="comment-body markdown-body markdown-format js-comment-body">
+<p>Trying to get this working... I posted a question on Stack Overflow, would appreciate any help from you if you can spare me some time :-)</p>
+<p><a href="http://stackoverflow.com/questions/35095722/meteor-shopify-authenticator-getpermanentaccesstoken-with-code">http://stackoverflow.com/questions/35095722/meteor-shopify-authenticator-getpermanentaccesstoken-with-code</a></p>
+<p>p.s. I'm using ngrok for ssl proxy, works nicely maybe add it to your guide where localhost doesn't work so well?</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="timeline-comment-wrapper js-comment-container">
+<a href="http://github.com/dbnoble"><img alt="@dbnoble" class="timeline-comment-avatar" height="48" src="https://avatars1.githubusercontent.com/u/3032305?v=3&amp;s=96" width="48" /></a>
+<div id="issuecomment-177085440" class="comment previewable-edit timeline-comment js-comment js-task-list-container " data-body-version="e282d441dec0775e5773433698df4ee4">
+<div class="timeline-comment-header ">
+<div class="timeline-comment-header-text">
+<strong>
+<a href="http://github.com/dbnoble" class="author">dbnoble</a>
+</strong>
+
+    commented
+
+    <a href="#issuecomment-177085440" class="timestamp">
+<time datetime="2016-01-30T06:21:00Z" is="relative-time">Jan 30, 2016</time>
+</a>
+</div>
+</div>
+<div class="comment-content">
+<div class="edit-comment-hide">
+<div class="comment-body markdown-body markdown-format js-comment-body">
+<p>Quoting your authenticator code from StackOverflow for reference:</p>
+<pre><code>// I call this during 'onBeforeAction' for iron-router
+function beforeAuth (query) {
+    // is this necessary..?
+    console.assert(Meteor.isClient);
+
+    // get shop name like 'myshop' from 'myshop.shopify.com';
+    const shop = query.shop.substring(0, query.shop.indexOf('.'));
+
+    // use api_key stored in settings
+    var api_key = Meteor.settings.public.shopify.api_key;
+
+    // Prepare to authenticate
+    var authenticator = new Shopify.PublicAppOAuthAuthenticator({
+        shop: shop,
+        api_key: api_key,
+        keyset: 'default',
+        embedded_app_sdk: true,
+        redirect_uri: 'https://45a04f23.ngrok.com/testContent',
+        //post_auth_uri: ???
+
+        // This is doesn't seem to be getting
+        // called after clicking through the OAuth dialog
+        onAuth: function(access_token) {
+            ShopifyCredentials.insert({
+                shop: shop, 
+                api_key: api_key, 
+                access_token: access_token
+            });
+        }
+    });
+
+    // Should i use something different with iron-router?
+    location.href = authenticator.auth_uri;
+
+    // how do i get code in this scope???
+    // authenticator.getPermanentAccessToken(code);
+}
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="timeline-comment-wrapper js-comment-container">
+<a href="http://github.com/dbnoble"><img alt="@dbnoble" class="timeline-comment-avatar" height="48" src="https://avatars1.githubusercontent.com/u/3032305?v=3&amp;s=96" width="48" /></a>
+<div id="issuecomment-177156576" class="comment previewable-edit timeline-comment js-comment js-task-list-container " data-body-version="0a1533b91c50a88d70060be8d71fc67c">
+<div class="timeline-comment-header ">
+<div class="timeline-comment-header-text">
+<strong>
+<a href="http://github.com/dbnoble" class="author">dbnoble</a>
+</strong>
+
+    commented
+
+    <a href="#issuecomment-177156576" class="timestamp">
+<time datetime="2016-01-30T11:47:14Z" is="relative-time">Jan 30, 2016</time>
+</a>
+</div>
+</div>
+<div class="comment-content">
+<div class="edit-comment-hide">
+<div class="comment-body markdown-body markdown-format js-comment-body">
+<p><a href="https://github.com/ArdentKid" class="user-mention">@ArdentKid</a><br />
+There are a few issues with the way you are trying to set up the authenticator, although it's not really your fault because the way Scenario 3 works in the docs is not an 'out of the box' solution and requires a bunch of custom code, including your own handler (I can provide a gist if you REALLY want to build your own handler, but I suggest using the new server-side <code>onAuth</code> callback instead)</p>
+<p><strong>1.</strong> Specifying a <code>redirect_uri</code> overrides the package's default redirect_uri handler which is <code>Meteor.absoluteUrl("/__shopify-auth")</code>, unless you want to build your own handler, you should leave this and let the package's handler take care of it. </p>
+<p>So instead, completely remove <code>redirect_uri</code> and put your testContent url in <code>post_auth_uri</code> instead. </p>
+<p><strong>2.</strong> ShopifyCredentials does not exist in this package. If you want to use it that way, make sure you actually have defined a collection called 'ShopifyCredentials' and insert the record from the server, not the client. Note that you will still need to add a keyset <em>on the server</em> for the API methods to work. If you are using user accounts and would like to permanently strore credentials, I suggest saving the credentials to the database and adding the keyset via a server-side onAuth callback.</p>
+<p><strong>3.</strong> <code>authenticator.getPermanentAccessToken(code)</code> isn't useful unless you are using your own handler. Instead, you can just get <code>access_token</code> from the <code>onAuth</code> callback. </p>
+<p>Also keep in mind that if you ever need to reauthenticate from inside the embedded app, you need to use <code>window.top.location.href</code> to break out of the iframe.</p>
+<p>If you want a complete, working boilerplate example <em>with user accounts</em> see my gist here:<br />
+<a href="https://gist.github.com/dbnoble/8867b392f89462732495">Authentication with Accounts and Persistent Keysets</a></p>
+<p>If you aren't using accounts, you can use this gist instead, but please note that you really need to come up with some way to check that the current client has permission to request the keyset for a given shop before going to production:<br />
+<a href="https://gist.github.com/dbnoble/1120dafcf44cc8f60f46">Authentication with Persistent Keysets</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="timeline-comment-wrapper js-comment-container">
+<a href="http://github.com/ArdentKid"><img alt="@ArdentKid" class="timeline-comment-avatar" height="48" src="https://avatars3.githubusercontent.com/u/705001?v=3&amp;s=96" width="48" /></a>
+<div id="issuecomment-177312483" class="comment previewable-edit timeline-comment js-comment js-task-list-container " data-body-version="46fa5bbe9086cc7a138e4a1f2fde9daa">
+<div class="timeline-comment-header ">
+<div class="timeline-comment-header-text">
+<strong>
+<a href="http://github.com/ArdentKid" class="author">ArdentKid</a>
+</strong>
+
+    commented
+
+    <a href="#issuecomment-177312483" class="timestamp">
+<time datetime="2016-01-30T21:43:51Z" is="relative-time">Jan 30, 2016</time>
+</a>
+</div>
+</div>
+<div class="comment-content">
+<div class="edit-comment-hide">
+<div class="comment-body markdown-body markdown-format js-comment-body">
+<p>Very grateful for your help! Just a couple followup q's:</p>
+<p>1) Assuming I want to create users upon authorizing the app, how would I grab their email during the onAuth callback...? Looks like the callback assumes the user is already logged in. <a href="http://stackoverflow.com/questions/35107573/meteor-shopify-user-creation-login-after-auth-callback">Stack Overflow Here</a></p>
+<p>2) If I use post_auth_uri to redirect to my testContent page, don't I still need to assign it to <code>https://${shop}.myshopify.com/admin/apps/${api_key}</code> to get the access token?</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="timeline-comment-wrapper js-comment-container">
+<a href="http://github.com/dbnoble"><img alt="@dbnoble" class="timeline-comment-avatar" height="48" src="https://avatars1.githubusercontent.com/u/3032305?v=3&amp;s=96" width="48" /></a>
+<div id="issuecomment-177413630" class="comment previewable-edit timeline-comment js-comment js-task-list-container " data-body-version="cb8642f7b916fdace32ba12090126aab">
+<div class="timeline-comment-header ">
+<div class="timeline-comment-header-text">
+<strong>
+<a href="http://github.com/dbnoble" class="author">dbnoble</a>
+</strong>
+
+    commented
+
+    <a href="#issuecomment-177413630" class="timestamp">
+<time datetime="2016-01-31T06:44:32Z" is="relative-time">Jan 31, 2016</time>
+</a>
+</div>
+</div>
+<div class="comment-content">
+<div class="edit-comment-hide">
+<div class="comment-body markdown-body markdown-format js-comment-body">
+<p><a href="https://github.com/ArdentKid" class="user-mention">@ArdentKid</a></p>
+<p><strong>1.</strong> The user's email can be be extracted directly via the API by making a call to retrieve the shop object. You can do something like below in your server-side onAuth callback (untested, rough example) :</p>
+<pre><code>Shopify.onAuth(function(access_token, authConfig, userId) {
+  var shopUUID = uuid.new();
+  var existingShop = Shops.findOne({shop: authConfig.shop}); 
+  if(existingShop) {
+    shopUUID = existingShop.locator;
+    // if the shop exists, it should already belong a user, so we can use that userId.
+    userId = existingShop.userId;
+  }
+
+  Shopify.addKeyset(shopUUID, {
+    access_token: access_token
+  });
+
+  Keysets.upsert({name: shopUUID}, {$set: { token: access_token }});
+
+  // If there's still no userId set, we'll grab it from the API and
+  // either find the existing user or create one
+  if(!userId){
+    var email = 'not@specified.com'; // set a dummy value to overwrite
+    var api = new Shopify.API({
+      shop: authConfig.shop,
+      keyset: shopUUID
+    });
+    // get the Shop object from the API
+    var shopObj = api.getShop();
+    email = shopObj.email;
+
+    // search for existing user with that email
+    var existingUser = Meteor.users.findOne({email: email});
+
+    if(!existingUser) {
+      // create a new user with the email address and set userId to returned value
+      // I have no idea what your requirements for accounts are, so I can't provide
+      // example code for this. Look into Accounts.createOrUpdateUserFromExternalService
+    userId = function_That_Creates_A_User_And_Returns_The_Id();
+    } else {
+      // if a user does exist with that email address, set userId to that user's _id
+      userId = existingUser._id;
+    }
+  }
+
+ // Finally we can update the shop and associate it with the user
+  Shops.update({shop: authConfig.shop, userId: userId}, {
+    $set: {
+      locator: shopUUID
+    },
+  }, {upsert: true});
+
+});
+</code></pre>
+<p>You'll still need to figure out a way to log the user in afterwards and all that. You should also consider that it's quite likely that a user might have different emails for different shops, so emails are not necessarily the best vector for identification. It would probably be better to always allow users to authenticate and then handle what happens next conditionally based on their login status. If no <code>userId</code> is present in the <code>onAuth</code> callback, temporarily save the authentication details to a collection called something like <code>Unassigned</code>, forward the user to a login form, and then associate the user/shop relationship after they have logged in/signed up. That would solve alot of issues like when a user authenticates to a new shop from a different device or browser and is not logged in, has different email addresses assigned to multiple shops, etc.</p>
+<p>Before the server-side onAuth existed, I built a custom handler and gateway page that did all of that junk based only the current shop, but overall I think it's a little bit too convoluted. Modifying it so that multiple shops can be assigned to the same user would probably be a better way instead of a 1:1 user/shop relationship, but again you'll run into issues determining when you should create a new user vs modifying an existing one. At the time I was using iron router, if you are using FlowRouter you'll need to add a server-side router like Picker to handle your server-side request routes. You can see the rundown here:<br />
+<a href="https://github.com/froatsnook/meteor-shopify/issues/9#issuecomment-156478861" class="issue-link js-issue-link" data-url="https://github.com/froatsnook/meteor-shopify/issues/9" data-id="116031691" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#9 (comment)</a></p>
+<p>I'm not going to lie, if you want to do passwordless accounts that get created at auth, there are alot of potential edge cases to think about. I have built it that way before, and it seems to work okay, but I'm still concerned that there are edge cases that I didn't think of that would cause some issues. For instance, Meteor stores user's <code>loginToken</code> in <code>localStorage</code> instead of in the <code>Session</code>... so what happens when the same user has your app installed on two shops and tries to use them both simultaneously in different tabs?</p>
+<p>It also makes me feel uneasy identifying a user based only on the shop parameter. Alot of complexity is introduced in terms of making sure that it's a valid request. If you're using the shop param, checking the referrer, and verifying the authenticity of the HMAC it's probably decently secure but there's just alot of moving parts to do it this way and it feels 'dirty'.</p>
+<p><strong>2.</strong> I apologize for the confusion. I don't even know why I said that. I meant to say that the <code>after_auth_uri</code> should point to the app, so yes <code>https://${shop}.myshopify.com/admin/apps/${api_key}</code> would be the correct pattern here. You COULD instead redirect them to an account sign up page or something instead and have them create an actual user account with a password if you wanted.</p>
+<p>I also want to point out that <code>post_auth_uri</code> has nothing to do with the authentication, it's simply where you want them to go well.... post auth! By the time a user lands at <code>post_auth_uri</code>, all the oAuth related stuff will have already been taken care of.</p>
+<p>I'll break down the flow for you so you can see what's actually happening here:</p>
+<ol>
+<li>User goes to install your app</li>
+<li>User is sent to Shopify's auth dialog</li>
+<li>Shopify sends an auth response with access token to the <code>redirect_uri</code> (the handler)</li>
+<li>The handler verifies the auth response from Shopify</li>
+<li>If the auth request is valid it fires <code>onAuth</code> callbacks with the necessary params</li>
+<li>User is redirected to the <code>post_auth_uri</code>
+</li>
+</ol>
+<p>3-5 happens basically instantly and is not really observable. Everything you need to do with the access token should be happening in your onAuth callbacks.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Rendered timeline since 2016-01-30 22:44:32 -->
+<div id="partial-timeline-marker" class="js-timeline-marker js-socket-channel js-updatable-content" data-channel="froatsnook/meteor-shopify:issue:129908681" data-url="/froatsnook/meteor-shopify/issues/15/show_partial?partial=issues%2Ftimeline_marker&amp;since=1454222672" data-last-modified="Sun, 31 Jan 2016 06:44:32 GMT">
+<!-- &lt;/textarea&gt; --><!-- '"` --><form accept-charset="UTF-8" action="/froatsnook/meteor-shopify/notifications/mark?ids=121538439" class="hidden js-timeline-marker-form" data-form-nonce="5a39bef97d32280994700c53a4671cf81b43a936" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓" /><input name="authenticity_token" type="hidden" value="uuDI8tj1jmmJCrCGNu6BhWn00XKsPfcrvnhsTnHyLyjFakHtld3HDbl30d8TrZjBtYTZMMjj6C5NzZdRF9ebKg==" /></div>
+</form></div>
+</div>
+<div class="discussion-timeline-actions">
+<div class="signed-out-comment">
+<a href="http://github.com/join?source=comment-repo" class="btn btn-primary" rel="nofollow">Sign up for free</a>
+<strong>to join this conversation on GitHub</strong>.
+    Already have an account?
+    <a href="http://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Ffroatsnook%2Fmeteor-shopify%2Fissues%2F15" rel="nofollow">Sign in to comment</a>
+</div>
+</div>
+</div>
+</div>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<div class="modal-backdrop"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="container">
+<div class="site-footer" role="contentinfo">
+<ul class="site-footer-links right">
+<li><a href="https://status.github.com/" data-ga-click="Footer, go to status, text:status">Status</a></li>
+<li><a href="https://developer.github.com" data-ga-click="Footer, go to api, text:api">API</a></li>
+<li><a href="https://training.github.com" data-ga-click="Footer, go to training, text:training">Training</a></li>
+<li><a href="https://shop.github.com" data-ga-click="Footer, go to shop, text:shop">Shop</a></li>
+<li><a href="https://github.com/blog" data-ga-click="Footer, go to blog, text:blog">Blog</a></li>
+<li><a href="https://github.com/about" data-ga-click="Footer, go to about, text:about">About</a></li>
+<li><a href="https://github.com/pricing" data-ga-click="Footer, go to pricing, text:pricing">Pricing</a></li>
+</ul>
+<a href="https://github.com" aria-label="Homepage">
+<span aria-hidden="true" class="mega-octicon octicon-mark-github" title="GitHub "></span>
+</a>
+<ul class="site-footer-links">
+<li>&copy; 2016 <span title="0.06957s from github-fe132-cp1-prd.iad.github.net">GitHub</span>, Inc.</li>
+<li><a href="https://github.com/site/terms" data-ga-click="Footer, go to terms, text:terms">Terms</a></li>
+<li><a href="https://github.com/site/privacy" data-ga-click="Footer, go to privacy, text:privacy">Privacy</a></li>
+<li><a href="https://github.com/security" data-ga-click="Footer, go to security, text:security">Security</a></li>
+<li><a href="https://github.com/contact" data-ga-click="Footer, go to contact, text:contact">Contact</a></li>
+<li><a href="https://help.github.com" data-ga-click="Footer, go to help, text:help">Help</a></li>
+</ul>
+</div>
+</div>
+<div id="ajax-error-message" class="flash flash-error">
+<span aria-hidden="true" class="octicon octicon-alert"></span>
+<button type="button" class="flash-close js-flash-close js-ajax-error-dismiss" aria-label="Dismiss error">
+<span aria-hidden="true" class="octicon octicon-x"></span>
+</button>
+      Something went wrong with that request. Please try again.
+    </div>
+<script crossorigin="anonymous" src="https://assets-cdn.github.com/assets/compat-a0cee5d8d4fb535c0f41971d037b32e852a56ddca5bf67bb2124e426a2d813a5.js"></script>
+<script crossorigin="anonymous" src="https://assets-cdn.github.com/assets/frameworks-9ee55ceaf87fc34dc86334249fef6cbece88e815478e0fbe81642d57ed0fff89.js"></script>
+<script async="async" crossorigin="anonymous" src="https://assets-cdn.github.com/assets/github-8afeb971202f92778ffc73ddd92661c1977dc5e42a928ed35f8ec96e425a6e7a.js"></script>
+<div class="js-stale-session-flash stale-session-flash flash flash-warn flash-banner hidden">
+<span aria-hidden="true" class="octicon octicon-alert"></span>
+<span class="signed-in-tab-flash">You signed in with another tab or window. <a href="">Reload</a> to refresh your session.</span>
+<span class="signed-out-tab-flash">You signed out in another tab or window. <a href="">Reload</a> to refresh your session.</span>
+</div>
+<div class="facebox" id="facebox" style="display:none;">
+<div class="facebox-popup">
+<div class="facebox-content" role="dialog" aria-labelledby="facebox-header" aria-describedby="facebox-description">
+</div>
+<button type="button" class="facebox-close js-facebox-close" aria-label="Close modal">
+<span aria-hidden="true" class="octicon octicon-x"></span>
+</button>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,1013 @@
+
+<!DOCTYPE html>
+<html lang="en" class="">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article# profile: http://ogp.me/ns/profile#">
+<meta charset="utf-8" />
+<link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/github-d0dea0e5376d5c42aabf467726e0cffb7034a0d94eb947b9328eb6c9c4fcbba3.css" media="all" rel="stylesheet" />
+<link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/github2-5f7255544b25f937224217b1c37ee5c139a0a00a3decd8020b9aabc550340903.css" media="all" rel="stylesheet" />
+<link as="script" href="https://assets-cdn.github.com/assets/frameworks-9ee55ceaf87fc34dc86334249fef6cbece88e815478e0fbe81642d57ed0fff89.js" rel="preload" />
+<link as="script" href="https://assets-cdn.github.com/assets/github-8afeb971202f92778ffc73ddd92661c1977dc5e42a928ed35f8ec96e425a6e7a.js" rel="preload" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Content-Language" content="en" />
+<meta name="viewport" content="width=1020" />
+<title>electron/electron-faq.md at master · atom/electron · GitHub</title>
+<link rel="search" type="application/opensearchdescription+xml" href="http://github.com/opensearch.xml" title="GitHub" />
+<link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub" />
+<link rel="apple-touch-icon" href="http://github.com/apple-touch-icon.png" />
+<link rel="apple-touch-icon" sizes="57x57" href="http://github.com/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon" sizes="60x60" href="http://github.com/apple-touch-icon-60x60.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="http://github.com/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon" sizes="76x76" href="http://github.com/apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="http://github.com/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon" sizes="120x120" href="http://github.com/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="http://github.com/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon" sizes="152x152" href="http://github.com/apple-touch-icon-152x152.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="http://github.com/apple-touch-icon-180x180.png" />
+<meta property="fb:app_id" content="1401488693436528" />
+<meta content="https://avatars2.githubusercontent.com/u/1089146?v=3&amp;s=400" name="twitter:image:src" /><meta content="@github" name="twitter:site" /><meta content="summary" name="twitter:card" /><meta content="atom/electron" name="twitter:title" /><meta content="electron - Build cross platform desktop apps with web technologies" name="twitter:description" />
+<meta content="https://avatars2.githubusercontent.com/u/1089146?v=3&amp;s=400" property="og:image" /><meta content="GitHub" property="og:site_name" /><meta content="object" property="og:type" /><meta content="atom/electron" property="og:title" /><meta content="https://github.com/atom/electron" property="og:url" /><meta content="electron - Build cross platform desktop apps with web technologies" property="og:description" />
+<meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats" />
+<meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors" />
+<link rel="assets" href="https://assets-cdn.github.com/" />
+<meta name="pjax-timeout" content="1000" />
+<meta name="msapplication-TileImage" content="/windows-tile.png" />
+<meta name="msapplication-TileColor" content="#ffffff" />
+<meta name="selected-link" value="repo_source" data-pjax-transient="data-pjax-transient" />
+<meta name="google-site-verification" content="KT5gs8h0wvaagLKAVWq8bbeNwnZZK1r1XQysX3xurLU" />
+<meta name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA" />
+<meta name="google-analytics" content="UA-3769691-2" />
+<meta content="collector.githubapp.com" name="octolytics-host" /><meta content="github" name="octolytics-app-id" /><meta content="68C5BF7F:3B67:862F6BE:56ADAA69" name="octolytics-dimension-request_id" />
+<meta content="/&lt;user-name&gt;/&lt;repo-name&gt;/blob/show" data-pjax-transient="true" name="analytics-location" />
+<meta class="js-ga-set" name="dimension1" content="Logged Out" />
+<meta name="hostname" content="github.com" />
+<meta name="user-login" content="" />
+<meta name="expected-hostname" content="github.com" />
+<link rel="mask-icon" href="https://assets-cdn.github.com/pinned-octocat.svg" color="#4078c0" />
+<link rel="icon" type="image/x-icon" href="https://assets-cdn.github.com/favicon.ico" />
+<meta content="aa05455a2a9d6cbb5ef8cffeb2e7a42b23c5fc02" name="form-nonce" />
+<meta http-equiv="x-pjax-version" content="55b41dd856d04e698e17bd7fc2020079" />
+<meta name="description" content="electron - Build cross platform desktop apps with web technologies" />
+<meta name="go-import" content="github.com/atom/electron git https://github.com/atom/electron.git" />
+<meta content="1089146" name="octolytics-dimension-user_id" /><meta content="atom" name="octolytics-dimension-user_login" /><meta content="9384267" name="octolytics-dimension-repository_id" /><meta content="atom/electron" name="octolytics-dimension-repository_nwo" /><meta content="true" name="octolytics-dimension-repository_public" /><meta content="false" name="octolytics-dimension-repository_is_fork" /><meta content="9384267" name="octolytics-dimension-repository_network_root_id" /><meta content="atom/electron" name="octolytics-dimension-repository_network_root_nwo" />
+<link href="https://github.com/atom/electron/commits/master.atom" rel="alternate" title="Recent Commits to electron:master" type="application/atom+xml" />
+<link rel="canonical" href="https://github.com/atom/electron/blob/master/docs/faq/electron-faq.md" data-pjax-transient="data-pjax-transient" />
+</head>
+<body class="logged_out   env-production  vis-public page-blob">
+<a href="#start-of-content" tabindex="1" class="accessibility-aid js-skip-to-content">Skip to content</a>
+<div class="header header-logged-out" role="banner">
+<div class="container clearfix">
+<a class="header-logo-wordmark" href="https://github.com/" data-ga-click="(Logged out) Header, go to homepage, icon:logo-wordmark">
+<span aria-hidden="true" class="mega-octicon octicon-logo-github"></span>
+</a>
+<div class="header-actions" role="navigation">
+<a class="btn btn-primary" href="http://github.com/join?source=header-repo" data-ga-click="(Logged out) Header, clicked Sign up, text:sign-up">Sign up</a>
+<a class="btn" href="http://github.com/login?return_to=%2Fatom%2Felectron%2Fblob%2Fmaster%2Fdocs%2Ffaq%2Felectron-faq.md" data-ga-click="(Logged out) Header, clicked Sign in, text:sign-in">Sign in</a>
+</div>
+<div class="site-search repo-scope js-site-search" role="search">
+<!-- &lt;/textarea&gt; --><!-- '"` --><form accept-charset="UTF-8" action="/atom/electron/search" class="js-site-search-form" data-global-search-url="/search" data-repo-search-url="/atom/electron/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓" /></div>
+<label class="js-chromeless-input-container form-control">
+<div class="scope-badge">This repository</div>
+<input type="text" class="js-site-search-focus js-site-search-field is-clearable chromeless-input" data-hotkey="s" name="q" placeholder="Search" aria-label="Search this repository" data-global-scope-placeholder="Search GitHub" data-repo-scope-placeholder="Search" tabindex="1" autocapitalize="off" />
+</label>
+</form>
+</div>
+<ul class="header-nav left" role="navigation">
+<li class="header-nav-item">
+<a class="header-nav-link" href="http://github.com/explore" data-ga-click="(Logged out) Header, go to explore, text:explore">Explore</a>
+</li>
+<li class="header-nav-item">
+<a class="header-nav-link" href="http://github.com/features" data-ga-click="(Logged out) Header, go to features, text:features">Features</a>
+</li>
+<li class="header-nav-item">
+<a class="header-nav-link" href="https://enterprise.github.com/" data-ga-click="(Logged out) Header, go to enterprise, text:enterprise">Enterprise</a>
+</li>
+<li class="header-nav-item">
+<a class="header-nav-link" href="http://github.com/pricing" data-ga-click="(Logged out) Header, go to pricing, text:pricing">Pricing</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="start-of-content" class="accessibility-aid"></div>
+<div id="js-flash-container">
+</div>
+<div role="main" class="main-content">
+<div itemscope="itemscope" itemtype="http://schema.org/WebPage">
+<div id="js-repo-pjax-container" class="context-loader-container js-repo-nav-next" data-pjax-container="data-pjax-container">
+<div class="pagehead repohead instapaper_ignore readability-menu experiment-repo-nav">
+<div class="container repohead-details-container">
+<ul class="pagehead-actions">
+<li>
+<a href="http://github.com/login?return_to=%2Fatom%2Felectron" class="btn btn-sm btn-with-count tooltipped tooltipped-n" aria-label="You must be signed in to watch a repository" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-eye"></span>
+    Watch
+  </a>
+<a class="social-count" href="http://github.com/atom/electron/watchers">
+    1,146
+  </a>
+</li>
+<li>
+<a href="http://github.com/login?return_to=%2Fatom%2Felectron" class="btn btn-sm btn-with-count tooltipped tooltipped-n" aria-label="You must be signed in to star a repository" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-star"></span>
+    Star
+  </a>
+<a class="social-count js-social-count" href="http://github.com/atom/electron/stargazers">
+      23,095
+    </a>
+</li>
+<li>
+<a href="http://github.com/login?return_to=%2Fatom%2Felectron" class="btn btn-sm btn-with-count tooltipped tooltipped-n" aria-label="You must be signed in to fork a repository" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-repo-forked"></span>
+        Fork
+      </a>
+<a href="http://github.com/atom/electron/network" class="social-count">
+      2,254
+    </a>
+</li>
+</ul>
+<h1 itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb" class="entry-title public ">
+<span aria-hidden="true" class="octicon octicon-repo"></span>
+<span class="author"><a href="http://github.com/atom" class="url fn" itemprop="url" rel="author"><span itemprop="title">atom</span></a></span><!--
+--><span class="path-divider">/</span><!--
+--><strong><a href="http://github.com/atom/electron" data-pjax="#js-repo-pjax-container">electron</a></strong>
+<span class="page-context-loader">
+<img alt="" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</span>
+</h1>
+</div>
+<div class="container">
+<nav class="reponav js-repo-nav js-sidenav-container-pjax js-octicon-loaders" role="navigation" data-pjax="#js-repo-pjax-container">
+<a href="http://github.com/atom/electron" aria-label="Code" aria-selected="true" class="js-selected-navigation-item selected reponav-item" data-hotkey="g c" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches /atom/electron">
+<span aria-hidden="true" class="octicon octicon-code"></span>
+    Code
+</a>
+<a href="http://github.com/atom/electron/issues" class="js-selected-navigation-item reponav-item" data-hotkey="g i" data-selected-links="repo_issues repo_labels repo_milestones /atom/electron/issues">
+<span aria-hidden="true" class="octicon octicon-issue-opened"></span>
+      Issues
+      <span class="counter">240</span>
+</a>
+<a href="http://github.com/atom/electron/pulls" class="js-selected-navigation-item reponav-item" data-hotkey="g p" data-selected-links="repo_pulls /atom/electron/pulls">
+<span aria-hidden="true" class="octicon octicon-git-pull-request"></span>
+    Pull requests
+    <span class="counter">5</span>
+</a>
+<a href="http://github.com/atom/electron/pulse" class="js-selected-navigation-item reponav-item" data-selected-links="pulse /atom/electron/pulse">
+<span aria-hidden="true" class="octicon octicon-pulse"></span>
+    Pulse
+</a>
+<a href="http://github.com/atom/electron/graphs" class="js-selected-navigation-item reponav-item" data-selected-links="repo_graphs repo_contributors /atom/electron/graphs">
+<span aria-hidden="true" class="octicon octicon-graph"></span>
+    Graphs
+</a>
+</nav>
+</div>
+</div>
+<div class="container new-discussion-timeline experiment-repo-nav">
+<div class="repository-content">
+<a href="http://github.com/atom/electron/blob/0aa0efa43957e7324f2e8b001e6256c72a35f77d/docs/faq/electron-faq.md" class="hidden js-permalink-shortcut" data-hotkey="y">Permalink</a>
+<!-- blob contrib key: blob_contributors:v21:6fecf3b219bb334189ffe0372e2d7652 -->
+<div class="file-navigation js-zeroclipboard-container">
+<div class="select-menu js-menu-container js-select-menu left">
+<button class="btn btn-sm select-menu-button js-menu-target css-truncate" data-hotkey="w" title="master" type="button" aria-label="Switch branches or tags" tabindex="0" aria-haspopup="true">
+<i>Branch:</i>
+<span class="js-select-button css-truncate-target">master</span>
+</button>
+<div class="select-menu-modal-holder js-menu-content js-navigation-container" data-pjax="data-pjax" aria-hidden="true">
+<div class="select-menu-modal">
+<div class="select-menu-header">
+<span aria-label="Close" class="octicon octicon-x js-menu-close" role="button"></span>
+<span class="select-menu-title">Switch branches/tags</span>
+</div>
+<div class="select-menu-filters">
+<div class="select-menu-text-filter">
+<input type="text" aria-label="Filter branches/tags" id="context-commitish-filter-field" class="js-filterable-field js-navigation-enable" placeholder="Filter branches/tags" />
+</div>
+<div class="select-menu-tabs">
+<ul>
+<li class="select-menu-tab">
+<a href="#" data-tab-filter="branches" data-filter-placeholder="Filter branches/tags" class="js-select-menu-tab" role="tab">Branches</a>
+</li>
+<li class="select-menu-tab">
+<a href="#" data-tab-filter="tags" data-filter-placeholder="Find a tag…" class="js-select-menu-tab" role="tab">Tags</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="branches" role="menu">
+<div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+<a class="select-menu-item js-navigation-item js-navigation-open selected" href="http://github.com/atom/electron/blob/master/docs/faq/electron-faq.md" data-name="master" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="master">
+                master
+              </span>
+</a>
+</div>
+<div class="select-menu-no-results">Nothing to show</div>
+</div>
+<div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="tags">
+<div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.36.7/docs/faq/electron-faq.md" data-name="v0.36.7" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.36.7">
+                v0.36.7
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.36.6/docs/faq/electron-faq.md" data-name="v0.36.6" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.36.6">
+                v0.36.6
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.36.5/docs/faq/electron-faq.md" data-name="v0.36.5" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.36.5">
+                v0.36.5
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.36.4/docs/faq/electron-faq.md" data-name="v0.36.4" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.36.4">
+                v0.36.4
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.36.3/docs/faq/electron-faq.md" data-name="v0.36.3" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.36.3">
+                v0.36.3
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.36.2/docs/faq/electron-faq.md" data-name="v0.36.2" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.36.2">
+                v0.36.2
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.36.1/docs/faq/electron-faq.md" data-name="v0.36.1" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.36.1">
+                v0.36.1
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.36.0/docs/faq/electron-faq.md" data-name="v0.36.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.36.0">
+                v0.36.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.35.6/docs/faq/electron-faq.md" data-name="v0.35.6" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.35.6">
+                v0.35.6
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.35.5/docs/faq/electron-faq.md" data-name="v0.35.5" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.35.5">
+                v0.35.5
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.35.4/docs/faq/electron-faq.md" data-name="v0.35.4" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.35.4">
+                v0.35.4
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.35.3/docs/faq/electron-faq.md" data-name="v0.35.3" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.35.3">
+                v0.35.3
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.35.2/docs/faq/electron-faq.md" data-name="v0.35.2" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.35.2">
+                v0.35.2
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.35.1/docs/faq/electron-faq.md" data-name="v0.35.1" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.35.1">
+                v0.35.1
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.35.0/docs/faq/electron-faq.md" data-name="v0.35.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.35.0">
+                v0.35.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.34.5/docs/faq/electron-faq.md" data-name="v0.34.5" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.34.5">
+                v0.34.5
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.34.4/docs/faq/electron-faq.md" data-name="v0.34.4" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.34.4">
+                v0.34.4
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.34.3/docs/faq/electron-faq.md" data-name="v0.34.3" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.34.3">
+                v0.34.3
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.34.2/docs/faq/electron-faq.md" data-name="v0.34.2" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.34.2">
+                v0.34.2
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.34.1/docs/faq/electron-faq.md" data-name="v0.34.1" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.34.1">
+                v0.34.1
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.34.0/docs/faq/electron-faq.md" data-name="v0.34.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.34.0">
+                v0.34.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.33.9/docs/faq/electron-faq.md" data-name="v0.33.9" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.33.9">
+                v0.33.9
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.33.8/docs/faq/electron-faq.md" data-name="v0.33.8" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.33.8">
+                v0.33.8
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.33.7/docs/faq/electron-faq.md" data-name="v0.33.7" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.33.7">
+                v0.33.7
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.33.6/docs/faq/electron-faq.md" data-name="v0.33.6" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.33.6">
+                v0.33.6
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.33.5/docs/faq/electron-faq.md" data-name="v0.33.5" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.33.5">
+                v0.33.5
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.33.4/docs/faq/electron-faq.md" data-name="v0.33.4" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.33.4">
+                v0.33.4
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.33.3/docs/faq/electron-faq.md" data-name="v0.33.3" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.33.3">
+                v0.33.3
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.33.2/docs/faq/electron-faq.md" data-name="v0.33.2" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.33.2">
+                v0.33.2
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.33.1/docs/faq/electron-faq.md" data-name="v0.33.1" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.33.1">
+                v0.33.1
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.33.0/docs/faq/electron-faq.md" data-name="v0.33.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.33.0">
+                v0.33.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.32.3/docs/faq/electron-faq.md" data-name="v0.32.3" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.32.3">
+                v0.32.3
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.32.2/docs/faq/electron-faq.md" data-name="v0.32.2" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.32.2">
+                v0.32.2
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.32.1/docs/faq/electron-faq.md" data-name="v0.32.1" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.32.1">
+                v0.32.1
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.32.0/docs/faq/electron-faq.md" data-name="v0.32.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.32.0">
+                v0.32.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.31.2/docs/faq/electron-faq.md" data-name="v0.31.2" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.31.2">
+                v0.31.2
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.31.1/docs/faq/electron-faq.md" data-name="v0.31.1" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.31.1">
+                v0.31.1
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.31.0/docs/faq/electron-faq.md" data-name="v0.31.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.31.0">
+                v0.31.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.30.8/docs/faq/electron-faq.md" data-name="v0.30.8" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.30.8">
+                v0.30.8
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.30.7/docs/faq/electron-faq.md" data-name="v0.30.7" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.30.7">
+                v0.30.7
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.30.6/docs/faq/electron-faq.md" data-name="v0.30.6" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.30.6">
+                v0.30.6
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.30.5/docs/faq/electron-faq.md" data-name="v0.30.5" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.30.5">
+                v0.30.5
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.30.4/docs/faq/electron-faq.md" data-name="v0.30.4" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.30.4">
+                v0.30.4
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.30.3/docs/faq/electron-faq.md" data-name="v0.30.3" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.30.3">
+                v0.30.3
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.30.2/docs/faq/electron-faq.md" data-name="v0.30.2" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.30.2">
+                v0.30.2
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.30.1/docs/faq/electron-faq.md" data-name="v0.30.1" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.30.1">
+                v0.30.1
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.30.0/docs/faq/electron-faq.md" data-name="v0.30.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.30.0">
+                v0.30.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.29.2/docs/faq/electron-faq.md" data-name="v0.29.2" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.29.2">
+                v0.29.2
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.29.1/docs/faq/electron-faq.md" data-name="v0.29.1" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.29.1">
+                v0.29.1
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.29.0/docs/faq/electron-faq.md" data-name="v0.29.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.29.0">
+                v0.29.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.28.3/docs/faq/electron-faq.md" data-name="v0.28.3" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.28.3">
+                v0.28.3
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.28.2/docs/faq/electron-faq.md" data-name="v0.28.2" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.28.2">
+                v0.28.2
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.28.1/docs/faq/electron-faq.md" data-name="v0.28.1" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.28.1">
+                v0.28.1
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.28.0/docs/faq/electron-faq.md" data-name="v0.28.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.28.0">
+                v0.28.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.27.3/docs/faq/electron-faq.md" data-name="v0.27.3" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.27.3">
+                v0.27.3
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.27.2/docs/faq/electron-faq.md" data-name="v0.27.2" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.27.2">
+                v0.27.2
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.27.1/docs/faq/electron-faq.md" data-name="v0.27.1" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.27.1">
+                v0.27.1
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.27.0/docs/faq/electron-faq.md" data-name="v0.27.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.27.0">
+                v0.27.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.26.1/docs/faq/electron-faq.md" data-name="v0.26.1" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.26.1">
+                v0.26.1
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.26.0/docs/faq/electron-faq.md" data-name="v0.26.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.26.0">
+                v0.26.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.25.3/docs/faq/electron-faq.md" data-name="v0.25.3" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.25.3">
+                v0.25.3
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.25.2/docs/faq/electron-faq.md" data-name="v0.25.2" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.25.2">
+                v0.25.2
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.25.1/docs/faq/electron-faq.md" data-name="v0.25.1" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.25.1">
+                v0.25.1
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.25.0/docs/faq/electron-faq.md" data-name="v0.25.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.25.0">
+                v0.25.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.24.0/docs/faq/electron-faq.md" data-name="v0.24.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.24.0">
+                v0.24.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.23.0/docs/faq/electron-faq.md" data-name="v0.23.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.23.0">
+                v0.23.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.22.3/docs/faq/electron-faq.md" data-name="v0.22.3" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.22.3">
+                v0.22.3
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.22.2/docs/faq/electron-faq.md" data-name="v0.22.2" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.22.2">
+                v0.22.2
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.22.1/docs/faq/electron-faq.md" data-name="v0.22.1" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.22.1">
+                v0.22.1
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.22.0/docs/faq/electron-faq.md" data-name="v0.22.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.22.0">
+                v0.22.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.21.3/docs/faq/electron-faq.md" data-name="v0.21.3" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.21.3">
+                v0.21.3
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.21.2/docs/faq/electron-faq.md" data-name="v0.21.2" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.21.2">
+                v0.21.2
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.21.1/docs/faq/electron-faq.md" data-name="v0.21.1" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.21.1">
+                v0.21.1
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.21.0/docs/faq/electron-faq.md" data-name="v0.21.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.21.0">
+                v0.21.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.20.8/docs/faq/electron-faq.md" data-name="v0.20.8" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.20.8">
+                v0.20.8
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.20.7/docs/faq/electron-faq.md" data-name="v0.20.7" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.20.7">
+                v0.20.7
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.20.6/docs/faq/electron-faq.md" data-name="v0.20.6" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.20.6">
+                v0.20.6
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.20.5/docs/faq/electron-faq.md" data-name="v0.20.5" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.20.5">
+                v0.20.5
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.20.4/docs/faq/electron-faq.md" data-name="v0.20.4" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.20.4">
+                v0.20.4
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.20.3/docs/faq/electron-faq.md" data-name="v0.20.3" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.20.3">
+                v0.20.3
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.20.2/docs/faq/electron-faq.md" data-name="v0.20.2" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.20.2">
+                v0.20.2
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.20.1/docs/faq/electron-faq.md" data-name="v0.20.1" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.20.1">
+                v0.20.1
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.20.0/docs/faq/electron-faq.md" data-name="v0.20.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.20.0">
+                v0.20.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.19.5/docs/faq/electron-faq.md" data-name="v0.19.5" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.19.5">
+                v0.19.5
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.19.4/docs/faq/electron-faq.md" data-name="v0.19.4" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.19.4">
+                v0.19.4
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.19.3/docs/faq/electron-faq.md" data-name="v0.19.3" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.19.3">
+                v0.19.3
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.19.2/docs/faq/electron-faq.md" data-name="v0.19.2" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.19.2">
+                v0.19.2
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.19.1/docs/faq/electron-faq.md" data-name="v0.19.1" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.19.1">
+                v0.19.1
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.19.0/docs/faq/electron-faq.md" data-name="v0.19.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.19.0">
+                v0.19.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.18.2/docs/faq/electron-faq.md" data-name="v0.18.2" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.18.2">
+                v0.18.2
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.18.1/docs/faq/electron-faq.md" data-name="v0.18.1" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.18.1">
+                v0.18.1
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.18.0/docs/faq/electron-faq.md" data-name="v0.18.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.18.0">
+                v0.18.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.17.2/docs/faq/electron-faq.md" data-name="v0.17.2" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.17.2">
+                v0.17.2
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.17.1/docs/faq/electron-faq.md" data-name="v0.17.1" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.17.1">
+                v0.17.1
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.17.0/docs/faq/electron-faq.md" data-name="v0.17.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.17.0">
+                v0.17.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.16.3/docs/faq/electron-faq.md" data-name="v0.16.3" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.16.3">
+                v0.16.3
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.16.2/docs/faq/electron-faq.md" data-name="v0.16.2" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.16.2">
+                v0.16.2
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.16.1/docs/faq/electron-faq.md" data-name="v0.16.1" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.16.1">
+                v0.16.1
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.16.0/docs/faq/electron-faq.md" data-name="v0.16.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.16.0">
+                v0.16.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/atom/electron/tree/v0.15.9/docs/faq/electron-faq.md" data-name="v0.15.9" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v0.15.9">
+                v0.15.9
+              </span>
+</a>
+</div>
+<div class="select-menu-no-results">Nothing to show</div>
+</div>
+</div>
+</div>
+</div>
+<div class="btn-group right">
+<a href="http://github.com/atom/electron/find/master" class="js-show-file-finder btn btn-sm" data-pjax="data-pjax" data-hotkey="t">
+      Find file
+    </a>
+<button aria-label="Copy file path to clipboard" class="js-zeroclipboard btn btn-sm zeroclipboard-button tooltipped tooltipped-s" data-copied-hint="Copied!" type="button">Copy path</button>
+</div>
+<div class="breadcrumb js-zeroclipboard-target">
+<span class="repo-root js-repo-root"><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://github.com/atom/electron" class="" data-branch="master" data-pjax="true" itemscope="url"><span itemprop="title">electron</span></a></span></span><span class="separator">/</span><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://github.com/atom/electron/tree/master/docs" class="" data-branch="master" data-pjax="true" itemscope="url"><span itemprop="title">docs</span></a></span><span class="separator">/</span><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://github.com/atom/electron/tree/master/docs/faq" class="" data-branch="master" data-pjax="true" itemscope="url"><span itemprop="title">faq</span></a></span><span class="separator">/</span><strong class="final-path">electron-faq.md</strong>
+</div>
+</div>
+<div class="commit-tease">
+<span class="right">
+<a class="commit-tease-sha" href="http://github.com/atom/electron/commit/4c43be2148e0c5efc1042e894356acd970621d43" data-pjax="data-pjax">
+          4c43be2
+        </a>
+<time datetime="2016-01-26T09:00:12Z" is="relative-time">Jan 26, 2016</time>
+</span>
+<div>
+<img alt="@zcbenz" class="avatar" height="20" src="https://avatars3.githubusercontent.com/u/639601?v=3&amp;s=40" width="20" />
+<a href="http://github.com/zcbenz" class="user-mention" rel="contributor">zcbenz</a>
+<a href="http://github.com/atom/electron/commit/4c43be2148e0c5efc1042e894356acd970621d43" class="message" data-pjax="true" title='docs: Add more on the "electron.xxx" undefined question'>docs: Add more on the "electron.xxx" undefined question</a>
+</div>
+<div class="commit-tease-contributors">
+<a class="muted-link contributors-toggle" href="#blob_contributors_box" rel="facebox">
+<strong>1</strong>
+         contributor
+      </a>
+</div>
+<div id="blob_contributors_box" style="display:none">
+<h2 class="facebox-header" data-facebox-id="facebox-header">Users who have contributed to this file</h2>
+<ul class="facebox-user-list" data-facebox-id="facebox-description">
+<li class="facebox-user-list-item">
+<img alt="@zcbenz" height="24" src="https://avatars1.githubusercontent.com/u/639601?v=3&amp;s=48" width="24" />
+<a href="http://github.com/zcbenz">zcbenz</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="file">
+<div class="file-header">
+<div class="file-actions">
+<div class="btn-group">
+<a href="http://github.com/atom/electron/raw/master/docs/faq/electron-faq.md" class="btn btn-sm " id="raw-url">Raw</a>
+<a href="http://github.com/atom/electron/blame/master/docs/faq/electron-faq.md" class="btn btn-sm js-update-url-with-hash">Blame</a>
+<a href="http://github.com/atom/electron/commits/master/docs/faq/electron-faq.md" class="btn btn-sm " rel="nofollow">History</a>
+</div>
+<button type="button" class="btn-octicon disabled tooltipped tooltipped-nw" aria-label="You must be signed in to make or propose changes">
+<span aria-hidden="true" class="octicon octicon-pencil"></span>
+</button>
+<button type="button" class="btn-octicon btn-octicon-danger disabled tooltipped tooltipped-nw" aria-label="You must be signed in to make or propose changes">
+<span aria-hidden="true" class="octicon octicon-trashcan"></span>
+</button>
+</div>
+<div class="file-info">
+      123 lines (90 sloc)
+      <span class="file-info-divider"></span>
+    3.58 KB
+  </div>
+</div>
+<div id="readme" class="blob instapaper_body">
+<article class="markdown-body entry-content" itemprop="mainContentOfPage"><h1><a id="user-content-electron-faq" class="anchor" href="#electron-faq" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Electron FAQ</h1>
+<h2><a id="user-content-when-will-electron-upgrade-to-latest-chrome" class="anchor" href="#when-will-electron-upgrade-to-latest-chrome" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>When will Electron upgrade to latest Chrome?</h2>
+</article><p>The Chrome version of Electron is usually bumped within one or two weeks after
+a new stable Chrome version gets released.</p>
+<p>Also we only use stable channel of Chrome, if an important fix is in beta or dev
+channel, we will back-port it.</p>
+<h2><a id="user-content-when-will-electron-upgrade-to-latest-nodejs" class="anchor" href="#when-will-electron-upgrade-to-latest-nodejs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>When will Electron upgrade to latest Node.js?</h2>
+<p>When a new version of Node.js gets released, we usually wait for about a month
+before upgrading the one in Electron. So we can avoid getting affected by bugs
+introduced in new Node.js versions, which happens very often.</p>
+<p>New features of Node.js are usually brought by V8 upgrades, since Electron is
+using the V8 shipped by Chrome browser, the shiny new JavaScript feature of a
+new Node.js version is usually already in Electron.</p>
+<h2><a id="user-content-my-apps-windowtray-disappeared-after-a-few-minutes" class="anchor" href="#my-apps-windowtray-disappeared-after-a-few-minutes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>My app's window/tray disappeared after a few minutes.</h2>
+<p>This happens when the variable which is used to store the window/tray gets
+garbage collected.</p>
+<p>It is recommended to have a reading of following articles you encountered this
+problem:</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management">Memory Management</a></li>
+<li><a href="https://msdn.microsoft.com/library/bzt2dkta(v=vs.94).aspx">Variable Scope</a></li>
+</ul>
+<p>If you want a quick fix, you can make the variables global by changing your
+code from this:</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">app</span>.<span class="pl-en">on</span>(<span class="pl-s"><span class="pl-pds">'</span>ready<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>() {
+  <span class="pl-k">var</span> tray <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Tray</span>(<span class="pl-s"><span class="pl-pds">'</span>/path/to/icon.png<span class="pl-pds">'</span></span>);
+})</pre></div>
+<p>to this:</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> tray <span class="pl-k">=</span> <span class="pl-c1">null</span>;
+<span class="pl-smi">app</span>.<span class="pl-en">on</span>(<span class="pl-s"><span class="pl-pds">'</span>ready<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>() {
+  tray <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Tray</span>(<span class="pl-s"><span class="pl-pds">'</span>/path/to/icon.png<span class="pl-pds">'</span></span>);
+})</pre></div>
+<h2><a id="user-content-i-can-not-use-jqueryrequirejsmeteorangularjs-in-electron" class="anchor" href="#i-can-not-use-jqueryrequirejsmeteorangularjs-in-electron" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>I can not use jQuery/RequireJS/Meteor/AngularJS in Electron.</h2>
+<p>Due to the Node.js integration of Electron, there are some extra symbols
+inserted into DOM, like <code>module</code>, <code>exports</code>, <code>require</code>. This causes troubles for
+some libraries since they want to insert the symbols with same names.</p>
+<p>To solve this, you can turn off node integration in Electron:</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-c">// In the main process.</span>
+<span class="pl-k">var</span> mainWindow <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">BrowserWindow</span>({
+  webPreferences<span class="pl-k">:</span> {
+    nodeIntegration<span class="pl-k">:</span> <span class="pl-c1">false</span>
+  }
+});</pre></div>
+<p>But if you want to keep the abilities of using Node.js and Electron APIs, you
+have to rename the symbols in the page before including other libraries:</p>
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">head</span>&gt;
+<span class="pl-s1">&lt;<span class="pl-ent">script</span>&gt;</span>
+<span class="pl-s1"><span class="pl-smi">window</span>.<span class="pl-smi">nodeRequire</span> <span class="pl-k">=</span> <span class="pl-c1">require</span>;</span>
+<span class="pl-s1"><span class="pl-k">delete</span> <span class="pl-smi">window</span>.<span class="pl-smi">require</span>;</span>
+<span class="pl-s1"><span class="pl-k">delete</span> <span class="pl-smi">window</span>.<span class="pl-smi">exports</span>;</span>
+<span class="pl-s1"><span class="pl-k">delete</span> <span class="pl-smi">window</span>.<span class="pl-smi">module</span>;</span>
+<span class="pl-s1">&lt;/<span class="pl-ent">script</span>&gt;</span>
+&lt;<span class="pl-ent">script</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>text/javascript<span class="pl-pds">"</span></span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>jquery.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
+&lt;/<span class="pl-ent">head</span>&gt;</pre></div>
+<h2><a id="user-content-requireelectronxxx-is-undefined" class="anchor" href="#requireelectronxxx-is-undefined" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><code>require('electron').xxx</code> is undefined.</h2>
+<p>When using Electron's built-in module you might encounter an error like this:</p>
+<pre><code>&gt; require('electron').webFrame.setZoomFactor(1.0);
+Uncaught TypeError: Cannot read property 'setZoomLevel' of undefined
+</code></pre>
+<p>This is because you have the <a href="https://www.npmjs.com/package/electron">npm <code>electron</code> module</a> installed
+either locally or globally, which overrides Electron's built-in module.</p>
+<p>To verify whether you are using the correct built-in module, you can print the
+path of the <code>electron</code> module:</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-smi">require</span>.<span class="pl-en">resolve</span>(<span class="pl-s"><span class="pl-pds">'</span>electron<span class="pl-pds">'</span></span>));</pre></div>
+<p>and then check if it is in the following form:</p>
+<pre><code>"/path/to/Electron.app/Contents/Resources/atom.asar/renderer/api/lib/exports/electron.js"
+</code></pre>
+<p>If it is something like <code>node_modules/electron/index.js</code>, then you have to
+either remove the npm <code>electron</code> module, or rename it.</p>
+<div class="highlight highlight-source-shell"><pre>npm uninstall electron
+npm uninstall -g electron</pre></div>
+<p>However if your are using the built-in module but still getting this error, it
+is very likely you are using the module in wrong process. For example
+<code>electron.app</code> can only be used in the main process, while <code>electron.webFrame</code>
+is only available in renderer processes.</p>
+
+</div>
+</div>
+<a href="#jump-to-line" rel="facebox[.linejump]" data-hotkey="l" style="display:none">Jump to Line</a>
+<div id="jump-to-line" style="display:none">
+<!-- &lt;/textarea&gt; --><!-- '"` --><form accept-charset="UTF-8" action="" class="js-jump-to-line-form" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓" /></div>
+<input class="linejump-input js-jump-to-line-field" type="text" placeholder="Jump to line&hellip;" aria-label="Jump to line" autofocus="autofocus" />
+<button type="submit" class="btn">Go</button>
+</form></div>
+</div>
+<div class="modal-backdrop"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="container">
+<div class="site-footer" role="contentinfo">
+<ul class="site-footer-links right">
+<li><a href="https://status.github.com/" data-ga-click="Footer, go to status, text:status">Status</a></li>
+<li><a href="https://developer.github.com" data-ga-click="Footer, go to api, text:api">API</a></li>
+<li><a href="https://training.github.com" data-ga-click="Footer, go to training, text:training">Training</a></li>
+<li><a href="https://shop.github.com" data-ga-click="Footer, go to shop, text:shop">Shop</a></li>
+<li><a href="https://github.com/blog" data-ga-click="Footer, go to blog, text:blog">Blog</a></li>
+<li><a href="https://github.com/about" data-ga-click="Footer, go to about, text:about">About</a></li>
+<li><a href="https://github.com/pricing" data-ga-click="Footer, go to pricing, text:pricing">Pricing</a></li>
+</ul>
+<a href="https://github.com" aria-label="Homepage">
+<span aria-hidden="true" class="mega-octicon octicon-mark-github" title="GitHub "></span>
+</a>
+<ul class="site-footer-links">
+<li>&copy; 2016 <span title="0.04806s from github-fe122-cp1-prd.iad.github.net">GitHub</span>, Inc.</li>
+<li><a href="https://github.com/site/terms" data-ga-click="Footer, go to terms, text:terms">Terms</a></li>
+<li><a href="https://github.com/site/privacy" data-ga-click="Footer, go to privacy, text:privacy">Privacy</a></li>
+<li><a href="https://github.com/security" data-ga-click="Footer, go to security, text:security">Security</a></li>
+<li><a href="https://github.com/contact" data-ga-click="Footer, go to contact, text:contact">Contact</a></li>
+<li><a href="https://help.github.com" data-ga-click="Footer, go to help, text:help">Help</a></li>
+</ul>
+</div>
+</div>
+<div id="ajax-error-message" class="flash flash-error">
+<span aria-hidden="true" class="octicon octicon-alert"></span>
+<button type="button" class="flash-close js-flash-close js-ajax-error-dismiss" aria-label="Dismiss error">
+<span aria-hidden="true" class="octicon octicon-x"></span>
+</button>
+      Something went wrong with that request. Please try again.
+    </div>
+<script crossorigin="anonymous" src="https://assets-cdn.github.com/assets/compat-a0cee5d8d4fb535c0f41971d037b32e852a56ddca5bf67bb2124e426a2d813a5.js"></script>
+<script crossorigin="anonymous" src="https://assets-cdn.github.com/assets/frameworks-9ee55ceaf87fc34dc86334249fef6cbece88e815478e0fbe81642d57ed0fff89.js"></script>
+<script async="async" crossorigin="anonymous" src="https://assets-cdn.github.com/assets/github-8afeb971202f92778ffc73ddd92661c1977dc5e42a928ed35f8ec96e425a6e7a.js"></script>
+<div class="js-stale-session-flash stale-session-flash flash flash-warn flash-banner hidden">
+<span aria-hidden="true" class="octicon octicon-alert"></span>
+<span class="signed-in-tab-flash">You signed in with another tab or window. <a href="">Reload</a> to refresh your session.</span>
+<span class="signed-out-tab-flash">You signed out in another tab or window. <a href="">Reload</a> to refresh your session.</span>
+</div>
+<div class="facebox" id="facebox" style="display:none;">
+<div class="facebox-popup">
+<div class="facebox-content" role="dialog" aria-labelledby="facebox-header" aria-describedby="facebox-description">
+</div>
+<button type="button" class="facebox-close js-facebox-close" aria-label="Close modal">
+<span aria-hidden="true" class="octicon octicon-x"></span>
+</button>
+</div>
+</div>
+</body>
+</html>

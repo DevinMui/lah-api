@@ -1,0 +1,961 @@
+
+<!DOCTYPE html>
+<html lang="en" class="">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article# profile: http://ogp.me/ns/profile#">
+<meta charset="utf-8" />
+<link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/github-d0dea0e5376d5c42aabf467726e0cffb7034a0d94eb947b9328eb6c9c4fcbba3.css" media="all" rel="stylesheet" />
+<link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/github2-5f7255544b25f937224217b1c37ee5c139a0a00a3decd8020b9aabc550340903.css" media="all" rel="stylesheet" />
+<link as="script" href="https://assets-cdn.github.com/assets/frameworks-9ee55ceaf87fc34dc86334249fef6cbece88e815478e0fbe81642d57ed0fff89.js" rel="preload" />
+<link as="script" href="https://assets-cdn.github.com/assets/github-8afeb971202f92778ffc73ddd92661c1977dc5e42a928ed35f8ec96e425a6e7a.js" rel="preload" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Content-Language" content="en" />
+<meta name="viewport" content="width=1020" />
+<title>nostra13/Android-Universal-Image-Loader - Java - GitHub</title>
+<link rel="search" type="application/opensearchdescription+xml" href="http://github.com/opensearch.xml" title="GitHub" />
+<link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub" />
+<link rel="apple-touch-icon" href="http://github.com/apple-touch-icon.png" />
+<link rel="apple-touch-icon" sizes="57x57" href="http://github.com/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon" sizes="60x60" href="http://github.com/apple-touch-icon-60x60.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="http://github.com/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon" sizes="76x76" href="http://github.com/apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="http://github.com/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon" sizes="120x120" href="http://github.com/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="http://github.com/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon" sizes="152x152" href="http://github.com/apple-touch-icon-152x152.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="http://github.com/apple-touch-icon-180x180.png" />
+<meta property="fb:app_id" content="1401488693436528" />
+<meta content="https://avatars1.githubusercontent.com/u/1223348?v=3&amp;s=400" name="twitter:image:src" /><meta content="@github" name="twitter:site" /><meta content="summary" name="twitter:card" /><meta content="nostra13/Android-Universal-Image-Loader" name="twitter:title" /><meta content="Android-Universal-Image-Loader - Powerful and flexible library for loading, caching and displaying images on Android." name="twitter:description" />
+<meta content="https://avatars1.githubusercontent.com/u/1223348?v=3&amp;s=400" property="og:image" /><meta content="GitHub" property="og:site_name" /><meta content="object" property="og:type" /><meta content="nostra13/Android-Universal-Image-Loader" property="og:title" /><meta content="https://github.com/nostra13/Android-Universal-Image-Loader" property="og:url" /><meta content="Android-Universal-Image-Loader - Powerful and flexible library for loading, caching and displaying images on Android." property="og:description" />
+<meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats" />
+<meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors" />
+<link rel="assets" href="https://assets-cdn.github.com/" />
+<meta name="pjax-timeout" content="1000" />
+<meta name="msapplication-TileImage" content="/windows-tile.png" />
+<meta name="msapplication-TileColor" content="#ffffff" />
+<meta name="selected-link" value="repo_source" data-pjax-transient="data-pjax-transient" />
+<meta name="google-site-verification" content="KT5gs8h0wvaagLKAVWq8bbeNwnZZK1r1XQysX3xurLU" />
+<meta name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA" />
+<meta name="google-analytics" content="UA-3769691-2" />
+<meta content="collector.githubapp.com" name="octolytics-host" /><meta content="github" name="octolytics-app-id" /><meta content="68C5BF7F:160C:6706743:56ADAAAD" name="octolytics-dimension-request_id" />
+<meta content="/&lt;user-name&gt;/&lt;repo-name&gt;" data-pjax-transient="true" name="analytics-location" />
+<meta class="js-ga-set" name="dimension1" content="Logged Out" />
+<meta name="hostname" content="github.com" />
+<meta name="user-login" content="" />
+<meta name="expected-hostname" content="github.com" />
+<link rel="mask-icon" href="https://assets-cdn.github.com/pinned-octocat.svg" color="#4078c0" />
+<link rel="icon" type="image/x-icon" href="https://assets-cdn.github.com/favicon.ico" />
+<meta content="182bdd5446f78b26c82a9626393b021e4e02a9b5" name="form-nonce" />
+<meta http-equiv="x-pjax-version" content="55b41dd856d04e698e17bd7fc2020079" />
+<meta name="description" content="Android-Universal-Image-Loader - Powerful and flexible library for loading, caching and displaying images on Android." />
+<meta name="go-import" content="github.com/nostra13/Android-Universal-Image-Loader git https://github.com/nostra13/Android-Universal-Image-Loader.git" />
+<meta content="1223348" name="octolytics-dimension-user_id" /><meta content="nostra13" name="octolytics-dimension-user_login" /><meta content="2862290" name="octolytics-dimension-repository_id" /><meta content="nostra13/Android-Universal-Image-Loader" name="octolytics-dimension-repository_nwo" /><meta content="true" name="octolytics-dimension-repository_public" /><meta content="false" name="octolytics-dimension-repository_is_fork" /><meta content="2862290" name="octolytics-dimension-repository_network_root_id" /><meta content="nostra13/Android-Universal-Image-Loader" name="octolytics-dimension-repository_network_root_nwo" />
+<link href="https://github.com/nostra13/Android-Universal-Image-Loader/commits/master.atom" rel="alternate" title="Recent Commits to Android-Universal-Image-Loader:master" type="application/atom+xml" />
+<link rel="canonical" href="https://github.com/nostra13/Android-Universal-Image-Loader" data-pjax-transient="data-pjax-transient" />
+</head>
+<body class="logged_out   env-production  vis-public">
+<a href="#start-of-content" tabindex="1" class="accessibility-aid js-skip-to-content">Skip to content</a>
+<div class="header header-logged-out" role="banner">
+<div class="container clearfix">
+<a class="header-logo-wordmark" href="https://github.com/" data-ga-click="(Logged out) Header, go to homepage, icon:logo-wordmark">
+<span aria-hidden="true" class="mega-octicon octicon-logo-github"></span>
+</a>
+<div class="header-actions" role="navigation">
+<a class="btn btn-primary" href="http://github.com/join?source=header-repo" data-ga-click="(Logged out) Header, clicked Sign up, text:sign-up">Sign up</a>
+<a class="btn" href="http://github.com/login?return_to=%2Fnostra13%2FAndroid-Universal-Image-Loader" data-ga-click="(Logged out) Header, clicked Sign in, text:sign-in">Sign in</a>
+</div>
+<div class="site-search repo-scope js-site-search" role="search">
+<!-- &lt;/textarea&gt; --><!-- '"` --><form accept-charset="UTF-8" action="/nostra13/Android-Universal-Image-Loader/search" class="js-site-search-form" data-global-search-url="/search" data-repo-search-url="/nostra13/Android-Universal-Image-Loader/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓" /></div>
+<label class="js-chromeless-input-container form-control">
+<div class="scope-badge">This repository</div>
+<input type="text" class="js-site-search-focus js-site-search-field is-clearable chromeless-input" data-hotkey="s" name="q" placeholder="Search" aria-label="Search this repository" data-global-scope-placeholder="Search GitHub" data-repo-scope-placeholder="Search" tabindex="1" autocapitalize="off" />
+</label>
+</form>
+</div>
+<ul class="header-nav left" role="navigation">
+<li class="header-nav-item">
+<a class="header-nav-link" href="http://github.com/explore" data-ga-click="(Logged out) Header, go to explore, text:explore">Explore</a>
+</li>
+<li class="header-nav-item">
+<a class="header-nav-link" href="http://github.com/features" data-ga-click="(Logged out) Header, go to features, text:features">Features</a>
+</li>
+<li class="header-nav-item">
+<a class="header-nav-link" href="https://enterprise.github.com/" data-ga-click="(Logged out) Header, go to enterprise, text:enterprise">Enterprise</a>
+</li>
+<li class="header-nav-item">
+<a class="header-nav-link" href="http://github.com/pricing" data-ga-click="(Logged out) Header, go to pricing, text:pricing">Pricing</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="start-of-content" class="accessibility-aid"></div>
+<div id="js-flash-container">
+</div>
+<div role="main" class="main-content">
+<div itemscope="itemscope" itemtype="http://schema.org/WebPage">
+<div id="js-repo-pjax-container" class="context-loader-container js-repo-nav-next" data-pjax-container="data-pjax-container">
+<div class="pagehead repohead instapaper_ignore readability-menu experiment-repo-nav">
+<div class="container repohead-details-container">
+<ul class="pagehead-actions">
+<li>
+<a href="http://github.com/login?return_to=%2Fnostra13%2FAndroid-Universal-Image-Loader" class="btn btn-sm btn-with-count tooltipped tooltipped-n" aria-label="You must be signed in to watch a repository" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-eye"></span>
+    Watch
+  </a>
+<a class="social-count" href="http://github.com/nostra13/Android-Universal-Image-Loader/watchers">
+    1,386
+  </a>
+</li>
+<li>
+<a href="http://github.com/login?return_to=%2Fnostra13%2FAndroid-Universal-Image-Loader" class="btn btn-sm btn-with-count tooltipped tooltipped-n" aria-label="You must be signed in to star a repository" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-star"></span>
+    Star
+  </a>
+<a class="social-count js-social-count" href="http://github.com/nostra13/Android-Universal-Image-Loader/stargazers">
+      11,718
+    </a>
+</li>
+<li>
+<a href="http://github.com/login?return_to=%2Fnostra13%2FAndroid-Universal-Image-Loader" class="btn btn-sm btn-with-count tooltipped tooltipped-n" aria-label="You must be signed in to fork a repository" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-repo-forked"></span>
+        Fork
+      </a>
+<a href="http://github.com/nostra13/Android-Universal-Image-Loader/network" class="social-count">
+      5,409
+    </a>
+</li>
+</ul>
+<h1 itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb" class="entry-title public ">
+<span aria-hidden="true" class="octicon octicon-repo"></span>
+<span class="author"><a href="http://github.com/nostra13" class="url fn" itemprop="url" rel="author"><span itemprop="title">nostra13</span></a></span><!--
+--><span class="path-divider">/</span><!--
+--><strong><a href="http://github.com/nostra13/Android-Universal-Image-Loader" data-pjax="#js-repo-pjax-container">Android-Universal-Image-Loader</a></strong>
+<span class="page-context-loader">
+<img alt="" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</span>
+</h1>
+</div>
+<div class="container">
+<nav class="reponav js-repo-nav js-sidenav-container-pjax js-octicon-loaders" role="navigation" data-pjax="#js-repo-pjax-container">
+<a href="http://github.com/nostra13/Android-Universal-Image-Loader" aria-label="Code" aria-selected="true" class="js-selected-navigation-item selected reponav-item" data-hotkey="g c" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches /nostra13/Android-Universal-Image-Loader">
+<span aria-hidden="true" class="octicon octicon-code"></span>
+    Code
+</a>
+<a href="http://github.com/nostra13/Android-Universal-Image-Loader/issues" class="js-selected-navigation-item reponav-item" data-hotkey="g i" data-selected-links="repo_issues repo_labels repo_milestones /nostra13/Android-Universal-Image-Loader/issues">
+<span aria-hidden="true" class="octicon octicon-issue-opened"></span>
+      Issues
+      <span class="counter">309</span>
+</a>
+<a href="http://github.com/nostra13/Android-Universal-Image-Loader/pulls" class="js-selected-navigation-item reponav-item" data-hotkey="g p" data-selected-links="repo_pulls /nostra13/Android-Universal-Image-Loader/pulls">
+<span aria-hidden="true" class="octicon octicon-git-pull-request"></span>
+    Pull requests
+    <span class="counter">10</span>
+</a>
+<a href="http://github.com/nostra13/Android-Universal-Image-Loader/wiki" class="js-selected-navigation-item reponav-item" data-hotkey="g w" data-selected-links="repo_wiki /nostra13/Android-Universal-Image-Loader/wiki">
+<span aria-hidden="true" class="octicon octicon-book"></span>
+      Wiki
+</a>
+<a href="http://github.com/nostra13/Android-Universal-Image-Loader/pulse" class="js-selected-navigation-item reponav-item" data-selected-links="pulse /nostra13/Android-Universal-Image-Loader/pulse">
+<span aria-hidden="true" class="octicon octicon-pulse"></span>
+    Pulse
+</a>
+<a href="http://github.com/nostra13/Android-Universal-Image-Loader/graphs" class="js-selected-navigation-item reponav-item" data-selected-links="repo_graphs repo_contributors /nostra13/Android-Universal-Image-Loader/graphs">
+<span aria-hidden="true" class="octicon octicon-graph"></span>
+    Graphs
+</a>
+</nav>
+</div>
+</div>
+<div class="container new-discussion-timeline experiment-repo-nav">
+<div class="repository-content">
+<div class="repository-meta js-details-container">
+<span class="repository-meta-content">
+        Powerful and flexible library for loading, caching and displaying images on Android.
+  </span>
+</div>
+<div class="overall-summary overall-summary-bottomless">
+<div class="stats-switcher-viewport js-stats-switcher-viewport">
+<div class="stats-switcher-wrapper">
+<ul class="numbers-summary">
+<li class="commits">
+<a data-pjax="data-pjax" href="http://github.com/nostra13/Android-Universal-Image-Loader/commits/master">
+<span aria-hidden="true" class="octicon octicon-history"></span>
+<span class="num text-emphasized">
+              1,025
+            </span>
+            commits
+        </a>
+</li>
+<li>
+<a data-pjax="data-pjax" href="http://github.com/nostra13/Android-Universal-Image-Loader/branches">
+<span aria-hidden="true" class="octicon octicon-git-branch"></span>
+<span class="num text-emphasized">
+            3
+          </span>
+          branches
+        </a>
+</li>
+<li>
+<a data-pjax="data-pjax" href="http://github.com/nostra13/Android-Universal-Image-Loader/releases">
+<span aria-hidden="true" class="octicon octicon-tag"></span>
+<span class="num text-emphasized">
+            15
+          </span>
+          releases
+        </a>
+</li>
+<li>
+<a href="http://github.com/nostra13/Android-Universal-Image-Loader/graphs/contributors">
+<span aria-hidden="true" class="octicon octicon-organization"></span>
+<span class="num text-emphasized">
+      35
+    </span>
+    contributors
+</a>
+</li>
+</ul>
+<div class="repository-lang-stats">
+<ol class="repository-lang-stats-numbers">
+<li>
+<a href="http://github.com/nostra13/Android-Universal-Image-Loader/search?l=java" data-ga-click="Repository, language stats search click, location:repo overview">
+<span class="color-block language-color" style="background-color:#b07219;"></span>
+<span class="lang">Java</span>
+<span class="percent">100.0%</span>
+</a>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="repository-lang-stats-graph js-toggle-lang-stats" title="Click for language details" data-ga-click="Repository, language bar stats toggle, location:repo overview">
+<span class="language-color" aria-label="Java 100.0%" style="width:100.0%; background-color:#b07219;" itemprop="keywords">Java</span>
+</div>
+<div class="file-navigation in-mid-page">
+<div class="right">
+<div class="btn-group">
+<button class="btn btn-sm disabled tooltipped tooltipped-n" aria-label="You must be signed in to make or propose changes" type="button">
+    New file
+  </button>
+<a href="http://github.com/nostra13/Android-Universal-Image-Loader/find/master" class="btn btn-sm empty-icon right js-show-file-finder" data-pjax="data-pjax" data-hotkey="t" data-ga-click="Repository, find file, location:repo overview">
+        Find file
+      </a>
+</div>
+<div class="file-navigation-options" data-multiple="data-multiple">
+<div class="file-navigation-option">
+<!-- &lt;/textarea&gt; --><!-- '"` --><form accept-charset="UTF-8" action="/users/set_protocol" class="js-set-user-protocol-preference" data-form-nonce="182bdd5446f78b26c82a9626393b021e4e02a9b5" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓" /><input name="authenticity_token" type="hidden" value="1PzzqdyJJx0wlRM4sWpukyuGABAQCSyb6SeyQTIWLVIafgGKCN16VgaId64c+giiTwq4o41KblkNcG4WY4fCzg==" /></div>
+<input type="hidden" name="protocol_type" value="clone" />
+<div class="select-menu js-menu-container js-select-menu">
+<div class="input-group js-select-button js-zeroclipboard-container">
+<div class="input-group-button">
+<button type="button" class="btn btn-sm select-menu-button js-menu-target" data-ga-click="Repository, clone HTTPS, location:repo overview">
+    HTTPS
+  </button>
+</div>
+<input type="text" class="input-monospace input-mini js-zeroclipboard-target js-url-field" value="https://github.com/nostra13/Android-Universal-Image-Loader.git" readonly="readonly" />
+<div class="input-group-button">
+<button aria-label="Copy to clipboard" class="js-zeroclipboard btn btn-sm zeroclipboard-button tooltipped tooltipped-s" data-copied-hint="Copied!" type="button"><span aria-hidden="true" class="octicon octicon-clippy"></span></button>
+</div>
+</div>
+<div class="select-menu-modal-holder">
+<div class="select-menu-modal js-menu-content" aria-hidden="true">
+<div class="select-menu-header">
+<span aria-label="Close" class="octicon octicon-x js-menu-close" role="button"></span>
+<span class="select-menu-title">Choose a clone URL</span>
+</div>
+<div class="select-menu-list js-navigation-container" role="menu">
+<div class="select-menu-item js-navigation-item selected" role="menuitem" tabindex="0">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<div class="select-menu-item-text">
+<input type="radio" name="protocol_selector" value="http" checked="checked" />
+<span class="select-menu-item-heading">
+                            HTTPS
+                            (recommended)
+                          </span>
+<span class="description">
+                              Clone with Git or checkout with SVN using the repository's web address.
+                            </span>
+<span class="js-select-button-text hidden-select-button-text">
+<div class="input-group-button">
+<button type="button" class="btn btn-sm select-menu-button js-menu-target" data-ga-click="Repository, clone HTTPS, location:repo overview">
+    HTTPS
+  </button>
+</div>
+<input type="text" class="input-monospace input-mini js-zeroclipboard-target js-url-field" value="https://github.com/nostra13/Android-Universal-Image-Loader.git" readonly="readonly" />
+<div class="input-group-button">
+<button aria-label="Copy to clipboard" class="js-zeroclipboard btn btn-sm zeroclipboard-button tooltipped tooltipped-s" data-copied-hint="Copied!" type="button"><span aria-hidden="true" class="octicon octicon-clippy"></span></button>
+</div>
+</span>
+</div>
+</div>
+</div>
+<div class="select-menu-list" role="menu">
+<a class="select-menu-item select-menu-action" href="https://help.github.com/articles/which-remote-url-should-i-use" target="_blank">
+<span aria-hidden="true" class="octicon octicon-question select-menu-item-icon"></span>
+<div class="select-menu-item-text">
+                        Learn more about clone URLs
+                      </div>
+</a>
+</div>
+</div>
+</div>
+</div>
+</form> </div>
+<div class="file-navigation-option">
+</div>
+<div class="file-navigation-option">
+<a href="http://github.com/nostra13/Android-Universal-Image-Loader/archive/master.zip" class="btn btn-sm" rel="nofollow" data-ga-click="Repository, download zip, location:repo overview">
+            Download ZIP
+          </a>
+</div>
+</div>
+</div>
+<div class="select-menu js-menu-container js-select-menu left">
+<button class="btn btn-sm select-menu-button js-menu-target css-truncate" data-hotkey="w" title="master" type="button" aria-label="Switch branches or tags" tabindex="0" aria-haspopup="true">
+<i>Branch:</i>
+<span class="js-select-button css-truncate-target">master</span>
+</button>
+<div class="select-menu-modal-holder js-menu-content js-navigation-container" data-pjax="data-pjax" aria-hidden="true">
+<div class="select-menu-modal">
+<div class="select-menu-header">
+<span aria-label="Close" class="octicon octicon-x js-menu-close" role="button"></span>
+<span class="select-menu-title">Switch branches/tags</span>
+</div>
+<div class="select-menu-filters">
+<div class="select-menu-text-filter">
+<input type="text" aria-label="Filter branches/tags" id="context-commitish-filter-field" class="js-filterable-field js-navigation-enable" placeholder="Filter branches/tags" />
+</div>
+<div class="select-menu-tabs">
+<ul>
+<li class="select-menu-tab">
+<a href="#" data-tab-filter="branches" data-filter-placeholder="Filter branches/tags" class="js-select-menu-tab" role="tab">Branches</a>
+</li>
+<li class="select-menu-tab">
+<a href="#" data-tab-filter="tags" data-filter-placeholder="Find a tag…" class="js-select-menu-tab" role="tab">Tags</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="branches" role="menu">
+<div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+<a class="select-menu-item js-navigation-item js-navigation-open selected" href="http://github.com/nostra13/Android-Universal-Image-Loader/tree/master" data-name="master" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="master">
+                master
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/nostra13/Android-Universal-Image-Loader/tree/new_disk_cache_api" data-name="new_disk_cache_api" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="new_disk_cache_api">
+                new_disk_cache_api
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/nostra13/Android-Universal-Image-Loader/tree/new_memory_cache_api" data-name="new_memory_cache_api" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="new_memory_cache_api">
+                new_memory_cache_api
+              </span>
+</a>
+</div>
+<div class="select-menu-no-results">Nothing to show</div>
+</div>
+<div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="tags">
+<div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/nostra13/Android-Universal-Image-Loader/tree/v1.9.5" data-name="v1.9.5" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v1.9.5">
+                v1.9.5
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/nostra13/Android-Universal-Image-Loader/tree/v1.9.4" data-name="v1.9.4" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v1.9.4">
+                v1.9.4
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/nostra13/Android-Universal-Image-Loader/tree/v1.9.3" data-name="v1.9.3" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v1.9.3">
+                v1.9.3
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/nostra13/Android-Universal-Image-Loader/tree/v1.9.2" data-name="v1.9.2" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v1.9.2">
+                v1.9.2
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/nostra13/Android-Universal-Image-Loader/tree/v1.9.1" data-name="v1.9.1" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v1.9.1">
+                v1.9.1
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/nostra13/Android-Universal-Image-Loader/tree/v1.9.0" data-name="v1.9.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v1.9.0">
+                v1.9.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/nostra13/Android-Universal-Image-Loader/tree/v1.8.6" data-name="v1.8.6" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v1.8.6">
+                v1.8.6
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/nostra13/Android-Universal-Image-Loader/tree/v1.8.5" data-name="v1.8.5" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v1.8.5">
+                v1.8.5
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/nostra13/Android-Universal-Image-Loader/tree/v1.8.4" data-name="v1.8.4" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v1.8.4">
+                v1.8.4
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/nostra13/Android-Universal-Image-Loader/tree/v1.8.3" data-name="v1.8.3" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v1.8.3">
+                v1.8.3
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/nostra13/Android-Universal-Image-Loader/tree/v1.8.2" data-name="v1.8.2" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v1.8.2">
+                v1.8.2
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/nostra13/Android-Universal-Image-Loader/tree/v1.8.1" data-name="v1.8.1" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v1.8.1">
+                v1.8.1
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/nostra13/Android-Universal-Image-Loader/tree/v1.8.0" data-name="v1.8.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v1.8.0">
+                v1.8.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/nostra13/Android-Universal-Image-Loader/tree/v1.7.1" data-name="v1.7.1" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v1.7.1">
+                v1.7.1
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/nostra13/Android-Universal-Image-Loader/tree/v1.7.0" data-name="v1.7.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="v1.7.0">
+                v1.7.0
+              </span>
+</a>
+</div>
+<div class="select-menu-no-results">Nothing to show</div>
+</div>
+</div>
+</div>
+</div>
+<button type="button" class="btn btn-sm btn-primary disabled tooltipped tooltipped-n" aria-label="You must be signed in to create a pull request">
+        New pull request
+      </button>
+<div class="breadcrumb">
+</div>
+</div>
+<div class="commit-tease js-details-container">
+<span class="right">
+      Latest commit
+      <a class="commit-tease-sha" href="http://github.com/nostra13/Android-Universal-Image-Loader/commit/4c728792d73e964f6d8501f742cda57dd56731c6" data-pjax="data-pjax">
+        4c72879
+      </a>
+<time datetime="2016-01-26T11:29:19Z" is="relative-time">Jan 26, 2016</time>
+</span>
+<span class="commit-author-section">
+<img alt="@nostra13" class="avatar" height="20" src="https://avatars2.githubusercontent.com/u/1223348?v=3&amp;s=40" width="20" />
+<a href="http://github.com/nostra13" class="user-mention" rel="author">nostra13</a>
+</span>
+<a href="http://github.com/nostra13/Android-Universal-Image-Loader/commit/4c728792d73e964f6d8501f742cda57dd56731c6" class="message" data-pjax="true" title="Update README.md">Update README.md</a>
+
+</div>
+<div class="file-wrap ">
+<a href="http://github.com/nostra13/Android-Universal-Image-Loader/tree/4c728792d73e964f6d8501f742cda57dd56731c6" class="hidden js-permalink-shortcut" data-hotkey="y">Permalink</a>
+<table class="files js-navigation-container js-active-navigation-container" data-pjax="data-pjax">
+<tbody>
+<tr class="warning include-fragment-error">
+<td class="icon"><span aria-hidden="true" class="octicon octicon-alert"></span></td>
+<td class="content" colspan="3">Failed to load latest commit information.</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-directory"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/nostra13/Android-Universal-Image-Loader/tree/master/downloads" class="js-directory-link js-navigation-open" id="d07d50a751bc6ddf12bf3af0efee9b45-535ebf6475e8485df9e24f529737629131a6f6e8" title="downloads">downloads</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/nostra13/Android-Universal-Image-Loader/commit/9da1b1ad1dd61b8df1571d7b6dc1308f19d5d40d" class="message" data-pjax="true" title="v1.9.5">v1.9.5</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2015-11-27T22:09:09Z" is="time-ago">Nov 28, 2015</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-directory"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/nostra13/Android-Universal-Image-Loader/tree/master/gradle" class="js-directory-link js-navigation-open" id="8ed1a771bc236c287ad93c699bfdd2d7-4d6a99df4507e850193c73e8f32185ab6315a3ad" title="gradle">gradle</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/nostra13/Android-Universal-Image-Loader/commit/4ef3d4698d3b8994350476290b99ced67685547a" class="message" data-pjax="true" title="Upgraded to Gradle 2.5
+
+Change Log:
+https://docs.gradle.org/current/release-notes">Upgraded to Gradle 2.5</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2015-07-09T12:43:42Z" is="time-ago">Jul 9, 2015</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-directory"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/nostra13/Android-Universal-Image-Loader/tree/master/library" class="js-directory-link js-navigation-open" id="d521f765a49c72507257a2620612ee96-d6aee1f9d4512e5f9ef98221235f50ff416b15aa" title="library">library</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/nostra13/Android-Universal-Image-Loader/commit/761632c00c559cec2bc74845b69322f25fac04d6" class="message" data-pjax="true" title="Fixed DiskLruCache file naming">Fixed DiskLruCache file naming</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2015-12-12T21:01:03Z" is="time-ago">Dec 13, 2015</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-directory"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/nostra13/Android-Universal-Image-Loader/tree/master/sample" class="js-directory-link js-navigation-open" id="5e8ff9bf55ba3508199d22e984129be6-d7c02ea1b537e47aba94cbcb48b1c6511a6794a6" title="sample">sample</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/nostra13/Android-Universal-Image-Loader/commit/6ba67f73d5f1b5db04c9e9fb65e2ea55f6126a63" class="message" data-pjax="true" title="Travis">Travis</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2015-11-28T20:25:16Z" is="time-ago">Nov 28, 2015</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-directory"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/nostra13/Android-Universal-Image-Loader/tree/master/wiki" class="js-directory-link js-navigation-open" id="d54b7ba27571a2f00b38ed9273b974f2-2e1eff9a15cd55e340d7cd433e972115d8bdca5b" title="wiki">wiki</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/nostra13/Android-Universal-Image-Loader/commit/5436ddcb096c6d7dafdf5a99e4274c41cf907701" class="message" data-pjax="true" title="Wiki: UIL task flow diagram">Wiki: UIL task flow diagram</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2014-07-18T09:02:56Z" is="time-ago">Jul 18, 2014</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-text"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/nostra13/Android-Universal-Image-Loader/blob/master/.gitignore" class="js-directory-link js-navigation-open" id="a084b794bc0759e7a6b77810e01874f2-7abf0aabeb480b74a6f69fa27eaf9707324a6219" title=".gitignore">.gitignore</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/nostra13/Android-Universal-Image-Loader/commit/2d8123e5bd65a6037464015a28cd6f0fe9556382" class="message" data-pjax="true" title="Clean gradle files">Clean gradle files</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2015-06-07T00:41:25Z" is="time-ago">Jun 7, 2015</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-text"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/nostra13/Android-Universal-Image-Loader/blob/master/.travis.yml" class="js-directory-link js-navigation-open" id="354f30a63fb0907d4ad57269548329e3-1516d37279bed656e437ae68cc8ab314849acfec" title=".travis.yml">.travis.yml</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/nostra13/Android-Universal-Image-Loader/commit/0131d800630a9876b3cf8edd3e3e1f2efff32e36" class="message" data-pjax="true" title="Travis">Travis</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2015-11-28T19:54:53Z" is="time-ago">Nov 28, 2015</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-text"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/nostra13/Android-Universal-Image-Loader/blob/master/CHANGELOG.md" class="js-directory-link js-navigation-open" id="4ac32a78649ca5bdd8e0ba38b7006a1e-3e2ed348a5160afd5f66699feb7cd5db93bb188e" title="CHANGELOG.md">CHANGELOG.md</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/nostra13/Android-Universal-Image-Loader/commit/9da1b1ad1dd61b8df1571d7b6dc1308f19d5d40d" class="message" data-pjax="true" title="v1.9.5">v1.9.5</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2015-11-27T22:09:09Z" is="time-ago">Nov 27, 2015</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-text"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/nostra13/Android-Universal-Image-Loader/blob/master/LICENSE" class="js-directory-link js-navigation-open" id="9879d6db96fd29134fc802214163b95a-f49a4e16e68b128803cc2dcea614603632b04eac" title="LICENSE">LICENSE</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/nostra13/Android-Universal-Image-Loader/commit/81d5645a31b9d67f63b41765a84414edeaea63e0" class="message" data-pjax="true" title="Switched to Apache 2.0 license. Update Readme.">Switched to Apache 2.0 license. Update Readme.</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2013-02-09T21:43:12Z" is="time-ago">Feb 10, 2013</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-text"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/nostra13/Android-Universal-Image-Loader/blob/master/README.md" class="js-directory-link js-navigation-open" id="04c6e90faac2675aa89e2176d2eec7d8-62841c44331c1c8b2cade883503622576681981b" title="README.md">README.md</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/nostra13/Android-Universal-Image-Loader/commit/4c728792d73e964f6d8501f742cda57dd56731c6" class="message" data-pjax="true" title="Update README.md">Update README.md</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2016-01-26T11:29:19Z" is="time-ago">Jan 26, 2016</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-text"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/nostra13/Android-Universal-Image-Loader/blob/master/UniversalImageLoader.png" class="js-directory-link js-navigation-open" id="49e9ea843b79661212b5b9ad766d2bd8-3b6d202468cc08bd4984ac071e57e8ab9650623f" title="UniversalImageLoader.png">UniversalImageLoader.png</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/nostra13/Android-Universal-Image-Loader/commit/3bbc58bdcc79749c9a869bd69da5a3d0a1d5be62" class="message" data-pjax="true" title="Updated screenshots image">Updated screenshots image</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2013-01-28T19:45:05Z" is="time-ago">Jan 28, 2013</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-text"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/nostra13/Android-Universal-Image-Loader/blob/master/build.gradle" class="js-directory-link js-navigation-open" id="c197962302397baf3a4cc36463dce5ea-66167eaaeac8562d6b675b4505921488f247fb1b" title="build.gradle">build.gradle</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/nostra13/Android-Universal-Image-Loader/commit/3ec62e03c7b1ea6ef8cc592d35fd755d8441076b" class="message" data-pjax="true" title="Update build tools">Update build tools</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2015-11-27T21:53:03Z" is="time-ago">Nov 28, 2015</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-text"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/nostra13/Android-Universal-Image-Loader/blob/master/gradle.properties" class="js-directory-link js-navigation-open" id="503f218d646c10f484fdc9d6315bf2e3-021cc7f094877df66112b6b4a7a45191e48472e9" title="gradle.properties">gradle.properties</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/nostra13/Android-Universal-Image-Loader/commit/a0799bca6f308b55b2866fbe327418e485502a1b" class="message" data-pjax="true" title="Prepare for release">Prepare for release</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2015-11-27T21:53:46Z" is="time-ago">Nov 28, 2015</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-text"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/nostra13/Android-Universal-Image-Loader/blob/master/gradlew" class="js-directory-link js-navigation-open" id="36ffbd2ea7085cf19547193a7faf30c8-91a7e269e19dfc62e27137a0b57ef3e430cee4fd" title="gradlew">gradlew</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/nostra13/Android-Universal-Image-Loader/commit/54dd2304f1e668f48d7d164696a3cd06c23223bd" class="message" data-pjax="true" title="Added gradle build scripts">Added gradle build scripts</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2015-05-09T18:43:00Z" is="time-ago">May 9, 2015</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-text"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/nostra13/Android-Universal-Image-Loader/blob/master/gradlew.bat" class="js-directory-link js-navigation-open" id="c9b677a57d25a366595a35b2230d0502-8a0b282aa6885fb573c106b3551f7275c5f17e8e" title="gradlew.bat">gradlew.bat</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/nostra13/Android-Universal-Image-Loader/commit/efd2e418ccae3fe65c2867e265a451486c113e43" class="message" data-pjax="true" title="Convert line endings from CRLF to LF.
+
++ This commit does not introduce any code change.
++ Please only commit files with Unix line endings to the repository.">Convert line endings from CRLF to LF.</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2015-07-21T21:36:45Z" is="time-ago">Jul 21, 2015</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-text"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/nostra13/Android-Universal-Image-Loader/blob/master/settings.gradle" class="js-directory-link js-navigation-open" id="88b7c47e47b8ee65263b6784b86fa0a7-77c36d03202be03277a646bfe38f86ef6af653e7" title="settings.gradle">settings.gradle</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/nostra13/Android-Universal-Image-Loader/commit/54dd2304f1e668f48d7d164696a3cd06c23223bd" class="message" data-pjax="true" title="Added gradle build scripts">Added gradle build scripts</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2015-05-09T18:43:00Z" is="time-ago">May 9, 2015</time></span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="readme" class="boxed-group clearfix announce instapaper_body md">
+<h3>
+<span aria-hidden="true" class="octicon octicon-book"></span>
+      README.md
+    </h3>
+<article class="markdown-body entry-content" itemprop="mainContentOfPage"><h1><a id="user-content--universal-image-loader--" class="anchor" href="#-universal-image-loader--" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="https://github.com/nostra13/Android-Universal-Image-Loader/raw/master/sample/src/main/res/drawable-mdpi/ic_launcher.png" target="_blank"><img src="https://github.com/nostra13/Android-Universal-Image-Loader/raw/master/sample/src/main/res/drawable-mdpi/ic_launcher.png" alt="Logo" style="max-width:100%;" /></a> Universal Image Loader <a href="https://travis-ci.org/nostra13/Android-Universal-Image-Loader"><img src="https://camo.githubusercontent.com/88350fe75918ede7754ffd574f52a097b985c504/68747470733a2f2f7472617669732d63692e6f72672f6e6f7374726131332f416e64726f69642d556e6976657273616c2d496d6167652d4c6f616465722e7376673f6272616e63683d6d6173746572" alt="Build Status" data-canonical-src="https://travis-ci.org/nostra13/Android-Universal-Image-Loader.svg?branch=master" style="max-width:100%;" /></a> <a href="https://maven-badges.herokuapp.com/maven-central/com.nostra13.universalimageloader/universal-image-loader"><img src="https://camo.githubusercontent.com/1bf727351ad5a2eb85a8e07939816d031d3c17a3/68747470733a2f2f6d6176656e2d6261646765732e6865726f6b756170702e636f6d2f6d6176656e2d63656e7472616c2f636f6d2e6e6f7374726131332e756e6976657273616c696d6167656c6f616465722f756e6976657273616c2d696d6167652d6c6f616465722f62616467652e737667" alt="Maven Central" data-canonical-src="https://maven-badges.herokuapp.com/maven-central/com.nostra13.universalimageloader/universal-image-loader/badge.svg" style="max-width:100%;" /></a></h1>
+</article><p>Android library <strong><a href="https://www.gitrep.com/search?utf8=%E2%9C%93&amp;omni_search=&amp;public_tags%5B%5D=android&amp;description=&amp;search=true&amp;sort=star_count&amp;commit=Search">#1</a></strong> on GitHub.
+UIL aims to provide a powerful, flexible and highly customizable instrument for image loading, caching and displaying. It provides a lot of configuration options and good control over the image loading and caching process.</p>
+<p><a href="https://github.com/nostra13/Android-Universal-Image-Loader/raw/master/UniversalImageLoader.png" target="_blank"><img src="https://github.com/nostra13/Android-Universal-Image-Loader/raw/master/UniversalImageLoader.png" alt="Screenshot" style="max-width:100%;" /></a></p>
+<h2><a id="user-content-project-news" class="anchor" href="#project-news" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Project News</h2>
+<ul>
+<li>Really have no time for development... so I stop project maintaining since Nov 27 :(</li>
+<li>UIL [27.11.2011 - 27.11.2015]</li>
+<li>Thanks to all developers for your support :)</li>
+</ul>
+<h2><a id="user-content-features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h2>
+<ul>
+<li>Multithread image loading (async or sync)</li>
+<li>Wide customization of ImageLoader's configuration (thread executors, downloader, decoder, memory and disk cache, display image options, etc.)</li>
+<li>Many customization options for every display image call (stub images, caching switch, decoding options, Bitmap processing and displaying, etc.)</li>
+<li>Image caching in memory and/or on disk (device's file system or SD card)</li>
+<li>Listening loading process (including downloading progress)</li>
+</ul>
+<p>Android 2.0+ support</p>
+<h2><a id="user-content-downloads" class="anchor" href="#downloads" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Downloads</h2>
+<ul>
+<li><strong><a href="https://github.com/nostra13/Android-Universal-Image-Loader/raw/master/downloads/universal-image-loader-1.9.5.jar">universal-image-loader-1.9.5.jar</a></strong></li>
+<li><a href="https://play.google.com/store/apps/details?id=com.nostra13.universalimageloader.sample"><img src="https://camo.githubusercontent.com/b908ff6651d5ec11d504a37d2f441de9bc1362bc/68747470733a2f2f706c61792e676f6f676c652e636f6d2f696e746c2f656e5f75732f6261646765732f696d616765732f617070732f656e2d706c61792d62616467652e706e67" height="45px" data-canonical-src="https://play.google.com/intl/en_us/badges/images/apps/en-play-badge.png" style="max-width:100%;" /></a> <a href="http://chart.apis.google.com/chart?chs=300x300&amp;cht=qr&amp;chld=%7C1&amp;chl=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.nostra13.universalimageloader.sample"><img src="https://camo.githubusercontent.com/ec49d385c342023cc266c10483f29fd9e4efc525/68747470733a2f2f6c68332e67677068742e636f6d2f63735845646478694c6751364678636b65666a516e503150567567626141594f646375546133765674475631506c5762467532645967676f483872493177325264457a313d773530" alt="QR Code" data-canonical-src="https://lh3.ggpht.com/csXEddxiLgQ6FxckefjQnP1PVugbaAYOdcuTa3vVtGV1PlWbFu2dYggoH8rI1w2RdEz1=w50" style="max-width:100%;" /></a> <a href="https://github.com/nostra13/Android-Universal-Image-Loader/raw/master/downloads/universal-image-loader-sample-1.9.5.apk"><img src="https://camo.githubusercontent.com/c209e75d0951c695a39651cfe3773a2b19c6afe8/687474703a2f2f6d6f627761792e696e2f696d6167652f61706b2e706e67" height="45px" data-canonical-src="http://mobway.in/image/apk.png" style="max-width:100%;" /></a></li>
+</ul>
+<h2><a id="user-content-documentation" class="anchor" href="#documentation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="https://github.com/nostra13/Android-Universal-Image-Loader/wiki">Documentation</a></h2>
+<ul>
+<li><strong><a href="https://github.com/nostra13/Android-Universal-Image-Loader/wiki/Quick-Setup">Quick Setup</a></strong></li>
+<li><strong><a href="https://github.com/nostra13/Android-Universal-Image-Loader/wiki/Configuration">Configuration</a></strong></li>
+<li><strong><a href="https://github.com/nostra13/Android-Universal-Image-Loader/wiki/Display-Options">Display Options</a></strong></li>
+<li><a href="https://github.com/nostra13/Android-Universal-Image-Loader/wiki/Useful-Info">Useful Info</a> - Read it before asking a question</li>
+<li><a href="https://github.com/nostra13/Android-Universal-Image-Loader/wiki/User-Support">User Support</a> - Read it before creating new issue</li>
+<li><a href="https://github.com/nostra13/Android-Universal-Image-Loader/tree/master/sample">Sample project</a> - Learn it to understand the right way of library usage</li>
+<li><a href="https://github.com/nostra13/Android-Universal-Image-Loader/blob/master/CHANGELOG.md">ChangeLog</a> - Info about API changes is here</li>
+</ul>
+<h2><a id="user-content-usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+<h3><a id="user-content-acceptable-uris-examples" class="anchor" href="#acceptable-uris-examples" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Acceptable URIs examples</h3>
+<div class="highlight highlight-source-java"><pre><span class="pl-s"><span class="pl-pds">"</span>http://site.com/image.png<span class="pl-pds">"</span></span> <span class="pl-c">// from Web</span>
+<span class="pl-s"><span class="pl-pds">"</span>file:///mnt/sdcard/image.png<span class="pl-pds">"</span></span> <span class="pl-c">// from SD card</span>
+<span class="pl-s"><span class="pl-pds">"</span>file:///mnt/sdcard/video.mp4<span class="pl-pds">"</span></span> <span class="pl-c">// from SD card (video thumbnail)</span>
+<span class="pl-s"><span class="pl-pds">"</span>content://media/external/images/media/13<span class="pl-pds">"</span></span> <span class="pl-c">// from content provider</span>
+<span class="pl-s"><span class="pl-pds">"</span>content://media/external/video/media/13<span class="pl-pds">"</span></span> <span class="pl-c">// from content provider (video thumbnail)</span>
+<span class="pl-s"><span class="pl-pds">"</span>assets://image.png<span class="pl-pds">"</span></span> <span class="pl-c">// from assets</span>
+<span class="pl-s"><span class="pl-pds">"</span>drawable://<span class="pl-pds">"</span></span> <span class="pl-k">+</span> <span class="pl-smi">R</span><span class="pl-k">.</span>drawable<span class="pl-k">.</span>img <span class="pl-c">// from drawables (non-9patch images)</span></pre></div>
+<p><strong>NOTE:</strong> Use <code>drawable://</code> only if you really need it! Always <strong>consider the native way</strong> to load drawables - <code>ImageView.setImageResource(...)</code> instead of using of <code>ImageLoader</code>.</p>
+<h3><a id="user-content-simple" class="anchor" href="#simple" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Simple</h3>
+<div class="highlight highlight-source-java"><pre><span class="pl-smi">ImageLoader</span> imageLoader <span class="pl-k">=</span> <span class="pl-smi">ImageLoader</span><span class="pl-k">.</span>getInstance(); <span class="pl-c">// Get singleton instance</span></pre></div>
+<div class="highlight highlight-source-java"><pre><span class="pl-c">// Load image, decode it to Bitmap and display Bitmap in ImageView (or any other view </span>
+<span class="pl-c">//  which implements ImageAware interface)</span>
+imageLoader<span class="pl-k">.</span>displayImage(imageUri, imageView);</pre></div>
+<div class="highlight highlight-source-java"><pre><span class="pl-c">// Load image, decode it to Bitmap and return Bitmap to callback</span>
+imageLoader<span class="pl-k">.</span>loadImage(imageUri, <span class="pl-k">new</span> <span class="pl-smi">SimpleImageLoadingListener</span>() {
+    <span class="pl-k">@Override</span>
+    <span class="pl-k">public</span> <span class="pl-k">void</span> <span class="pl-en">onLoadingComplete</span>(<span class="pl-smi">String</span> <span class="pl-v">imageUri</span>, <span class="pl-smi">View</span> <span class="pl-v">view</span>, <span class="pl-smi">Bitmap</span> <span class="pl-v">loadedImage</span>) {
+        <span class="pl-c">// Do whatever you want with Bitmap</span>
+    }
+});</pre></div>
+<div class="highlight highlight-source-java"><pre><span class="pl-c">// Load image, decode it to Bitmap and return Bitmap synchronously</span>
+<span class="pl-smi">Bitmap</span> bmp <span class="pl-k">=</span> imageLoader<span class="pl-k">.</span>loadImageSync(imageUri);</pre></div>
+<h3><a id="user-content-complete" class="anchor" href="#complete" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Complete</h3>
+<div class="highlight highlight-source-java"><pre><span class="pl-c">// Load image, decode it to Bitmap and display Bitmap in ImageView (or any other view </span>
+<span class="pl-c">//  which implements ImageAware interface)</span>
+imageLoader<span class="pl-k">.</span>displayImage(imageUri, imageView, options, <span class="pl-k">new</span> <span class="pl-smi">ImageLoadingListener</span>() {
+    <span class="pl-k">@Override</span>
+    <span class="pl-k">public</span> <span class="pl-k">void</span> <span class="pl-en">onLoadingStarted</span>(<span class="pl-smi">String</span> <span class="pl-v">imageUri</span>, <span class="pl-smi">View</span> <span class="pl-v">view</span>) {
+        <span class="pl-c1">...</span>
+    }
+    <span class="pl-k">@Override</span>
+    <span class="pl-k">public</span> <span class="pl-k">void</span> <span class="pl-en">onLoadingFailed</span>(<span class="pl-smi">String</span> <span class="pl-v">imageUri</span>, <span class="pl-smi">View</span> <span class="pl-v">view</span>, <span class="pl-smi">FailReason</span> <span class="pl-v">failReason</span>) {
+        <span class="pl-c1">...</span>
+    }
+    <span class="pl-k">@Override</span>
+    <span class="pl-k">public</span> <span class="pl-k">void</span> <span class="pl-en">onLoadingComplete</span>(<span class="pl-smi">String</span> <span class="pl-v">imageUri</span>, <span class="pl-smi">View</span> <span class="pl-v">view</span>, <span class="pl-smi">Bitmap</span> <span class="pl-v">loadedImage</span>) {
+        <span class="pl-c1">...</span>
+    }
+    <span class="pl-k">@Override</span>
+    <span class="pl-k">public</span> <span class="pl-k">void</span> <span class="pl-en">onLoadingCancelled</span>(<span class="pl-smi">String</span> <span class="pl-v">imageUri</span>, <span class="pl-smi">View</span> <span class="pl-v">view</span>) {
+        <span class="pl-c1">...</span>
+    }
+}, <span class="pl-k">new</span> <span class="pl-smi">ImageLoadingProgressListener</span>() {
+    <span class="pl-k">@Override</span>
+    <span class="pl-k">public</span> <span class="pl-k">void</span> <span class="pl-en">onProgressUpdate</span>(<span class="pl-smi">String</span> <span class="pl-v">imageUri</span>, <span class="pl-smi">View</span> <span class="pl-v">view</span>, <span class="pl-k">int</span> <span class="pl-v">current</span>, <span class="pl-k">int</span> <span class="pl-v">total</span>) {
+        <span class="pl-c1">...</span>
+    }
+});</pre></div>
+<div class="highlight highlight-source-java"><pre><span class="pl-c">// Load image, decode it to Bitmap and return Bitmap to callback</span>
+<span class="pl-smi">ImageSize</span> targetSize <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">ImageSize</span>(<span class="pl-c1">80</span>, <span class="pl-c1">50</span>); <span class="pl-c">// result Bitmap will be fit to this size</span>
+imageLoader<span class="pl-k">.</span>loadImage(imageUri, targetSize, options, <span class="pl-k">new</span> <span class="pl-smi">SimpleImageLoadingListener</span>() {
+    <span class="pl-k">@Override</span>
+    <span class="pl-k">public</span> <span class="pl-k">void</span> <span class="pl-en">onLoadingComplete</span>(<span class="pl-smi">String</span> <span class="pl-v">imageUri</span>, <span class="pl-smi">View</span> <span class="pl-v">view</span>, <span class="pl-smi">Bitmap</span> <span class="pl-v">loadedImage</span>) {
+        <span class="pl-c">// Do whatever you want with Bitmap</span>
+    }
+});</pre></div>
+<div class="highlight highlight-source-java"><pre><span class="pl-c">// Load image, decode it to Bitmap and return Bitmap synchronously</span>
+<span class="pl-smi">ImageSize</span> targetSize <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">ImageSize</span>(<span class="pl-c1">80</span>, <span class="pl-c1">50</span>); <span class="pl-c">// result Bitmap will be fit to this size</span>
+<span class="pl-smi">Bitmap</span> bmp <span class="pl-k">=</span> imageLoader<span class="pl-k">.</span>loadImageSync(imageUri, targetSize, options);</pre></div>
+<h2><a id="user-content-load--display-task-flow" class="anchor" href="#load--display-task-flow" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Load &amp; Display Task Flow</h2>
+<p><a href="https://github.com/nostra13/Android-Universal-Image-Loader/raw/master/wiki/UIL_Flow.png" target="_blank"><img src="https://github.com/nostra13/Android-Universal-Image-Loader/raw/master/wiki/UIL_Flow.png" alt="Task Flow" style="max-width:100%;" /></a></p>
+<h2><a id="user-content-applications-using-universal-image-loader" class="anchor" href="#applications-using-universal-image-loader" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Applications using Universal Image Loader</h2>
+<p><strong><a href="https://play.google.com/store/apps/details?id=com.dbapp.android.mediahouse">MediaHouse, UPnP/DLNA Browser</a></strong> | <strong><a href="https://play.google.com/store/apps/details?id=org.vernazza.androidfuel">Prezzi Benzina (AndroidFuel)</a></strong> | <strong><a href="https://play.google.com/store/apps/details?id=com.jrummy.liberty.toolbox">ROM Toolbox Lite</a></strong>, <a href="https://play.google.com/store/apps/details?id=com.jrummy.liberty.toolboxpro">Pro</a> | <a href="https://play.google.com/store/apps/details?id=com.astro.stadium.activities">Stadium Astro</a> | <a href="https://play.google.com/store/apps/details?id=com.sencha.test">Chef Astro</a> | <a href="https://play.google.com/store/apps/details?id=com.sporee.android">Sporee - Live Soccer Scores</a> | <strong><a href="https://play.google.com/store/apps/details?id=com.baseapp.eyeem">EyeEm - Photo Filter Camera</a></strong> | <strong><a href="https://play.google.com/store/apps/details?id=com.topface.topface">Topface - meeting is easy</a></strong> | <strong><a href="https://play.google.com/store/apps/details?id=com.andrewshu.android.reddit">reddit is fun</a></strong> | <strong><a href="https://play.google.com/store/apps/details?id=com.pixelcrater.Diaro">Diaro - personal diary</a></strong> | <strong><a href="https://play.google.com/store/apps/details?id=com.meetup">Meetup</a></strong> | <a href="https://play.google.com/store/apps/details?id=com.vingle.android">Vingle - Magazines by Fans</a> | <a href="https://play.google.com/store/apps/details?id=com.maxxt.animeradio">Anime Music Radio</a> | <a href="https://play.google.com/store/apps/details?id=com.companionfree.WLThemeViewer">WidgetLocker Theme Viewer</a> | <a href="https://play.google.com/store/apps/details?id=com.luckydroid.tumblelog">ShortBlogger for Tumblr</a> | <a href="https://play.google.com/store/apps/details?id=com.vuzz.snapdish">SnapDish Food Camera</a> | <strong><a href="https://play.google.com/store/apps/details?id=tv.twitch.android.viewer">Twitch</a></strong> | <a href="https://play.google.com/store/apps/details?id=com.tozelabs.tvshowtime">TVShow Time, TV show guide</a> | <a href="https://play.google.com/store/apps/details?id=com.ministrycentered.PlanningCenter">Planning Center Services</a> | <strong><a href="https://play.google.com/store/apps/details?id=com.ui.LapseIt">Lapse It</a></strong> | <a href="https://play.google.com/store/apps/details?id=com.mycloudplayers.mycloudplayer">My Cloud Player for SoundCloud</a> | <strong><a href="https://play.google.com/store/apps/details?id=com.schematiclabs.soundtracking">SoundTracking</a></strong> | <a href="https://play.google.com/store/apps/details?id=com.looplr">LoopLR Social Video</a> | <a href="https://play.google.com/store/apps/details?id=hu.sanomamedia.hir24">Hír24</a> | <strong><a href="https://play.google.com/store/apps/details?id=de.is24.android">Immobilien Scout24</a></strong> | <strong><a href="https://play.google.com/store/apps/details?id=de.lieferheld.android">Lieferheld - Pizza Pasta Sushi</a></strong> | <a href="https://play.google.com/store/apps/details?id=com.ivicode.loocator">Loocator: free sex datings</a> | <a href="https://play.google.com/store/apps/details?id=com.mediahubs.www">벨팡-개편 이벤트,컬러링,벨소리,무료,최신가요,링투유</a> | <a href="https://play.google.com/store/apps/details?id=com.tuxera.streambels">Streambels AirPlay/DLNA Player</a> | <a href="https://play.google.com/store/apps/details?id=shipmate.carnival">Ship Mate - All Cruise Lines</a> | <a href="https://play.google.com/store/apps/details?id=com.mobile_infographics_tools.mydrive">Disk &amp; Storage Analyzer</a> | <a href="https://play.google.com/store/apps/details?id=qsbk.app">糗事百科</a> | <a href="https://play.google.com/store/apps/details?id=com.vladyud.balance">Balance BY</a> | <strong><a href="https://play.google.com/store/apps/details?id=br.com.verde.alarme">Anti Theft Alarm - Security</a></strong> | <strong><a href="https://play.google.com/store/apps/details?id=com.android.DroidLiveLite">XiiaLive™ - Internet Radio</a></strong> | <strong><a href="https://play.google.com/store/apps/details?id=com.bandsintown">Bandsintown Concerts</a></strong> | <strong><a href="https://play.google.com/store/apps/details?id=jp.fuukiemonster.webmemo">Save As Web Archive</a></strong> | <a href="https://play.google.com/store/apps/details?id=com.newidea.mcpestore">MCPE STORE -Download MCPE file</a> | <strong><a href="http://aiotoolbox.com/">All-In-One Toolbox (29 Tools)</a></strong> | <a href="https://play.google.com/store/apps/details?id=net.zaim.android">Zaim</a> | <strong><a href="https://play.google.com/store/apps/details?id=com.digitalchemy.calculator.freedecimal">Calculator Plus Free</a></strong> | <a href="https://play.google.com/store/apps/details?id=com.truecaller.phoneapp">Truedialer by Truecaller</a> | <a href="https://play.google.com/store/apps/details?id=com.snoggdoggler.android.applications.doggcatcher.v1_0">DoggCatcher Podcast Player</a> | <a href="https://play.google.com/store/apps/details?id=ua.com.streamsoft.pingtools">PingTools Network Utilities</a> | <a href="https://play.google.com/store/apps/details?id=edu.bsu.android.apps.traveler">The Traveler</a> | <a href="https://play.google.com/store/apps/details?id=com.minube.app">minube: travel photo album</a> | <a href="https://play.google.com/store/apps/details?id=goko.ws2">Wear Store for Wear Apps</a> | <a href="https://play.google.com/store/apps/details?id=goko.gcs">Cast Store for Chromecast Apps</a> | <a href="https://play.google.com/store/apps/details?id=com.webmoney.my">WebMoney Keeper</a></p>
+<h2><a id="user-content-donation" class="anchor" href="#donation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Donation</h2>
+<p>You can support the project and thank the author for his hard work :)</p>
+<p><a href="https://pledgie.com/campaigns/19144"><img alt="Click here to lend your support to: Universal Image Loader for Android and make a donation at pledgie.com !" src="https://camo.githubusercontent.com/92fa16fe8e53771d3e1001f995e45b1f9b801422/68747470733a2f2f706c65646769652e636f6d2f63616d706169676e732f31393134342e706e673f736b696e5f6e616d653d6368726f6d65" border="0" data-canonical-src="https://pledgie.com/campaigns/19144.png?skin_name=chrome" style="max-width:100%;" /></a> <a href="http://flattr.com/thing/1110177/nostra13Android-Universal-Image-Loader-on-GitHub" target="_blank"><img src="https://camo.githubusercontent.com/739a757846f69c1cc10163619eec008e871b591b/687474703a2f2f6170692e666c617474722e636f6d2f627574746f6e2f666c617474722d62616467652d6c617267652e706e67" alt="Flattr this" title="Flattr this" border="0" data-canonical-src="http://api.flattr.com/button/flattr-badge-large.png" style="max-width:100%;" /></a></p>
+<ul>
+<li><strong>PayPal</strong> - nostra.uil[at]gmail[dot]com</li>
+</ul>
+<h2><a id="user-content-alternative-libraries" class="anchor" href="#alternative-libraries" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Alternative libraries</h2>
+<ul>
+<li><a href="https://code.google.com/p/android-query/wiki/ImageLoading">AndroidQuery : ImageLoading</a></li>
+<li><a href="http://droidparts.org/image_fetcher.html">DroidParts : ImageFetcher</a></li>
+<li><a href="https://github.com/facebook/fresco">Fresco</a></li>
+<li><a href="https://github.com/bumptech/glide">Glide</a></li>
+<li><a href="https://github.com/square/picasso">Picasso</a></li>
+<li><a href="https://github.com/koush/UrlImageViewHelper">UrlImageViewHelper</a></li>
+<li><a href="https://android.googlesource.com/platform/frameworks/volley/">Volley : ImageLoader</a></li>
+</ul>
+<h2><a id="user-content-license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+<pre><code>Copyright 2011-2015 Sergey Tarasevich
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+</code></pre>
+
+</div>
+</div>
+<div class="modal-backdrop"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="container">
+<div class="site-footer" role="contentinfo">
+<ul class="site-footer-links right">
+<li><a href="https://status.github.com/" data-ga-click="Footer, go to status, text:status">Status</a></li>
+<li><a href="https://developer.github.com" data-ga-click="Footer, go to api, text:api">API</a></li>
+<li><a href="https://training.github.com" data-ga-click="Footer, go to training, text:training">Training</a></li>
+<li><a href="https://shop.github.com" data-ga-click="Footer, go to shop, text:shop">Shop</a></li>
+<li><a href="https://github.com/blog" data-ga-click="Footer, go to blog, text:blog">Blog</a></li>
+<li><a href="https://github.com/about" data-ga-click="Footer, go to about, text:about">About</a></li>
+<li><a href="https://github.com/pricing" data-ga-click="Footer, go to pricing, text:pricing">Pricing</a></li>
+</ul>
+<a href="https://github.com" aria-label="Homepage">
+<span aria-hidden="true" class="mega-octicon octicon-mark-github" title="GitHub "></span>
+</a>
+<ul class="site-footer-links">
+<li>&copy; 2016 <span title="0.06366s from github-fe117-cp1-prd.iad.github.net">GitHub</span>, Inc.</li>
+<li><a href="https://github.com/site/terms" data-ga-click="Footer, go to terms, text:terms">Terms</a></li>
+<li><a href="https://github.com/site/privacy" data-ga-click="Footer, go to privacy, text:privacy">Privacy</a></li>
+<li><a href="https://github.com/security" data-ga-click="Footer, go to security, text:security">Security</a></li>
+<li><a href="https://github.com/contact" data-ga-click="Footer, go to contact, text:contact">Contact</a></li>
+<li><a href="https://help.github.com" data-ga-click="Footer, go to help, text:help">Help</a></li>
+</ul>
+</div>
+</div>
+<div id="ajax-error-message" class="flash flash-error">
+<span aria-hidden="true" class="octicon octicon-alert"></span>
+<button type="button" class="flash-close js-flash-close js-ajax-error-dismiss" aria-label="Dismiss error">
+<span aria-hidden="true" class="octicon octicon-x"></span>
+</button>
+      Something went wrong with that request. Please try again.
+    </div>
+<script crossorigin="anonymous" src="https://assets-cdn.github.com/assets/compat-a0cee5d8d4fb535c0f41971d037b32e852a56ddca5bf67bb2124e426a2d813a5.js"></script>
+<script crossorigin="anonymous" src="https://assets-cdn.github.com/assets/frameworks-9ee55ceaf87fc34dc86334249fef6cbece88e815478e0fbe81642d57ed0fff89.js"></script>
+<script async="async" crossorigin="anonymous" src="https://assets-cdn.github.com/assets/github-8afeb971202f92778ffc73ddd92661c1977dc5e42a928ed35f8ec96e425a6e7a.js"></script>
+<div class="js-stale-session-flash stale-session-flash flash flash-warn flash-banner hidden">
+<span aria-hidden="true" class="octicon octicon-alert"></span>
+<span class="signed-in-tab-flash">You signed in with another tab or window. <a href="">Reload</a> to refresh your session.</span>
+<span class="signed-out-tab-flash">You signed out in another tab or window. <a href="">Reload</a> to refresh your session.</span>
+</div>
+<div class="facebox" id="facebox" style="display:none;">
+<div class="facebox-popup">
+<div class="facebox-content" role="dialog" aria-labelledby="facebox-header" aria-describedby="facebox-description">
+</div>
+<button type="button" class="facebox-close js-facebox-close" aria-label="Close modal">
+<span aria-hidden="true" class="octicon octicon-x"></span>
+</button>
+</div>
+</div>
+</body>
+</html>

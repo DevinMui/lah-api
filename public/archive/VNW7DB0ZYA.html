@@ -1,0 +1,577 @@
+
+<!DOCTYPE html>
+<html lang="en" class="">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article# profile: http://ogp.me/ns/profile#">
+<meta charset="utf-8" />
+<link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/github-d0dea0e5376d5c42aabf467726e0cffb7034a0d94eb947b9328eb6c9c4fcbba3.css" media="all" rel="stylesheet" />
+<link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/github2-5f7255544b25f937224217b1c37ee5c139a0a00a3decd8020b9aabc550340903.css" media="all" rel="stylesheet" />
+<link as="script" href="https://assets-cdn.github.com/assets/frameworks-9ee55ceaf87fc34dc86334249fef6cbece88e815478e0fbe81642d57ed0fff89.js" rel="preload" />
+<link as="script" href="https://assets-cdn.github.com/assets/github-8afeb971202f92778ffc73ddd92661c1977dc5e42a928ed35f8ec96e425a6e7a.js" rel="preload" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Content-Language" content="en" />
+<meta name="viewport" content="width=1020" />
+<title>rometools/rome-fetcher: A caching feed fetcher that supports retrieval of feeds via HTTP conditional GET. Supports ETags, GZip compression, and RFC3229 Delta encoding.</title>
+<link rel="search" type="application/opensearchdescription+xml" href="http://github.com/opensearch.xml" title="GitHub" />
+<link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub" />
+<link rel="apple-touch-icon" href="http://github.com/apple-touch-icon.png" />
+<link rel="apple-touch-icon" sizes="57x57" href="http://github.com/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon" sizes="60x60" href="http://github.com/apple-touch-icon-60x60.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="http://github.com/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon" sizes="76x76" href="http://github.com/apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="http://github.com/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon" sizes="120x120" href="http://github.com/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="http://github.com/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon" sizes="152x152" href="http://github.com/apple-touch-icon-152x152.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="http://github.com/apple-touch-icon-180x180.png" />
+<meta property="fb:app_id" content="1401488693436528" />
+<meta content="https://avatars2.githubusercontent.com/u/5429829?v=3&amp;s=400" name="twitter:image:src" /><meta content="@github" name="twitter:site" /><meta content="summary" name="twitter:card" /><meta content="rometools/rome-fetcher" name="twitter:title" /><meta content="rome-fetcher - A caching feed fetcher that supports retrieval of feeds via HTTP conditional GET. Supports ETags, GZip compression, and RFC3229 Delta encoding." name="twitter:description" />
+<meta content="https://avatars2.githubusercontent.com/u/5429829?v=3&amp;s=400" property="og:image" /><meta content="GitHub" property="og:site_name" /><meta content="object" property="og:type" /><meta content="rometools/rome-fetcher" property="og:title" /><meta content="https://github.com/rometools/rome-fetcher" property="og:url" /><meta content="rome-fetcher - A caching feed fetcher that supports retrieval of feeds via HTTP conditional GET. Supports ETags, GZip compression, and RFC3229 Delta encoding." property="og:description" />
+<meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats" />
+<meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors" />
+<link rel="assets" href="https://assets-cdn.github.com/" />
+<meta name="pjax-timeout" content="1000" />
+<meta name="msapplication-TileImage" content="/windows-tile.png" />
+<meta name="msapplication-TileColor" content="#ffffff" />
+<meta name="selected-link" value="repo_source" data-pjax-transient="data-pjax-transient" />
+<meta name="google-site-verification" content="KT5gs8h0wvaagLKAVWq8bbeNwnZZK1r1XQysX3xurLU" />
+<meta name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA" />
+<meta name="google-analytics" content="UA-3769691-2" />
+<meta content="collector.githubapp.com" name="octolytics-host" /><meta content="github" name="octolytics-app-id" /><meta content="68C5BF7F:1609:4757A2B:56ADD9E1" name="octolytics-dimension-request_id" />
+<meta content="/&lt;user-name&gt;/&lt;repo-name&gt;" data-pjax-transient="true" name="analytics-location" />
+<meta class="js-ga-set" name="dimension1" content="Logged Out" />
+<meta name="hostname" content="github.com" />
+<meta name="user-login" content="" />
+<meta name="expected-hostname" content="github.com" />
+<link rel="mask-icon" href="https://assets-cdn.github.com/pinned-octocat.svg" color="#4078c0" />
+<link rel="icon" type="image/x-icon" href="https://assets-cdn.github.com/favicon.ico" />
+<meta content="80fdf947cd060878be9b994ecb9b2a92117d5006" name="form-nonce" />
+<meta http-equiv="x-pjax-version" content="55b41dd856d04e698e17bd7fc2020079" />
+<meta name="description" content="rome-fetcher - A caching feed fetcher that supports retrieval of feeds via HTTP conditional GET. Supports ETags, GZip compression, and RFC3229 Delta encoding." />
+<meta name="go-import" content="github.com/rometools/rome-fetcher git https://github.com/rometools/rome-fetcher.git" />
+<meta content="5429829" name="octolytics-dimension-user_id" /><meta content="rometools" name="octolytics-dimension-user_login" /><meta content="13040969" name="octolytics-dimension-repository_id" /><meta content="rometools/rome-fetcher" name="octolytics-dimension-repository_nwo" /><meta content="true" name="octolytics-dimension-repository_public" /><meta content="false" name="octolytics-dimension-repository_is_fork" /><meta content="13040969" name="octolytics-dimension-repository_network_root_id" /><meta content="rometools/rome-fetcher" name="octolytics-dimension-repository_network_root_nwo" />
+<link href="https://github.com/rometools/rome-fetcher/commits/master.atom" rel="alternate" title="Recent Commits to rome-fetcher:master" type="application/atom+xml" />
+<link rel="canonical" href="https://github.com/rometools/rome-fetcher" data-pjax-transient="data-pjax-transient" />
+</head>
+<body class="logged_out   env-production  vis-public">
+<a href="#start-of-content" tabindex="1" class="accessibility-aid js-skip-to-content">Skip to content</a>
+<div class="header header-logged-out" role="banner">
+<div class="container clearfix">
+<a class="header-logo-wordmark" href="https://github.com/" data-ga-click="(Logged out) Header, go to homepage, icon:logo-wordmark">
+<span aria-hidden="true" class="mega-octicon octicon-logo-github"></span>
+</a>
+<div class="header-actions" role="navigation">
+<a class="btn btn-primary" href="http://github.com/join?source=header-repo" data-ga-click="(Logged out) Header, clicked Sign up, text:sign-up">Sign up</a>
+<a class="btn" href="http://github.com/login?return_to=%2Frometools%2Frome-fetcher" data-ga-click="(Logged out) Header, clicked Sign in, text:sign-in">Sign in</a>
+</div>
+<div class="site-search repo-scope js-site-search" role="search">
+<!-- &lt;/textarea&gt; --><!-- '"` --><form accept-charset="UTF-8" action="/rometools/rome-fetcher/search" class="js-site-search-form" data-global-search-url="/search" data-repo-search-url="/rometools/rome-fetcher/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓" /></div>
+<label class="js-chromeless-input-container form-control">
+<div class="scope-badge">This repository</div>
+<input type="text" class="js-site-search-focus js-site-search-field is-clearable chromeless-input" data-hotkey="s" name="q" placeholder="Search" aria-label="Search this repository" data-global-scope-placeholder="Search GitHub" data-repo-scope-placeholder="Search" tabindex="1" autocapitalize="off" />
+</label>
+</form>
+</div>
+<ul class="header-nav left" role="navigation">
+<li class="header-nav-item">
+<a class="header-nav-link" href="http://github.com/explore" data-ga-click="(Logged out) Header, go to explore, text:explore">Explore</a>
+</li>
+<li class="header-nav-item">
+<a class="header-nav-link" href="http://github.com/features" data-ga-click="(Logged out) Header, go to features, text:features">Features</a>
+</li>
+<li class="header-nav-item">
+<a class="header-nav-link" href="https://enterprise.github.com/" data-ga-click="(Logged out) Header, go to enterprise, text:enterprise">Enterprise</a>
+</li>
+<li class="header-nav-item">
+<a class="header-nav-link" href="http://github.com/pricing" data-ga-click="(Logged out) Header, go to pricing, text:pricing">Pricing</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="start-of-content" class="accessibility-aid"></div>
+<div id="js-flash-container">
+</div>
+<div role="main" class="main-content">
+<div itemscope="itemscope" itemtype="http://schema.org/WebPage">
+<div id="js-repo-pjax-container" class="context-loader-container js-repo-nav-next" data-pjax-container="data-pjax-container">
+<div class="pagehead repohead instapaper_ignore readability-menu experiment-repo-nav">
+<div class="container repohead-details-container">
+<ul class="pagehead-actions">
+<li>
+<a href="http://github.com/login?return_to=%2Frometools%2Frome-fetcher" class="btn btn-sm btn-with-count tooltipped tooltipped-n" aria-label="You must be signed in to watch a repository" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-eye"></span>
+    Watch
+  </a>
+<a class="social-count" href="http://github.com/rometools/rome-fetcher/watchers">
+    7
+  </a>
+</li>
+<li>
+<a href="http://github.com/login?return_to=%2Frometools%2Frome-fetcher" class="btn btn-sm btn-with-count tooltipped tooltipped-n" aria-label="You must be signed in to star a repository" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-star"></span>
+    Star
+  </a>
+<a class="social-count js-social-count" href="http://github.com/rometools/rome-fetcher/stargazers">
+      22
+    </a>
+</li>
+<li>
+<a href="http://github.com/login?return_to=%2Frometools%2Frome-fetcher" class="btn btn-sm btn-with-count tooltipped tooltipped-n" aria-label="You must be signed in to fork a repository" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-repo-forked"></span>
+        Fork
+      </a>
+<a href="http://github.com/rometools/rome-fetcher/network" class="social-count">
+      21
+    </a>
+</li>
+</ul>
+<h1 itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb" class="entry-title public ">
+<span aria-hidden="true" class="octicon octicon-repo"></span>
+<span class="author"><a href="http://github.com/rometools" class="url fn" itemprop="url" rel="author"><span itemprop="title">rometools</span></a></span><!--
+--><span class="path-divider">/</span><!--
+--><strong><a href="http://github.com/rometools/rome-fetcher" data-pjax="#js-repo-pjax-container">rome-fetcher</a></strong>
+<span class="page-context-loader">
+<img alt="" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</span>
+</h1>
+</div>
+<div class="container">
+<nav class="reponav js-repo-nav js-sidenav-container-pjax js-octicon-loaders" role="navigation" data-pjax="#js-repo-pjax-container">
+<a href="http://github.com/rometools/rome-fetcher" aria-label="Code" aria-selected="true" class="js-selected-navigation-item selected reponav-item" data-hotkey="g c" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches /rometools/rome-fetcher">
+<span aria-hidden="true" class="octicon octicon-code"></span>
+    Code
+</a>
+<a href="http://github.com/rometools/rome-fetcher/issues" class="js-selected-navigation-item reponav-item" data-hotkey="g i" data-selected-links="repo_issues repo_labels repo_milestones /rometools/rome-fetcher/issues">
+<span aria-hidden="true" class="octicon octicon-issue-opened"></span>
+      Issues
+      <span class="counter">6</span>
+</a>
+<a href="http://github.com/rometools/rome-fetcher/pulls" class="js-selected-navigation-item reponav-item" data-hotkey="g p" data-selected-links="repo_pulls /rometools/rome-fetcher/pulls">
+<span aria-hidden="true" class="octicon octicon-git-pull-request"></span>
+    Pull requests
+    <span class="counter">0</span>
+</a>
+<a href="http://github.com/rometools/rome-fetcher/pulse" class="js-selected-navigation-item reponav-item" data-selected-links="pulse /rometools/rome-fetcher/pulse">
+<span aria-hidden="true" class="octicon octicon-pulse"></span>
+    Pulse
+</a>
+<a href="http://github.com/rometools/rome-fetcher/graphs" class="js-selected-navigation-item reponav-item" data-selected-links="repo_graphs repo_contributors /rometools/rome-fetcher/graphs">
+<span aria-hidden="true" class="octicon octicon-graph"></span>
+    Graphs
+</a>
+</nav>
+</div>
+</div>
+<div class="container new-discussion-timeline experiment-repo-nav">
+<div class="repository-content">
+<div class="repository-meta js-details-container">
+<span class="repository-meta-content">
+        A caching feed fetcher that supports retrieval of feeds via HTTP conditional GET. Supports ETags, GZip compression, and RFC3229 Delta encoding.
+  </span>
+</div>
+<div class="overall-summary overall-summary-bottomless">
+<div class="stats-switcher-viewport js-stats-switcher-viewport">
+<div class="stats-switcher-wrapper">
+<ul class="numbers-summary">
+<li class="commits">
+<a data-pjax="data-pjax" href="http://github.com/rometools/rome-fetcher/commits/master">
+<span aria-hidden="true" class="octicon octicon-history"></span>
+<span class="num text-emphasized">
+              66
+            </span>
+            commits
+        </a>
+</li>
+<li>
+<a data-pjax="data-pjax" href="http://github.com/rometools/rome-fetcher/branches">
+<span aria-hidden="true" class="octicon octicon-git-branch"></span>
+<span class="num text-emphasized">
+            2
+          </span>
+          branches
+        </a>
+</li>
+<li>
+<a data-pjax="data-pjax" href="http://github.com/rometools/rome-fetcher/releases">
+<span aria-hidden="true" class="octicon octicon-tag"></span>
+<span class="num text-emphasized">
+            3
+          </span>
+          releases
+        </a>
+</li>
+<li>
+<a href="http://github.com/rometools/rome-fetcher/graphs/contributors">
+<span aria-hidden="true" class="octicon octicon-organization"></span>
+<span class="num text-emphasized">
+      8
+    </span>
+    contributors
+</a>
+</li>
+</ul>
+<div class="repository-lang-stats">
+<ol class="repository-lang-stats-numbers">
+<li>
+<a href="http://github.com/rometools/rome-fetcher/search?l=java" data-ga-click="Repository, language stats search click, location:repo overview">
+<span class="color-block language-color" style="background-color:#b07219;"></span>
+<span class="lang">Java</span>
+<span class="percent">99.9%</span>
+</a>
+</li>
+<li>
+<a href="http://github.com/rometools/rome-fetcher/search?l=css" data-ga-click="Repository, language stats search click, location:repo overview">
+<span class="color-block language-color" style="background-color:#563d7c;"></span>
+<span class="lang">CSS</span>
+<span class="percent">0.1%</span>
+</a>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="repository-lang-stats-graph js-toggle-lang-stats" title="Click for language details" data-ga-click="Repository, language bar stats toggle, location:repo overview">
+<span class="language-color" aria-label="Java 99.9%" style="width:99.9%; background-color:#b07219;" itemprop="keywords">Java</span>
+<span class="language-color" aria-label="CSS 0.1%" style="width:0.1%; background-color:#563d7c;" itemprop="keywords">CSS</span>
+</div>
+<div class="file-navigation in-mid-page">
+<div class="right">
+<div class="btn-group">
+<button class="btn btn-sm disabled tooltipped tooltipped-n" aria-label="You must be signed in to make or propose changes" type="button">
+    New file
+  </button>
+<a href="http://github.com/rometools/rome-fetcher/find/master" class="btn btn-sm empty-icon right js-show-file-finder" data-pjax="data-pjax" data-hotkey="t" data-ga-click="Repository, find file, location:repo overview">
+        Find file
+      </a>
+</div>
+<div class="file-navigation-options" data-multiple="data-multiple">
+<div class="file-navigation-option">
+<!-- &lt;/textarea&gt; --><!-- '"` --><form accept-charset="UTF-8" action="/users/set_protocol" class="js-set-user-protocol-preference" data-form-nonce="80fdf947cd060878be9b994ecb9b2a92117d5006" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓" /><input name="authenticity_token" type="hidden" value="7MnoZuZALI9azKC56Dcnr/3y1VEwzaUfsNxH41lc5Bk2sVURh1SWfI8wTzaW4iSm1IT4dU9vdJlMwpG2sm2xBA==" /></div>
+<input type="hidden" name="protocol_type" value="clone" />
+<div class="select-menu js-menu-container js-select-menu">
+<div class="input-group js-select-button js-zeroclipboard-container">
+<div class="input-group-button">
+<button type="button" class="btn btn-sm select-menu-button js-menu-target" data-ga-click="Repository, clone HTTPS, location:repo overview">
+    HTTPS
+  </button>
+</div>
+<input type="text" class="input-monospace input-mini js-zeroclipboard-target js-url-field" value="https://github.com/rometools/rome-fetcher.git" readonly="readonly" />
+<div class="input-group-button">
+<button aria-label="Copy to clipboard" class="js-zeroclipboard btn btn-sm zeroclipboard-button tooltipped tooltipped-s" data-copied-hint="Copied!" type="button"><span aria-hidden="true" class="octicon octicon-clippy"></span></button>
+</div>
+</div>
+<div class="select-menu-modal-holder">
+<div class="select-menu-modal js-menu-content" aria-hidden="true">
+<div class="select-menu-header">
+<span aria-label="Close" class="octicon octicon-x js-menu-close" role="button"></span>
+<span class="select-menu-title">Choose a clone URL</span>
+</div>
+<div class="select-menu-list js-navigation-container" role="menu">
+<div class="select-menu-item js-navigation-item selected" role="menuitem" tabindex="0">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<div class="select-menu-item-text">
+<input type="radio" name="protocol_selector" value="http" checked="checked" />
+<span class="select-menu-item-heading">
+                            HTTPS
+                            (recommended)
+                          </span>
+<span class="description">
+                              Clone with Git or checkout with SVN using the repository's web address.
+                            </span>
+<span class="js-select-button-text hidden-select-button-text">
+<div class="input-group-button">
+<button type="button" class="btn btn-sm select-menu-button js-menu-target" data-ga-click="Repository, clone HTTPS, location:repo overview">
+    HTTPS
+  </button>
+</div>
+<input type="text" class="input-monospace input-mini js-zeroclipboard-target js-url-field" value="https://github.com/rometools/rome-fetcher.git" readonly="readonly" />
+<div class="input-group-button">
+<button aria-label="Copy to clipboard" class="js-zeroclipboard btn btn-sm zeroclipboard-button tooltipped tooltipped-s" data-copied-hint="Copied!" type="button"><span aria-hidden="true" class="octicon octicon-clippy"></span></button>
+</div>
+</span>
+</div>
+</div>
+</div>
+<div class="select-menu-list" role="menu">
+<a class="select-menu-item select-menu-action" href="https://help.github.com/articles/which-remote-url-should-i-use" target="_blank">
+<span aria-hidden="true" class="octicon octicon-question select-menu-item-icon"></span>
+<div class="select-menu-item-text">
+                        Learn more about clone URLs
+                      </div>
+</a>
+</div>
+</div>
+</div>
+</div>
+</form> </div>
+<div class="file-navigation-option">
+</div>
+<div class="file-navigation-option">
+<a href="http://github.com/rometools/rome-fetcher/archive/master.zip" class="btn btn-sm" rel="nofollow" data-ga-click="Repository, download zip, location:repo overview">
+            Download ZIP
+          </a>
+</div>
+</div>
+</div>
+<div class="select-menu js-menu-container js-select-menu left">
+<button class="btn btn-sm select-menu-button js-menu-target css-truncate" data-hotkey="w" title="master" type="button" aria-label="Switch branches or tags" tabindex="0" aria-haspopup="true">
+<i>Branch:</i>
+<span class="js-select-button css-truncate-target">master</span>
+</button>
+<div class="select-menu-modal-holder js-menu-content js-navigation-container" data-pjax="data-pjax" aria-hidden="true">
+<div class="select-menu-modal">
+<div class="select-menu-header">
+<span aria-label="Close" class="octicon octicon-x js-menu-close" role="button"></span>
+<span class="select-menu-title">Switch branches/tags</span>
+</div>
+<div class="select-menu-filters">
+<div class="select-menu-text-filter">
+<input type="text" aria-label="Filter branches/tags" id="context-commitish-filter-field" class="js-filterable-field js-navigation-enable" placeholder="Filter branches/tags" />
+</div>
+<div class="select-menu-tabs">
+<ul>
+<li class="select-menu-tab">
+<a href="#" data-tab-filter="branches" data-filter-placeholder="Filter branches/tags" class="js-select-menu-tab" role="tab">Branches</a>
+</li>
+<li class="select-menu-tab">
+<a href="#" data-tab-filter="tags" data-filter-placeholder="Find a tagâ&euro;Ś" class="js-select-menu-tab" role="tab">Tags</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="branches" role="menu">
+<div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/rometools/rome-fetcher/tree/gh-pages" data-name="gh-pages" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="gh-pages">
+                gh-pages
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open selected" href="http://github.com/rometools/rome-fetcher/tree/master" data-name="master" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="master">
+                master
+              </span>
+</a>
+</div>
+<div class="select-menu-no-results">Nothing to show</div>
+</div>
+<div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="tags">
+<div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/rometools/rome-fetcher/tree/rome-fetcher-1.5.1" data-name="rome-fetcher-1.5.1" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="rome-fetcher-1.5.1">
+                rome-fetcher-1.5.1
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/rometools/rome-fetcher/tree/rome-fetcher-1.5.0" data-name="rome-fetcher-1.5.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="rome-fetcher-1.5.0">
+                rome-fetcher-1.5.0
+              </span>
+</a>
+<a class="select-menu-item js-navigation-item js-navigation-open " href="http://github.com/rometools/rome-fetcher/tree/rome-fetcher-1.2.0" data-name="rome-fetcher-1.2.0" data-skip-pjax="true" rel="nofollow">
+<span aria-hidden="true" class="octicon octicon-check select-menu-item-icon"></span>
+<span class="select-menu-item-text css-truncate-target" title="rome-fetcher-1.2.0">
+                rome-fetcher-1.2.0
+              </span>
+</a>
+</div>
+<div class="select-menu-no-results">Nothing to show</div>
+</div>
+</div>
+</div>
+</div>
+<button type="button" class="btn btn-sm btn-primary disabled tooltipped tooltipped-n" aria-label="You must be signed in to create a pull request">
+        New pull request
+      </button>
+<div class="breadcrumb">
+</div>
+</div>
+<div class="commit-tease js-details-container">
+<span class="right">
+      Latest commit
+      <a class="commit-tease-sha" href="http://github.com/rometools/rome-fetcher/commit/bfe8329fd9709a992757731079de879ea0b4bc69" data-pjax="data-pjax">
+        bfe8329
+      </a>
+<time datetime="2016-01-16T18:14:05Z" is="relative-time">Jan 16, 2016</time>
+</span>
+<span class="commit-author-section">
+<img alt="@mishako" class="avatar" height="20" src="https://avatars2.githubusercontent.com/u/202554?v=3&amp;s=40" width="20" />
+<a href="http://github.com/mishako" class="user-mention" rel="contributor">mishako</a>
+</span>
+<a href="http://github.com/rometools/rome-fetcher/commit/bfe8329fd9709a992757731079de879ea0b4bc69" class="message" data-pjax="true" title="Merge pull request #20 from mishako/maven-bundle-plugin
+
+Configure OSGi bundling">Merge pull request</a> <a href="https://github.com/rometools/rome-fetcher/pull/20" class="issue-link js-issue-link" data-url="https://github.com/rometools/rome-fetcher/issues/20" data-id="124604544" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#20</a> <a href="http://github.com/rometools/rome-fetcher/commit/bfe8329fd9709a992757731079de879ea0b4bc69" class="message" data-pjax="true" title="Merge pull request #20 from mishako/maven-bundle-plugin
+
+Configure OSGi bundling">from mishako/maven-bundle-plugin</a>
+<span class="hidden-text-expander inline">
+<a href="#" class="js-details-target">â&euro;Ś</a>
+</span>
+
+<div class="commit-desc"><pre class="text-small">Configure OSGi bundling</pre></div>
+</div>
+<div class="file-wrap ">
+<a href="http://github.com/rometools/rome-fetcher/tree/bfe8329fd9709a992757731079de879ea0b4bc69" class="hidden js-permalink-shortcut" data-hotkey="y">Permalink</a>
+<table class="files js-navigation-container js-active-navigation-container" data-pjax="data-pjax">
+<tbody>
+<tr class="warning include-fragment-error">
+<td class="icon"><span aria-hidden="true" class="octicon octicon-alert"></span></td>
+<td class="content" colspan="3">Failed to load latest commit information.</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-directory"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/rometools/rome-fetcher/tree/master/src" class="js-directory-link js-navigation-open" id="25d902c24283ab8cfbac54dfa101ad31-b8754461152b7458b10f60c4abb26c2b9091f1af" title="src">src</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/rometools/rome-fetcher/commit/ace52cfa9fcb780abaf4244178e61e6b6f5124d5" class="message" data-pjax="true" title="Refactoring code">Refactoring code</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2015-02-16T21:25:26Z" is="time-ago">Feb 16, 2015</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-text"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/rometools/rome-fetcher/blob/master/.gitignore" class="js-directory-link js-navigation-open" id="a084b794bc0759e7a6b77810e01874f2-83a7c0c1ba5ca73c8c0bc3d55c2de180b284df23" title=".gitignore">.gitignore</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/rometools/rome-fetcher/commit/3b1be4a653a7e52ac13d8df9adc6cc9924e6497a" class="message" data-pjax="true" title="ignore IntelliJ project files">ignore IntelliJ project files</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2014-12-22T13:52:48Z" is="time-ago">Dec 22, 2014</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-text"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/rometools/rome-fetcher/blob/master/LICENSE" class="js-directory-link js-navigation-open" id="9879d6db96fd29134fc802214163b95a-f43cdb1cbc529eebbe2aaa8b885766d6b236d975" title="LICENSE">LICENSE</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/rometools/rome-fetcher/commit/e472bdcb15193a71543f7ade9703d1ee7e83d906" class="message" data-pjax="true" title="Renamed license file
+Removed Ant script">Renamed license file</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2013-10-07T20:28:31Z" is="time-ago">Oct 7, 2013</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-text"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/rometools/rome-fetcher/blob/master/README.md" class="js-directory-link js-navigation-open" id="04c6e90faac2675aa89e2176d2eec7d8-49d2dfe24e56b231a31af69f7b2375965b0765b6" title="README.md">README.md</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/rometools/rome-fetcher/commit/e365fa78c2dcf463620fb8e3830bd7d9cd7abb7b" class="message" data-pjax="true" title="maven site for Rome fetcher">maven site for Rome fetcher</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2013-09-26T21:12:47Z" is="time-ago">Sep 26, 2013</time></span>
+</td>
+</tr>
+<tr class="js-navigation-item">
+<td class="icon">
+<span aria-hidden="true" class="octicon octicon-file-text"></span>
+<img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</td>
+<td class="content">
+<span class="css-truncate css-truncate-target"><a href="http://github.com/rometools/rome-fetcher/blob/master/pom.xml" class="js-directory-link js-navigation-open" id="600376dffeb79835ede4a0b285078036-5d8606361219a9a3e47b69777e107d677880f383" title="pom.xml">pom.xml</a></span>
+</td>
+<td class="message">
+<span class="css-truncate css-truncate-target">
+<a href="http://github.com/rometools/rome-fetcher/commit/8cdee06ab03904e88b1ddb166e9e1ac0c18bff2c" class="message" data-pjax="true" title="Configure OSGi bundling">Configure OSGi bundling</a>
+</span>
+</td>
+<td class="age">
+<span class="css-truncate css-truncate-target"><time datetime="2016-01-02T18:38:12Z" is="time-ago">Jan 2, 2016</time></span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="readme" class="boxed-group clearfix announce instapaper_body md">
+<h3>
+<span aria-hidden="true" class="octicon octicon-book"></span>
+      README.md
+    </h3>
+<article class="markdown-body entry-content" itemprop="mainContentOfPage"><h1><a id="user-content-rome" class="anchor" href="#rome" aria-hidden="true"><span class="octicon octicon-link"></span></a>rome</h1>
+</article><p>ROME is a set of RSS and Atom Utilities for Java. It makes it easy to work in Java with most syndication formats: RSS 0.90, RSS 0.91 Netscape,
+RSS 0.91 Userland, RSS 0.92, RSS 0.93, RSS 0.94, RSS 1.0, RSS 2.0, Atom 0.3, Atom 1.0</p>
+<p>More Information: <a href="http://rometools.github.io/rome-fetcher/">http://rometools.github.io/rome-fetcher/</a></p>
+
+</div>
+</div>
+<div class="modal-backdrop"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="container">
+<div class="site-footer" role="contentinfo">
+<ul class="site-footer-links right">
+<li><a href="https://status.github.com/" data-ga-click="Footer, go to status, text:status">Status</a></li>
+<li><a href="https://developer.github.com" data-ga-click="Footer, go to api, text:api">API</a></li>
+<li><a href="https://training.github.com" data-ga-click="Footer, go to training, text:training">Training</a></li>
+<li><a href="https://shop.github.com" data-ga-click="Footer, go to shop, text:shop">Shop</a></li>
+<li><a href="https://github.com/blog" data-ga-click="Footer, go to blog, text:blog">Blog</a></li>
+<li><a href="https://github.com/about" data-ga-click="Footer, go to about, text:about">About</a></li>
+<li><a href="https://github.com/pricing" data-ga-click="Footer, go to pricing, text:pricing">Pricing</a></li>
+</ul>
+<a href="https://github.com" aria-label="Homepage">
+<span aria-hidden="true" class="mega-octicon octicon-mark-github" title="GitHub "></span>
+</a>
+<ul class="site-footer-links">
+<li>&copy; 2016 <span title="0.04208s from github-fe118-cp1-prd.iad.github.net">GitHub</span>, Inc.</li>
+<li><a href="https://github.com/site/terms" data-ga-click="Footer, go to terms, text:terms">Terms</a></li>
+<li><a href="https://github.com/site/privacy" data-ga-click="Footer, go to privacy, text:privacy">Privacy</a></li>
+<li><a href="https://github.com/security" data-ga-click="Footer, go to security, text:security">Security</a></li>
+<li><a href="https://github.com/contact" data-ga-click="Footer, go to contact, text:contact">Contact</a></li>
+<li><a href="https://help.github.com" data-ga-click="Footer, go to help, text:help">Help</a></li>
+</ul>
+</div>
+</div>
+<div id="ajax-error-message" class="flash flash-error">
+<span aria-hidden="true" class="octicon octicon-alert"></span>
+<button type="button" class="flash-close js-flash-close js-ajax-error-dismiss" aria-label="Dismiss error">
+<span aria-hidden="true" class="octicon octicon-x"></span>
+</button>
+      Something went wrong with that request. Please try again.
+    </div>
+<script crossorigin="anonymous" src="https://assets-cdn.github.com/assets/compat-a0cee5d8d4fb535c0f41971d037b32e852a56ddca5bf67bb2124e426a2d813a5.js"></script>
+<script crossorigin="anonymous" src="https://assets-cdn.github.com/assets/frameworks-9ee55ceaf87fc34dc86334249fef6cbece88e815478e0fbe81642d57ed0fff89.js"></script>
+<script async="async" crossorigin="anonymous" src="https://assets-cdn.github.com/assets/github-8afeb971202f92778ffc73ddd92661c1977dc5e42a928ed35f8ec96e425a6e7a.js"></script>
+<div class="js-stale-session-flash stale-session-flash flash flash-warn flash-banner hidden">
+<span aria-hidden="true" class="octicon octicon-alert"></span>
+<span class="signed-in-tab-flash">You signed in with another tab or window. <a href="">Reload</a> to refresh your session.</span>
+<span class="signed-out-tab-flash">You signed out in another tab or window. <a href="">Reload</a> to refresh your session.</span>
+</div>
+<div class="facebox" id="facebox" style="display:none;">
+<div class="facebox-popup">
+<div class="facebox-content" role="dialog" aria-labelledby="facebox-header" aria-describedby="facebox-description">
+</div>
+<button type="button" class="facebox-close js-facebox-close" aria-label="Close modal">
+<span aria-hidden="true" class="octicon octicon-x"></span>
+</button>
+</div>
+</div>
+</body>
+</html>
